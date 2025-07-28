@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Defs>
+
+  <AbilityDef>
+    <defName>WhipSlash</defName>
+    <label>Whiplash</label>
+    <description>Expend a pressurized bioferrite charge to create a burst of flame.</description>
+    <iconPath>UI/Icons/Genes/Gene_HairStyleBaldOnly</iconPath>
+    <aiCanUse>true</aiCanUse>
+    <warmupStartSound>FireSpew_Warmup</warmupStartSound>
+    <showOnCharacterCard>false</showOnCharacterCard>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <requireLineOfSight>true</requireLineOfSight>
+      <range>8.9</range>
+      <warmupTime>0.5</warmupTime>
+      <soundCast>FireSpew_Resolve</soundCast>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>WhipSplash</projectileDef>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
+  <defName>WhipSplash</defName>
+  <label>flame Spew</label>
+  <thingClass>VEF.Weapons.FlamethrowProjectile</thingClass>
+  <graphicData>
+    <texPath>Whip/Whip_Release</texPath>
+    <texPathFadeOut>Whip/Whip_Resolve</texPathFadeOut>
+  </graphicData>
+  <projectile>
+    <damageDef>Bullet</damageDef>
+    <speed>60</speed>
+    <damageAmountBase>2</damageAmountBase>
+  </projectile>
+  <drawOffscreen>true</drawOffscreen>
+  <lifeTimeDuration>80</lifeTimeDuration>
+  <widthScaleFactor>0.50</widthScaleFactor>
+  <heightScaleFactor>1</heightScaleFactor>
+  <startingPositionOffset>(0, 0, -0.8)</startingPositionOffset>
+  <totalSizeScale>1.25</totalSizeScale>
+  <tickFrameRate>5</tickFrameRate>
+  <finalTickFrameRate>5</finalTickFrameRate>
+  <tickDamageRate>20</tickDamageRate>
+  <dealsDamageOnce>true</dealsDamageOnce>
+  <minDistanceToAffect>3</minDistanceToAffect>
+</VEF.Weapons.ExpandableProjectileDef>
+
+
+
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>Weapon_Whip</defName>
+    <label>Whip</label>
+    <description>A formidable spear befitting Noche, a Holy Knight Commander who once lost his place in the Order. It channels focused energy for powerful melee strikes and can unleash a sweeping attack to strike multiple foes in a line.</description>
+    <possessionCount>1</possessionCount>
+    <graphicData>
+      <texPath>Weapons/Whip</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>1.5</drawSize>
+    </graphicData>
+    <techLevel>Spacer</techLevel>
+    <weaponTags>
+      <li>HolyKnightSpear</li>
+    </weaponTags>
+    <thingSetMakerTags>
+      <li>RewardStandardQualitySuper</li>
+    </thingSetMakerTags>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <armorPenetration>0.10</armorPenetration>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>22</power>
+        <armorPenetration>0.45</armorPenetration>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>22</power>
+        <armorPenetration>0.45</armorPenetration>
+        <cooldownTime>2.6</cooldownTime>
+      </li>
+    </tools>
+    <statBases>
+      <MarketValue>1200</MarketValue>
+      <WorkToMake>30000</WorkToMake>
+      <Mass>1.5</Mass>
+      <EquipDelay>1.5</EquipDelay>
+    </statBases>
+    <relicChance>2</relicChance>
+    <costList>
+      <Gold>1</Gold>
+      <Plasteel>80</Plasteel>
+      <ComponentSpacer>3</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="CompProperties_EquippableAbility">
+        <abilityDef>WhipSlash</abilityDef>
+      </li>
+    </comps>
+        <modExtensions>
+      <li Class="VEF.Things.ThingDefExtension" MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">
+        <usableWithShields>true</usableWithShields>
+        <weaponDraftedDrawOffsets>
+          <north>
+            <drawOffset>(0.05,0.0,0.15)</drawOffset>
+            <angleOffset>-60</angleOffset>
+          </north>
+          <east>
+            <drawOffset>(0.10,0.2,0.10)</drawOffset>
+            <angleOffset>-60</angleOffset>
+          </east>
+          <south>
+            <drawOffset>(0.3,0,0.10)</drawOffset>            <!-- -Left/+Right, -Back/+Front, -Down/+Up -->
+            <angleOffset>-60</angleOffset>
+          </south>
+          <west>
+            <drawOffset>(-0.10,0.0,0.15)</drawOffset>
+            <angleOffset>45</angleOffset>
+          </west>
+        </weaponDraftedDrawOffsets>
+      </li>
+    </modExtensions>
+    <recipeMaker>
+      <recipeUsers>
+        <li>TableMachining</li>
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <displayPriority>420</displayPriority>
+    </recipeMaker>
+  </ThingDef>
+  
+  <ThingDef ParentName="BaseGun">
+    <defName>Gazer_Laser</defName>
+    <label>optical laser</label>
+    <description>The Locust’s primary beam weapon, powerful enough to melt reinforced plasteel and vaporise flesh.</description>
+    <graphicData>
+      <texPath>Blank</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <uiIconPath>UI/Light</uiIconPath>
+    <techLevel>Ultra</techLevel>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <relicChance>0</relicChance>
+    <statBases>
+      <MarketValue>9999</MarketValue>
+      <AccuracyTouch>0.7</AccuracyTouch>
+      <AccuracyShort>0.85</AccuracyShort>
+      <AccuracyMedium>0.92</AccuracyMedium>
+      <AccuracyLong>0.90</AccuracyLong>
+      <RangedWeapon_Cooldown>6.8</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <weaponTags Inherit="False">
+      <li>MechanoidLaserLocust</li>
+    </weaponTags>
+    <comps>
+      <li Class="CompProperties_EquippableAbilityReloadable">
+        <abilityDef>powerbeamability</abilityDef>
+      </li>
+      </comps>
+   <verbs>
+      <li>
+        <verbClass>Verb_ShootBeam</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <warmupTime>1.0</warmupTime>
+        <range>24.9</range>
+        <minRange>3.9</minRange>
+        <beamFullWidthRange>6.9</beamFullWidthRange>
+        <burstShotCount>5</burstShotCount>
+        <showBurstShotStats>false</showBurstShotStats>
+        <beamWidth>6</beamWidth>
+        <ticksBetweenBurstShots>22</ticksBetweenBurstShots>
+        <beamDamageDef>MegaBeam</beamDamageDef>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <soundCastBeam>BeamGraser_Shooting</soundCastBeam>
+        <beamGroundFleckDef>Fleck_BeamBurn</beamGroundFleckDef>
+        <beamFleckChancePerTick>0.32</beamFleckChancePerTick>
+        <beamMaxDeviation>1.5</beamMaxDeviation>
+        <beamCurvature>0.6</beamCurvature>
+        <beamMoteDef>Mote_GraserLaserBeamBase</beamMoteDef>
+        <beamEndEffecterDef>GraserBeam_End</beamEndEffecterDef>
+        <beamChanceToStartFire>0.85</beamChanceToStartFire>
+        <beamChanceToAttachFire>0.85</beamChanceToAttachFire>
+        <beamFireSizeRange>0.55~0.85</beamFireSizeRange>
+        <beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
+        <beamStartOffset>0.8</beamStartOffset>
+        <beamLineFleckChanceCurve>
+          <points>
+            <li>(0, 0)</li>
+            <li>(0.65, 0.4)</li>
+            <li>(1, 0.75)</li>
+          </points>
+        </beamLineFleckChanceCurve>
+      </li>
+    </verbs>
+            <modExtensions>
+      <li Class="VEF.Things.ThingDefExtension" MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">
+        <usableWithShields>true</usableWithShields>
+        <weaponDraftedDrawOffsets>
+          <north>
+            <drawOffset>(0.05,0.0,0.15)</drawOffset>
+            <angleOffset>-60</angleOffset>
+          </north>
+          <east>
+            <drawOffset>(0.20,-3.2,4.50)</drawOffset>
+            <angleOffset>-60</angleOffset>
+          </east>
+          <south>
+            <drawOffset>(0.3,0,0.10)</drawOffset>            <!-- -Left/+Right, -Back/+Front, -Down/+Up -->
+            <angleOffset>-60</angleOffset>
+          </south>
+          <west>
+            <drawOffset>(-0.10,0.0,0.15)</drawOffset>
+            <angleOffset>45</angleOffset>
+          </west>
+        </weaponDraftedDrawOffsets>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <DamageDef ParentName="Beam">
+    <defName>MegaBeam</defName>
+    <label>mega beam</label>
+    <defaultDamage>25</defaultDamage>
+  </DamageDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_GraserLaserBeamBase</defName>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.2</fadeInTime>
+      <fadeOutTime>0.3</fadeOutTime>
+      <solidTime>999999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+      <rotateTowardsTarget>True</rotateTowardsTarget>
+      <scaleToConnectTargets>True</scaleToConnectTargets>
+      <fadeOutUnmaintained>True</fadeOutUnmaintained>
+    </mote>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData>
+      <texPath>Things/Mote/GraserBeam</texPath>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>MoteBeam</shaderType>
+      <shaderParameters>
+        <_ExtraTexA>/Things/Mote/BeamSecondaryNoise_A</_ExtraTexA>
+        <_ExtraTexB>/Things/Mote/BeamSecondaryNoise_B</_ExtraTexB>
+        <_ScrollSpeedA>-4 </_ScrollSpeedA>
+        <_ScrollSpeedB>3</_ScrollSpeedB>
+        <_Intensity>2</_Intensity>
+      </shaderParameters>
+      <color>(235, 64, 52)</color>
+      <drawSize>(5.5, 1)</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <AbilityDef>
+    <defName>powerbeamability</defName>
+    <label>draupnir spear explosive</label>
+    <description>Throw the draupnir spear, which will explode after some seconds. You can recharge this ability using gold.</description>
+    <iconPath>UI/Powerful</iconPath>
+    <aiCanUse>true</aiCanUse>
+    <ai_IsIncendiary>false</ai_IsIncendiary>
+    <showOnCharacterCard>false</showOnCharacterCard>
+    <cooldownTicksRange>9000</cooldownTicksRange> 
+    <canUseAoeToGetTargets>false</canUseAoeToGetTargets>
+    <verbProperties>
+        <verbClass>Verb_ShootBeam</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <warmupTime>1.0</warmupTime>
+        <range>24.9</range>
+        <minRange>3.9</minRange>
+        <beamFullWidthRange>6.9</beamFullWidthRange>
+        <burstShotCount>5</burstShotCount>
+        <showBurstShotStats>false</showBurstShotStats>
+        <beamWidth>6</beamWidth>
+        <ticksBetweenBurstShots>22</ticksBetweenBurstShots>
+        <beamDamageDef>Beam</beamDamageDef>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <soundCastBeam>BeamGraser_Shooting</soundCastBeam>
+        <beamGroundFleckDef>Fleck_BeamBurn</beamGroundFleckDef>
+        <beamFleckChancePerTick>0.32</beamFleckChancePerTick>
+        <beamMaxDeviation>1.5</beamMaxDeviation>
+        <beamCurvature>0.6</beamCurvature>
+        <beamMoteDef>Mote_GraserLaserBeamBase</beamMoteDef>
+        <beamEndEffecterDef>GraserBeam_End</beamEndEffecterDef>
+        <beamChanceToStartFire>0.85</beamChanceToStartFire>
+        <beamChanceToAttachFire>0.85</beamChanceToAttachFire>
+        <beamFireSizeRange>0.55~0.85</beamFireSizeRange>
+        <beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
+        <beamStartOffset>0.8</beamStartOffset>
+        <beamLineFleckChanceCurve>
+          <points>
+            <li>(0, 0)</li>
+            <li>(0.65, 0.4)</li>
+            <li>(1, 0.75)</li>
+          </points>
+        </beamLineFleckChanceCurve>
+    </verbProperties>
+  </AbilityDef>
+
+
+
+  <ThingDef ParentName="BaseGun">
+    <defName>Ravager_Artillery</defName>
+    <label>ravager artillery</label>
+    <description>PLACEHOLDER</description>
+    <graphicData>
+      <texPath>Weapons/Artillery</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.6</drawSize>
+    </graphicData>
+    <techLevel>Ultra</techLevel>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <relicChance>0</relicChance>
+    <statBases>
+      <MarketValue>9999</MarketValue>
+      <AccuracyTouch>0.7</AccuracyTouch>
+      <AccuracyShort>0.85</AccuracyShort>
+      <AccuracyMedium>0.92</AccuracyMedium>
+      <AccuracyLong>0.90</AccuracyLong>
+      <RangedWeapon_Cooldown>6.8</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <weaponTags Inherit="False">
+      <li>RavagerArtillery</li>
+    </weaponTags>
+        <comps>
+      <li Class="CompProperties_EquippableAbilityReloadable">
+        <abilityDef>MechDash</abilityDef>
+      </li>
+      </comps>
+    <verbs>
+      <li>
+        <label>launch frag grenade</label>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>ArtilleryProjectile</defaultProjectile>
+        <hasStandardCommand>true</hasStandardCommand>
+        <burstShotCount>3</burstShotCount>
+        <range>24.9</range>
+        <forcedMissRadius>8.9</forcedMissRadius>
+        <warmupTime>3</warmupTime>
+        <noiseRadius>4</noiseRadius>
+        <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+        <soundCast>Shot_IncendiaryLauncher</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>14</muzzleFlashScale>
+        <drawHighlightWithLineOfSight>true</drawHighlightWithLineOfSight>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+      </li>
+    </verbs>
+            <modExtensions>
+      <li Class="VEF.Things.ThingDefExtension" MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">
+        <usableWithShields>true</usableWithShields>
+        <weaponDraftedDrawOffsets>
+          <north>
+            <drawOffset>(0.05,1.0,0.15)</drawOffset>
+            <angleOffset>-60</angleOffset>
+          </north>
+          <east>
+            <drawOffset>(-0.1,0.1,0.5)</drawOffset>
+            <angleOffset>-52</angleOffset>
+          </east>
+          <south>
+            <drawOffset>(-0.1,0,0.70)</drawOffset>            <!-- -Left/+Right, -Back/+Front, -Down/+Up -->
+            <angleOffset>40</angleOffset>
+          </south>
+          <west>
+            <drawOffset>(0.15,0.0,0.5)</drawOffset>
+            <angleOffset>45</angleOffset>
+          </west>
+        </weaponDraftedDrawOffsets>
+        <weaponCarryDrawOffsets>
+          <north>
+            <drawOffset>(0.05,1.0,0.15)</drawOffset>
+            <angleOffset>-60</angleOffset>
+          </north>
+          <east>
+            <drawOffset>(-0.10,0.1,0.7)</drawOffset>
+          </east>
+          <south>
+            <drawOffset>(0,0,0.10)</drawOffset>            <!-- -Left/+Right, -Back/+Front, -Down/+Up -->
+          </south>
+          <west>
+            <drawOffset>(0.15,0.0,0.5)</drawOffset>
+            <angleOffset>45</angleOffset>
+          </west>
+        </weaponCarryDrawOffsets>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+      <ThingDef ParentName="BaseFragGrenadeProjectile">
+        <defName>ArtilleryProjectile</defName>
+        <label>artillery projectile</label>
+        <thingClass>Projectile_Explosive</thingClass>
+        <graphicData>
+          <texPath>Projectiles/ProjectileArtillery</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+          <explosionRadius>1.9</explosionRadius >
+          <damageDef>Bomb</damageDef>
+          <!-- Use default damage from explosion def -->
+          <explosionDelay>0</explosionDelay>
+        </projectile>
+      </ThingDef>
+
+    <AbilityDef>
+        <defName>MechDash</defName>
+        <label>go launch yourself</label>
+        <description>Fly to another world tile.</description>
+        <iconPath>Things/Mote/SpeechSymbols/Speech</iconPath>
+        <targetWorldCell>True</targetWorldCell>
+        <showGizmoOnWorldView>true</showGizmoOnWorldView>
+        <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+        <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+        <cooldownTicksRange>60</cooldownTicksRange>
+        <hostile>false</hostile>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <range>0.9</range>
+            <warmupTime>0.5</warmupTime>
+            <requireLineOfSight>False</requireLineOfSight>
+        </verbProperties>
+        <comps>
+            <li Class="EBSGFramework.CompProperties_Launch">
+                <maxDistance>3</maxDistance>
+            </li>
+        </comps>
+    </AbilityDef>
+  
+</Defs>
