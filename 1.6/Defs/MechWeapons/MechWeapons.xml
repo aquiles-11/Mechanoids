@@ -2,58 +2,6 @@
 
 <Defs>
 
-  <AbilityDef>
-    <defName>WhipSlash</defName>
-    <label>Whiplash</label>
-    <description>Expend a pressurized bioferrite charge to create a burst of flame.</description>
-    <iconPath>UI/Icons/Genes/Gene_HairStyleBaldOnly</iconPath>
-    <aiCanUse>true</aiCanUse>
-    <warmupStartSound>FireSpew_Warmup</warmupStartSound>
-    <showOnCharacterCard>false</showOnCharacterCard>
-    <verbProperties>
-      <verbClass>Verb_CastAbility</verbClass>
-      <requireLineOfSight>true</requireLineOfSight>
-      <range>8.9</range>
-      <warmupTime>0.5</warmupTime>
-      <soundCast>FireSpew_Resolve</soundCast>
-      <targetParams>
-        <canTargetLocations>true</canTargetLocations>
-      </targetParams>
-    </verbProperties>
-    <comps>
-      <li Class="CompProperties_AbilityLaunchProjectile">
-        <projectileDef>WhipSplash</projectileDef>
-      </li>
-    </comps>
-  </AbilityDef>
-
-  <VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
-  <defName>WhipSplash</defName>
-  <label>flame Spew</label>
-  <thingClass>VEF.Weapons.FlamethrowProjectile</thingClass>
-  <graphicData>
-    <texPath>Whip/Whip_Release</texPath>
-    <texPathFadeOut>Whip/Whip_Resolve</texPathFadeOut>
-  </graphicData>
-  <projectile>
-    <damageDef>Bullet</damageDef>
-    <speed>60</speed>
-    <damageAmountBase>2</damageAmountBase>
-  </projectile>
-  <drawOffscreen>true</drawOffscreen>
-  <lifeTimeDuration>80</lifeTimeDuration>
-  <widthScaleFactor>0.50</widthScaleFactor>
-  <heightScaleFactor>1</heightScaleFactor>
-  <startingPositionOffset>(0, 0, -0.8)</startingPositionOffset>
-  <totalSizeScale>1.25</totalSizeScale>
-  <tickFrameRate>5</tickFrameRate>
-  <finalTickFrameRate>5</finalTickFrameRate>
-  <tickDamageRate>20</tickDamageRate>
-  <dealsDamageOnce>true</dealsDamageOnce>
-  <minDistanceToAffect>3</minDistanceToAffect>
-</VEF.Weapons.ExpandableProjectileDef>
-
-
 
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
     <defName>Weapon_Whip</defName>
@@ -153,6 +101,57 @@
       <displayPriority>420</displayPriority>
     </recipeMaker>
   </ThingDef>
+
+  <AbilityDef>
+    <defName>WhipSlash</defName>
+    <label>Whiplash</label>
+    <description>Expend a pressurized bioferrite charge to create a burst of flame.</description>
+    <iconPath>UI/Icons/Genes/Gene_HairStyleBaldOnly</iconPath>
+    <aiCanUse>true</aiCanUse>
+    <warmupStartSound>FireSpew_Warmup</warmupStartSound>
+    <showOnCharacterCard>false</showOnCharacterCard>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <requireLineOfSight>true</requireLineOfSight>
+      <range>8.9</range>
+      <warmupTime>0.5</warmupTime>
+      <soundCast>FireSpew_Resolve</soundCast>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>WhipSplash</projectileDef>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
+  <defName>WhipSplash</defName>
+  <label>flame Spew</label>
+  <thingClass>VEF.Weapons.FlamethrowProjectile</thingClass>
+  <graphicData>
+    <texPath>Whip/Whip_Release</texPath>
+    <texPathFadeOut>Whip/Whip_Resolve</texPathFadeOut>
+  </graphicData>
+  <projectile>
+    <damageDef>Bullet</damageDef>
+    <speed>60</speed>
+    <damageAmountBase>2</damageAmountBase>
+  </projectile>
+  <drawOffscreen>true</drawOffscreen>
+  <lifeTimeDuration>80</lifeTimeDuration>
+  <widthScaleFactor>0.50</widthScaleFactor>
+  <heightScaleFactor>1</heightScaleFactor>
+  <startingPositionOffset>(0, 0, -0.8)</startingPositionOffset>
+  <totalSizeScale>1.25</totalSizeScale>
+  <tickFrameRate>5</tickFrameRate>
+  <finalTickFrameRate>5</finalTickFrameRate>
+  <tickDamageRate>20</tickDamageRate>
+  <dealsDamageOnce>true</dealsDamageOnce>
+  <minDistanceToAffect>3</minDistanceToAffect>
+</VEF.Weapons.ExpandableProjectileDef>
   
   <ThingDef ParentName="BaseGun">
     <defName>Gazer_Laser</defName>
@@ -442,28 +441,5 @@
         </projectile>
       </ThingDef>
 
-    <AbilityDef>
-        <defName>MechDash</defName>
-        <label>go launch yourself</label>
-        <description>Fly to another world tile.</description>
-        <iconPath>Things/Mote/SpeechSymbols/Speech</iconPath>
-        <targetWorldCell>True</targetWorldCell>
-        <showGizmoOnWorldView>true</showGizmoOnWorldView>
-        <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
-        <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
-        <cooldownTicksRange>60</cooldownTicksRange>
-        <hostile>false</hostile>
-        <verbProperties>
-            <verbClass>Verb_CastAbility</verbClass>
-            <range>0.9</range>
-            <warmupTime>0.5</warmupTime>
-            <requireLineOfSight>False</requireLineOfSight>
-        </verbProperties>
-        <comps>
-            <li Class="EBSGFramework.CompProperties_Launch">
-                <maxDistance>3</maxDistance>
-            </li>
-        </comps>
-    </AbilityDef>
-  
+
 </Defs>
