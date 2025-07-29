@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+  <Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Biotech</li>
+		</mods>
+    <match Class="PatchOperationSequence">
+			<success>Normal</success>
+			<operations>
+
+<li Class="PatchOperationAdd">
+          <xpath>Defs/RecipeDef[defName = "ResurrectHeavyMech"]/fixedIngredientFilter/thingDefs</xpath>
+          <value>
+            <li>Corpse_Mech_Aegis</li>
+          </value>
+        </li>
+<li Class="PatchOperationAdd">
+          <xpath>Defs/RecipeDef[defName = "ResurrectMediumMech"]/fixedIngredientFilter/thingDefs</xpath>
+          <value>
+            <li>Corpse_Mech_Conqueror_AR</li>
+	    <li>Corpse_Mech_Conqueror_DMR</li>
+          </value>
+        </li>
+<li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName = "LargeMechGestator"]/recipes</xpath>
+          <value>
+            <li>Mech_Aegis</li>
+            <li>Mech_Conqueror_AR</li> 
+	    <li>Mech_Conqueror_DMR</li>
+
+	  </value>
+        </li>
+
+<li Class="PatchOperationAdd">
+          <xpath>Defs</xpath>
+          <value>
+
+            <RecipeDef ParentName="HeavyMechanoidRecipe">
+              <defName>Mech_Aegis</defName>
+              <label>gestate aegis</label>
+              <description>Gestate an aegis mechanoid.</description>
+              <researchPrerequisite>HighMechtech</researchPrerequisite>
+              <ingredients Inherit="False">
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>Steel</li>
+                    </thingDefs>
+                  </filter>
+                  <count>150</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>Plasteel</li>
+                    </thingDefs>
+                  </filter>
+                  <count>80</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>ComponentIndustrial</li>
+                    </thingDefs>
+                  </filter>
+                 <count>3</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>SubcoreHigh</li>
+                    </thingDefs>
+                  </filter>
+                 <count>1</count>
+                </li>
+              </ingredients>
+              <products>
+                <Mech_Aegis>1</Mech_Aegis>
+              </products>
+              <descriptionHyperlinks>
+                <ThingDef>Mech_Aegis</ThingDef>
+              </descriptionHyperlinks>
+            </RecipeDef>
+
+ <RecipeDef ParentName="MediumMechanoidRecipe">
+              <defName>Mech_Conqueror_DMR</defName>
+              <label>gestate DMR conqueror</label>
+              <description>Gestate a conqueror mechanoid with a high powered DMR.</description>
+              <researchPrerequisite>StandardMechtech</researchPrerequisite>
+              <ingredients Inherit="False">
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>Steel</li>
+                    </thingDefs>
+                  </filter>
+                  <count>75</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>Plasteel</li>
+                    </thingDefs>
+                  </filter>
+                  <count>25</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>ComponentIndustrial</li>
+                    </thingDefs>
+                  </filter>
+                 <count>1</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>SubcoreRegular</li>
+                    </thingDefs>
+                  </filter>
+                 <count>1</count>
+                </li>
+              </ingredients>
+              <products>
+                <Mech_Conqueror_DMR>1</Mech_Conqueror_DMR>
+              </products>
+              <descriptionHyperlinks>
+                <ThingDef>Mech_Conqueror_DMR</ThingDef>
+              </descriptionHyperlinks>
+            </RecipeDef>
+
+    <RecipeDef ParentName="MediumMechanoidRecipe">
+              <defName>Mech_Conqueror_AR</defName>
+              <label>gestate autorifle conqueror</label>
+              <description>Gestate a conqueror mechanoid with a rifle.</description>
+              <researchPrerequisite>StandardMechtech</researchPrerequisite>
+              <ingredients Inherit="False">
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>Steel</li>
+                    </thingDefs>
+                  </filter>
+                  <count>75</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>Plasteel</li>
+                    </thingDefs>
+                  </filter>
+                  <count>25</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>ComponentIndustrial</li>
+                    </thingDefs>
+                  </filter>
+                 <count>1</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>SubcoreRegular</li>
+                    </thingDefs>
+                  </filter>
+                 <count>1</count>
+                </li>
+              </ingredients>
+              <products>
+                <Mech_Conqueror_AR>1</Mech_Conqueror_AR>
+              </products>
+              <descriptionHyperlinks>
+                <ThingDef>Mech_Conqueror_AR</ThingDef>
+              </descriptionHyperlinks>
+            </RecipeDef>
+
+        </value>
+    </li>
+			</operations>
+		</match>
+  </Operation>
+
+</Patch>
