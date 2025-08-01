@@ -28,9 +28,8 @@
           <value>
             <li>Mech_Aegis</li>
             <li>Mech_Conqueror_AR</li> 
-	    <li>Mech_Conqueror_DMR</li>
-
-	  </value>
+	          <li>Mech_Conqueror_DMR</li>
+          </value>
         </li>
 
 <li Class="PatchOperationAdd">
@@ -178,6 +177,53 @@
               </descriptionHyperlinks>
             </RecipeDef>
 
+            <RecipeDef ParentName="HeavyMechanoidRecipe">
+              <defName>Mech_Gazer</defName>
+              <label>gestate gazer</label>
+              <description>Gestate a gazer mechanoid.</description>
+              <researchPrerequisite>HighMechtech</researchPrerequisite>
+              <ingredients Inherit="False">
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>Steel</li>
+                    </thingDefs>
+                  </filter>
+                  <count>150</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>Plasteel</li>
+                    </thingDefs>
+                  </filter>
+                  <count>80</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>ComponentIndustrial</li>
+                    </thingDefs>
+                  </filter>
+                 <count>3</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>SubcoreHigh</li>
+                    </thingDefs>
+                  </filter>
+                 <count>1</count>
+                </li>
+              </ingredients>
+              <products>
+                <Mech_Gazer>1</Mech_Gazer>
+              </products>
+              <descriptionHyperlinks>
+                <ThingDef>Mech_Gazer</ThingDef>
+              </descriptionHyperlinks>
+            </RecipeDef>
+            
         </value>
     </li>
 			</operations>
