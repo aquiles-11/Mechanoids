@@ -30,11 +30,6 @@
     <weaponTags Inherit="False">
       <li>RavagerArtillery</li>
     </weaponTags>
-    <comps>
-      <li Class="CompProperties_EquippableAbilityReloadable">
-        <abilityDef>MechDash</abilityDef>
-      </li>
-    </comps>
     <verbs>
       <li>
         <label>launch frag grenade</label>

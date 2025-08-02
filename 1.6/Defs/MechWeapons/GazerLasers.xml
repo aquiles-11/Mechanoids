@@ -31,7 +31,7 @@
     </weaponTags>
     <comps>
       <li Class="CompProperties_EquippableAbilityReloadable">
-        <abilityDef>powerbeamability</abilityDef>
+        <abilityDef>PowerBeamAbility</abilityDef>
       </li>
     </comps>
     <verbs>

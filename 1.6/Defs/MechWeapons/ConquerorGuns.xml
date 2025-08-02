@@ -6,7 +6,7 @@
     <description>A charged-shot assault rifle. Weaker than a charge rifle, but more accurate.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Common/Textures/Weapons/ConquerorAR</texPath>
+      <texPath>Weapons/ConquerorAR</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_ChargeRifle</soundInteract>
@@ -93,7 +93,7 @@
     <description>A stronger, faster, but less accurate Charge Lance.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Common/Textures/Weapons/ConquerorDMR</texPath>
+      <texPath>Weapons/ConquerorDMR</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_ChargeLance</soundInteract>

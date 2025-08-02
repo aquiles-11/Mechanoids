@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Defs>
+
+<!-- BodyDef Ravager -->
+
+  <BodyDef>
+    <defName>Mech_Ravager</defName>
+    <label>ravager</label>
+    <corePart>
+      <def>RavagerBody</def>
+      <height>Bottom</height>
+      <depth>Outside</depth>
+      <parts>
+        <li>
+          <def>MechanicalHead</def>
+          <coverage>0.18</coverage>
+          <height>Bottom</height>
+          <depth>Outside</depth>
+          <groups>
+            <li>HeadAttackTool</li>
+          </groups>
+          <parts>
+            <li>
+              <def>ArtificialBrain</def>
+              <customLabel>primary artificial brain</customLabel>
+              <coverage>0.25</coverage>
+              <depth>Inside</depth>
+            </li>
+            <li>
+              <def>ArtificialBrain</def>
+              <customLabel>secondary artificial brain</customLabel>
+              <coverage>0.15</coverage>
+              <depth>Inside</depth>
+            </li>
+            <li>
+              <def>SightSensor</def>
+              <customLabel>center sight sensor</customLabel>
+              <coverage>0.20</coverage>
+            </li>
+            <li>
+              <def>SightSensor</def>
+              <customLabel>left sensors array</customLabel>
+              <coverage>0.10</coverage>
+            </li>
+            <li>
+              <def>SightSensor</def>
+              <customLabel>right sensors array</customLabel>
+              <coverage>0.10</coverage>
+            </li>
+            <li>
+              <def>HearingSensor</def>
+              <customLabel>left hearing sensor</customLabel>
+              <coverage>0.03</coverage>
+            </li>
+            <li>
+              <def>HearingSensor</def>
+              <customLabel>right hearing sensor</customLabel>
+              <coverage>0.03</coverage>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>FluidReprocessor</def>
+          <customLabel>left fluid peprocessor</customLabel>
+          <coverage>0.05</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>FluidReprocessor</def>
+          <customLabel>right fluid peprocessor</customLabel>
+          <coverage>0.05</coverage>
+          <depth>Inside</depth>
+        </li>
+      </parts>
+    </corePart>
+  </BodyDef>
+
+    <BodyPartDef>
+        <defName>RavagerBody</defName>
+        <label>body</label>
+        <hitPoints>100</hitPoints>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+        <skinCovered>false</skinCovered>
+        <solid>true</solid>
+        <alive>false</alive>
+        <bleedRate>0</bleedRate>
+    </BodyPartDef>
+
+</Defs>
