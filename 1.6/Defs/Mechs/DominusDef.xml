@@ -86,7 +86,7 @@
             </li>
             <li>
                 <bodyGraphicData>
-                    <texPath>Mechs/Dominus/Dominus</texPath>
+                    <texPath>Mechs/Dominus/DominusAncient</texPath>
                     <maskPath>Mechs/Overlays/Dominus_Overlay/Mech_Dominus</maskPath>
                     <shaderType>CutoutWithOverlay</shaderType>
                     <graphicClass>Graphic_Multi</graphicClass>

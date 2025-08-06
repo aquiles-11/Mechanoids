@@ -106,7 +106,7 @@
             </li>
             <li>
                 <bodyGraphicData>
-                    <texPath>Mechs/Gazer/Gazer</texPath>
+                    <texPath>Mechs/Gazer/GazerAncient</texPath>
                     <maskPath>Mechs/Overlays/Gazer_Overlay/Mech_Gazer</maskPath>
                     <shaderType>CutoutWithOverlay</shaderType>
                     <graphicClass>Graphic_Multi</graphicClass>
