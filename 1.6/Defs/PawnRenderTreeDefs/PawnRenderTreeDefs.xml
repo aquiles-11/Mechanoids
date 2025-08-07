@@ -14,9 +14,8 @@
           <children>
             <li Class="ApexMech.PawnRenderNodeProperties_MechanoidAllegiance">
               <debugLabel>Cape</debugLabel>
-              <tagDef>Body</tagDef>
-              <texPath>Mechs\Terminus\Nodes\Cape</texPath>
-              <maskPath>Mechs\Overlays\Terminus_Overlay\Nodes\Mech_Cape</maskPath>
+              <texPath>Mechs/Terminus/Nodes/Cape</texPath>
+              <maskPath>Mechs/Overlays/Terminus_Overlay/Nodes/Mech_Cape</maskPath>
               <drawSize>1.0</drawSize>
               <baseLayer>4</baseLayer>
             </li>
