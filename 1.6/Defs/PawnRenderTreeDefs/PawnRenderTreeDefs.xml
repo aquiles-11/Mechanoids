@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <PawnRenderTreeDef>
+    <defName>Terminus_Cape</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel>
+      <tagDef>Root</tagDef>
+      <children>
+        <li>
+          <debugLabel>Body</debugLabel>
+          <tagDef>Body</tagDef>
+          <nodeClass>PawnRenderNode_AnimalPart</nodeClass>
+          <children>
+            <li Class="ApexMech.PawnRenderNodeProperties_MechanoidAllegiance">
+              <debugLabel>Cape</debugLabel>
+              <tagDef>Body</tagDef>
+              <texPath>Mechs\Terminus\Nodes\Cape</texPath>
+              <maskPath>Mechs\Overlays\Terminus_Overlay\Nodes\Mech_Cape</maskPath>
+              <drawSize>1.0</drawSize>
+              <baseLayer>4</baseLayer>
+            </li>
+          </children>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+
+</Defs>

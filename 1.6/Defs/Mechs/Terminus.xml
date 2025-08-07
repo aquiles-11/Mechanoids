@@ -43,6 +43,7 @@
     </tools>
     <race>
       <body>Terminus</body>
+      <renderTree>Terminus_Cape</renderTree>
       <baseHealthScale>1</baseHealthScale>
       <detritusLeavings>
         <li>
