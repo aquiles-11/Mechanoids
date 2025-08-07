@@ -11,6 +11,7 @@
     <graphicData>
       <texPath>Weapons/Sword</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.35</drawSize>
     </graphicData>
     <equippedAngleOffset>45</equippedAngleOffset>
     <soundInteract>Interact_ChargeRifle</soundInteract>
@@ -57,7 +58,7 @@
           <li>Stab</li>
         </capacities>
         <power>27</power>
-        <cooldownTime>1</cooldownTime>
+        <cooldownTime>2</cooldownTime>
       </li>
       <li>
         <label>blade</label>
