@@ -56,15 +56,15 @@
         <capacities>
           <li>Stab</li>
         </capacities>
-        <power>9</power>
-        <cooldownTime>2</cooldownTime>
+        <power>27</power>
+        <cooldownTime>1</cooldownTime>
       </li>
       <li>
         <label>blade</label>
         <capacities>
           <li>Cut</li>
         </capacities>
-        <power>9</power>
+        <power>23</power>
         <cooldownTime>2</cooldownTime>
       </li>
     </tools>

@@ -21,6 +21,10 @@
             </li>
           </children>
         </li>
+        <li Class="PawnRenderNodeProperties_Carried">
+          <debugLabel>Carried thing</debugLabel>
+          <workerClass>PawnRenderNodeWorker_Carried</workerClass>
+        </li>
       </children>
     </root>
   </PawnRenderTreeDef>

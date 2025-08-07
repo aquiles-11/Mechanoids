@@ -95,7 +95,7 @@
       </li>
     </lifeStages>
     <weaponMoney>9999~9999</weaponMoney>
-    <weaponTags>
+    <weaponTags Inherit="False">
       <li>MechanoidTerminusSword</li>
     </weaponTags>
     <techHediffsChance>1</techHediffsChance>
