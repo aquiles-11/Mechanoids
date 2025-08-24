@@ -32,7 +32,7 @@
             </li>
         </tools>
         <race>
-            <body>Mech_Gazer</body>
+            <body>Mech_Ravager</body>
             <baseBodySize>3</baseBodySize>
             <baseHealthScale>6.2</baseHealthScale>
             <thinkTreeMain>Mechanoid</thinkTreeMain>
