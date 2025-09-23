@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "8LUF3jxp/rE=",
+  "dgSpecHash": "5E9tILMEOUk=",
   "success": true,
-  "projectFilePath": "C:\\Penyimpanan\\RimWorld Mod Development\\Co-development\\Apex Mechanoids\\Mechanoids\\1.6\\Source\\ApexMech.csproj",
+  "projectFilePath": "D:\\Games\\steamapps\\common\\RimWorld\\Mods\\Mechanoids\\1.6\\Source\\ApexMech.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Rayyan\\.nuget\\packages\\krafs.rimworld.ref\\1.6.4543\\krafs.rimworld.ref.1.6.4543.nupkg.sha512"
+    "C:\\Users\\aquil\\.nuget\\packages\\krafs.rimworld.ref\\1.6.4566\\krafs.rimworld.ref.1.6.4566.nupkg.sha512"
   ],
   "logs": []
 }

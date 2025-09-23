@@ -1,23 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>  
+
 
 <Defs>
 
     <ThingDef ParentName="BuildingBase">
-        <defName>Building_BigRepairStation</defName>
-        <label>big repair station</label>
+        <defName>Building_PowerPlant</defName>
+        <label>power plant</label>
         <description>PLACEHOLDER</description>
-        <thingClass>Building_MultiTileDoor</thingClass>
         <drawerType>MapMeshAndRealTime</drawerType>
         <tickerType>Normal</tickerType>
         <graphicData>
-            <texPath>Buildings/BigRepairStation/BigRepairStation_Base</texPath>
+            <texPath>Buildings/PowerPlant/PowerPlant</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>(3,3)</drawSize>
+            <drawSize>(2,3)</drawSize>
         </graphicData>
         <thingCategories>
             <li>BuildingsMisc</li>
         </thingCategories>
-        <uiIconPath>Buildings/BigRepairStation/BigRepairStation</uiIconPath>
         <altitudeLayer>Building</altitudeLayer>
         <passability>PassThroughOnly</passability>
         <minifiedDef>MinifiedThing</minifiedDef>
@@ -30,14 +29,6 @@
                 <li>Biotech</li>
             </buildingTags>
             <ai_chillDestination>false</ai_chillDestination>
-            <doorTopGraphic>
-                <texPath>Buildings/BigRepairStation/BigRepairStation_Top</texPath>
-                <graphicClass>Graphic_Single</graphicClass>
-            </doorTopGraphic>
-            <upperMoverGraphic>
-                <texPath>Buildings/BigRepairStation/BigRepairStation_Moving</texPath>
-                <graphicClass>Graphic_Multi</graphicClass>
-            </upperMoverGraphic>
         </building>
         <designationCategory>Biotech</designationCategory>
         <hasInteractionCell>true</hasInteractionCell>
@@ -48,7 +39,7 @@
             <Mass>80</Mass>
             <Flammability>0.5</Flammability>
         </statBases>
-        <size>(3,3)</size>
+        <size>(2,3)</size>
         <costList>
             <Steel>200</Steel>
         </costList>

@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Defs>
-
+<!--
     <ThingDef ParentName="BuildingBase">
-        <defName>Building_BigRepairStation</defName>
-        <label>big repair station</label>
+        <defName>Building_SmallRepairStation</defName>
+        <label>Small repair station</label>
         <description>PLACEHOLDER</description>
         <thingClass>Building_MultiTileDoor</thingClass>
         <drawerType>MapMeshAndRealTime</drawerType>
         <tickerType>Normal</tickerType>
         <graphicData>
-            <texPath>Buildings/BigRepairStation/BigRepairStation_Base</texPath>
+            <texPath>Buildings/SmallRepairStation/SmallRepairStation_Base</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>(3,3)</drawSize>
         </graphicData>
         <thingCategories>
             <li>BuildingsMisc</li>
         </thingCategories>
-        <uiIconPath>Buildings/BigRepairStation/BigRepairStation</uiIconPath>
         <altitudeLayer>Building</altitudeLayer>
         <passability>PassThroughOnly</passability>
         <minifiedDef>MinifiedThing</minifiedDef>
@@ -31,11 +30,11 @@
             </buildingTags>
             <ai_chillDestination>false</ai_chillDestination>
             <doorTopGraphic>
-                <texPath>Buildings/BigRepairStation/BigRepairStation_Top</texPath>
+                <texPath>Buildings/SmallRepairStation/SmallRepairStation_Top</texPath>
                 <graphicClass>Graphic_Single</graphicClass>
             </doorTopGraphic>
             <upperMoverGraphic>
-                <texPath>Buildings/BigRepairStation/BigRepairStation_Moving</texPath>
+                <texPath>Buildings/SmallRepairStation/SmallRepairStation_Moving</texPath>
                 <graphicClass>Graphic_Multi</graphicClass>
             </upperMoverGraphic>
         </building>
@@ -59,7 +58,7 @@
                 <basePowerConsumption>400</basePowerConsumption>
             </li>
         </comps>
-    </ThingDef>
+    </ThingDef>-->
 
 
 </Defs>
