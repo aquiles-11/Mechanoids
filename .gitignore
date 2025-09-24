@@ -1,6 +1,6 @@
-*/Source/*/.vs/*
-*/Source/*/obj/*
-*/Source/*/bin/*
-*/Source/*/*.csproj.user
+.vs
+obj
+bin
+*.csproj.user
 
 .vscode
