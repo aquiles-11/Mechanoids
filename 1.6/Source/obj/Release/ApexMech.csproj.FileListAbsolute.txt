@@ -1,5 +1,0 @@
-C:\Penyimpanan\RimWorld Mod Development\Co-development\Apex Mechanoids\Mechanoids\1.6\Assemblies\ApexMech.dll
-C:\Penyimpanan\RimWorld Mod Development\Co-development\Apex Mechanoids\Mechanoids\1.6\Source\obj\Release\ApexMech.csproj.AssemblyReference.cache
-C:\Penyimpanan\RimWorld Mod Development\Co-development\Apex Mechanoids\Mechanoids\1.6\Source\obj\Release\ApexMech.GeneratedMSBuildEditorConfig.editorconfig
-C:\Penyimpanan\RimWorld Mod Development\Co-development\Apex Mechanoids\Mechanoids\1.6\Source\obj\Release\ApexMech.csproj.CoreCompileInputs.cache
-C:\Penyimpanan\RimWorld Mod Development\Co-development\Apex Mechanoids\Mechanoids\1.6\Source\obj\Release\ApexMech.dll
