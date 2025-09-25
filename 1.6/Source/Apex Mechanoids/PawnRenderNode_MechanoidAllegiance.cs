@@ -1,6 +1,6 @@
 ﻿using Verse;
 
-namespace ApexMech
+namespace ApexMechanoids
 {
     public class PawnRenderNode_MechanoidAllegiance : PawnRenderNode
     {

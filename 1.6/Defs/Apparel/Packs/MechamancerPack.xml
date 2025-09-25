@@ -16,9 +16,9 @@
     </graphicData>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedPack</unfinishedThingDef>
-      <recipeUsers>
-        <li>BioferriteShaper</li>
-      </recipeUsers>
+      <!-- <recipeUsers> -->
+        <!-- <li>BioferriteShaper</li> -->
+      <!-- </recipeUsers> -->
       <useIngredientsForColor>false</useIngredientsForColor>
       <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
       <workSkill>Crafting</workSkill>
@@ -31,7 +31,7 @@
     </recipeMaker>
     <costList>
       <ComponentIndustrial>1</ComponentIndustrial>
-      <Bioferrite>30</Bioferrite>
+      <!-- <Bioferrite>30</Bioferrite> -->
     </costList>
     <tickerType>Normal</tickerType>
     <statBases>
