@@ -37,6 +37,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompAbilityEffect_KillCaster.cs" />
     <Compile Include="PawnRenderNodeProperties_MechanoidAllegiance.cs" />
     <Compile Include="PawnRenderNode_MechanoidAllegiance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
