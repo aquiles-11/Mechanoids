@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace ApexMech
+namespace ApexMechanoids
 {
     public class CompAbilityEffect_KillCaster : CompAbilityEffect
     {

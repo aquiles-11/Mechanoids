@@ -236,7 +236,7 @@
 				<applyToSelf>false</applyToSelf>
 				<ignoreSelf>true</ignoreSelf>
 			</li>
-			<li Class="ApexMech.CompProperties_KillCaster">
+			<li Class="ApexMechanoids.CompProperties_KillCaster">
 				<destroy>false</destroy>
 			</li>
 		</comps>
