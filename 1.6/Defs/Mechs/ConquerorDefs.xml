@@ -1,202 +1,124 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
- <ThingDef ParentName="BaseMechanoidWalker"> 
-   <defName>Mech_Conqueror_DMR</defName>
-    <label>DMR Conqueror</label>
-    <description>Human-sized, armed to the teeth, and ready to brawl. Conquerors make the best foot soldiers. Oorah. This one is armed with a highly powered Charge Carbine.</description>
-    <tools>
-      <li>
-        <label>left fist</label>
-        <labelNoLocation>fist</labelNoLocation>
-        <capacities>
-          <li>Blunt</li>
-        </capacities>
-        <power>12.0</power>
-        <cooldownTime>2</cooldownTime>
-        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
-        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
-      </li>
-      <li>
-        <label>right fist</label>
-        <labelNoLocation>fist</labelNoLocation>
-        <capacities>
-          <li>Blunt</li>
-        </capacities>
-        <power>12.0</power>
-        <cooldownTime>2</cooldownTime>
-        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
-        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
-      </li>
-      <li>
-        <label>head</label>
-        <capacities>
-          <li>Blunt</li>
-        </capacities>
-        <power>8.5</power>
-        <cooldownTime>2</cooldownTime>
-        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
-        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
-        <chanceFactor>0.2</chanceFactor>
-      </li>
-    </tools>
-    <race>
-      <body>Conqueror</body>
-      <baseHealthScale>1</baseHealthScale>
-      <detritusLeavings>
-        <li>
-          <def>ChunkMechanoidSlag</def>
-          <texOverrideIndex>11</texOverrideIndex>
-          <spawnChance>0.1</spawnChance>
-        </li>
-        <li>
-          <def>ChunkMechanoidSlag</def>
-          <texOverrideIndex>12</texOverrideIndex>
-          <spawnChance>0.1</spawnChance>
-        </li>
-      </detritusLeavings>
-    </race>
-    <statBases>
-      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">2</BandwidthCost>
-    </statBases>
-  </ThingDef>
+	
+	<ThingDef Abstract="True" Name="Mech_ConquerorBase" ParentName="BaseMechanoidWalker">
+		<tools>
+			<li>
+				<label>left fist</label>
+				<labelNoLocation>fist</labelNoLocation>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12.0</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>right fist</label>
+				<labelNoLocation>fist</labelNoLocation>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12.0</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>8.5</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+		<race>
+			<body>Conqueror</body>
+			<baseHealthScale>1</baseHealthScale>
+			<detritusLeavings>
+				<li>
+					<def>ChunkMechanoidSlag</def>
+					<texOverrideIndex>11</texOverrideIndex>
+					<spawnChance>0.1</spawnChance>
+				</li>
+				<li>
+					<def>ChunkMechanoidSlag</def>
+					<texOverrideIndex>12</texOverrideIndex>
+					<spawnChance>0.1</spawnChance>
+				</li>
+			</detritusLeavings>
+		</race>
+		<statBases>
+			<BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">2</BandwidthCost>
+		</statBases>
+	</ThingDef>
 
- <PawnKindDef ParentName="BaseMechanoidKind">  
-  <defName>Mech_Conqueror_DMR</defName>
-    <label>Conqueror</label>
-    <race>Mech_Conqueror_DMR</race>
-    <combatPower>190</combatPower>
-    <lifeStages>
-      <li MayRequire="Ludeon.RimWorld.Biotech">
-        <bodyGraphicData>
-         <texPath>Mechs/Conqueror/Conqueror</texPath>
-          <maskPath>Mechs/Overlays/Conqueror_Overlay/Mech_Conqueror</maskPath>
-          <shaderType>CutoutWithOverlay</shaderType>
-          <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.5</drawSize>
-          <shadowData>
-            <volume>(0.4, 0.8, 0.4)</volume>
-          </shadowData>
-        </bodyGraphicData>
-      </li>
-      <li>
-        <bodyGraphicData>
-          <texPath>Mechs/Conqueror/ConquerorAncient</texPath>
-          <maskPath>Mechs/Overlays/Conqueror_Overlay/Mech_Conqueror</maskPath>
-          <shaderType>CutoutWithOverlay</shaderType>
-          <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.5</drawSize>
-          <shadowData>
-            <volume>(0.4, 0.8, 0.4)</volume>
-          </shadowData>
-        </bodyGraphicData>
-      </li>
-    </lifeStages>
-    <weaponMoney>9999~9999</weaponMoney>
-    <weaponTags>
-      <li>MechanoidConquerorDMR</li>
-    </weaponTags>
-    <techHediffsChance>1</techHediffsChance>
-    <techHediffsMoney>9999~9999</techHediffsMoney>
-  </PawnKindDef>
+	<PawnKindDef Abstract="True" Name="Mech_ConquerorKindBase" ParentName="BaseMechanoidKind">
+		<label>Conqueror</label>
+		<combatPower>190</combatPower>
+		<lifeStages>
+			<li MayRequire="Ludeon.RimWorld.Biotech">
+				<bodyGraphicData>
+					<texPath>Mechs/Conqueror/Conqueror</texPath>
+					<maskPath>Mechs/Overlays/Conqueror_Overlay/Mech_Conqueror</maskPath>
+					<shaderType>CutoutWithOverlay</shaderType>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.5</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+			<li>
+				<bodyGraphicData>
+					<texPath>Mechs/Conqueror/ConquerorAncient</texPath>
+					<maskPath>Mechs/Overlays/Conqueror_Overlay/Mech_Conqueror</maskPath>
+					<shaderType>CutoutWithOverlay</shaderType>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.5</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<weaponMoney>9999~9999</weaponMoney>
+		<techHediffsChance>1</techHediffsChance>
+		<techHediffsMoney>9999~9999</techHediffsMoney>
+	</PawnKindDef>
+
+	<ThingDef ParentName="Mech_ConquerorBase">
+		<defName>Mech_Conqueror_DMR</defName>
+		<label>DMR Conqueror</label>
+		<description>Human-sized, armed to the teeth, and ready to brawl. Conquerors make the best foot soldiers. Oorah. This one is armed with a highly powered Charge Carbine.</description>
+	</ThingDef>
+
+	<PawnKindDef ParentName="Mech_ConquerorKindBase">
+		<defName>Mech_Conqueror_DMR</defName>
+		<race>Mech_Conqueror_DMR</race>
+		<weaponTags>
+			<li>MechanoidConquerorDMR</li>
+		</weaponTags>
+	</PawnKindDef>
 
 
-<ThingDef ParentName="BaseMechanoidWalker"> 
-   <defName>Mech_Conqueror_AR</defName>
-    <label>AR Conqueror</label>
-    <description>Human-sized, armed to the teeth, and ready to brawl. Conquerors make the best foot soldiers. Oorah. This one is armed with a powerful Charge Blaster.</description>
-    <tools>
-      <li>
-        <label>left fist</label>
-        <labelNoLocation>fist</labelNoLocation>
-        <capacities>
-          <li>Blunt</li>
-        </capacities>
-        <power>12.0</power>
-        <cooldownTime>2</cooldownTime>
-        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
-        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
-      </li>
-      <li>
-        <label>right fist</label>
-        <labelNoLocation>fist</labelNoLocation>
-        <capacities>
-          <li>Blunt</li>
-        </capacities>
-        <power>12.0</power>
-        <cooldownTime>2</cooldownTime>
-        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
-        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
-      </li>
-      <li>
-        <label>head</label>
-        <capacities>
-          <li>Blunt</li>
-        </capacities>
-        <power>8.5</power>
-        <cooldownTime>2</cooldownTime>
-        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
-        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
-        <chanceFactor>0.2</chanceFactor>
-      </li>
-    </tools>
-    <race>
-      <body>Conqueror</body>
-      <baseHealthScale>1</baseHealthScale>
-      <detritusLeavings>
-        <li>
-          <def>ChunkMechanoidSlag</def>
-          <texOverrideIndex>11</texOverrideIndex>
-          <spawnChance>0.1</spawnChance>
-        </li>
-        <li>
-          <def>ChunkMechanoidSlag</def>
-          <texOverrideIndex>12</texOverrideIndex>
-          <spawnChance>0.1</spawnChance>
-        </li>
-      </detritusLeavings>
-    </race>
-    <statBases>
-      <BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">2</BandwidthCost>
-    </statBases>
-  </ThingDef>
+	<ThingDef ParentName="Mech_ConquerorBase">
+		<defName>Mech_Conqueror_AR</defName>
+		<label>AR Conqueror</label>
+		<description>Human-sized, armed to the teeth, and ready to brawl. Conquerors make the best foot soldiers. Oorah. This one is armed with a powerful Charge Blaster.</description>
+	</ThingDef>
 
- <PawnKindDef ParentName="BaseMechanoidKind">  
-  <defName>Mech_Conqueror_AR</defName>
-    <label>Conqueror</label>
-    <race>Mech_Conqueror_AR</race>
-    <combatPower>190</combatPower>
-    <lifeStages>
-      <li MayRequire="Ludeon.RimWorld.Biotech">
-        <bodyGraphicData>
-          <texPath>Mechs/Conqueror/Conqueror</texPath>
-          <maskPath>Mechs/Overlays/Conqueror_Overlay/Mech_Conqueror</maskPath>
-          <shaderType>CutoutWithOverlay</shaderType>
-          <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.5</drawSize>
-          <shadowData>
-            <volume>(0.4, 0.8, 0.4)</volume>
-          </shadowData>
-        </bodyGraphicData>
-      </li>
-      <li>
-        <bodyGraphicData>
-         <texPath>Mechs/Conqueror/ConquerorAncient</texPath>
-          <maskPath>Mechs/Overlays/Conqueror_Overlay/Mech_Conqueror</maskPath>
-          <shaderType>CutoutWithOverlay</shaderType>
-          <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.5</drawSize>
-          <shadowData>
-            <volume>(0.4, 0.8, 0.4)</volume>
-          </shadowData>
-        </bodyGraphicData>
-      </li>
-    </lifeStages>
-    <weaponMoney>9999~9999</weaponMoney>
-    <weaponTags>
-      <li>MechanoidConquerorAR</li>
-    </weaponTags>
-    <techHediffsChance>1</techHediffsChance>
-    <techHediffsMoney>9999~9999</techHediffsMoney>
-  </PawnKindDef>
- 
+	<PawnKindDef ParentName="Mech_ConquerorKindBase">
+		<defName>Mech_Conqueror_AR</defName>
+		<race>Mech_Conqueror_AR</race>
+		<weaponTags>
+			<li>MechanoidConquerorAR</li>
+		</weaponTags>
+	</PawnKindDef>
+
 </Defs>
