@@ -31,7 +31,7 @@ namespace ApexMechanoids
             {
                 yield break;
             }
-            if (clickedThing.def.ingestible == null || clickedThing.HasComp<CompRottable>())
+            if (clickedThing.def.ingestible == null || !clickedThing.HasComp<CompRottable>())
             {
                 yield break;
             }
