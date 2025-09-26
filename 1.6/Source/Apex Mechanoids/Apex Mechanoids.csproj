@@ -35,6 +35,7 @@
   <ItemGroup>
     <Compile Include="DefsOf.cs" />
     <Compile Include="FloatMenuOptionProvider_PickUp_Frostivus.cs" />
+    <Compile Include="HarmonyPatches\CompRottable_Patch.cs" />
     <Compile Include="PawnRenderNodeProperties_MechanoidAllegiance.cs" />
     <Compile Include="PawnRenderNode_MechanoidAllegiance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
