@@ -33,6 +33,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompAbilityEffect_Absorb.cs" />
     <Compile Include="DefsOf.cs" />
     <Compile Include="PawnRenderNodeProperties_MechanoidAllegiance.cs" />
     <Compile Include="PawnRenderNode_MechanoidAllegiance.cs" />
