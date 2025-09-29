@@ -168,5 +168,20 @@
 			</li>
 		</stages>
 	</HediffDef>
+
+	<ThoughtDef>
+		<defName>Mech_PressTheAttack</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>Mech_PressTheAttack</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+		<stages>
+			<li>
+				<label>Press The Attack</label>
+				<description>PLACEHOLDER.</description>
+				<baseMoodEffect>3</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
     
 </Defs>
