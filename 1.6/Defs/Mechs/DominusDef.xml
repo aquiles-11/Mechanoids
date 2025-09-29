@@ -110,7 +110,7 @@
 		<defName>Mech_PressTheAttack</defName>
 		<label>Press The Attack</label>
 		<description>PLACEHOLDER</description>
-		<iconPath>UI/Sacrifice</iconPath>
+		<iconPath>UI/PressTheAttack</iconPath>
 		<cooldownTicksRange>180000</cooldownTicksRange> <!-- 3 days -->
 		<targetRequired>false</targetRequired>
 		<hostile>false</hostile>
