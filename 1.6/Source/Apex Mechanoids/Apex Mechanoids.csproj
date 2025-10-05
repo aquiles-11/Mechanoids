@@ -34,7 +34,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompAbilityEffect_KillCaster.cs" />
+    <Compile Include="CompAbilityEffect_Absorb.cs" />
+    <Compile Include="CompAbilityEffect_NeedOffset.cs" />
     <Compile Include="DefsOf.cs" />
+    <Compile Include="FloatMenuOptionProvider_PickUp_Frostivus.cs" />
+    <Compile Include="HarmonyPatches\CompRottable_Patch.cs" />
+    <Compile Include="HarmonyPatches\ContentsInCryptosleep_Patch.cs" />
     <Compile Include="PawnRenderNodeProperties_MechanoidAllegiance.cs" />
     <Compile Include="PawnRenderNode_MechanoidAllegiance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
