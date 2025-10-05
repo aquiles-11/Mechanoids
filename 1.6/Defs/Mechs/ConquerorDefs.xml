@@ -58,39 +58,47 @@
 		</statBases>
 	</ThingDef>
 
-	<PawnKindDef Abstract="True" Name="Mech_ConquerorKindBase" ParentName="BaseMechanoidKind">
-		<label>Conqueror</label>
-		<combatPower>190</combatPower>
-		<lifeStages>
-			<li MayRequire="Ludeon.RimWorld.Biotech">
-				<bodyGraphicData>
-					<texPath>Mechs/Conqueror/Conqueror</texPath>
-					<maskPath>Mechs/Overlays/Conqueror_Overlay/Mech_Conqueror</maskPath>
-					<shaderType>CutoutWithOverlay</shaderType>
-					<graphicClass>Graphic_Multi</graphicClass>
-					<drawSize>1.5</drawSize>
-					<shadowData>
-						<volume>(0.4, 0.8, 0.4)</volume>
-					</shadowData>
-				</bodyGraphicData>
-			</li>
-			<li>
-				<bodyGraphicData>
-					<texPath>Mechs/Conqueror/ConquerorAncient</texPath>
-					<maskPath>Mechs/Overlays/Conqueror_Overlay/Mech_Conqueror</maskPath>
-					<shaderType>CutoutWithOverlay</shaderType>
-					<graphicClass>Graphic_Multi</graphicClass>
-					<drawSize>1.5</drawSize>
-					<shadowData>
-						<volume>(0.4, 0.8, 0.4)</volume>
-					</shadowData>
-				</bodyGraphicData>
-			</li>
-		</lifeStages>
-		<weaponMoney>9999~9999</weaponMoney>
-		<techHediffsChance>1</techHediffsChance>
-		<techHediffsMoney>9999~9999</techHediffsMoney>
-	</PawnKindDef>
+ <PawnKindDef ParentName="BaseMechanoidKind">  
+  <defName>Mech_Conqueror_DMR</defName>
+    <label>Conqueror</label>
+    <race>Mech_Conqueror_DMR</race>
+    <combatPower>190</combatPower>
+    <lifeStages>
+      <li MayRequire="Ludeon.RimWorld.Biotech">
+        <bodyGraphicData>
+         <texPath>Mechs/Conqueror/Conqueror</texPath>
+          <maskPath>Mechs/Overlays/Conqueror_Overlay/Mech_Conqueror</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.8, 0.4)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Mechs/Conqueror/ConquerorAncient</texPath>
+          <maskPath>Mechs/Overlays/Conqueror_Overlay/Mech_Conqueror</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.8, 0.4)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags>
+      <li>MechanoidConquerorDMR</li>
+    </weaponTags>
+    <techHediffsChance>1</techHediffsChance>
+    <techHediffsMoney>9999~9999</techHediffsMoney>
+	 <abilities>
+		 <li>Mech_UltimateSacrifice</li>
+	 </abilities>
+  </PawnKindDef>
 
 	<ThingDef ParentName="Mech_ConquerorBase">
 		<defName>Mech_Conqueror_DMR</defName>
@@ -120,5 +128,114 @@
 			<li>MechanoidConquerorAR</li>
 		</weaponTags>
 	</PawnKindDef>
+
+ <PawnKindDef ParentName="BaseMechanoidKind">  
+  <defName>Mech_Conqueror_AR</defName>
+    <label>Conqueror</label>
+    <race>Mech_Conqueror_AR</race>
+    <combatPower>190</combatPower>
+    <lifeStages>
+      <li MayRequire="Ludeon.RimWorld.Biotech">
+        <bodyGraphicData>
+          <texPath>Mechs/Conqueror/Conqueror</texPath>
+          <maskPath>Mechs/Overlays/Conqueror_Overlay/Mech_Conqueror</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.8, 0.4)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+         <texPath>Mechs/Conqueror/ConquerorAncient</texPath>
+          <maskPath>Mechs/Overlays/Conqueror_Overlay/Mech_Conqueror</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.4, 0.8, 0.4)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags>
+      <li>MechanoidConquerorAR</li>
+    </weaponTags>
+    <techHediffsChance>1</techHediffsChance>
+    <techHediffsMoney>9999~9999</techHediffsMoney>
+	 <abilities>
+		 <li>Mech_UltimateSacrifice</li>
+	 </abilities>
+  </PawnKindDef>
+
+	<AbilityDef>
+		<defName>Mech_UltimateSacrifice</defName>
+		<label>ultimate sacrifice</label>
+		<description>PLACEHOLDER</description>
+		<iconPath>UI/Sacrifice</iconPath>
+		<cooldownTicksRange>900000</cooldownTicksRange><!-- 15 days -->
+		<targetRequired>false</targetRequired>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<canUseAoeToGetTargets>true</canUseAoeToGetTargets>
+		<showCastingProgressBar>true</showCastingProgressBar>
+		<statBases>
+			<Ability_EffectRadius>12</Ability_EffectRadius>
+			<Ability_Duration>150</Ability_Duration>
+		</statBases>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>1</warmupTime>
+			<range>12.9</range>
+			<drawAimPie>false</drawAimPie>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>Mech_UltimateSacrifice</hediffDef>
+				<applyToSelf>false</applyToSelf>
+				<ignoreSelf>true</ignoreSelf>
+			</li>
+			<li Class="ApexMechanoids.CompProperties_KillCaster">
+				<destroy>false</destroy>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<HediffDef>
+		<defName>Mech_UltimateSacrifice</defName>
+		<label>ultimate sacrifice</label>
+		<description>PLACEHOLDER</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<showRemainingTime>True</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<painFactor>0.7</painFactor>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.10</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.25</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
 
 </Defs>

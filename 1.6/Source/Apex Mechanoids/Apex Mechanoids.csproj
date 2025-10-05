@@ -33,6 +33,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompAbilityEffect_KillCaster.cs" />
     <Compile Include="CompAbilityEffect_Absorb.cs" />
     <Compile Include="CompAbilityEffect_NeedOffset.cs" />
     <Compile Include="DefsOf.cs" />
