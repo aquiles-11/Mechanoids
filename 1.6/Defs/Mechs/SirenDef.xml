@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <ThingDef ParentName="BaseMechanoidWalker">
@@ -75,7 +73,7 @@
           <maskPath>Mechs/Overlays/Siren_Overlay/Mech_Siren</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.5</drawSize>
+          <drawSize>1.8</drawSize>
           <shadowData>
             <volume>(0.4, 0.8, 0.4)</volume>
           </shadowData>
@@ -87,7 +85,7 @@
           <maskPath>Mechs/Overlays/Siren_Overlay/Mech_Siren</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.5</drawSize>
+          <drawSize>1.8</drawSize>
           <shadowData>
             <volume>(0.4, 0.8, 0.4)</volume>
           </shadowData>

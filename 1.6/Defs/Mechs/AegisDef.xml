@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
+
   <ThingDef ParentName="HeavyMechanoid">
     <defName>Mech_Aegis</defName>
     <label>Aegis</label>
@@ -70,7 +71,7 @@
         <labelNoLocation>shield</labelNoLocation>
         <capacities>
           <li>Blunt</li>
-	  <li>Scratch</li>
+	        <li>Scratch</li>
         </capacities>
         <power>22</power>
         <cooldownTime>2.9</cooldownTime>
@@ -79,10 +80,13 @@
       </li>
     </tools>
     <comps>
-      <li Class="CompProperties_Shield" />
+      <li Class="CompProperties_Shield">
+        <minDrawSize>0</minDrawSize>
+        <maxDrawSize>0</maxDrawSize>
+      </li>
     </comps>
   </ThingDef>
-  
+
   <PawnKindDef ParentName="HeavyMechanoidKind">
     <defName>Mech_Aegis</defName>
     <label>Aegis</label>
@@ -104,7 +108,7 @@
       </li>
       <li>
         <bodyGraphicData>
-	  <texPath>Mechs/Aegis/AegisAncient</texPath>
+	        <texPath>Mechs/Aegis/AegisAncient</texPath>
           <maskPath>Mechs/Overlays/Aegis_Overlay/Mech_Aegis</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
@@ -114,9 +118,9 @@
           </shadowData>
         </bodyGraphicData>
       </li>
-    </lifeStages>   
+    </lifeStages>
     <techHediffsChance MayRequire="Ludeon.RimWorld.Biotech">1</techHediffsChance>
-    <controlGroupPortraitZoom>1</controlGroupPortraitZoom>  
+    <controlGroupPortraitZoom>1</controlGroupPortraitZoom>
   </PawnKindDef>
 
 </Defs>

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>  
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
     <ThingDef ParentName="BaseMechanoid">
@@ -78,7 +77,7 @@
                     <maskPath>Mechs/Overlays/Dominus_Overlay/Mech_Dominus</maskPath>
                     <shaderType>CutoutWithOverlay</shaderType>
                     <graphicClass>Graphic_Multi</graphicClass>
-                    <drawSize>4.0</drawSize>
+                    <drawSize>2.0</drawSize>
                     <shadowData>
                         <volume>(0.4, 0.8, 0.4)</volume>
                     </shadowData>
@@ -90,7 +89,7 @@
                     <maskPath>Mechs/Overlays/Dominus_Overlay/Mech_Dominus</maskPath>
                     <shaderType>CutoutWithOverlay</shaderType>
                     <graphicClass>Graphic_Multi</graphicClass>
-                    <drawSize>4.0</drawSize>
+                    <drawSize>2.0</drawSize>
                     <shadowData>
                         <volume>(0.4, 0.8, 0.4)</volume>
                     </shadowData>
@@ -183,5 +182,5 @@
 			</li>
 		</stages>
 	</ThoughtDef>
-    
+
 </Defs>
