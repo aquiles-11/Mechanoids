@@ -7,7 +7,7 @@
 		<jobDef>CastAbilityOnThingMelee</jobDef>
 		<description>PLACEHOLDER</description>
 		<iconPath>UI/Absorb</iconPath>
-		<cooldownTicksRange>90000</cooldownTicksRange> <!-- 1.5 days -->
+		<cooldownTicksRange>90000</cooldownTicksRange><!-- 1.5 days -->
 		<targetRequired>true</targetRequired>
 		<hostile>false</hostile>
 		<showCastingProgressBar>true</showCastingProgressBar>
@@ -32,6 +32,41 @@
 			<li Class="ApexMechanoids.CompProperties_Absorb">
 				<chemfuelPer1BodySizeOfCorpse>36</chemfuelPer1BodySizeOfCorpse>
 				<chemfuelPer1Nutrition>10</chemfuelPer1Nutrition>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<AbilityDef>
+		<defName>AM_SwithcToPowerPlantMode</defName>
+		<label>Power Plant Mode</label>
+		<description>...</description>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>False</targetRequired>
+		<canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+		<iconPath>UI/Commands/DropCarriedPawn</iconPath>
+		<stunTargetWhileCasting>True</stunTargetWhileCasting>
+		<showPsycastEffects>False</showPsycastEffects>
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		<warmupStartSound>CombatCommand_Warmup</warmupStartSound>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>40</warmupTime>
+			<drawAimPie>False</drawAimPie>
+			<requireLineOfSight>False</requireLineOfSight>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>false</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="ApexMechanoids.CompProperties_ConvertToBuilding">
+				<thingDef>AM_DynamoPoweredGenerator</thingDef>
 			</li>
 		</comps>
 	</AbilityDef>
