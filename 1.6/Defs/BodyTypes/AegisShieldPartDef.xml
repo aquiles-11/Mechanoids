@@ -4,7 +4,7 @@
 <BodyPartDef>
     <defName>AegisShield</defName>
     <label>shield</label>
-    <hitPoints>80</hitPoints>
+    <hitPoints>40</hitPoints>
     <frostbiteVulnerability>5</frostbiteVulnerability>
     <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
     <skinCovered>false</skinCovered>
