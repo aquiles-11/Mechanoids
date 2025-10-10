@@ -103,6 +103,7 @@
         </weaponTags>
 			<abilities>
 				<li>Mech_PressTheAttack</li>
+				<li>Mech_Duel</li>
 			</abilities>
     </PawnKindDef>
 
@@ -183,5 +184,40 @@
 			</li>
 		</stages>
 	</ThoughtDef>
+	
+	
+	<AbilityDef>
+		<defName>Mech_Duel</defName>
+		<label>the duel trial</label>
+		<description>PLACEHOLDER</description>
+		<iconPath>UI/Absorb</iconPath>
+		<cooldownTicksRange>90000</cooldownTicksRange> <!-- 1.5 days -->
+		<targetRequired>true</targetRequired>
+		<hostile>true</hostile>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>1</warmupTime>
+			<drawAimPie>false</drawAimPie>
+			<range>5</range>
+			<targetParams>
+				<canTargetCorpses>true</canTargetCorpses>
+				<canTargetItems>true</canTargetItems>
+				<mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<thingCategory>None</thingCategory>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityGiveMentalState">
+				<compClass>CompAbilityEffect_GiveMentalState</compClass>
+				<stateDef>Mech_Duel</stateDef>
+				<stateDefForMechs>Mech_Duel</stateDefForMechs>
+				<applyToSelf>false</applyToSelf>
+				<forced>true</forced>
+			</li>
+		</comps>
+	</AbilityDef>
     
 </Defs>

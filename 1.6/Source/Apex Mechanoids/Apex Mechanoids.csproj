@@ -36,6 +36,8 @@
     <Compile Include="CompAbilityEffect_Absorb.cs" />
     <Compile Include="CompAbilityEffect_NeedOffset.cs" />
     <Compile Include="DefsOf.cs" />
+    <Compile Include="JobGiver_Duel.cs" />
+    <Compile Include="MentalState_Duel.cs" />
     <Compile Include="PawnRenderNodeProperties_MechanoidAllegiance.cs" />
     <Compile Include="PawnRenderNode_MechanoidAllegiance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
