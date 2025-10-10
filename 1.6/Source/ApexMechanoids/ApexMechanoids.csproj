@@ -33,11 +33,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets.cs" />
     <Compile Include="CompAbilityEffect_KillCaster.cs" />
     <Compile Include="CompAbilityEffect_Absorb.cs" />
     <Compile Include="CompAbilityEffect_NeedOffset.cs" />
+    <Compile Include="CompProperties\CompProperties_Aegis.cs" />
     <Compile Include="CompProperties\CompProperties_MechWirelessCharger.cs" />
     <Compile Include="CompProperties\CompProperties_ConvertToBuilding.cs" />
+    <Compile Include="Comps\CompAegis.cs" />
     <Compile Include="Comps\CompMechWirelessCharger.cs" />
     <Compile Include="Comps\CompPowerPlantDynamo.cs" />
     <Compile Include="Comps\CompAbilityEffect_ConvertToBuilding.cs" />
@@ -45,10 +48,17 @@
     <Compile Include="FloatMenuOptionProvider_PickUp_Frostivus.cs" />
     <Compile Include="HarmonyPatches\CompRottable_Patch.cs" />
     <Compile Include="HarmonyPatches\ContentsInCryptosleep_Patch.cs" />
-    <Compile Include="PawnRenderNodeProperties_MechanoidAllegiance.cs" />
-    <Compile Include="PawnRenderNode_MechanoidAllegiance.cs" />
+    <Compile Include="HarmonyPatches\DamageWorker_AddInjury_Patch.cs" />
+    <Compile Include="HarmonyPatches\HediffSet_Patch.cs" />
+    <Compile Include="JobDrivers\JobDriver_RepairAegisShields.cs" />
+    <Compile Include="PawnRenderNodeProperties\PawnRenderNodeProperties_BodyPartShield.cs" />
+    <Compile Include="PawnRenderNodeProperties\PawnRenderNodeProperties_MechanoidAllegiance.cs" />
+    <Compile Include="PawnRenderNodes\PawnRenderNode_BodyPartShield.cs" />
+    <Compile Include="PawnRenderNodes\PawnRenderNode_MechanoidAllegiance.cs" />
+    <Compile Include="PawnRenderNodeWorkers\PawnRenderNodeWorker_BodyPartShield.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StartUp.cs" />
+    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Publicizer">
