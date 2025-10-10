@@ -36,6 +36,11 @@
     <Compile Include="CompAbilityEffect_KillCaster.cs" />
     <Compile Include="CompAbilityEffect_Absorb.cs" />
     <Compile Include="CompAbilityEffect_NeedOffset.cs" />
+    <Compile Include="CompProperties\CompProperties_MechWirelessCharger.cs" />
+    <Compile Include="CompProperties\CompProperties_ConvertToBuilding.cs" />
+    <Compile Include="Comps\CompMechWirelessCharger.cs" />
+    <Compile Include="Comps\CompPowerPlantDynamo.cs" />
+    <Compile Include="Comps\CompAbilityEffect_ConvertToBuilding.cs" />
     <Compile Include="DefsOf.cs" />
     <Compile Include="FloatMenuOptionProvider_PickUp_Frostivus.cs" />
     <Compile Include="HarmonyPatches\CompRottable_Patch.cs" />
@@ -59,6 +64,9 @@
       <IncludeAssets>compile</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Publicize Include="Assembly-CSharp:RimWorld.CompRefuelable.fuel" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
