@@ -22,10 +22,25 @@ namespace ApexMechanoids
             }
         }
         public override RandomSocialMode SocialModeMax() => RandomSocialMode.Off;
+        public override void MentalStateTick(int delta)
+        {
+            base.MentalStateTick(delta);
+            if (this.causedByPawn.DeadOrDowned)
+            {
+                this.RecoverFromState();
+            }
+        }
         public override void PostEnd()
         {
             base.PostEnd();
-            
+            if (causedByPawn.DeadOrDowned)
+            {
+                pawn.health.AddHediff(ApexDefsOf.Mech_DuelWinner);
+            }
+            else if (!pawn.DeadOrDowned)
+            {
+                pawn.health.AddHediff(ApexDefsOf.Mech_DuelDraw);
+            }
         }
         public override TaggedString GetBeginLetterText()
         {
