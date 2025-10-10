@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  
+  <!-- CompAegis Gizmo -->
+  <AM_RepairAegisShields_Label>Repair Aegis Shields</AM_RepairAegisShields_Label>
+  <AM_RepairAegisShields_Desc>Assign a colonist to repair the damaged shields using steel. Requires {0} steel total.</AM_RepairAegisShields_Desc>
+  
+  <!-- CompAegis Float Menu -->
+  <AM_CannotReach>(cannot reach)</AM_CannotReach>
+  <AM_NeedSteel>(need {0} steel, only {1} available)</AM_NeedSteel>
+  <AM_NoSteelAvailable>No steel available for repair.</AM_NoSteelAvailable>
+  <AM_NoAvailableColonists>No available colonists assigned to crafting</AM_NoAvailableColonists>
+  
+  <!-- JobDriver_RepairAegisShields Messages -->
+  <AM_NotEnoughSteel>Could not find enough steel. Delivered {0}/{1}.</AM_NotEnoughSteel>
+  <AM_ShieldsFullyRepaired>{0}'s shields have been fully repaired!</AM_ShieldsFullyRepaired>
+  <AM_ShieldRestored>Restored {0}'s {1} at full health!</AM_ShieldRestored>
+  
+</LanguageData>

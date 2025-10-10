@@ -17,6 +17,7 @@
       <thinkTreeMain>Mechanoid</thinkTreeMain>
       <baseHealthScale>2</baseHealthScale>
       <mechWeightClass>Heavy</mechWeightClass>
+      <renderTree>Mech_Aegis_RenderTree</renderTree>
       <lifeStageAges>
         <li>
           <def>MechanoidFullyFormed</def>
@@ -80,6 +81,12 @@
     </tools>
     <comps>
       <li Class="CompProperties_Shield" />
+      <li Class="ApexMechanoids.CompProperties_Aegis">
+        <regenerationAmount>2</regenerationAmount> <!-- Amount of HP to regenerate per interval -->
+        <regenerationDelaySeconds>60</regenerationDelaySeconds> <!-- Minimum time in seconds before regeneration starts after damage -->
+        <regenerationIntervalSeconds>30</regenerationIntervalSeconds> <!-- How often to regenerate in seconds (converted to ticks internally). Uses CompTickRare, any amount less than 4.16 seconds won't work. -->
+        <steelRequiredForRepair>50</steelRequiredForRepair> <!-- Amount of steel required for manual repair -->
+      </li>
     </comps>
   </ThingDef>
   
@@ -92,8 +99,8 @@
     <lifeStages>
       <li MayRequire="Ludeon.RimWorld.Biotech">
         <bodyGraphicData>
-         <texPath>Mechs/Aegis/AegisClean</texPath>
-          <maskPath>Mechs/Overlays/Aegis_Overlay/Mech_Aegis</maskPath>
+          <texPath>Mechs/Aegis/Mechanoid/Aegis</texPath>
+          <maskPath>Mechs/Overlays/Aegis_Overlay/Mechanoid/Mech_Aegis</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>2.5</drawSize>
@@ -104,8 +111,8 @@
       </li>
       <li>
         <bodyGraphicData>
-	  <texPath>Mechs/Aegis/AegisAncient</texPath>
-          <maskPath>Mechs/Overlays/Aegis_Overlay/Mech_Aegis</maskPath>
+	        <texPath>Mechs/Aegis/Mechanoid/AegisAncient</texPath>
+          <maskPath>Mechs/Overlays/Aegis_Overlay/Mechanoid/Mech_Aegis</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>2.5</drawSize>
