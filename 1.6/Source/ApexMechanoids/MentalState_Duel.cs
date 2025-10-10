@@ -20,6 +20,7 @@ namespace ApexMechanoids
                 this.causedByPawn.mindState.mentalStateHandler.TryStartMentalState(this.def, reason: reason, forced: true, forceWake: true, causedByMood: false, otherPawn: this.pawn);
                 this.causedByPawn.mindState.mentalStateHandler.CurState.forceRecoverAfterTicks = this.forceRecoverAfterTicks;
             }
+            pawn.health.AddHediff(ApexDefsOf.Mech_InDuel);
         }
         public override RandomSocialMode SocialModeMax() => RandomSocialMode.Off;
         public override void MentalStateTick(int delta)
@@ -41,6 +42,7 @@ namespace ApexMechanoids
             {
                 pawn.health.AddHediff(ApexDefsOf.Mech_DuelDraw);
             }
+            pawn.health.RemoveHediff(pawn.health.hediffSet.GetFirstHediffOfDef(ApexDefsOf.Mech_InDuel));
         }
         public override TaggedString GetBeginLetterText()
         {

@@ -1,6 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+	<HediffDef>
+		<defName>Mech_InDuel</defName>
+		<label>in duel</label>
+		<hediffClass>HediffWithComps</hediffClass>
+		<description>PLACEHOLDER.</description>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<statFactors>
+					<IncomingDamageFactor>3</IncomingDamageFactor>
+					<MeleeCooldownFactor>0.7</MeleeCooldownFactor>
+				</statFactors>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>60000~120000</disappearsAfterTicks>
+				<showRemainingTime>True</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	</HediffDef>
 
   <HediffDef>
     <defName>Mech_DuelWinner</defName>

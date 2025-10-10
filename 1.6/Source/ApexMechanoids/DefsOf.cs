@@ -14,5 +14,6 @@ namespace ApexMechanoids
         public static JobDef RepairAegisShields;
         public static HediffDef Mech_DuelWinner;
         public static HediffDef Mech_DuelDraw;
+        public static HediffDef Mech_InDuel;
     }
 }
