@@ -37,6 +37,7 @@
     <Compile Include="CompAbilityEffect_KillCaster.cs" />
     <Compile Include="CompAbilityEffect_Absorb.cs" />
     <Compile Include="CompAbilityEffect_NeedOffset.cs" />
+    <Compile Include="CompAbilityEffect_SpawnThingBetween.cs" />
     <Compile Include="CompProperties\CompProperties_Aegis.cs" />
     <Compile Include="CompProperties\CompProperties_MechWirelessCharger.cs" />
     <Compile Include="CompProperties\CompProperties_ConvertToBuilding.cs" />
