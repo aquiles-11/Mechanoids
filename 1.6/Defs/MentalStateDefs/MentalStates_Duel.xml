@@ -22,8 +22,8 @@
     <baseInspectLine>Mental state: Duel</baseInspectLine>
     <stateEffecter>Berserk</stateEffecter>
     <inCaravanCanDo>true</inCaravanCanDo>
-		<minTicksBeforeRecovery>2000</minTicksBeforeRecovery>
-		<maxTicksBeforeRecovery>2000</maxTicksBeforeRecovery>
+		<minTicksBeforeRecovery>1200</minTicksBeforeRecovery> <!--20 seconds-->
+		<maxTicksBeforeRecovery>1200</maxTicksBeforeRecovery>
   </MentalStateDef>
 
 </Defs>
