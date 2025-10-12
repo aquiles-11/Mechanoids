@@ -1,10 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
-    <defName>Weapon_DominusSpear</defName>
+    <defName>APM_Weapon_DominusSpear</defName>
     <label>Dominus' Spear</label>
     <description>PLACEHOLDER</description>
     <possessionCount>1</possessionCount>
@@ -15,9 +13,9 @@
       <drawSize>1.5</drawSize>
     </graphicData>
     <equippedAngleOffset>-90</equippedAngleOffset>
-    <techLevel>Medieval</techLevel>
+    <techLevel>Spacer</techLevel>
     <weaponTags>
-      <li>Weapon_DominusSpear</li>
+      <li>APM_WeaponDominusSpear</li>
     </weaponTags>
     <costStuffCount>100</costStuffCount>
     <thingSetMakerTags>
@@ -28,10 +26,10 @@
       <Mass>2</Mass>
     </statBases>
     <relicChance>2</relicChance>
-    <stuffCategories>
-      <li>Metallic</li>
-      <li>Woody</li>
-    </stuffCategories>
+    <costList>
+      <Plasteel>50</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
     <tools>
       <li>
         <label>handle</label>
@@ -90,6 +88,5 @@
       </li>
     </modExtensions>
   </ThingDef>
-
 
 </Defs>

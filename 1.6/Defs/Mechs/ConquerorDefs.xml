@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-	
-	<ThingDef Abstract="True" Name="Mech_ConquerorBase" ParentName="BaseMechanoidWalker">
+
+	<ThingDef Abstract="True" Name="APM_Mech_ConquerorBase" ParentName="BaseMechanoidWalker">
 		<tools>
 			<li>
 				<label>left fist</label>
@@ -38,7 +38,7 @@
 			</li>
 		</tools>
 		<race>
-			<body>Conqueror</body>
+			<body>APM_Conqueror</body>
 			<baseHealthScale>1</baseHealthScale>
 			<detritusLeavings>
 				<li>
@@ -58,15 +58,21 @@
 		</statBases>
 	</ThingDef>
 
- <PawnKindDef ParentName="BaseMechanoidKind">  
-  <defName>Mech_Conqueror_DMR</defName>
-    <label>Conqueror</label>
-    <race>Mech_Conqueror_DMR</race>
+  <ThingDef ParentName="APM_Mech_ConquerorBase">
+		<defName>APM_Mech_Conqueror_DMR</defName>
+		<label>DMR Conqueror</label>
+		<description>Human-sized, armed to the teeth, and ready to brawl. Conquerors make the best foot soldiers. Oorah. This one is armed with a highly powered Charge Carbine.</description>
+	</ThingDef>
+
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>APM_Mech_Conqueror_DMR</defName>
+    <label>conqueror</label>
+    <race>APM_Mech_Conqueror_DMR</race>
     <combatPower>190</combatPower>
     <lifeStages>
       <li MayRequire="Ludeon.RimWorld.Biotech">
         <bodyGraphicData>
-         <texPath>Mechs/Conqueror/Conqueror</texPath>
+        <texPath>Mechs/Conqueror/Conqueror</texPath>
           <maskPath>Mechs/Overlays/Conqueror_Overlay/Mech_Conqueror</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
@@ -91,48 +97,25 @@
     </lifeStages>
     <weaponMoney>9999~9999</weaponMoney>
     <weaponTags>
-      <li>MechanoidConquerorDMR</li>
+      <li>APM_WeaponConquerorDMR</li>
     </weaponTags>
     <techHediffsChance>1</techHediffsChance>
     <techHediffsMoney>9999~9999</techHediffsMoney>
-	 <abilities>
-		 <li>Mech_UltimateSacrifice</li>
-	 </abilities>
+    <abilities>
+      <li>APM_Ability_UltimateSacrifice</li>
+    </abilities>
   </PawnKindDef>
 
-	<ThingDef ParentName="Mech_ConquerorBase">
-		<defName>Mech_Conqueror_DMR</defName>
-		<label>DMR Conqueror</label>
-		<description>Human-sized, armed to the teeth, and ready to brawl. Conquerors make the best foot soldiers. Oorah. This one is armed with a highly powered Charge Carbine.</description>
-	</ThingDef>
-
-	<PawnKindDef ParentName="Mech_ConquerorKindBase">
-		<defName>Mech_Conqueror_DMR</defName>
-		<race>Mech_Conqueror_DMR</race>
-		<weaponTags>
-			<li>MechanoidConquerorDMR</li>
-		</weaponTags>
-	</PawnKindDef>
-
-
-	<ThingDef ParentName="Mech_ConquerorBase">
-		<defName>Mech_Conqueror_AR</defName>
+	<ThingDef ParentName="APM_Mech_ConquerorBase">
+		<defName>APM_Mech_Conqueror_AR</defName>
 		<label>AR Conqueror</label>
 		<description>Human-sized, armed to the teeth, and ready to brawl. Conquerors make the best foot soldiers. Oorah. This one is armed with a powerful Charge Blaster.</description>
 	</ThingDef>
 
-	<PawnKindDef ParentName="Mech_ConquerorKindBase">
-		<defName>Mech_Conqueror_AR</defName>
-		<race>Mech_Conqueror_AR</race>
-		<weaponTags>
-			<li>MechanoidConquerorAR</li>
-		</weaponTags>
-	</PawnKindDef>
-
- <PawnKindDef ParentName="BaseMechanoidKind">  
-  <defName>Mech_Conqueror_AR</defName>
-    <label>Conqueror</label>
-    <race>Mech_Conqueror_AR</race>
+  <PawnKindDef ParentName="BaseMechanoidKind">
+    <defName>APM_Mech_Conqueror_AR</defName>
+    <label>conqueror</label>
+    <race>APM_Mech_Conqueror_AR</race>
     <combatPower>190</combatPower>
     <lifeStages>
       <li MayRequire="Ludeon.RimWorld.Biotech">
@@ -149,7 +132,7 @@
       </li>
       <li>
         <bodyGraphicData>
-         <texPath>Mechs/Conqueror/ConquerorAncient</texPath>
+        <texPath>Mechs/Conqueror/ConquerorAncient</texPath>
           <maskPath>Mechs/Overlays/Conqueror_Overlay/Mech_Conqueror</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
@@ -162,17 +145,17 @@
     </lifeStages>
     <weaponMoney>9999~9999</weaponMoney>
     <weaponTags>
-      <li>MechanoidConquerorAR</li>
+      <li>APM_WeaponConquerorAR</li>
     </weaponTags>
     <techHediffsChance>1</techHediffsChance>
     <techHediffsMoney>9999~9999</techHediffsMoney>
-	 <abilities>
-		 <li>Mech_UltimateSacrifice</li>
-	 </abilities>
+    <abilities>
+      <li>APM_UltimateSacrifice</li>
+    </abilities>
   </PawnKindDef>
 
 	<AbilityDef>
-		<defName>Mech_UltimateSacrifice</defName>
+		<defName>APM_UltimateSacrifice</defName>
 		<label>ultimate sacrifice</label>
 		<description>PLACEHOLDER</description>
 		<iconPath>UI/Sacrifice</iconPath>
@@ -198,7 +181,7 @@
 		<comps>
 			<li Class="CompProperties_AbilityGiveHediff">
 				<compClass>CompAbilityEffect_GiveHediff</compClass>
-				<hediffDef>Mech_UltimateSacrifice</hediffDef>
+				<hediffDef>APM_Hediff_UltimateSacrifice</hediffDef>
 				<applyToSelf>false</applyToSelf>
 				<ignoreSelf>true</ignoreSelf>
 			</li>
@@ -209,7 +192,7 @@
 	</AbilityDef>
 
 	<HediffDef>
-		<defName>Mech_UltimateSacrifice</defName>
+		<defName>APM_Hediff_UltimateSacrifice</defName>
 		<label>ultimate sacrifice</label>
 		<description>PLACEHOLDER</description>
 		<hediffClass>HediffWithComps</hediffClass>
@@ -236,6 +219,5 @@
 			</li>
 		</stages>
 	</HediffDef>
-
 
 </Defs>

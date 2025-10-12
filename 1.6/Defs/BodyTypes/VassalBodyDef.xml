@@ -2,7 +2,7 @@
 <Defs>
 
   <BodyDef>
-    <defName>Vassal</defName>
+    <defName>APM_Vassal</defName>
     <label>vassal</label>
     <corePart>
       <def>MechanicalThorax</def>

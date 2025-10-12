@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <ThingDef ParentName="BaseGun">
-    <defName>Gazer_Laser</defName>
+    <defName>APM_Gazer_Laser</defName>
     <label>laser</label>
     <description>PLACEHOLDER</description>
     <graphicData>
@@ -27,11 +26,11 @@
       <li>RangedHeavy</li>
     </weaponClasses>
     <weaponTags Inherit="False">
-      <li>Weapon_GazerLaser</li>
+      <li>APM_WeaponGazerLaser</li>
     </weaponTags>
     <comps>
       <li Class="CompProperties_EquippableAbilityReloadable">
-        <abilityDef>PowerBeamAbility</abilityDef>
+        <abilityDef>APM_PowerBeam</abilityDef>
       </li>
     </comps>
     <verbs>
@@ -132,7 +131,7 @@
   </ThingDef>
 
   <AbilityDef>
-    <defName>PowerBeamAbility</defName>
+    <defName>APM_PowerBeam</defName>
     <label>power beam</label>
     <description>PLACEHOLDER</description>
     <iconPath>UI/Powerful</iconPath>
@@ -176,8 +175,5 @@
       </beamLineFleckChanceCurve>
     </verbProperties>
   </AbilityDef>
-
-
-
 
 </Defs>

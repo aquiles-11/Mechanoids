@@ -1,10 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>  
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-
   <BodyDef>
-    <defName>Terminus</defName>
+    <defName>APM_Terminus</defName>
     <label>terminus</label>
     <corePart>
       <def>MechanicalThorax</def>

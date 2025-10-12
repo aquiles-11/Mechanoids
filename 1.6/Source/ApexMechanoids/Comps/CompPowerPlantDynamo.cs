@@ -107,8 +107,8 @@ namespace ApexMechanoids
                 {
                     parent.Destroy();
                 },
-                defaultLabel = "AM.Dynamo.Command.SwithcToMobileMode.Label".Translate(),
-                defaultDesc = "AM.Dynamo.Command.SwithcToMobileMode.Desc".Translate(),
+                defaultLabel = "APM.Dynamo.Command.SwithcToMobileMode.Label".Translate(),
+                defaultDesc = "APM.Dynamo.Command.SwithcToMobileMode.Desc".Translate(),
                 icon = ContentFinder<Texture2D>.Get("UI/Commands/DropCarriedPawn"),
                 Order = 30
             };

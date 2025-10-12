@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <BodyDef>
-    <defName>Mech_Aegis</defName>
+    <defName>APM_Aegis</defName>
     <label>heavy mech with dual shields</label>
     <corePart>
       <def>MechanicalThorax</def>
@@ -60,12 +60,12 @@
               <coverage>0.85</coverage>
               <parts>
                 <li>
-                  <def>AegisShield</def>
+                  <def>APM_AegisShield</def>
                   <customLabel>left shield</customLabel>
                   <coverage>0.8</coverage>
                   <height>Middle</height>
                   <groups>
-                    <li>LeftAegisShield</li>
+                    <li>APM_LeftAegisShield</li>
                   </groups>
                 </li>
               </parts>
@@ -83,12 +83,12 @@
               <coverage>0.85</coverage>
               <parts>
                 <li>
-                  <def>AegisShield</def>
+                  <def>APM_AegisShield</def>
                   <customLabel>right shield</customLabel>
                   <coverage>0.8</coverage>
                   <height>Middle</height>
                   <groups>
-                    <li>RightAegisShield</li>
+                    <li>APM_RightAegisShield</li>
                   </groups>
                 </li>
               </parts>
@@ -139,5 +139,29 @@
       </parts>
     </corePart>
   </BodyDef>
+
+  <BodyPartGroupDef>
+    <defName>APM_LeftAegisShield</defName>
+    <label>left shield</label>
+    <labelShort>shield</labelShort>
+  </BodyPartGroupDef>
+
+  <BodyPartGroupDef>
+    <defName>APM_RightAegisShield</defName>
+    <label>right shield</label>
+    <labelShort>shield</labelShort>
+  </BodyPartGroupDef>
+
+  <BodyPartDef>
+    <defName>APM_AegisShield</defName>
+    <label>shield</label>
+    <hitPoints>40</hitPoints>
+    <frostbiteVulnerability>5</frostbiteVulnerability>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <solid>true</solid>
+    <alive>false</alive>
+    <bleedRate>0</bleedRate>
+  </BodyPartDef>
 
 </Defs>

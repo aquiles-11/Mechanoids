@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
+
   <ThingDef ParentName="HeavyMechanoid">
-    <defName>Mech_Aegis</defName>
+    <defName>APM_Mech_Aegis</defName>
     <label>Aegis</label>
     <description>"The Aegis is a mighty mechanoid that sacrifices offensive capabilities for defensive mastery. The phrase 'The best defense is a good offense' rings true with the Aegis' dual shields."</description>
     <statBases>
@@ -12,12 +13,12 @@
       <WorkSpeedGlobal>1.5</WorkSpeedGlobal>
     </statBases>
     <race>
-      <body>Mech_Aegis</body>
+      <body>APM_Aegis</body>
       <baseBodySize>3.5</baseBodySize>
       <thinkTreeMain>Mechanoid</thinkTreeMain>
       <baseHealthScale>2</baseHealthScale>
       <mechWeightClass>Heavy</mechWeightClass>
-      <renderTree>Mech_Aegis_RenderTree</renderTree>
+      <renderTree>APM_RenderTree_Aegis</renderTree>
       <lifeStageAges>
         <li>
           <def>MechanoidFullyFormed</def>
@@ -71,7 +72,7 @@
         <labelNoLocation>shield</labelNoLocation>
         <capacities>
           <li>Blunt</li>
-	  <li>Scratch</li>
+	        <li>Scratch</li>
         </capacities>
         <power>22</power>
         <cooldownTime>2.9</cooldownTime>
@@ -89,11 +90,11 @@
       </li>
     </comps>
   </ThingDef>
-  
+
   <PawnKindDef ParentName="HeavyMechanoidKind">
-    <defName>Mech_Aegis</defName>
+    <defName>APM_Mech_Aegis</defName>
     <label>Aegis</label>
-    <race>Mech_Aegis</race>
+    <race>APM_Mech_Aegis</race>
     <allowInMechClusters>true</allowInMechClusters>
     <combatPower>250</combatPower>
     <lifeStages>
@@ -121,9 +122,9 @@
           </shadowData>
         </bodyGraphicData>
       </li>
-    </lifeStages>   
+    </lifeStages>
     <techHediffsChance MayRequire="Ludeon.RimWorld.Biotech">1</techHediffsChance>
-    <controlGroupPortraitZoom>1</controlGroupPortraitZoom>  
+    <controlGroupPortraitZoom>1</controlGroupPortraitZoom>
   </PawnKindDef>
 
 </Defs>

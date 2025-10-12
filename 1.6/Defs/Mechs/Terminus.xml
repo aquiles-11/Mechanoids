@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>  
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <ThingDef ParentName="BaseMechanoidWalker">
-    <defName>Mech_Terminus</defName>
+    <defName>APM_Mech_Terminus</defName>
     <label>Terminus</label>
     <description>PLACEHOLDER</description>
     <tools>
@@ -42,8 +41,8 @@
       </li>
     </tools>
     <race>
-      <body>Terminus</body>
-      <renderTree>Terminus_Cape</renderTree>
+      <body>APM_Terminus</body>
+      <renderTree>APM_RenderTree_Terminus</renderTree>
       <baseHealthScale>1</baseHealthScale>
       <detritusLeavings>
         <li>
@@ -64,9 +63,9 @@
   </ThingDef>
 
   <PawnKindDef ParentName="BaseMechanoidKind">
-    <defName>Mech_Terminus</defName>
-    <label>Terminus</label>
-    <race>Mech_Terminus</race>
+    <defName>APM_Mech_Terminus</defName>
+    <label>terminus</label>
+    <race>APM_Mech_Terminus</race>
     <combatPower>190</combatPower>
     <lifeStages>
       <li MayRequire="Ludeon.RimWorld.Biotech">
@@ -96,11 +95,10 @@
     </lifeStages>
     <weaponMoney>9999~9999</weaponMoney>
     <weaponTags Inherit="False">
-      <li>MechanoidTerminusSword</li>
+      <li>APM_WeaponTerminusSword</li>
     </weaponTags>
     <techHediffsChance>1</techHediffsChance>
     <techHediffsMoney>9999~9999</techHediffsMoney>
   </PawnKindDef>
-
 
 </Defs>

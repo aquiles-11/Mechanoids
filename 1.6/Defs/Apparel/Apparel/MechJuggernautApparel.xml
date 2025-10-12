@@ -1,7 +1,7 @@
 <Defs>
 
   <ThingDef ParentName="ApparelArmorPowerBase">
-    <defName>Apparel_MechamancerSuit</defName>
+    <defName>APM_Apparel_MechamancerSuit</defName>
     <label>mechamancer suit</label>
     <description>PLACEHOLDER</description>
     <recipeMaker>
@@ -36,7 +36,7 @@
     <apparel>
       <tags>
         <li>RoyalTier7</li>
-        <li>Mechamancer</li>
+        <li>APM_Mechamancer</li>
       </tags>
       <wornGraphicPath>Things/Pawn/Humanlike/Apparel/MechamancerSuit/MechJuggernaut</wornGraphicPath>
     </apparel>

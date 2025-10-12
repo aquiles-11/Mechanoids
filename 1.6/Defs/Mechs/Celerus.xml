@@ -1,10 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>  
-
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <ThingDef ParentName="BaseMechanoidWalker">
-    <defName>Mech_Celerus</defName>
+    <defName>APM_Mech_Celerus</defName>
     <label>Celerus</label>
     <description>PLACEHOLDER</description>
     <tools>
@@ -43,7 +41,7 @@
       </li>
     </tools>
     <race>
-      <body>Vassal</body>
+      <body>APM_Vassal</body>
       <baseHealthScale>1</baseHealthScale>
       <detritusLeavings>
         <li>
@@ -64,9 +62,9 @@
   </ThingDef>
 
   <PawnKindDef ParentName="BaseMechanoidKind">
-    <defName>Mech_Celerus</defName>
+    <defName>APM_Mech_Celerus</defName>
     <label>Celerus</label>
-    <race>Mech_Celerus</race>
+    <race>APM_Mech_Celerus</race>
     <combatPower>190</combatPower>
     <lifeStages>
       <li MayRequire="Ludeon.RimWorld.Biotech">

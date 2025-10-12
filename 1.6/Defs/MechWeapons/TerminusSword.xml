@@ -1,10 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>  
-
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <ThingDef ParentName="BaseGun">
-    <defName>Weapon_TerminusSword</defName>
+    <defName>APM_Weapon_TerminusSword</defName>
     <label>terminus' sword</label>
     <description>PLACEHOLDER</description>
     <techLevel>Spacer</techLevel>
@@ -19,11 +17,6 @@
     <statBases>
       <WorkToMake>45000</WorkToMake>
       <Mass>4.6</Mass>
-      <AccuracyTouch>0.65</AccuracyTouch>
-      <AccuracyShort>0.80</AccuracyShort>
-      <AccuracyMedium>0.80</AccuracyMedium>
-      <AccuracyLong>0.70</AccuracyLong>
-      <RangedWeapon_Cooldown>2.00</RangedWeapon_Cooldown>
     </statBases>
     <costList>
       <Plasteel>50</Plasteel>
@@ -33,18 +26,11 @@
       <li>RewardStandardQualitySuper</li>
     </thingSetMakerTags>
     <weaponTags>
-      <li>SpacerGun</li>
-      <li>MechanoidTerminusSword</li>
+      <li>APM_WeaponTerminusSword</li>
     </weaponTags>
-    <tradeTags>
-      <li>WeaponRanged</li>
-    </tradeTags>
-    <weaponClasses>
-      <li>RangedLight</li>
-    </weaponClasses>
     <tools>
       <li>
-        <label>stock</label>
+        <label>handle</label>
         <capacities>
           <li>Blunt</li>
         </capacities>
