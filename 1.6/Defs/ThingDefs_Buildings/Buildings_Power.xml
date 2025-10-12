@@ -51,7 +51,7 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
-		<defName>AM_DynamoPoweredGenerator</defName>
+		<defName>APM_DynamoPoweredGenerator</defName>
 		<label>Dynamo powered generator</label>
 		<description>Produces power by consuming chemfuel. Must be periodically refueled by hand.</description>
 		<thingClass>Building</thingClass>

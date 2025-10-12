@@ -37,7 +37,7 @@
 	</AbilityDef>
 
 	<AbilityDef>
-		<defName>AM_SwithcToPowerPlantMode</defName>
+		<defName>APM_SwithcToPowerPlantMode</defName>
 		<label>Power Plant Mode</label>
 		<description>...</description>
 		<jobDef>CastAbilityOnThing</jobDef>
@@ -67,7 +67,7 @@
 		</verbProperties>
 		<comps>
 			<li Class="ApexMechanoids.CompProperties_ConvertToBuilding">
-				<thingDef>AM_DynamoPoweredGenerator</thingDef>
+				<thingDef>APM_DynamoPoweredGenerator</thingDef>
 			</li>
 		</comps>
 	</AbilityDef>
