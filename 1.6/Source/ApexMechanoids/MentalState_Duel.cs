@@ -11,6 +11,7 @@ namespace ApexMechanoids
 {
     public class MentalState_Duel : MentalState
     {
+        public Thing attachedThing;
         public override void PostStart(string reason)
         {
             base.PostStart(reason);
@@ -43,6 +44,10 @@ namespace ApexMechanoids
                 pawn.health.AddHediff(ApexDefsOf.Mech_DuelDraw);
             }
             pawn.health.RemoveHediff(pawn.health.hediffSet.GetFirstHediffOfDef(ApexDefsOf.Mech_InDuel));
+            if (!attachedThing.DestroyedOrNull())
+            {
+                attachedThing.Destroy(DestroyMode.KillFinalize);
+            }
         }
         public override TaggedString GetBeginLetterText()
         {
@@ -52,6 +57,11 @@ namespace ApexMechanoids
                 return "";
             }
             return this.def.beginLetter.Formatted(this.pawn.NameShortColored, this.causedByPawn.NameShortColored, this.pawn.Named("PAWN"), this.causedByPawn.Named("TARGET")).AdjustedFor(this.pawn, "PAWN", true).Resolve().CapitalizeFirst();
+        }
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_References.Look(ref attachedThing, nameof(attachedThing));
         }
     }
 }

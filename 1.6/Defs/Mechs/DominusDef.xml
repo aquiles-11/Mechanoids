@@ -217,7 +217,7 @@
 				<applyToSelf>false</applyToSelf>
 				<forced>true</forced>
 			</li>
-			<li Class="ApexMechanoids.CompProperties_SpawnThingBetween">
+			<li Class="ApexMechanoids.CompProperties_SpawnThingDuelAttached">
 				<thing>MechDuelSpot</thing>
 			</li>
 		</comps>
