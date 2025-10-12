@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
 	<ThingDef ParentName="LancerMechanoidWalker">
@@ -91,7 +91,7 @@
 			</li>
 		</comps>
 	</ThingDef>
-  
+
 	<PawnKindDef ParentName="BaseMechanoidKind">
 		<defName>APM_Mech_Dynamo</defName>
 		<label>dynamo</label>
@@ -124,7 +124,7 @@
 		<techHediffsMoney>9999~9999</techHediffsMoney>
 		<controlGroupPortraitZoom>1.2</controlGroupPortraitZoom>
 		<abilities>
-			<li>APM_SwithcToPowerPlantMode</li>
+			<li>APM_SwitchToPowerPlantMode</li>
 		</abilities>
 	</PawnKindDef>
 

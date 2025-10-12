@@ -1,7 +1,7 @@
 <Defs>
 
   <ThingDef ParentName="ApparelArmorHelmetMechanitorBase">
-    <defName>Apparel_ArmorHelmetMechamancerHelmet</defName>
+    <defName>APM_Apparel_ArmorHelmetMechamancerHelmet</defName>
     <label>mechamancer helmet</label>
     <description>PLACEHOLDER</description>
     <graphicData>
@@ -45,7 +45,7 @@
     <apparel>
       <tags>
         <li>RoyalTier7</li>
-        <li>Mechamancer</li>
+        <li>APM_Mechamancer</li>
       </tags>
       <scoreOffset>4</scoreOffset>
       <mechanitorApparel>true</mechanitorApparel>
