@@ -183,8 +183,8 @@ namespace ApexMechanoids
             {
                 Command_Action repairCommand = new Command_Action
                 {
-                    defaultLabel = "APM_RepairAegisShields_Label".Translate(),
-                    defaultDesc = "APM_RepairAegisShields_Desc".Translate(Props.steelRequiredForRepair),
+                    defaultLabel = "APM.RepairAegisShields.Label".Translate(),
+                    defaultDesc = "APM.RepairAegisShields.Desc".Translate(Props.steelRequiredForRepair),
                     icon = Assets.shieldRepairIcon,
                     action = delegate
                     {
@@ -199,7 +199,7 @@ namespace ApexMechanoids
 
                                 if (!colonist.CanReach(pawn, PathEndMode.Touch, Danger.Deadly))
                                 {
-                                    options.Add(new FloatMenuOption(colonist.LabelShort + " " + "APM_CannotReach".Translate(), null));
+                                    options.Add(new FloatMenuOption(colonist.LabelShort + " " + "APM.CannotReach".Translate(), null));
                                     continue;
                                 }
 
@@ -209,7 +209,7 @@ namespace ApexMechanoids
                                 if (totalAvailable < Props.steelRequiredForRepair)
                                 {
                                     options.Add(new FloatMenuOption(
-                                        colonist.LabelShort + " " + "APM_NeedSteel".Translate(Props.steelRequiredForRepair, totalAvailable),
+                                        colonist.LabelShort + " " + "APM.NeedSteel".Translate(Props.steelRequiredForRepair, totalAvailable),
                                         null
                                     ));
                                     continue;
@@ -221,7 +221,7 @@ namespace ApexMechanoids
 
                                     if (steelToHaul.Count == 0)
                                     {
-                                        Messages.Message("APM_NoSteelAvailable".Translate(), MessageTypeDefOf.RejectInput);
+                                        Messages.Message("APM.NoSteelAvailable".Translate(), MessageTypeDefOf.RejectInput);
                                         return;
                                     }
 
@@ -246,7 +246,7 @@ namespace ApexMechanoids
 
                         if (options.Count == 0)
                         {
-                            options.Add(new FloatMenuOption("APM_NoAvailableColonists".Translate(), null));
+                            options.Add(new FloatMenuOption("APM.NoAvailableColonists".Translate(), null));
                         }
 
                         Find.WindowStack.Add(new FloatMenu(options));

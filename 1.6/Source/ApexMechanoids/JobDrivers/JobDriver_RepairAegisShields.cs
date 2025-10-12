@@ -72,7 +72,7 @@ namespace ApexMechanoids
                     if (!HasEnoughSteel)
                     {
                         Messages.Message(
-                            "APM_NotEnoughSteel".Translate(steelDelivered, SteelRequired),
+                            "APM.NotEnoughSteel".Translate(steelDelivered, SteelRequired),
                             Mech,
                             MessageTypeDefOf.NegativeEvent
                         );
@@ -182,7 +182,7 @@ namespace ApexMechanoids
                 }
 
                 Messages.Message(
-                    "APM_ShieldsFullyRepaired".Translate(Mech.LabelShort),
+                    "APM.ShieldsFullyRepaired".Translate(Mech.LabelShort),
                     Mech,
                     MessageTypeDefOf.PositiveEvent
                 );
@@ -206,7 +206,7 @@ namespace ApexMechanoids
                     Mech.health.RemoveHediff(Mech.health.hediffSet.GetMissingPartFor(shieldPart));
                     FleckMaker.ThrowMetaIcon(Mech.Position, Mech.Map, FleckDefOf.HealingCross);
                     Messages.Message(
-                        "APM_ShieldRestored".Translate(Mech.LabelShort, shieldPart.Label),
+                        "APM.ShieldRestored".Translate(Mech.LabelShort, shieldPart.Label),
                         Mech,
                         MessageTypeDefOf.PositiveEvent,
                         historical: false
