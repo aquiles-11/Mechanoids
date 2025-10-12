@@ -48,6 +48,10 @@ namespace ApexMechanoids
             {
                 attachedThing.Destroy(DestroyMode.KillFinalize);
             }
+            if (pawn.drafter?.ShowDraftGizmo ?? false)
+            {
+                pawn.drafter.Drafted = true;
+            }
         }
         public override TaggedString GetBeginLetterText()
         {
