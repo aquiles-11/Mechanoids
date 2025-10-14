@@ -191,7 +191,7 @@
 		<label>the duel trial</label>
 		<description>PLACEHOLDER</description>
 		<iconPath>UI/Absorb</iconPath>
-		<cooldownTicksRange>90000</cooldownTicksRange> <!-- 1.5 days -->
+		<cooldownTicksRange>1800</cooldownTicksRange> <!-- 30 seconds -->
 		<targetRequired>true</targetRequired>
 		<hostile>true</hostile>
 		<verbProperties>

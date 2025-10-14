@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 using Verse;
 using Verse.AI;
 
@@ -32,12 +33,13 @@ namespace ApexMechanoids
                 this.RecoverFromState();
             }
         }
+        const float severityPerWin = 1f / 8f; // 7 stages
         public override void PostEnd()
         {
             base.PostEnd();
             if (causedByPawn.DeadOrDowned)
             {
-                pawn.health.AddHediff(ApexDefsOf.Mech_DuelWinner);
+                HealthUtility.AdjustSeverity(pawn, ApexDefsOf.Mech_DuelWinner, severityPerWin);
             }
             else if (!pawn.DeadOrDowned)
             {
