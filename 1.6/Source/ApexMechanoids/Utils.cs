@@ -1,5 +1,6 @@
-﻿using Verse;
+﻿using RimWorld;
 using System.Collections.Generic;
+using Verse;
 
 namespace ApexMechanoids
 {
@@ -35,6 +36,31 @@ namespace ApexMechanoids
             }
 
             return matchingParts;
+        }
+        public static void TryDoAbility(Pawn pawn, AbilityDef abilityDef, LocalTargetInfo target)
+        {
+            if (!target.IsValid)
+            {
+                Log.Error("Invalid ability target: " + target.ToString());
+                return;
+            }
+            Ability ab = pawn.abilities?.GetAbility(abilityDef);
+            if (ab == null)
+            {
+                Log.Error("subAbility is null");
+                return;
+            }
+            if (!ab.CanCast)
+            {
+                Log.Error("Can't cast subAbility");
+                return;
+            }
+            if (!ab.verb.CanHitTarget(target))
+            {
+                Log.Error("Could not hit target: " + target + " from " + pawn.Position);
+                return;
+            }
+            ab.QueueCastingJob(target.Pawn, target.Pawn);
         }
     }
 }

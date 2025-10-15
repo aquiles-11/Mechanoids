@@ -1,6 +1,6 @@
 ﻿using Verse;
 
-namespace ApexMechanoids.HarmonyPatches
+namespace ApexMechanoids
 {
     internal static class HediffSet_Patch
     {

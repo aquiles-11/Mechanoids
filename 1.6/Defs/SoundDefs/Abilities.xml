@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <SoundDef>
+        <defName>APM_Ability_SirenLure</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>2</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Abilities/siren-lure</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>65~75</volumeRange>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef>
+        <defName>APM_Ability_PinpointTargeting</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>2</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Abilities/pinpoint-targeting</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>65~75</volumeRange>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef>
+        <defName>APM_Ability_PinpointRevealInvisibility</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>2</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Abilities/pinpoint-revealinvis</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>90~95</volumeRange>
+            </li>
+        </subSounds>
+    </SoundDef>
+</Defs>

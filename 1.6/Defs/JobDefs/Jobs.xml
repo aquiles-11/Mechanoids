@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <JobDef>
+        <defName>RepairAegisShields</defName>
+        <driverClass>ApexMechanoids.JobDriver_RepairAegisShields</driverClass>
+        <reportString>repairing TargetA's shields.</reportString>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+        <collideWithPawns>true</collideWithPawns>
+    </JobDef>
+</Defs>

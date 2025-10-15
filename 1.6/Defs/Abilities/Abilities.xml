@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	
 	<AbilityDef>
 		<defName>Mech_Absorb</defName>
 		<label>absorb</label>
 		<jobDef>CastAbilityOnThingMelee</jobDef>
 		<description>PLACEHOLDER</description>
 		<iconPath>UI/Absorb</iconPath>
-		<cooldownTicksRange>90000</cooldownTicksRange><!-- 1.5 days -->
+		<cooldownTicksRange>90000</cooldownTicksRange>		<!-- 1.5 days -->
 		<targetRequired>true</targetRequired>
 		<hostile>false</hostile>
 		<showCastingProgressBar>true</showCastingProgressBar>
@@ -44,7 +43,7 @@
 		<targetRequired>False</targetRequired>
 		<canUseAoeToGetTargets>False</canUseAoeToGetTargets>
 		<iconPath>UI/Commands/DropCarriedPawn</iconPath>
-		<cooldownTicksRange>20000</cooldownTicksRange><!-- 8 hours -->
+		<cooldownTicksRange>20000</cooldownTicksRange>		<!-- 8 hours -->
 		<stunTargetWhileCasting>True</stunTargetWhileCasting>
 		<showPsycastEffects>False</showPsycastEffects>
 		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
@@ -71,5 +70,238 @@
 			</li>
 		</comps>
 	</AbilityDef>
- 
+
+	<AbilityDef>
+		<defName>APM_Ability_SirenLure</defName>
+		<label>siren lure</label>
+		<description>.</description>
+		<iconPath>Things/Mote/SpeechSymbols/Speech</iconPath>
+		<cooldownTicksRange>60</cooldownTicksRange>
+		<hostile>true</hostile>
+		<writeCombatLog>true</writeCombatLog>
+		<aiCanUse>true</aiCanUse>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>29.9</range>
+			<warmupTime>0.5</warmupTime>
+			<requireLineOfSight>False</requireLineOfSight>
+			<soundCast>APM_Ability_SirenLure</soundCast>
+			<targetParams>
+				<canTargetSelf>False</canTargetSelf>
+				<canTargetBuildings>False</canTargetBuildings>
+				<canTargetLocations>False</canTargetLocations>
+				<canTargetAnimals>False</canTargetAnimals>
+			</targetParams>
+		</verbProperties>
+		<statBases>
+			<Ability_Duration>10</Ability_Duration>
+			<Ability_EffectRadius>0.9</Ability_EffectRadius>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_AbilityForceJob">
+				<compClass>CompAbilityEffect_ForceJob</compClass>
+				<jobDef>GotoMindControlled</jobDef>
+				<destination>Caster</destination>
+				<range>0.9</range>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<AbilityDef>
+		<defName>Mech_SirenSong</defName>
+		<label>siren's song</label>
+		<description>PLACEHOLDER</description>
+		<iconPath>UI/SirenSong</iconPath>
+		<cooldownTicksRange>900000</cooldownTicksRange>		<!-- 15 days -->
+		<targetRequired>false</targetRequired>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<canUseAoeToGetTargets>true</canUseAoeToGetTargets>
+		<showCastingProgressBar>true</showCastingProgressBar>
+		<statBases>
+			<Ability_EffectRadius>12</Ability_EffectRadius>
+			<Ability_Duration>480</Ability_Duration>
+		</statBases>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>1</warmupTime>
+			<range>12.9</range>
+			<drawAimPie>false</drawAimPie>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>Mech_SirenSong</hediffDef>
+				<applyToSelf>false</applyToSelf>
+				<ignoreSelf>true</ignoreSelf>
+			</li>
+			<li Class="ApexMechanoids.CompProperties_NeedOffset">
+				<needDef>Rest</needDef>
+				<offset>0.1</offset>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<!-- Primary: dash (then push) -->
+	<!-- <AbilityDef>
+		<defName>APM_Ability_DashAndPush</defName>
+		<label>dash and push</label>
+		<description>.</description>
+		<iconPath>Things/Mote/SpeechSymbols/Speech</iconPath>
+		<cooldownTicksRange>120</cooldownTicksRange>
+		<writeCombatLog>true</writeCombatLog>
+		<aiCanUse>true</aiCanUse>
+		<canUseAoeToGetTargets>false</canUseAoeToGetTargets>
+		<writeCombatLog>true</writeCombatLog>
+		<aiCanUse>true</aiCanUse>
+		<verbProperties>
+			<verbClass>ApexMechanoids.Verb_CastAbilityJumpExt</verbClass>
+			<spawnDef>APM_DashingPawn</spawnDef>
+			<soundCast>Pawn_Cat_Call</soundCast>
+			<warmupTime>0</warmupTime>
+			<noiseRadius>6</noiseRadius>
+			<range>9.9</range>
+			<targetParams>
+
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="ApexMechanoids.CompProperties_AbilityFlyerQueueAbility">
+				<abilityOnFinish>
+					<li>APM_Ability_Push</li>
+				</abilityOnFinish>
+			</li>
+		</comps>
+	</AbilityDef> -->
+
+	<!-- "dashing" pawnFlyer with rope -->
+	<!-- <ThingDef ParentName="PawnFlyerBase">
+		<defName>APM_DashingPawn</defName>
+		<label>dashing</label>
+		<thingClass>ApexMechanoids.PawnFlyerExtended</thingClass>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<pawnFlyer>
+			<flightDurationMin>0.25</flightDurationMin>
+			<flightSpeed>20</flightSpeed>
+			<workerClass>PawnFlyerWorker</workerClass>
+			<heightFactor>0.05</heightFactor>
+			<progressCurve>
+				<points>
+					<li>(0, 0)</li>
+					<li>(0.1, 0.15)</li>
+					<li>(1, 1)</li>
+				</points>
+			</progressCurve>
+		</pawnFlyer>
+		<modExtensions>
+			<li Class="ApexMechanoids.ModExt_PawnFlyerExt">
+				<rope>true</rope>
+			</li>
+		</modExtensions>
+	</ThingDef> -->
+
+	<!-- Follow-up: push -->
+	<!-- <AbilityDef>
+		<defName>APM_Ability_Push</defName>
+		<label>push</label>
+		<description>.</description>
+		<iconPath>Things/Mote/SpeechSymbols/Speech</iconPath>
+		<cooldownTicksRange>60</cooldownTicksRange>
+		<hostile>true</hostile>
+		<writeCombatLog>true</writeCombatLog>
+		<aiCanUse>true</aiCanUse>
+		<canUseAoeToGetTargets>true</canUseAoeToGetTargets>
+		<statBases>
+			<Ability_EffectRadius>0.9</Ability_EffectRadius>
+		</statBases>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>0.9</range>
+			<warmupTime>0.1</warmupTime>
+			<requireLineOfSight>false</requireLineOfSight>
+			<soundCast>Longjump_Jump</soundCast>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+			</targetParams>
+			<nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+		</verbProperties>
+		<comps>
+			<li Class="ApexMechanoids.CompProperties_AbilityPushTarget">
+				<range>5</range>
+				<soundLanding>Longjump_Land</soundLanding>
+				<destination>RandomInRange</destination>
+				<successChance>1</successChance>
+			</li>
+		</comps>
+		<comps>
+			<li Class="EBSGFramework.CompProperties_AbilityPushTarget">
+				<range>5</range>
+				<soundLanding>Longjump_Land</soundLanding>
+				<destination>RandomInRange</destination>
+			</li>
+		</comps>
+	</AbilityDef> -->
+
+	<AbilityDef>
+		<defName>APM_Ability_GiveAccuracyHediff</defName>
+		<label>give accuracy hediff</label>
+		<description>.</description>
+		<iconPath>Things/Mote/SpeechSymbols/Speech</iconPath>
+		<cooldownTicksRange>60</cooldownTicksRange>
+		<hostile>true</hostile>
+		<writeCombatLog>true</writeCombatLog>
+		<aiCanUse>true</aiCanUse>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>12.9</range>
+			<warmupTime>0.5</warmupTime>
+			<requireLineOfSight>False</requireLineOfSight>
+			<soundCast>APM_Ability_PinpointTargeting</soundCast>
+			<targetParams>
+				<canTargetBuildings>false</canTargetBuildings>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>APM_TargetingAccuracyHediff</hediffDef>
+				<durationSecondsOverride>10</durationSecondsOverride>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<AbilityDef>
+		<defName>APM_Ability_RevealInvisible</defName>
+		<label>reveal invisible</label>
+		<description>.</description>
+		<iconPath>Things/Mote/SpeechSymbols/Speech</iconPath>
+		<cooldownTicksRange>60</cooldownTicksRange>
+		<hostile>true</hostile>
+		<writeCombatLog>true</writeCombatLog>
+		<aiCanUse>true</aiCanUse>
+		<canUseAoeToGetTargets>true</canUseAoeToGetTargets>
+		<statBases>
+			<Ability_EffectRadius>12.9</Ability_EffectRadius>			<!-- this should make it possible to pick targets from AoE to push -->
+		</statBases>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>12.9</range>
+			<warmupTime>1.0</warmupTime>
+			<requireLineOfSight>False</requireLineOfSight>
+			<soundCast>APM_Ability_PinpointRevealInvisibility</soundCast>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetBuildings>false</canTargetBuildings>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="ApexMechanoids.CompProperties_AbilityRevealInvisibility">				<!-- should reveal invisible pawns -->
+				<instant>false</instant>
+			</li>
+		</comps>
+	</AbilityDef>
 </Defs>
