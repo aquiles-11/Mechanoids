@@ -72,8 +72,8 @@
     <lifeStages>
       <li MayRequire="Ludeon.RimWorld.Biotech">
         <bodyGraphicData>
-        <texPath>Mechs/Conqueror/Conqueror</texPath>
-          <maskPath>Mechs/Overlays/Conqueror_Overlay/Mech_Conqueror</maskPath>
+        <texPath>Mechs/Conqueror/DMR/Conqueror_DMR</texPath>
+          <maskPath>Mechs/Overlays/Conqueror_Overlay/DMR/Mech_Conqueror_DMR</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.5</drawSize>
@@ -84,8 +84,8 @@
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Mechs/Conqueror/ConquerorAncient</texPath>
-          <maskPath>Mechs/Overlays/Conqueror_Overlay/Mech_Conqueror</maskPath>
+          <texPath>Mechs/Conqueror/DMR/ConquerorDMRAncient</texPath>
+          <maskPath>Mechs/Overlays/Conqueror_Overlay/DMR/Mech_Conqueror_DMR</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.5</drawSize>
@@ -120,8 +120,8 @@
     <lifeStages>
       <li MayRequire="Ludeon.RimWorld.Biotech">
         <bodyGraphicData>
-          <texPath>Mechs/Conqueror/Conqueror</texPath>
-          <maskPath>Mechs/Overlays/Conqueror_Overlay/Mech_Conqueror</maskPath>
+          <texPath>Mechs/Conqueror/AR/ConquerorAR</texPath>
+          <maskPath>Mechs/Overlays/Conqueror_Overlay/AR/Mech_ConquerorAR</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.5</drawSize>
@@ -132,8 +132,8 @@
       </li>
       <li>
         <bodyGraphicData>
-        <texPath>Mechs/Conqueror/ConquerorAncient</texPath>
-          <maskPath>Mechs/Overlays/Conqueror_Overlay/Mech_Conqueror</maskPath>
+        <texPath>Mechs/Conqueror/ConquerorARAncient</texPath>
+          <maskPath>Mechs/Overlays/Conqueror_Overlay/AR/Mech_ConquerorAR</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.5</drawSize>
