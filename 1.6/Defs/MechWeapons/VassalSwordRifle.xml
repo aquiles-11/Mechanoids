@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <ThingDef ParentName="BaseGun">
-    <defName>Gun_Vassal_SwordRifle</defName>
+    <defName>APM_Gun_Vassal_SwordRifle</defName>
     <label>charge sword rifle</label>
     <description>A charged-shot sword rifle. Weaker than a charge rifle, but more accurate and melee capable.</description>
     <techLevel>Spacer</techLevel>
@@ -32,7 +32,7 @@
     </thingSetMakerTags>
     <weaponTags>
       <li>SpacerGun</li>
-      <li>MechanoidVassalSwordRifle</li>
+      <li>APM_WeaponVassalSwordRifle</li>
     </weaponTags>
     <tradeTags>
       <li>WeaponRanged</li>
@@ -44,7 +44,7 @@
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>Bullet_ChargeSwordRifle</defaultProjectile>
+        <defaultProjectile>APM_Bullet_ChargeSwordRifle</defaultProjectile>
         <warmupTime>1.2</warmupTime>
         <range>24.9</range>
         <soundCast>Shot_ChargeRifle</soundCast>
@@ -81,7 +81,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
-    <defName>Bullet_ChargeSwordRifle</defName>
+    <defName>APM_Bullet_ChargeSwordRifle</defName>
     <label>charge shot</label>
     <graphicData>
       <texPath>Things/Projectile/Charge_Small</texPath>
