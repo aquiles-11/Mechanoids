@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	
+
 	<AbilityDef>
-		<defName>Mech_Absorb</defName>
+		<defName>APM_Absorb</defName>
 		<label>absorb</label>
 		<jobDef>CastAbilityOnThingMelee</jobDef>
 		<description>PLACEHOLDER</description>
@@ -37,7 +37,7 @@
 	</AbilityDef>
 
 	<AbilityDef>
-		<defName>AM_SwithcToPowerPlantMode</defName>
+		<defName>APM_SwitchToPowerPlantMode</defName>
 		<label>Power Plant Mode</label>
 		<description>...</description>
 		<jobDef>CastAbilityOnThing</jobDef>
@@ -67,9 +67,9 @@
 		</verbProperties>
 		<comps>
 			<li Class="ApexMechanoids.CompProperties_ConvertToBuilding">
-				<thingDef>AM_DynamoPoweredGenerator</thingDef>
+				<thingDef>APM_DynamoPoweredGenerator</thingDef>
 			</li>
 		</comps>
 	</AbilityDef>
- 
+
 </Defs>

@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
 	<ThingDef ParentName="LancerMechanoidWalker">
-		<defName>AM_Mech_Dynamo</defName>
+		<defName>APM_Mech_Dynamo</defName>
 		<label>dynamo</label>
 		<description>A combat support mechanoid with a wide-range bullet shield and mid-range needle gun. Designed to support other mechanoids, the legionary is vulnerable to anyone who can get inside its shield.</description>
 		<statBases>
@@ -91,11 +91,11 @@
 			</li>
 		</comps>
 	</ThingDef>
-  
+
 	<PawnKindDef ParentName="BaseMechanoidKind">
-		<defName>AM_Mech_Dynamo</defName>
+		<defName>APM_Mech_Dynamo</defName>
 		<label>dynamo</label>
-		<race>AM_Mech_Dynamo</race>
+		<race>APM_Mech_Dynamo</race>
 		<combatPower>150</combatPower>
 		<allowInMechClusters>false</allowInMechClusters>
 		<lifeStages>
@@ -124,7 +124,7 @@
 		<techHediffsMoney>9999~9999</techHediffsMoney>
 		<controlGroupPortraitZoom>1.2</controlGroupPortraitZoom>
 		<abilities>
-			<li>AM_SwithcToPowerPlantMode</li>
+			<li>APM_SwitchToPowerPlantMode</li>
 		</abilities>
 	</PawnKindDef>
 

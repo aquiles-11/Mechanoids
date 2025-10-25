@@ -1,10 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <ThingDef ParentName="BaseGun">
-    <defName>Ravager_Artillery</defName>
+    <defName>APM_Ravager_Artillery</defName>
     <label>ravager artillery</label>
     <description>PLACEHOLDER</description>
     <graphicData>
@@ -28,13 +26,13 @@
       <li>RangedHeavy</li>
     </weaponClasses>
     <weaponTags Inherit="False">
-      <li>RavagerArtillery</li>
+      <li>APM_WeaponRavagerArtillery</li>
     </weaponTags>
     <verbs>
       <li>
         <label>launch frag grenade</label>
         <verbClass>Verb_Shoot</verbClass>
-        <defaultProjectile>ArtilleryProjectile</defaultProjectile>
+        <defaultProjectile>APM_ArtilleryProjectile</defaultProjectile>
         <hasStandardCommand>true</hasStandardCommand>
         <burstShotCount>3</burstShotCount>
         <range>24.9</range>
@@ -94,7 +92,7 @@
   </ThingDef>
 
   <ThingDef ParentName="BaseFragGrenadeProjectile">
-    <defName>ArtilleryProjectile</defName>
+    <defName>APM_ArtilleryProjectile</defName>
     <label>artillery projectile</label>
     <thingClass>Projectile_Explosive</thingClass>
     <graphicData>
