@@ -101,16 +101,16 @@
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Mechanoid/Legionary</texPath>
-					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Mech_Legionary</maskPath>
+					<texPath>Mechs/Dynamo/Dynamo</texPath>
+					<maskPath>Mechs/Overlays/Dynamo_Overlay/Dynamo</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<drawSize>1.5</drawSize>
 				</bodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Mechanoid/LegionaryAncient</texPath>
-					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Mech_Legionary</maskPath>
+					<texPath>Mechs/Dynamo/DynamoAncient</texPath>
+					<maskPath>Mechs/Overlays/Dynamo_Overlay/Dynamo</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<drawSize>1.5</drawSize>
 				</bodyGraphicData>
