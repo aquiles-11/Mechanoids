@@ -29,6 +29,13 @@ namespace ApexMechanoids
             {
                 Log.Error($"Cannot attach {thing} to duel.");
             }
+            if (thing is ThingWithComps thingWithComps)
+            {
+                foreach (var comp in thingWithComps.GetComps<CompDrawRotatedAdditionalGraphics>())
+                {
+                    comp.rotation = (target.Cell - casterPos).AngleFlat;
+                }
+            }
         }
     }
     public class CompProperties_SpawnThingDuelAttached : CompProperties_AbilityEffect

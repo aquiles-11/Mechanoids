@@ -5,16 +5,16 @@
     <defName>MechDuelSpot</defName>
     <label>duel spot</label>
     <description>PLACEHOLDER</description>
-    <altitudeLayer>MoteLow</altitudeLayer>
+    <altitudeLayer>Filth</altitudeLayer>
     <drawerType>MapMeshAndRealTime</drawerType>
     <pathCost>0</pathCost>
     <passability>Standable</passability>
 		<useHitPoints>false</useHitPoints>
     <fillPercent>0.35</fillPercent>
     <graphicData>
-      <texPath>UI/Misc/BadTexture</texPath>
+      <texPath>Buildings/Duel/Shield</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>5.7</drawSize>
+      <drawSize>1</drawSize>
     </graphicData>
     <tickerType>Normal</tickerType>
     <killedLeavings/>
@@ -45,6 +45,15 @@
         <destroyMode>KillFinalize</destroyMode>
         <countdownLabel>Finish in</countdownLabel>
       </li>
+			<li Class="ApexMechanoids.CompProperties_DrawRotatedAdditionalGraphics">
+				<graphics>
+					<li>
+						<texPath>Buildings/Duel/Arena</texPath>
+						<graphicClass>Graphic_Single</graphicClass>
+						<drawSize>5.7</drawSize>
+					</li>
+				</graphics>
+			</li>
     </comps>
   </ThingDef>
 

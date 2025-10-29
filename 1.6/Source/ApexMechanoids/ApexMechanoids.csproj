@@ -42,6 +42,7 @@
     <Compile Include="CompProperties\CompProperties_MechWirelessCharger.cs" />
     <Compile Include="CompProperties\CompProperties_ConvertToBuilding.cs" />
     <Compile Include="Comps\CompAegis.cs" />
+    <Compile Include="Comps\CompDrawRotatedAdditionalGraphics.cs" />
     <Compile Include="Comps\CompMechWirelessCharger.cs" />
     <Compile Include="Comps\CompPowerPlantDynamo.cs" />
     <Compile Include="Comps\CompAbilityEffect_ConvertToBuilding.cs" />
