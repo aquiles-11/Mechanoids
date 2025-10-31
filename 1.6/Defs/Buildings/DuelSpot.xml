@@ -73,13 +73,13 @@
 						<texPath>Buildings/Duel/Flag</texPath>
 						<graphicClass>Graphic_Single</graphicClass>
 						<drawSize>1.5</drawSize>
-						<drawOffset>(-4.5,0,0)</drawOffset>
+						<drawOffset>(-4,0,0)</drawOffset>
 					</li>
 					<li>
 						<texPath>Buildings/Duel/Flag</texPath>
 						<graphicClass>Graphic_Single</graphicClass>
 						<drawSize>1.5</drawSize>
-						<drawOffset>(4.5,0,0)</drawOffset>
+						<drawOffset>(4,0,0)</drawOffset>
 					</li>
 					<li>
 						<texPath>Buildings/Duel/Flag</texPath>
