@@ -107,6 +107,9 @@
 					</li>
 				</graphics>
 			</li>
+			<li Class="CompProperties_Effecter">
+				<effecterDef>APM_Duel</effecterDef>
+			</li>
 		</comps>
 	</ThingDef>
 
