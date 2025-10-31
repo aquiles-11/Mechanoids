@@ -48,7 +48,17 @@
 			<li Class="ApexMechanoids.CompProperties_DrawRotatedAdditionalGraphics">
 				<graphics>
 					<li>
-						<texPath>Buildings/Duel/Arena</texPath>
+						<texPath>Buildings/Duel/Ring_Layer1</texPath>
+						<graphicClass>Graphic_Single</graphicClass>
+						<drawSize>5.7</drawSize>
+					</li>
+					<li>
+						<texPath>Buildings/Duel/Ring_Layer2</texPath>
+						<graphicClass>Graphic_Single</graphicClass>
+						<drawSize>5.7</drawSize>
+					</li>
+					<li>
+						<texPath>Buildings/Duel/Ring_Layer3</texPath>
 						<graphicClass>Graphic_Single</graphicClass>
 						<drawSize>5.7</drawSize>
 					</li>
