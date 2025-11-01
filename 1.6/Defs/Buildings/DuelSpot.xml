@@ -53,16 +53,19 @@
 					<li>
 						<texPath>Buildings/Duel/Ring_Layer1</texPath>
 						<graphicClass>Graphic_Single</graphicClass>
+						<color>(250, 147, 19)</color>
 						<drawSize>5.7</drawSize>
 					</li>
 					<li>
 						<texPath>Buildings/Duel/Ring_Layer2</texPath>
 						<graphicClass>Graphic_Single</graphicClass>
+						<color>(250, 147, 19)</color>
 						<drawSize>5.7</drawSize>
 					</li>
 					<li>
 						<texPath>Buildings/Duel/Ring_Layer3</texPath>
 						<graphicClass>Graphic_Single</graphicClass>
+						<color>(250, 147, 19)</color>
 						<drawSize>5.7</drawSize>
 					</li>
 				</graphics>
