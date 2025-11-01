@@ -2,7 +2,7 @@
 <Defs>
 
 	<HediffDef>
-		<defName>Mech_InDuel</defName>
+		<defName>APM_InDuel</defName>
 		<label>in duel</label>
 		<hediffClass>HediffWithComps</hediffClass>
 		<description>PLACEHOLDER.</description>
@@ -25,7 +25,7 @@
 	</HediffDef>
 
 	<HediffDef>
-		<defName>Mech_DuelWinner</defName>
+		<defName>APM_DuelWinner</defName>
 		<label>duel winner</label>
 		<hediffClass>HediffWithComps</hediffClass>
 		<description>PLACEHOLDER.</description>
@@ -150,7 +150,7 @@
 	</HediffDef>
 
 	<HediffDef>
-		<defName>Mech_DuelDraw</defName>
+		<defName>APM_DuelDraw</defName>
 		<label>duel draw</label>
 		<hediffClass>HediffWithComps</hediffClass>
 		<description>PLACEHOLDER.</description>

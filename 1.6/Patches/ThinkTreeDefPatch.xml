@@ -4,7 +4,7 @@
     <xpath>/Defs/ThinkTreeDef[defName="MentalStateCritical"]/thinkRoot/subNodes</xpath>
     <value>
 			<li Class="ThinkNode_ConditionalMentalState">
-				<state>Mech_Duel</state>
+				<state>APM_Duel</state>
 				<subNodes>
 					<li Class="ThinkNode_Priority">
 						<subNodes>
@@ -23,7 +23,7 @@
 		<xpath>/Defs/ThinkTreeDef[defName="Mechanoid"]/thinkRoot/subNodes/li[state="BerserkMechanoid"]</xpath>
 		<value>
 			<li Class="ThinkNode_ConditionalMentalState">
-				<state>Mech_Duel</state>
+				<state>APM_Duel</state>
 				<subNodes>
 					<li Class="ThinkNode_Priority">
 						<subNodes>

@@ -102,7 +102,7 @@
 		</weaponTags>
 		<abilities>
 			<li>APM_PressTheAttack</li>
-			<li>Mech_Duel</li>
+			<li>APM_Mech_Duel</li>
 		</abilities>
 	</PawnKindDef>
 
@@ -187,7 +187,7 @@
 	
 	
 	<AbilityDef>
-		<defName>Mech_Duel</defName>
+		<defName>APM_Mech_Duel</defName>
 		<label>the duel trial</label>
 		<description>PLACEHOLDER</description>
 		<iconPath>UI/Absorb</iconPath>
@@ -212,13 +212,13 @@
 		<comps>
 			<li Class="CompProperties_AbilityGiveMentalState">
 				<compClass>CompAbilityEffect_GiveMentalState</compClass>
-				<stateDef>Mech_Duel</stateDef>
-				<stateDefForMechs>Mech_Duel</stateDefForMechs>
+				<stateDef>APM_Duel</stateDef>
+				<stateDefForMechs>APM_Duel</stateDefForMechs>
 				<applyToSelf>false</applyToSelf>
 				<forced>true</forced>
 			</li>
 			<li Class="ApexMechanoids.CompProperties_SpawnThingDuelAttached">
-				<thing>MechDuelSpot</thing>
+				<thing>APM_DuelSpot</thing>
 			</li>
 		</comps>
 	</AbilityDef>

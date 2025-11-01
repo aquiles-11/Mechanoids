@@ -22,7 +22,7 @@ namespace ApexMechanoids
                 this.causedByPawn.mindState.mentalStateHandler.TryStartMentalState(this.def, reason: reason, forced: true, forceWake: true, causedByMood: false, otherPawn: this.pawn);
                 this.causedByPawn.mindState.mentalStateHandler.CurState.forceRecoverAfterTicks = this.forceRecoverAfterTicks;
             }
-            pawn.health.AddHediff(ApexDefsOf.Mech_InDuel);
+            pawn.health.AddHediff(ApexDefsOf.APM_InDuel);
         }
         public override RandomSocialMode SocialModeMax() => RandomSocialMode.Off;
         public override void MentalStateTick(int delta)
@@ -39,13 +39,13 @@ namespace ApexMechanoids
             base.PostEnd();
             if (causedByPawn.DeadOrDowned)
             {
-                HealthUtility.AdjustSeverity(pawn, ApexDefsOf.Mech_DuelWinner, severityPerWin);
+                HealthUtility.AdjustSeverity(pawn, ApexDefsOf.APM_DuelWinner, severityPerWin);
             }
             else if (!pawn.DeadOrDowned)
             {
-                pawn.health.AddHediff(ApexDefsOf.Mech_DuelDraw);
+                pawn.health.AddHediff(ApexDefsOf.APM_DuelDraw);
             }
-            pawn.health.RemoveHediff(pawn.health.hediffSet.GetFirstHediffOfDef(ApexDefsOf.Mech_InDuel));
+            pawn.health.RemoveHediff(pawn.health.hediffSet.GetFirstHediffOfDef(ApexDefsOf.APM_InDuel));
             if (!attachedThing.DestroyedOrNull())
             {
                 attachedThing.Destroy(DestroyMode.KillFinalize);

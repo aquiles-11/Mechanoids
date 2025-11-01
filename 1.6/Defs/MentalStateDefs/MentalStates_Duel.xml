@@ -2,14 +2,14 @@
 <Defs>
 
   <MentalBreakDef>
-    <defName>Mech_Duel</defName>
-    <mentalState>Mech_Duel</mentalState>
+    <defName>APM_Duel</defName>
+    <mentalState>APM_Duel</mentalState>
     <baseCommonality>0</baseCommonality>
     <intensity>Extreme</intensity>
   </MentalBreakDef>
 	
   <MentalStateDef ParentName="BaseMentalState">
-    <defName>Mech_Duel</defName>
+    <defName>APM_Duel</defName>
     <stateClass>ApexMechanoids.MentalState_Duel</stateClass>
     <label>dueling</label>
     <category>Aggro</category>

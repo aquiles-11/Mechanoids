@@ -2,7 +2,7 @@
 <Defs>
 
 	<ThingDef ParentName="BuildingBase">
-		<defName>MechDuelSpot</defName>
+		<defName>APM_DuelSpot</defName>
 		<label>duel spot</label>
 		<description>PLACEHOLDER</description>
 		<altitudeLayer>Filth</altitudeLayer>
