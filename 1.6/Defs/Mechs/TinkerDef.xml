@@ -1,10 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>  
-
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-
   <ThingDef ParentName="BaseMechanoidWalker">
-    <defName>Mech_Tinker</defName>
+    <defName>APM_Mech_Tinker</defName>
     <label>Tinker</label>
     <description>PLACEHOLDER</description>
     <tools>
@@ -43,7 +41,7 @@
       </li>
     </tools>
     <race>
-      <body>Vassal</body>
+      <body>APM_Vassal</body>
       <baseHealthScale>1</baseHealthScale>
       <detritusLeavings>
         <li>
@@ -64,9 +62,9 @@
   </ThingDef>
 
   <PawnKindDef ParentName="BaseMechanoidKind">
-    <defName>Mech_Tinker</defName>
-    <label>Tinker</label>
-    <race>Mech_Tinker</race>
+    <defName>APM_Mech_Tinker</defName>
+    <label>tinker</label>
+    <race>APM_Mech_Tinker</race>
     <combatPower>190</combatPower>
     <lifeStages>
       <li MayRequire="Ludeon.RimWorld.Biotech">
@@ -98,5 +96,4 @@
     <techHediffsMoney>9999~9999</techHediffsMoney>
   </PawnKindDef>
 
-    
 </Defs>

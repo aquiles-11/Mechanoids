@@ -2,7 +2,7 @@
 <Defs>
 
   <ThingDef ParentName="BaseMechanoidWalker">
-    <defName>Mech_Vassal</defName>
+    <defName>APM_Mech_Vassal</defName>
     <label>Vassal</label>
     <description>PLACEHOLDER</description>
     <tools>
@@ -41,7 +41,7 @@
       </li>
     </tools>
     <race>
-      <body>Vassal</body>
+      <body>APM_Vassal</body>
       <baseHealthScale>1</baseHealthScale>
       <detritusLeavings>
         <li>
@@ -62,9 +62,9 @@
   </ThingDef>
 
   <PawnKindDef ParentName="BaseMechanoidKind">
-    <defName>Mech_Vassal</defName>
-    <label>Vassal</label>
-    <race>Mech_Vassal</race>
+    <defName>APM_Mech_Vassal</defName>
+    <label>vassal</label>
+    <race>APM_Mech_Vassal</race>
     <combatPower>190</combatPower>
     <lifeStages>
       <li MayRequire="Ludeon.RimWorld.Biotech">
@@ -73,7 +73,7 @@
           <maskPath>Mechs/Overlays/Vassal_Overlay/Mech_Vassal</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.5</drawSize>
+          <drawSize>1.8</drawSize>
           <shadowData>
             <volume>(0.4, 0.8, 0.4)</volume>
           </shadowData>
@@ -85,7 +85,7 @@
           <maskPath>Mechs/Overlays/Vassal_Overlay/Mech_Vassal</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.5</drawSize>
+          <drawSize>1.8</drawSize>
           <shadowData>
             <volume>(0.4, 0.8, 0.4)</volume>
           </shadowData>
@@ -94,7 +94,7 @@
     </lifeStages>
     <weaponMoney>9999~9999</weaponMoney>
     <weaponTags>
-      <li>MechanoidVassalSwordRifle</li>
+      <li>APM_WeaponVassalSwordRifle</li>
     </weaponTags>
     <techHediffsChance>1</techHediffsChance>
     <techHediffsMoney>9999~9999</techHediffsMoney>
