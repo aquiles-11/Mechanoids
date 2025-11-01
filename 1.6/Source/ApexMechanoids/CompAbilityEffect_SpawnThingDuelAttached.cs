@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 using Verse;
 
 namespace ApexMechanoids
@@ -15,7 +16,7 @@ namespace ApexMechanoids
         {
             base.Apply(target, dest);
             var casterPos = this.parent.pawn.Position;
-            var pos = casterPos + (target.Cell - casterPos) / 2;
+            var pos = Vector3.Lerp(casterPos.ToVector3Shifted(), target.Cell.ToVector3Shifted(), 0.5f).ToIntVec3();
             var thing = GenSpawn.Spawn(Props.thing, pos, parent.pawn.Map, wipeMode: WipeMode.VanishOrMoveAside);
             if (target.Pawn?.MentalState is MentalState_Duel duel)
             {
