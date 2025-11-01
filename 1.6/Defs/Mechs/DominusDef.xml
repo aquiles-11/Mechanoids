@@ -190,7 +190,7 @@
 		<defName>APM_Mech_Duel</defName>
 		<label>the duel trial</label>
 		<description>PLACEHOLDER</description>
-		<iconPath>UI/Absorb</iconPath>
+		<iconPath>UI/Duel</iconPath>
 		<cooldownTicksRange>1800</cooldownTicksRange> <!-- 30 seconds -->
 		<targetRequired>true</targetRequired>
 		<hostile>true</hostile>
