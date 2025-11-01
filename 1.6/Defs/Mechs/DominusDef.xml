@@ -200,11 +200,13 @@
 			<drawAimPie>false</drawAimPie>
 			<range>5</range>
 			<targetParams>
-				<canTargetCorpses>true</canTargetCorpses>
-				<canTargetItems>true</canTargetItems>
+				<canTargetCorpses>false</canTargetCorpses>
+				<canTargetItems>false</canTargetItems>
 				<mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
 				<canTargetSelf>false</canTargetSelf>
-				<canTargetPawns>false</canTargetPawns>
+				<canTargetPawns>true</canTargetPawns>
+				<neverTargetIncapacitated>true</neverTargetIncapacitated>
+				<canTargetAnimals>false</canTargetAnimals>
 				<canTargetBuildings>false</canTargetBuildings>
 				<thingCategory>None</thingCategory>
 			</targetParams>
