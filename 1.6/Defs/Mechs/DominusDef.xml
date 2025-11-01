@@ -102,6 +102,7 @@
 		</weaponTags>
 		<abilities>
 			<li>APM_PressTheAttack</li>
+			<li>APM_Mech_Duel</li>
 		</abilities>
 	</PawnKindDef>
 
@@ -183,4 +184,45 @@
 		</stages>
 	</ThoughtDef>
 
+	
+	
+	<AbilityDef>
+		<defName>APM_Mech_Duel</defName>
+		<label>the duel trial</label>
+		<description>PLACEHOLDER</description>
+		<iconPath>UI/Duel</iconPath>
+		<cooldownTicksRange>1800</cooldownTicksRange> <!-- 30 seconds -->
+		<targetRequired>true</targetRequired>
+		<hostile>true</hostile>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>1</warmupTime>
+			<drawAimPie>false</drawAimPie>
+			<range>5</range>
+			<targetParams>
+				<canTargetCorpses>false</canTargetCorpses>
+				<canTargetItems>false</canTargetItems>
+				<mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetPawns>true</canTargetPawns>
+				<neverTargetIncapacitated>true</neverTargetIncapacitated>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetBuildings>false</canTargetBuildings>
+				<thingCategory>None</thingCategory>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityGiveMentalState">
+				<compClass>CompAbilityEffect_GiveMentalState</compClass>
+				<stateDef>APM_Duel</stateDef>
+				<stateDefForMechs>APM_Duel</stateDefForMechs>
+				<applyToSelf>false</applyToSelf>
+				<forced>true</forced>
+			</li>
+			<li Class="ApexMechanoids.CompProperties_SpawnThingDuelAttached">
+				<thing>APM_DuelSpot</thing>
+			</li>
+		</comps>
+	</AbilityDef>
+    
 </Defs>
