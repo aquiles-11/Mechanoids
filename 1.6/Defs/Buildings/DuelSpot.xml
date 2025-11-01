@@ -53,19 +53,20 @@
 					<li>
 						<texPath>Buildings/Duel/Ring_Layer1</texPath>
 						<graphicClass>Graphic_Single</graphicClass>
+						<drawOffset>(0,-0.03,0)</drawOffset>
 						<color>(250, 147, 19)</color>
 						<drawSize>5.7</drawSize>
 					</li>
 					<li>
 						<texPath>Buildings/Duel/Ring_Layer2</texPath>
 						<graphicClass>Graphic_Single</graphicClass>
-						<drawOffset>(0,0.01,0)</drawOffset>
+						<drawOffset>(0,-0.02,0)</drawOffset>
 						<color>(250, 147, 19)</color>
 						<drawSize>5.7</drawSize>
 					</li>
 					<li>
 						<texPath>Buildings/Duel/Ring_Layer3</texPath>
-						<drawOffset>(0,0.02,0)</drawOffset>
+						<drawOffset>(0,-0.01,0)</drawOffset>
 						<graphicClass>Graphic_Single</graphicClass>
 						<color>(250, 147, 19)</color>
 						<drawSize>5.7</drawSize>
