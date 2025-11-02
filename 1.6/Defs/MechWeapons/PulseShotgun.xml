@@ -7,7 +7,7 @@
 		<description>A pulse-charged shotgun that fires two heavy bursts, releasing unstable energy on impact.</description>
 		<techLevel>Spacer</techLevel>
 		<graphicData>
-			<texPath>Things/Weapon/Ranged/Pulse_Shotgun</texPath>
+			<texPath>Weapons/PulseShotgun</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>1.25</drawSize>
 		</graphicData>

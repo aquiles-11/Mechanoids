@@ -131,7 +131,7 @@
 			</targetParams>
 		</verbProperties>
 		<comps>
-			<li Class="CompPropertiesGiveHediff">
+			<li Class="CompProperties_GiveHediff">
 				<compClass>CompAbilityEffect_GiveHediff</compClass>
 				<hediffDef>APM_Hediff_PressTheAttack</hediffDef>
 				<applyToSelf>false</applyToSelf>

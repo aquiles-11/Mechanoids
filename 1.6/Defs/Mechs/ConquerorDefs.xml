@@ -102,7 +102,7 @@
     <techHediffsChance>1</techHediffsChance>
     <techHediffsMoney>9999~9999</techHediffsMoney>
     <abilities>
-      <li>APM_Ability_UltimateSacrifice</li>
+      <li>APM_UltimateSacrifice</li>
     </abilities>
   </PawnKindDef>
 

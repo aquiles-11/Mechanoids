@@ -11,7 +11,7 @@
 
   <BossgroupDef ParentName="BaseBossgroup">
     <defName>APM_Group_Dominus</defName>
-    <boss>APM_Dominus</boss>
+    <boss>APM_Boss_Dominus</boss>
     <waves>
       <li> <!-- 0 -->
         <bossCount>1</bossCount>
