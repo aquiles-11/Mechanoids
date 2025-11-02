@@ -64,7 +64,7 @@
         </capacities>
         <power>22</power>
         <cooldownTime>2.9</cooldownTime>
-        <linkedBodyPartsGroup>LeftAegisShield</linkedBodyPartsGroup>
+        <linkedBodyPartsGroup>APM_LeftAegisShield</linkedBodyPartsGroup>
         <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
       </li>
       <li>
@@ -76,7 +76,7 @@
         </capacities>
         <power>22</power>
         <cooldownTime>2.9</cooldownTime>
-        <linkedBodyPartsGroup>RightAegisShield</linkedBodyPartsGroup>
+        <linkedBodyPartsGroup>APM_RightAegisShield</linkedBodyPartsGroup>
         <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
       </li>
     </tools>

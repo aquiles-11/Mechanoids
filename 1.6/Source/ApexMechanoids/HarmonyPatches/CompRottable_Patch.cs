@@ -13,7 +13,7 @@ namespace ApexMechanoids
     {
         public static void Postfix(CompRottable __instance, ref bool __result)
         {
-            if (__result && (__instance.parent.ParentHolder as Pawn_InventoryTracker)?.pawn?.def == ApexDefsOf.Mech_Frostivus)
+            if (__result && (__instance.parent.ParentHolder as Pawn_InventoryTracker)?.pawn?.def == ApexDefsOf.APM_Mech_Frostivus)
             {
                 __result = false;
             }

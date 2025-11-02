@@ -13,7 +13,7 @@ namespace ApexMechanoids
         {
             private static void Prefix(DamageInfo dinfo, Pawn pawn)
             {
-                if (!(dinfo.Instigator is Pawn pawn2) || pawn.kindDef != ApexDefsOf.Mech_Aegis)
+                if (!(dinfo.Instigator is Pawn pawn2) || pawn.kindDef != ApexDefsOf.APM_Mech_Aegis)
                 {
                     return;
                 }
@@ -34,8 +34,8 @@ namespace ApexMechanoids
             private static void TryPickShieldForFrontAttack(Pawn pawn)
             {
                 bool checkRightFirst = Rand.Chance(0.5f);
-                var firstShield = checkRightFirst ? ApexDefsOf.RightAegisShield : ApexDefsOf.LeftAegisShield;
-                var secondShield = checkRightFirst ? ApexDefsOf.LeftAegisShield : ApexDefsOf.RightAegisShield;
+                var firstShield = checkRightFirst ? ApexDefsOf.APM_RightAegisShield : ApexDefsOf.APM_LeftAegisShield;
+                var secondShield = checkRightFirst ? ApexDefsOf.APM_LeftAegisShield : ApexDefsOf.APM_RightAegisShield;
 
                 if (TryPickShield(pawn, firstShield) || TryPickShield(pawn, secondShield))
                 {
@@ -46,13 +46,13 @@ namespace ApexMechanoids
             private static void TryPickShieldForSideAttack(Pawn pawn, Rot4 attackRot)
             {
                 bool isRightSide = IsRightSideAttack(attackRot, pawn.Rotation);
-                var shieldDef = isRightSide ? ApexDefsOf.RightAegisShield : ApexDefsOf.LeftAegisShield;
+                var shieldDef = isRightSide ? ApexDefsOf.APM_RightAegisShield : ApexDefsOf.APM_LeftAegisShield;
                 TryPickShield(pawn, shieldDef);
             }
 
             private static bool TryPickShield(Pawn pawn, BodyPartGroupDef shieldDef)
             {
-                var targetBodyPart = Utils.GetNonMissingBodyPart(pawn, ApexDefsOf.AegisShield, shieldDef);
+                var targetBodyPart = Utils.GetNonMissingBodyPart(pawn, ApexDefsOf.APM_AegisShield, shieldDef);
                 if (targetBodyPart != null)
                 {
                     whichShield = shieldDef;

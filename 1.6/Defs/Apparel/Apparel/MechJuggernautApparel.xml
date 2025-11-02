@@ -10,7 +10,7 @@
       <displayPriority>530</displayPriority>
     </recipeMaker>
     <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/MechamancerSuit/MechJuggernaut</texPath>
+      <texPath>Apparel/MechamancerSuit/MechJuggernaut</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -38,7 +38,7 @@
         <li>RoyalTier7</li>
         <li>APM_Mechamancer</li>
       </tags>
-      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/MechamancerSuit/MechJuggernaut</wornGraphicPath>
+      <wornGraphicPath>Apparel/MechamancerSuit/MechJuggernaut</wornGraphicPath>
     </apparel>
     <tradeability>Sellable</tradeability>
     <tradeTags Inherit="False">

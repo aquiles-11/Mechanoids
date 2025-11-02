@@ -72,7 +72,7 @@
     <lifeStages>
       <li MayRequire="Ludeon.RimWorld.Biotech">
         <bodyGraphicData>
-        <texPath>Mechs/Conqueror/DMR/Conqueror_DMR</texPath>
+        <texPath>Mechs/Conqueror/DMR/ConquerorDMR</texPath>
           <maskPath>Mechs/Overlays/Conqueror_Overlay/DMR/Mech_Conqueror_DMR</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>

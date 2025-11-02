@@ -56,7 +56,7 @@ namespace ApexMechanoids
         }
         public static bool IsCryptosleepContainer(IThingHolder holder)
         {
-            return (holder as Pawn_InventoryTracker)?.pawn.def == ApexDefsOf.Mech_Frostivus;
+            return (holder as Pawn_InventoryTracker)?.pawn.def == ApexDefsOf.APM_Mech_Frostivus;
         }
     }
 }

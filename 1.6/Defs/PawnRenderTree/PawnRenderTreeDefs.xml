@@ -62,7 +62,7 @@
               <debugLabel>Left Shield</debugLabel>
               <nodeClass>ApexMechanoids.PawnRenderNode_BodyPartShield</nodeClass>
               <workerClass>ApexMechanoids.PawnRenderNodeWorker_BodyPartShield</workerClass>
-              <linkedBodyPartsGroup>LeftAegisShield</linkedBodyPartsGroup>
+              <linkedBodyPartsGroup>APM_LeftAegisShield</linkedBodyPartsGroup>
               <texPath>Mechs/Aegis/LeftShield/AegisLS</texPath>
               <maskPath>Mechs/Overlays/Aegis_Overlay/LeftShield/AegisLS</maskPath>
               <baseLayer>15</baseLayer>
@@ -84,7 +84,7 @@
               <debugLabel>Right Shield</debugLabel>
               <nodeClass>ApexMechanoids.PawnRenderNode_BodyPartShield</nodeClass>
               <workerClass>ApexMechanoids.PawnRenderNodeWorker_BodyPartShield</workerClass>
-              <linkedBodyPartsGroup>RightAegisShield</linkedBodyPartsGroup>
+              <linkedBodyPartsGroup>APM_RightAegisShield</linkedBodyPartsGroup>
               <texPath>Mechs/Aegis/RightShield/AegisRS</texPath>
               <maskPath>Mechs/Overlays/Aegis_Overlay/RightShield/AegisRS</maskPath>
               <baseLayer>15</baseLayer>

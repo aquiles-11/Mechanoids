@@ -22,7 +22,7 @@ namespace ApexMechanoids
 
         public override bool SelectedPawnValid(Pawn pawn, FloatMenuContext context)
         {
-            return base.SelectedPawnValid(pawn, context) && pawn.def == ApexDefsOf.Mech_Frostivus;
+            return base.SelectedPawnValid(pawn, context) && pawn.def == ApexDefsOf.APM_Mech_Frostivus;
         }
 
         public override bool TargetPawnValid(Pawn pawn, FloatMenuContext context)

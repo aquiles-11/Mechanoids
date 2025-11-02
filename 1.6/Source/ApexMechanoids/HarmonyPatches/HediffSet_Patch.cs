@@ -14,7 +14,7 @@ namespace ApexMechanoids.HarmonyPatches
                     return;
                 }
 
-                var nonMissingBodyPart = Utils.GetNonMissingBodyPart(__instance.pawn, ApexDefsOf.AegisShield, DamageWorker_AddInjury_Patch.whichShield);
+                var nonMissingBodyPart = Utils.GetNonMissingBodyPart(__instance.pawn, ApexDefsOf.APM_AegisShield, DamageWorker_AddInjury_Patch.whichShield);
                 if (nonMissingBodyPart != null)
                 {
                     __result = nonMissingBodyPart;

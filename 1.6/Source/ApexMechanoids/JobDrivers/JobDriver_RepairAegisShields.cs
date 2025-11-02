@@ -197,7 +197,7 @@ namespace ApexMechanoids
         {
             if (MechComp == null) return;
 
-            var shieldParts = Mech.RaceProps.body.AllParts.Where(part => part.def == ApexDefsOf.AegisShield);
+            var shieldParts = Mech.RaceProps.body.AllParts.Where(part => part.def == ApexDefsOf.APM_AegisShield);
 
             foreach (var shieldPart in shieldParts)
             {
@@ -238,13 +238,13 @@ namespace ApexMechanoids
 
         private bool ShieldsMissing(Pawn pawn)
         {
-            var shieldParts = pawn.RaceProps.body.AllParts.Where(part => part.def == ApexDefsOf.AegisShield);
+            var shieldParts = pawn.RaceProps.body.AllParts.Where(part => part.def == ApexDefsOf.APM_AegisShield);
             return shieldParts.Any(shieldPart => pawn.health.hediffSet.PartIsMissing(shieldPart));
         }
 
         private bool ShieldsDamaged(Pawn pawn)
         {
-            var shieldParts = Utils.GetNonMissingBodyParts(pawn, ApexDefsOf.AegisShield);
+            var shieldParts = Utils.GetNonMissingBodyParts(pawn, ApexDefsOf.APM_AegisShield);
             var injuredParts = pawn.health.hediffSet.GetInjuredParts();
 
             return shieldParts.Any(shieldPart => injuredParts.Contains(shieldPart));

@@ -5,7 +5,7 @@
     <label>mechamancer helmet</label>
     <description>PLACEHOLDER</description>
     <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/MechamancerHelmet/MechJuggernautH</texPath>
+      <texPath>Apparel/MechamancerHelmet/MechJuggernautH</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -49,7 +49,7 @@
       </tags>
       <scoreOffset>4</scoreOffset>
       <mechanitorApparel>true</mechanitorApparel>
-      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/MechamancerHelmet/MechJuggernautH</wornGraphicPath>
+      <wornGraphicPath>Apparel/MechamancerHelmet/MechJuggernautH</wornGraphicPath>
       <forceEyesVisibleForRotations>
         <li>1</li>
         <li>2</li>
