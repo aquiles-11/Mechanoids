@@ -19,8 +19,6 @@
 		<label>test mechanitor range</label>
 		<race>APEXM_Test_Mech_MechanitorRange</race>
 	</PawnKindDef>
-	
-	
 
   <ThingDef ParentName="BaseMechanoidWalker" Name="APEXM_TestScyther" Abstract="True">
     <description>.</description>
