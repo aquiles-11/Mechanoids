@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+ <!-- CompAegis Gizmo -->
+<APM.RepairAegisShields.Label>Ремонт щитов Эгиды</APM.RepairAegisShields.Label>
+<APM.RepairAegisShields.Desc>Назначьте колониста для починки повреждённых щитов с использованием стали. Требуется всего {0} стали.</APM.RepairAegisShields.Desc>
+
+<!-- CompAegis Float Menu -->
+<APM.CannotReach>(недоступно)</APM.CannotReach>
+<APM.NeedSteel>(нужно {0} стали, доступно только {1})</APM.NeedSteel>
+<APM.NoSteelAvailable>Нет стали для ремонта.</APM.NoSteelAvailable>
+<APM.NoAvailableColonists>Нет доступных колонистов, назначенных на ремесло</APM.NoAvailableColonists>
+
+<!-- JobDriver_RepairAegisShields Messages -->
+<APM.NotEnoughSteel>Не удалось найти достаточно стали. Доставлено {0}/{1}.</APM.NotEnoughSteel>
+<APM.ShieldsFullyRepaired>Щиты {0} полностью отремонтированы!</APM.ShieldsFullyRepaired>
+<APM.ShieldRestored>Восстановлен {1} {0} с полным запасом прочности!</APM.ShieldRestored>
+</LanguageData>

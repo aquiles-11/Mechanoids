@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+ <APM_Gun_Conqueror_AR.label>зарядный бластер</APM_Gun_Conqueror_AR.label>
+<APM_Gun_Conqueror_AR.description>Штурмовая винтовка с зарядным выстрелом. Слабее зарядовой винтовки, но точнее.</APM_Gun_Conqueror_AR.description>
+<APM_Gun_Conqueror_AR.tools.0.label>приклад</APM_Gun_Conqueror_AR.tools.0.label>
+<APM_Gun_Conqueror_AR.tools.1.label>ствол</APM_Gun_Conqueror_AR.tools.1.label>
+
+<APM_Gun_Conqueror_DMR.label>зарядный карабин</APM_Gun_Conqueror_DMR.label>
+<APM_Gun_Conqueror_DMR.description>Более мощный и скорострельный, но менее точный Зарядный ланцет.</APM_Gun_Conqueror_DMR.description>
+<APM_Gun_Conqueror_DMR.tools.0.label>ствол</APM_Gun_Conqueror_DMR.tools.0.label>
+
+
+</LanguageData>

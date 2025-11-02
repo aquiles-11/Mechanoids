@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+<APM_Mech_Satellite.label>спутник</APM_Mech_Satellite.label>
+<APM_Mech_Satellite.labelPlural>спутники</APM_Mech_Satellite.labelPlural>
+<APM_Mech_Satellite.lifeStages.0.label>спутник</APM_Mech_Satellite.lifeStages.0.label>
+<APM_Mech_Satellite.lifeStages.0.labelPlural>спутники</APM_Mech_Satellite.lifeStages.0.labelPlural>
+<APM_Mech_Satellite.lifeStages.0.labelMale>самец-спутник</APM_Mech_Satellite.lifeStages.0.labelMale>
+<APM_Mech_Satellite.lifeStages.0.labelMalePlural>самцы-спутники</APM_Mech_Satellite.lifeStages.0.labelMalePlural>
+<APM_Mech_Satellite.lifeStages.0.labelFemale>самка-спутник</APM_Mech_Satellite.lifeStages.0.labelFemale>
+<APM_Mech_Satellite.lifeStages.0.labelFemalePlural>самки-спутники</APM_Mech_Satellite.lifeStages.0.labelFemalePlural>
+<APM_Mech_Satellite.lifeStages.1.label>спутник</APM_Mech_Satellite.lifeStages.1.label>
+<APM_Mech_Satellite.lifeStages.1.labelPlural>спутники</APM_Mech_Satellite.lifeStages.1.labelPlural>
+<APM_Mech_Satellite.lifeStages.1.labelMale>самец-спутник</APM_Mech_Satellite.lifeStages.1.labelMale>
+<APM_Mech_Satellite.lifeStages.1.labelMalePlural>самцы-спутники</APM_Mech_Satellite.lifeStages.1.labelMalePlural>
+<APM_Mech_Satellite.lifeStages.1.labelFemale>самка-спутник</APM_Mech_Satellite.lifeStages.1.labelFemale>
+<APM_Mech_Satellite.lifeStages.1.labelFemalePlural>самки-спутники</APM_Mech_Satellite.lifeStages.1.labelFemalePlural>
+<APM_Mech_Satellite.labelMale>самец-спутник</APM_Mech_Satellite.labelMale>
+<APM_Mech_Satellite.labelMalePlural>самцы-спутники</APM_Mech_Satellite.labelMalePlural>
+<APM_Mech_Satellite.labelFemale>самка-спутник</APM_Mech_Satellite.labelFemale>
+<APM_Mech_Satellite.labelFemalePlural>самки-спутники</APM_Mech_Satellite.labelFemalePlural>
+
+
+</LanguageData>
