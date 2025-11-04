@@ -165,6 +165,20 @@
 				</capMods>
 			</li>
 		</stages>
+		<renderNodeProperties>
+			<li>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<texPath>Effects/PressTheAttack/Halo</texPath>
+				<parentTagDef>Head</parentTagDef>
+				<drawData>
+					<scale>0.7</scale>
+					<defaultData>
+						<layer>92</layer>
+						<offset>(0,0,0.5)</offset>
+					</defaultData>
+				</drawData>
+			</li>	
+		</renderNodeProperties>
 	</HediffDef>
 
 	<ThoughtDef>
