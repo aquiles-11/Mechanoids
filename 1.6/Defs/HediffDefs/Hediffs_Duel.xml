@@ -5,7 +5,7 @@
 		<defName>APM_InDuel</defName>
 		<label>in duel</label>
 		<hediffClass>HediffWithComps</hediffClass>
-		<description>PLACEHOLDER.</description>
+		<description>The Duel Trial - Challenges the chosen enemy pawn to a duel, forcing both opponents into close combat for a brief period. Abilities and ranged attacks are deactivated. A visual ""arena"" is automatically created around the participants of the duel for the duration of the ability. Other characters cannot target the duel participants. If one combatant dies in the duel, the victor gains a potent temporary buff. If the duel does not end with death (time has expired), both participants receive a significant penalty. The participants of the duel receive periodic damage every second of the duel. This encourages aggression and ensures that the duel rarely ends in a ""draw"" in time. Any recovery of the participants' health during the duel is blocked (except for possible lifestyles from attacks)</description>
 		<isBad>false</isBad>
 		<stages>
 			<li>
