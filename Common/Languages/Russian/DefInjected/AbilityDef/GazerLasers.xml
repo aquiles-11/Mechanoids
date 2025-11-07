@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
- <APM_PowerBeam.label>силовой луч</APM_PowerBeam.label>
-<APM_PowerBeam.description>PLACEHOLDER</APM_PowerBeam.description>
+ <APM_PowerBeam.label>Силовой луч</APM_PowerBeam.label>
+  <APM_PowerBeam.description>ЗАГОЛОВОК</APM_PowerBeam.description>
+
 
 </LanguageData>
