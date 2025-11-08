@@ -2,12 +2,12 @@
 <Defs>
 
   <ThingDef ParentName="BaseMechanoid">
-    <defName>APM_Mech_Ravager</defName>
-    <label>Ravager</label>
-    <description>PLACEHOLDER</description>
+    <defName>APM_Mech_Gazer</defName>
+    <label>Gazer</label>
+    <description>A different application of hellsphere technology resulted in the Gazer, a mechanoid clearly identified by its primary ocular beam emitter. This weapon is strong enough that the gazer must lock itself in place and divert all motor functions to stabilizing itself when firing. Even then, a significant charge time is required. The resultant beam can obliterate anything in front of it, even doing decent damage to structures. Alternatively, the gaze can chose to not expel its beam, instead building up the energy inside itself even more, creating a phenomenally devastating blast destroying itself in the process.</description>
     <statBases>
       <MarketValue>1600</MarketValue>
-      <MoveSpeed>1.3</MoveSpeed>
+      <MoveSpeed>0.45</MoveSpeed>
       <ArmorRating_Blunt>1.2</ArmorRating_Blunt>
       <ArmorRating_Sharp>1.2</ArmorRating_Sharp>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">5</BandwidthCost>
@@ -28,9 +28,29 @@
         <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
         <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
       </li>
+      <li>
+        <label>front left paw</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>20.5</power>
+        <cooldownTime>2.9</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+      <li>
+        <label>front right paw</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>20.5</power>
+        <cooldownTime>2.9</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
     </tools>
     <race>
-      <body>APM_Ravager</body>
+      <body>APM_Gazer</body>
       <baseBodySize>3</baseBodySize>
       <baseHealthScale>6.2</baseHealthScale>
       <thinkTreeMain>Mechanoid</thinkTreeMain>
@@ -64,17 +84,17 @@
   </ThingDef>
 
   <PawnKindDef ParentName="BaseMechanoidKind">
-    <defName>APM_Mech_Ravager</defName>
-    <label>ravager</label>
-    <race>APM_Mech_Ravager</race>
+    <defName>APM_Mech_Gazer</defName>
+    <label>gazer</label>
+    <race>APM_Mech_Gazer</race>
     <combatPower>550</combatPower>
     <maxPerGroup MayRequire="Ludeon.Rimworld.Biotech">2</maxPerGroup>
     <controlGroupPortraitZoom MayRequire="Ludeon.Rimworld.Biotech">0.48</controlGroupPortraitZoom>
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Mechs/Ravager/Ravager</texPath>
-          <maskPath>Mechs/Overlays/Ravager_Overlay/Mech_Ravager</maskPath>
+          <texPath>Mechs/Gazer/Gazer</texPath>
+          <maskPath>Mechs/Overlays/Gazer_Overlay/Mech_Gazer</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>4.0</drawSize>
@@ -85,8 +105,8 @@
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Mechs/Ravager/RavagerAncient</texPath>
-          <maskPath>Mechs/Overlays/Ravager_Overlay/Mech_Ravager</maskPath>
+          <texPath>Mechs/Gazer/GazerAncient</texPath>
+          <maskPath>Mechs/Overlays/Gazer_Overlay/Mech_Gazer</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>4.0</drawSize>
@@ -98,9 +118,8 @@
     </lifeStages>
     <weaponMoney>99999~99999</weaponMoney>
     <weaponTags Inherit="False">
-      <li>APM_WeaponRavagerArtillery</li>
+      <li>APM_WeaponGazerLaser</li>
     </weaponTags>
   </PawnKindDef>
-
 
 </Defs>

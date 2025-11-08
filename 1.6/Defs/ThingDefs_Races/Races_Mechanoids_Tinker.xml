@@ -2,9 +2,9 @@
 <Defs>
 
   <ThingDef ParentName="BaseMechanoidWalker">
-    <defName>APM_Mech_Satellite</defName>
-    <label>Satellite</label>
-    <description>PLACEHOLDER</description>
+    <defName>APM_Mech_Tinker</defName>
+    <label>Tinker</label>
+    <description>The TInkerer is a mechanoid that is suited for repair. It can aid in fixing buildings, as well as assist in repair jobs for mechanitor controlled mechs. In a pinch, it can project a shield on a nearby ally as well as blind enemies in a radius around a laser it can cast.</description>
     <tools>
       <li>
         <label>left fist</label>
@@ -62,15 +62,15 @@
   </ThingDef>
 
   <PawnKindDef ParentName="BaseMechanoidKind">
-    <defName>APM_Mech_Satellite</defName>
-    <label>satellite</label>
-    <race>APM_Mech_Satellite</race>
+    <defName>APM_Mech_Tinker</defName>
+    <label>tinker</label>
+    <race>APM_Mech_Tinker</race>
     <combatPower>190</combatPower>
     <lifeStages>
       <li MayRequire="Ludeon.RimWorld.Biotech">
         <bodyGraphicData>
-          <texPath>Mechs/Satellite/Satellite</texPath>
-          <maskPath>Mechs/Overlays/Satellite_Overlay/Mech_Satellite</maskPath>
+          <texPath>Mechs/Tinker/Tinker</texPath>
+          <maskPath>Mechs/Overlays/Tinker_Overlay/Mech_Tinker</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.5</drawSize>
@@ -81,8 +81,8 @@
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Mechs/Satellite/SatelliteAncient</texPath>
-          <maskPath>Mechs/Overlays/Satellite_Overlay/Mech_Satellite</maskPath>
+          <texPath>Mechs/Tinker/TinkerAncient</texPath>
+          <maskPath>Mechs/Overlays/Tinker_Overlay/Mech_Tinker</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.5</drawSize>

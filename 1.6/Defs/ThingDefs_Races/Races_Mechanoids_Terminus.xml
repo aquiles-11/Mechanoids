@@ -2,9 +2,9 @@
 <Defs>
 
   <ThingDef ParentName="BaseMechanoidWalker">
-    <defName>APM_Mech_Celerus</defName>
-    <label>Celerus</label>
-    <description>PLACEHOLDER</description>
+    <defName>APM_Mech_Terminus</defName>
+    <label>Terminus</label>
+    <description>Three powerful mechanoid types were created by an Archotech mind in an attempt to create a central commander of all mechanoid forces. Influenced by the Old Earth region of Europe in medieval times, the Terminus cleaves through waves of foes and not even distance can mitigate its wrath. Its weapon has the ability to sweep through a large area in front of itself. The Terminus can also focus its psychic influence inward, enhancing its damage and stagger resistance. For foes who escape its grasp, it is also equipped with a grappling hook to draw in enemies from a distance to finish off. Additionally, mechanitors can extend their command range in a radius around this mech if under their control.</description>
     <tools>
       <li>
         <label>left fist</label>
@@ -41,7 +41,8 @@
       </li>
     </tools>
     <race>
-      <body>APM_Vassal</body>
+      <body>APM_Terminus</body>
+      <renderTree>APM_RenderTree_Terminus</renderTree>
       <baseHealthScale>1</baseHealthScale>
       <detritusLeavings>
         <li>
@@ -62,15 +63,15 @@
   </ThingDef>
 
   <PawnKindDef ParentName="BaseMechanoidKind">
-    <defName>APM_Mech_Celerus</defName>
-    <label>Celerus</label>
-    <race>APM_Mech_Celerus</race>
+    <defName>APM_Mech_Terminus</defName>
+    <label>terminus</label>
+    <race>APM_Mech_Terminus</race>
     <combatPower>190</combatPower>
     <lifeStages>
       <li MayRequire="Ludeon.RimWorld.Biotech">
         <bodyGraphicData>
-          <texPath>Mechs/Celerus/Regular/Celerus</texPath>
-          <maskPath>Mechs/Overlays/Celerus_Overlay/Regular/Mech_Celerus</maskPath>
+          <texPath>Mechs/Terminus/Regular/Terminus</texPath>
+          <maskPath>Mechs/Overlays/Terminus_Overlay/Regular/Mech_Terminus</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.5</drawSize>
@@ -81,8 +82,8 @@
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Mechs/Celerus/Regular/CelerusAncient</texPath>
-          <maskPath>Mechs/Overlays/Celerus_Overlay/Regular/Mech_Celerus</maskPath>
+          <texPath>Mechs/Terminus/Regular/TerminusAncient</texPath>
+          <maskPath>Mechs/Overlays/Terminus_Overlay/Regular/Mech_Terminus</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.5</drawSize>
@@ -92,6 +93,10 @@
         </bodyGraphicData>
       </li>
     </lifeStages>
+    <weaponMoney>9999~9999</weaponMoney>
+    <weaponTags Inherit="False">
+      <li>APM_WeaponTerminusSword</li>
+    </weaponTags>
     <techHediffsChance>1</techHediffsChance>
     <techHediffsMoney>9999~9999</techHediffsMoney>
   </PawnKindDef>

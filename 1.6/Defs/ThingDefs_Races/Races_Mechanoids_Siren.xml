@@ -4,7 +4,7 @@
   <ThingDef ParentName="BaseMechanoidWalker">
     <defName>APM_Mech_Siren</defName>
     <label>Siren</label>
-    <description>PLACEHOLDER</description>
+    <description>Taking advantage of the fact that mechanoids have a psychic presence, the siren mechanoid has the ability to lure colonists toward itself, exposing them to the heat of battle. When controlled via a mechanitor, this mech can provide a mood and recreation boost to those nearby.</description>
     <tools>
       <li>
         <label>left fist</label>
@@ -102,7 +102,7 @@
 	<AbilityDef>
 		<defName>APM_SirenSong</defName>
 		<label>siren's song</label>
-		<description>PLACEHOLDER</description>
+		<description>Siren's Song - grants recreation buffs</description>
 		<iconPath>UI/SirenSong</iconPath>
 		<cooldownTicksRange>900000</cooldownTicksRange> <!-- 15 days -->
 		<targetRequired>false</targetRequired>
@@ -140,7 +140,7 @@
 	<HediffDef>
 		<defName>APM_Hediff_SirenSong</defName>
 		<label>siren's song</label>
-		<description>PLACEHOLDER</description>
+		<description>Siren's Song - grants recreation buffs</description>
 		<hediffClass>HediffWithComps</hediffClass>
 		<comps>
 			<li Class="HediffCompProperties_Disappears">

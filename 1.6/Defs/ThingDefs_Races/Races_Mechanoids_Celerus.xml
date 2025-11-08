@@ -2,9 +2,9 @@
 <Defs>
 
   <ThingDef ParentName="BaseMechanoidWalker">
-    <defName>APM_Mech_Vassal</defName>
-    <label>Vassal</label>
-    <description>PLACEHOLDER</description>
+    <defName>APM_Mech_Celerus</defName>
+    <label>Celerus</label>
+    <description>Three powerful mechanoid types were created by an Archotech mind in an attempt to create a central commander of all mechanoid forces. Influenced by the Old Earth region of Japan during its Sengoku period, the swift and stealthy Celerus is not any weaker for its speed. It has the ability to skip itself short distances around it as well as create a smokescreen to hinder enemies perception of it and anything around it, additionally becoming psychically imperceptible in this area. On top of those effects, enemies will receive periodic.</description>
     <tools>
       <li>
         <label>left fist</label>
@@ -62,18 +62,18 @@
   </ThingDef>
 
   <PawnKindDef ParentName="BaseMechanoidKind">
-    <defName>APM_Mech_Vassal</defName>
-    <label>vassal</label>
-    <race>APM_Mech_Vassal</race>
+    <defName>APM_Mech_Celerus</defName>
+    <label>Celerus</label>
+    <race>APM_Mech_Celerus</race>
     <combatPower>190</combatPower>
     <lifeStages>
       <li MayRequire="Ludeon.RimWorld.Biotech">
         <bodyGraphicData>
-          <texPath>Mechs/Vassal/Vassal</texPath>
-          <maskPath>Mechs/Overlays/Vassal_Overlay/Mech_Vassal</maskPath>
+          <texPath>Mechs/Celerus/Regular/Celerus</texPath>
+          <maskPath>Mechs/Overlays/Celerus_Overlay/Regular/Mech_Celerus</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.8</drawSize>
+          <drawSize>1.5</drawSize>
           <shadowData>
             <volume>(0.4, 0.8, 0.4)</volume>
           </shadowData>
@@ -81,21 +81,17 @@
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Mechs/Vassal/VassalAncient</texPath>
-          <maskPath>Mechs/Overlays/Vassal_Overlay/Mech_Vassal</maskPath>
+          <texPath>Mechs/Celerus/Regular/CelerusAncient</texPath>
+          <maskPath>Mechs/Overlays/Celerus_Overlay/Regular/Mech_Celerus</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.8</drawSize>
+          <drawSize>1.5</drawSize>
           <shadowData>
             <volume>(0.4, 0.8, 0.4)</volume>
           </shadowData>
         </bodyGraphicData>
       </li>
     </lifeStages>
-    <weaponMoney>9999~9999</weaponMoney>
-    <weaponTags>
-      <li>APM_WeaponVassalSwordRifle</li>
-    </weaponTags>
     <techHediffsChance>1</techHediffsChance>
     <techHediffsMoney>9999~9999</techHediffsMoney>
   </PawnKindDef>

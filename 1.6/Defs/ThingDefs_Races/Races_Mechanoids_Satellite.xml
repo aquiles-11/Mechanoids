@@ -2,9 +2,9 @@
 <Defs>
 
   <ThingDef ParentName="BaseMechanoidWalker">
-    <defName>APM_Mech_Tinker</defName>
-    <label>Tinker</label>
-    <description>PLACEHOLDER</description>
+    <defName>APM_Mech_Satellite</defName>
+    <label>Satellite</label>
+    <description>Equipped with a hover pack, this assault mechanoid can navigate most terrain with ease. The satellite can be seen summoned from a mechamancher pack to aid its allies or escorting mechanoid commanders in battle.</description>
     <tools>
       <li>
         <label>left fist</label>
@@ -62,15 +62,15 @@
   </ThingDef>
 
   <PawnKindDef ParentName="BaseMechanoidKind">
-    <defName>APM_Mech_Tinker</defName>
-    <label>tinker</label>
-    <race>APM_Mech_Tinker</race>
+    <defName>APM_Mech_Satellite</defName>
+    <label>satellite</label>
+    <race>APM_Mech_Satellite</race>
     <combatPower>190</combatPower>
     <lifeStages>
       <li MayRequire="Ludeon.RimWorld.Biotech">
         <bodyGraphicData>
-          <texPath>Mechs/Tinker/Tinker</texPath>
-          <maskPath>Mechs/Overlays/Tinker_Overlay/Mech_Tinker</maskPath>
+          <texPath>Mechs/Satellite/Satellite</texPath>
+          <maskPath>Mechs/Overlays/Satellite_Overlay/Mech_Satellite</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.5</drawSize>
@@ -81,8 +81,8 @@
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Mechs/Tinker/TinkerAncient</texPath>
-          <maskPath>Mechs/Overlays/Tinker_Overlay/Mech_Tinker</maskPath>
+          <texPath>Mechs/Satellite/SatelliteAncient</texPath>
+          <maskPath>Mechs/Overlays/Satellite_Overlay/Mech_Satellite</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.5</drawSize>
