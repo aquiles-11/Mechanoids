@@ -14,8 +14,8 @@
           <children>
             <li Class="ApexMechanoids.PawnRenderNodeProperties_MechanoidAllegiance">
               <debugLabel>Cape</debugLabel>
-              <texPath>Mechs/Terminus/Nodes/Cape</texPath>
-              <maskPath>Mechs/Overlays/Terminus_Overlay/Nodes/Mech_Cape</maskPath>
+              <texPath>Things/Pawn/Mechanoid/Terminus/Regular/Nodes/Cape</texPath>
+              <maskPath>Things/Pawn/Mechanoid/AllegienceOverlays/Terminus/Regular/Nodes/Mech_Cape</maskPath>
               <drawSize>1.0</drawSize>
               <baseLayer>4</baseLayer>
             </li>
@@ -63,8 +63,8 @@
               <nodeClass>ApexMechanoids.PawnRenderNode_BodyPartShield</nodeClass>
               <workerClass>ApexMechanoids.PawnRenderNodeWorker_BodyPartShield</workerClass>
               <linkedBodyPartsGroup>APM_LeftAegisShield</linkedBodyPartsGroup>
-              <texPath>Mechs/Aegis/LeftShield/AegisLS</texPath>
-              <maskPath>Mechs/Overlays/Aegis_Overlay/LeftShield/AegisLS</maskPath>
+              <texPath>Things/Pawn/Mechanoid/Aegis/LeftShield/AegisLS</texPath>
+              <maskPath>Things/Pawn/Mechanoid/AllegienceOverlays/Aegis/LeftShield/Mech_AegisLS</maskPath>
               <baseLayer>15</baseLayer>
               <drawData>
                 <scale>1.7</scale>
@@ -85,8 +85,8 @@
               <nodeClass>ApexMechanoids.PawnRenderNode_BodyPartShield</nodeClass>
               <workerClass>ApexMechanoids.PawnRenderNodeWorker_BodyPartShield</workerClass>
               <linkedBodyPartsGroup>APM_RightAegisShield</linkedBodyPartsGroup>
-              <texPath>Mechs/Aegis/RightShield/AegisRS</texPath>
-              <maskPath>Mechs/Overlays/Aegis_Overlay/RightShield/AegisRS</maskPath>
+              <texPath>Things/Pawn/Mechanoid/Aegis/RightShield/AegisRS</texPath>
+              <maskPath>Things/Pawn/Mechanoid/AllegienceOverlays/Aegis/RightShield/Mech_AegisRS</maskPath>
               <baseLayer>15</baseLayer>
               <drawData>
                 <scale>1.7</scale>

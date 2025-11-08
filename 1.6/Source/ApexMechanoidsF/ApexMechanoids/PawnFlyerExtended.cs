@@ -13,7 +13,7 @@ namespace ApexMechanoidsF
     [StaticConstructorOnStartup]
     public class PawnFlyerExtended : PawnFlyer // use vanilla pawnflyer with OnJumpCompleted instead
     {
-        private static readonly string RopeTexPath = "UI/Overlays/Rope";
+        private static readonly string RopeTexPath = "UI/AllegianceOverlays/Rope";
         private static readonly Material RopeLineMat = MaterialPool.MatFrom(RopeTexPath, ShaderDatabase.Transparent, GenColor.FromBytes(99, 70, 41));
         private ModExt_PawnFlyerExt ext;
 

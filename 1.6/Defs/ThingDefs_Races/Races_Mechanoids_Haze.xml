@@ -73,8 +73,8 @@
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Mechs/Haze/Haze</texPath>
-          <maskPath>Mechs/Overlays/Haze_Overlay/Mech_Haze</maskPath>
+          <texPath>Things/Pawn/Mechanoid/Haze/Haze</texPath>
+          <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Haze/Mech_Haze</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>4.0</drawSize>
@@ -85,8 +85,8 @@
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Mechs/Haze/HazeAncient</texPath>
-          <maskPath>Mechs/Overlays/Haze_Overlay/Mech_Haze</maskPath>
+          <texPath>Things/Pawn/Mechanoid/Haze/HazeAncient</texPath>
+          <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Haze/Mech_Haze</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>4.0</drawSize>

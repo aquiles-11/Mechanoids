@@ -103,8 +103,8 @@
     <lifeStages>
       <li MayRequire="Ludeon.RimWorld.Biotech">
         <bodyGraphicData>
-          <texPath>Mechs/Aegis/Mechanoid/Aegis</texPath>
-          <maskPath>Mechs/Overlays/Aegis_Overlay/Mechanoid/Mech_Aegis</maskPath>
+          <texPath>Things/Pawn/Mechanoid/Aegis/Mechanoid/Aegis</texPath>
+          <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Aegis/Mechanoid/Mech_Aegis</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>2.5</drawSize>
@@ -115,8 +115,8 @@
       </li>
       <li>
         <bodyGraphicData>
-	        <texPath>Mechs/Aegis/Mechanoid/AegisAncient</texPath>
-          <maskPath>Mechs/Overlays/Aegis_Overlay/Mechanoid/Mech_Aegis</maskPath>
+	        <texPath>Things/Pawn/Mechanoid/Aegis/Mechanoid/AegisAncient</texPath>
+          <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Aegis/Mechanoid/Mech_Aegis</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>2.5</drawSize>
