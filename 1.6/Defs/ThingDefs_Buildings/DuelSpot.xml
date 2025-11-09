@@ -12,7 +12,7 @@
 		<useHitPoints>false</useHitPoints>
 		<fillPercent>0.35</fillPercent>
 		<graphicData>
-			<texPath>Buildings/Duel/Shield</texPath>
+			<texPath>Things/Building/Duel/Shield</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>1</drawSize>
 		</graphicData>
@@ -51,21 +51,21 @@
 			<li Class="ApexMechanoids.CompProperties_DrawRotatedAdditionalGraphics">
 				<graphics>
 					<li>
-						<texPath>Buildings/Duel/Ring_Layer1</texPath>
+						<texPath>Things/Building/Duel/Ring_Layer1</texPath>
 						<graphicClass>Graphic_Single</graphicClass>
 						<drawOffset>(0,-0.03,0)</drawOffset>
 						<color>(250, 147, 19)</color>
 						<drawSize>5.7</drawSize>
 					</li>
 					<li>
-						<texPath>Buildings/Duel/Ring_Layer2</texPath>
+						<texPath>Things/Building/Duel/Ring_Layer2</texPath>
 						<graphicClass>Graphic_Single</graphicClass>
 						<drawOffset>(0,-0.02,0)</drawOffset>
 						<color>(250, 147, 19)</color>
 						<drawSize>5.7</drawSize>
 					</li>
 					<li>
-						<texPath>Buildings/Duel/Ring_Layer3</texPath>
+						<texPath>Things/Building/Duel/Ring_Layer3</texPath>
 						<drawOffset>(0,-0.01,0)</drawOffset>
 						<graphicClass>Graphic_Single</graphicClass>
 						<color>(250, 147, 19)</color>
@@ -76,37 +76,37 @@
 			<li Class="CompProperties_DrawAdditionalGraphics">
 				<graphics>
 					<li>
-						<texPath>Buildings/Duel/Flag</texPath>
+						<texPath>Things/Building/Duel/Flag</texPath>
 						<graphicClass>Graphic_Single</graphicClass>
 						<drawSize>1.5</drawSize>
 						<drawOffset>(-4,0,0)</drawOffset>
 					</li>
 					<li>
-						<texPath>Buildings/Duel/Flag</texPath>
+						<texPath>Things/Building/Duel/Flag</texPath>
 						<graphicClass>Graphic_Single</graphicClass>
 						<drawSize>1.5</drawSize>
 						<drawOffset>(4,0,0)</drawOffset>
 					</li>
 					<li>
-						<texPath>Buildings/Duel/Flag</texPath>
+						<texPath>Things/Building/Duel/Flag</texPath>
 						<graphicClass>Graphic_Single</graphicClass>
 						<drawSize>1.5</drawSize>
 						<drawOffset>(-2.2,0,-3)</drawOffset>
 					</li>
 					<li>
-						<texPath>Buildings/Duel/Flag</texPath>
+						<texPath>Things/Building/Duel/Flag</texPath>
 						<graphicClass>Graphic_Single</graphicClass>
 						<drawSize>1.5</drawSize>
 						<drawOffset>(2.2,0,-3)</drawOffset>
 					</li>
 					<li>
-						<texPath>Buildings/Duel/Flag</texPath>
+						<texPath>Things/Building/Duel/Flag</texPath>
 						<graphicClass>Graphic_Single</graphicClass>
 						<drawSize>1.5</drawSize>
 						<drawOffset>(-2.2,0,3)</drawOffset>
 					</li>
 					<li>
-						<texPath>Buildings/Duel/Flag</texPath>
+						<texPath>Things/Building/Duel/Flag</texPath>
 						<graphicClass>Graphic_Single</graphicClass>
 						<drawSize>1.5</drawSize>
 						<drawOffset>(2.2,0,3)</drawOffset>

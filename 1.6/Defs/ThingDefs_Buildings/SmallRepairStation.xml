@@ -9,7 +9,7 @@
         <drawerType>MapMeshAndRealTime</drawerType>
         <tickerType>Normal</tickerType>
         <graphicData>
-            <texPath>Buildings/SmallRepairStation/SmallRepairStation_Base</texPath>
+            <texPath>Things/Building/SmallRepairStation/SmallRepairStation_Base</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>(3,3)</drawSize>
         </graphicData>
@@ -29,11 +29,11 @@
             </buildingTags>
             <ai_chillDestination>false</ai_chillDestination>
             <doorTopGraphic>
-                <texPath>Buildings/SmallRepairStation/SmallRepairStation_Top</texPath>
+                <texPath>Things/Building/SmallRepairStation/SmallRepairStation_Top</texPath>
                 <graphicClass>Graphic_Single</graphicClass>
             </doorTopGraphic>
             <upperMoverGraphic>
-                <texPath>Buildings/SmallRepairStation/SmallRepairStation_Moving</texPath>
+                <texPath>Things/Building/SmallRepairStation/SmallRepairStation_Moving</texPath>
                 <graphicClass>Graphic_Multi</graphicClass>
             </upperMoverGraphic>
         </building>

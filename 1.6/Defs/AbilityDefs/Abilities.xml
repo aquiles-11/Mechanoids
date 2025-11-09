@@ -6,7 +6,7 @@
 		<label>absorb</label>
 		<jobDef>CastAbilityOnThingMelee</jobDef>
 		<description>PLACEHOLDER</description>
-		<iconPath>UI/Absorb</iconPath>
+		<iconPath>UI/Haze</iconPath>
 		<cooldownTicksRange>90000</cooldownTicksRange><!-- 1.5 days -->
 		<targetRequired>true</targetRequired>
 		<hostile>false</hostile>
@@ -43,7 +43,7 @@
 		<jobDef>CastAbilityOnThing</jobDef>
 		<targetRequired>False</targetRequired>
 		<canUseAoeToGetTargets>False</canUseAoeToGetTargets>
-		<iconPath>UI/Commands/DropCarriedPawn</iconPath>
+		<iconPath>UI/BuildingMode</iconPath>
 		<cooldownTicksRange>20000</cooldownTicksRange><!-- 8 hours -->
 		<stunTargetWhileCasting>True</stunTargetWhileCasting>
 		<showPsycastEffects>False</showPsycastEffects>

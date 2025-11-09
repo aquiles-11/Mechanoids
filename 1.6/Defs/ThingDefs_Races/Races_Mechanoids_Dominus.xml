@@ -72,8 +72,8 @@
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Mechs/Dominus/Regular/Dominus</texPath>
-					<maskPath>Mechs/Overlays/Dominus_Overlay/Regular/Mech_Dominus</maskPath>
+					<texPath>Things/Pawn/Mechanoid/Dominus/Regular/Dominus</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Dominus/Regular/Mech_Dominus</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>4.0</drawSize>
@@ -84,8 +84,8 @@
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Mechs/Dominus/Regular/DominusAncient</texPath>
-					<maskPath>Mechs/Overlays/Dominus_Overlay/Regular/Mech_Dominus</maskPath>
+					<texPath>Things/Pawn/Mechanoid/Dominus/Regular/DominusAncient</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Dominus/Regular/Mech_Dominus</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>4.0</drawSize>

@@ -74,8 +74,8 @@
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Mechs/Mantis/Mantis</texPath>
-          <maskPath>Mechs/Overlays/Mantis_Overlay/Mech_Mantis</maskPath>
+          <texPath>Things/Pawn/Mechanoid/Mantis/Mantis</texPath>
+          <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Mantis/Mech_Mantis</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>4.0</drawSize>
@@ -86,8 +86,8 @@
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Mechs/Mantis/MantisAncient</texPath>
-          <maskPath>Mechs/Overlays/Mantis_Overlay/Mech_Mantis</maskPath>
+          <texPath>Things/Pawn/Mechanoid/Mantis/MantisAncient</texPath>
+          <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Mantis/Mech_Mantis</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>4.0</drawSize>
