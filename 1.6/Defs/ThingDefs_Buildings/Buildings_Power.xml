@@ -8,7 +8,7 @@
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<tickerType>Normal</tickerType>
 		<graphicData>
-			<texPath>Buildings/PowerPlant/PowerPlant</texPath>
+			<texPath>Things/Building/PowerPlant/PowerPlant</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(2,3)</drawSize>
 		</graphicData>
