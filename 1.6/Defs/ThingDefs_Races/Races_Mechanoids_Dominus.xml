@@ -176,7 +176,35 @@
 						<offset>(0,0,0.5)</offset>
 					</defaultData>
 				</drawData>
-			</li>	
+			</li>
+			<li Class="ApexMechanoids.PawnRenderNodeProperties_Animated">
+				<nodeClass>ApexMechanoids.PawnRenderNode_RandomAnimated</nodeClass>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<texPath>Effects/PressTheAttack/Wings</texPath>
+				<parentTagDef>Body</parentTagDef>
+				<texPaths>
+					<li>Effects/PressTheAttack/Wings/WingsA</li>
+					<li>Effects/PressTheAttack/Wings/WingsB</li>
+					<li>Effects/PressTheAttack/Wings/WingsC</li>
+				</texPaths>
+				
+				<!--Optional, if we want specific time for each frame-->
+				<!--
+				<ticksPerTexPaths>
+					<li>3</li>
+					<li>4</li>
+					<li>3</li>
+				</ticksPerTexPaths>
+				-->
+				<ticksPerTexture>3</ticksPerTexture> <!--Alternative way to specify each frame time-->
+				<drawData>
+					<scale>2.3</scale>
+					<defaultData>
+						<layer>-6</layer>
+						<offset>(0,0,0)</offset>
+					</defaultData>
+				</drawData>
+			</li>
 		</renderNodeProperties>
 	</HediffDef>
 
