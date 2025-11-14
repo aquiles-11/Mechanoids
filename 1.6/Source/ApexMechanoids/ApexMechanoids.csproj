@@ -55,8 +55,10 @@
     <Compile Include="JobDrivers\JobDriver_RepairAegisShields.cs" />
     <Compile Include="PawnRenderNodeProperties\PawnRenderNodeProperties_BodyPartShield.cs" />
     <Compile Include="PawnRenderNodeProperties\PawnRenderNodeProperties_MechanoidAllegiance.cs" />
+    <Compile Include="PawnRenderNodes\PawnRenderNode_Animated.cs" />
     <Compile Include="PawnRenderNodes\PawnRenderNode_BodyPartShield.cs" />
     <Compile Include="PawnRenderNodes\PawnRenderNode_MechanoidAllegiance.cs" />
+    <Compile Include="PawnRenderNodes\PawnRenderNode_RandomAnimated.cs" />
     <Compile Include="PawnRenderNodeWorkers\PawnRenderNodeWorker_BodyPartShield.cs" />
     <Compile Include="JobGiver_Duel.cs" />
     <Compile Include="MentalState_Duel.cs" />
