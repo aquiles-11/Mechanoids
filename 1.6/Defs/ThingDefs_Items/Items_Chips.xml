@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="MechResourceBase">
+    <defName>APM_Boss_Chip_X</defName>
+    <label>chip1</label>
+    <description>PLACEHOLDER</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/PowerfocusChip</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>1000</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_CompAnalyzableUnlockResearch">
+        <requiresMechanitor>true</requiresMechanitor>
+        <analysisDurationHours>0.5</analysisDurationHours>
+        <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
+        <activateTexPath>UI/Icons/Study</activateTexPath>
+      </li>
+    </comps>
+  </ThingDef>
+
+
+  <ThingDef ParentName="MechResourceBase">
+    <defName>APM_Boss_Chip_Y</defName>
+    <label>chip2</label>
+    <description>PLACEHOLDER</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/PowerfocusChip</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>1000</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_CompAnalyzableUnlockResearch">
+        <requiresMechanitor>true</requiresMechanitor>
+        <analysisDurationHours>0.8</analysisDurationHours>
+        <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
+        <activateTexPath>UI/Icons/Study</activateTexPath>
+      </li>
+    </comps>
+  </ThingDef>
+
+
+  <ThingDef ParentName="MechResourceBase">
+    <defName>APM_Boss_Chip_Z</defName>
+    <label>chip3</label>
+    <description>PLACEHOLDER</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/PowerfocusChip</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>1000</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_CompAnalyzableUnlockResearch">
+        <requiresMechanitor>true</requiresMechanitor>
+        <analysisDurationHours>1</analysisDurationHours>
+        <destroyedOnAnalyzed>false</destroyedOnAnalyzed>
+        <activateTexPath>UI/Icons/Study</activateTexPath>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

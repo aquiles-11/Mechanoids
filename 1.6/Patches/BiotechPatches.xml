@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <Patch>
 
   <Operation Class="PatchOperationFindMod">
@@ -13,24 +12,24 @@
         <li Class="PatchOperationAdd">
           <xpath>Defs/RecipeDef[defName = "ResurrectHeavyMech"]/fixedIngredientFilter/thingDefs</xpath>
           <value>
-            <li>Corpse_Mech_Aegis</li>
+            <li>Corpse_APM_Mech_Aegis</li>
           </value>
         </li>
         <li Class="PatchOperationAdd">
           <xpath>Defs/RecipeDef[defName = "ResurrectMediumMech"]/fixedIngredientFilter/thingDefs</xpath>
           <value>
-            <li>Corpse_Mech_Conqueror_AR</li>
-            <li>Corpse_Mech_Conqueror_DMR</li>
-            <li>Mech_Vassal</li>
+            <li>Corpse_APM_Mech_Conqueror_AR</li>
+            <li>Corpse_APM_Mech_Conqueror_DMR</li>
+            <li>Corpse_APM_Mech_Vassal</li>
           </value>
         </li>
         <li Class="PatchOperationAdd">
           <xpath>Defs/ThingDef[defName = "LargeMechGestator"]/recipes</xpath>
           <value>
-            <li>Mech_Aegis</li>
-            <li>Mech_Conqueror_AR</li>
-            <li>Mech_Conqueror_DMR</li>
-            <li>Mech_Vassal</li>
+            <li>APM_Mech_Aegis</li>
+            <li>APM_Mech_Conqueror_AR</li>
+            <li>APM_Mech_Conqueror_DMR</li>
+            <li>APM_Mech_Vassal</li>
           </value>
         </li>
 
@@ -39,7 +38,7 @@
           <value>
 
             <RecipeDef ParentName="HeavyMechanoidRecipe">
-              <defName>Mech_Aegis</defName>
+              <defName>APM_Mech_Aegis</defName>
               <label>gestate aegis</label>
               <description>Gestate an aegis mechanoid.</description>
               <researchPrerequisite>HighMechtech</researchPrerequisite>
@@ -78,15 +77,15 @@
                 </li>
               </ingredients>
               <products>
-                <Mech_Aegis>1</Mech_Aegis>
+                <APM_Mech_Aegis>1</APM_Mech_Aegis>
               </products>
               <descriptionHyperlinks>
-                <ThingDef>Mech_Aegis</ThingDef>
+                <ThingDef>APM_Mech_Aegis</ThingDef>
               </descriptionHyperlinks>
             </RecipeDef>
 
             <RecipeDef ParentName="MediumMechanoidRecipe">
-              <defName>Mech_Conqueror_DMR</defName>
+              <defName>APM_Mech_Conqueror_DMR</defName>
               <label>gestate DMR conqueror</label>
               <description>Gestate a conqueror mechanoid with a high powered DMR.</description>
               <researchPrerequisite>StandardMechtech</researchPrerequisite>
@@ -125,15 +124,15 @@
                 </li>
               </ingredients>
               <products>
-                <Mech_Conqueror_DMR>1</Mech_Conqueror_DMR>
+                <APM_Mech_Conqueror_DMR>1</APM_Mech_Conqueror_DMR>
               </products>
               <descriptionHyperlinks>
-                <ThingDef>Mech_Conqueror_DMR</ThingDef>
+                <ThingDef>APM_Mech_Conqueror_DMR</ThingDef>
               </descriptionHyperlinks>
             </RecipeDef>
 
             <RecipeDef ParentName="MediumMechanoidRecipe">
-              <defName>Mech_Conqueror_AR</defName>
+              <defName>APM_Mech_Conqueror_AR</defName>
               <label>gestate autorifle conqueror</label>
               <description>Gestate a conqueror mechanoid with a rifle.</description>
               <researchPrerequisite>StandardMechtech</researchPrerequisite>
@@ -172,15 +171,15 @@
                 </li>
               </ingredients>
               <products>
-                <Mech_Conqueror_AR>1</Mech_Conqueror_AR>
+                <APM_Mech_Conqueror_AR>1</APM_Mech_Conqueror_AR>
               </products>
               <descriptionHyperlinks>
-                <ThingDef>Mech_Conqueror_AR</ThingDef>
+                <ThingDef>APM_Mech_Conqueror_AR</ThingDef>
               </descriptionHyperlinks>
             </RecipeDef>
 
             <RecipeDef ParentName="HeavyMechanoidRecipe">
-              <defName>Mech_Gazer</defName>
+              <defName>APM_Mech_Gazer</defName>
               <label>gestate gazer</label>
               <description>Gestate a gazer mechanoid.</description>
               <researchPrerequisite>HighMechtech</researchPrerequisite>
@@ -219,15 +218,15 @@
                 </li>
               </ingredients>
               <products>
-                <Mech_Gazer>1</Mech_Gazer>
+                <APM_Mech_Gazer>1</APM_Mech_Gazer>
               </products>
               <descriptionHyperlinks>
-                <ThingDef>Mech_Gazer</ThingDef>
+                <ThingDef>APM_Mech_Gazer</ThingDef>
               </descriptionHyperlinks>
             </RecipeDef>
 
             <RecipeDef ParentName="MediumMechanoidRecipe">
-              <defName>Mech_Vassal</defName>
+              <defName>APM_Mech_Vassal</defName>
               <label>gestate vassal</label>
               <description>Gestate a vassal mechanoid with a sword rifle.</description>
               <researchPrerequisite>StandardMechtech</researchPrerequisite>
@@ -266,10 +265,10 @@
                 </li>
               </ingredients>
               <products>
-                <Mech_Vassal>1</Mech_Vassal>
+                <APM_Mech_Vassal>1</APM_Mech_Vassal>
               </products>
               <descriptionHyperlinks>
-                <ThingDef>Mech_Vassal</ThingDef>
+                <ThingDef>APM_Mech_Vassal</ThingDef>
               </descriptionHyperlinks>
             </RecipeDef>
 
