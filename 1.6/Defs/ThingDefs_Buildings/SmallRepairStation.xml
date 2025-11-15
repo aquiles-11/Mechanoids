@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+<!--
+    <ThingDef ParentName="BuildingBase">
+        <defName>APM_Building_SmallRepairStation</defName>
+        <label>Small repair station</label>
+        <description>PLACEHOLDER</description>
+        <thingClass>Building_MultiTileDoor</thingClass>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <tickerType>Normal</tickerType>
+        <graphicData>
+            <texPath>Buildings/SmallRepairStation/SmallRepairStation_Base</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(3,3)</drawSize>
+        </graphicData>
+        <thingCategories>
+            <li>BuildingsMisc</li>
+        </thingCategories>
+        <altitudeLayer>Building</altitudeLayer>
+        <passability>PassThroughOnly</passability>
+        <minifiedDef>MinifiedThing</minifiedDef>
+        <canOverlapZones>false</canOverlapZones>
+        <pathCost>42</pathCost>
+        <blockWind>true</blockWind>
+        <fillPercent>0.5</fillPercent>
+        <building>
+            <buildingTags>
+                <li>Biotech</li>
+            </buildingTags>
+            <ai_chillDestination>false</ai_chillDestination>
+            <doorTopGraphic>
+                <texPath>Buildings/SmallRepairStation/SmallRepairStation_Top</texPath>
+                <graphicClass>Graphic_Single</graphicClass>
+            </doorTopGraphic>
+            <upperMoverGraphic>
+                <texPath>Buildings/SmallRepairStation/SmallRepairStation_Moving</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+            </upperMoverGraphic>
+        </building>
+        <designationCategory>Biotech</designationCategory>
+        <hasInteractionCell>true</hasInteractionCell>
+        <interactionCellOffset>(0, 0, -1)</interactionCellOffset>
+        <statBases>
+            <MaxHitPoints>500</MaxHitPoints>
+            <WorkToBuild>30000</WorkToBuild>
+            <Mass>80</Mass>
+            <Flammability>0.5</Flammability>
+        </statBases>
+        <size>(3,3)</size>
+        <costList>
+            <Steel>200</Steel>
+        </costList>
+        <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>400</basePowerConsumption>
+            </li>
+        </comps>
+    </ThingDef>-->
+
+</Defs>

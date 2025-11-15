@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef ParentName="MechtechBase">
+    <defName>APM_ADV_Mechtech</defName>
+    <label>advanced mechtech</label>
+    <description>
+    The technology needed for your mechanitor to create and control Advanced-tier mechanoids. You can get chips by using a mechanitor to summon a Gazer threat.
+    </description>
+    <baseCost>3000</baseCost>
+    <researchViewX>12.00</researchViewX>
+    <researchViewY>5.40</researchViewY>
+    <techprintMarketValue>12000</techprintMarketValue>
+    <prerequisites>
+      <li>StandardMechtech</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredAnalyzed>
+    <li>PowerfocusChip</li>
+    <!--PLACEHOLDER-->
+    </requiredAnalyzed>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef ParentName="MechtechBase">
+    <defName>APM_Apex_Mechtech</defName>
+    <label>apex mechtech</label>
+    <description>
+    The technology needed for your mechanitor to create and control Apex-tier mechanoids. You can get chips by using a mechanitor to summon a Three Lords threat. They can also be summoned separately.
+    </description>
+    <baseCost>8000</baseCost>
+    <researchViewX>11.00</researchViewX>
+    <researchViewY>5.40</researchViewY>
+    <techprintMarketValue>15000</techprintMarketValue>
+    <prerequisites>
+      <li>UltraMechtech</li>
+      <li>APM_ADV_Mechtech</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredAnalyzed>
+    <li>PowerfocusChip</li>
+    <!--PLACEHOLDER-->
+    </requiredAnalyzed>
+  </ResearchProjectDef>
+  <!-- THESE ARE THE THREE OTHER RESEARCHES PRESENT ON THE DOCUMENT, STILL HAVE TO DEFINE BECAUSE THERE IS NOTHING WRITTEN FOR THEM
+  <ResearchProjectDef ParentName="MechtechBase">
+    <defName>APM_Apex_Mechtech</defName>
+    <label>apex mechtech</label>
+    <description>PLACEHOLDER</description>
+    <baseCost>8000</baseCost>
+    <researchViewX>11.00</researchViewX>
+    <researchViewY>5.40</researchViewY>
+    <techprintMarketValue>1000</techprintMarketValue>
+    <prerequisites>
+      <li>UltraMechtech</li>
+      <li>AdvancedFabrication</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredAnalyzed>
+    <li>PowerfocusChip</li>
+    </requiredAnalyzed>
+  </ResearchProjectDef>
+  <ResearchProjectDef ParentName="MechtechBase">
+    <defName>APM_Apex_Mechtech</defName>
+    <label>apex mechtech</label>
+    <description>PLACEHOLDER</description>
+    <baseCost>8000</baseCost>
+    <researchViewX>11.00</researchViewX>
+    <researchViewY>5.40</researchViewY>
+    <techprintMarketValue>1000</techprintMarketValue>
+    <prerequisites>
+      <li>UltraMechtech</li>
+      <li>AdvancedFabrication</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredAnalyzed>
+    <li>PowerfocusChip</li>
+    </requiredAnalyzed>
+  </ResearchProjectDef>
+  <ResearchProjectDef ParentName="MechtechBase">
+    <defName>APM_Apex_Mechtech</defName>
+    <label>apex mechtech</label>
+    <description>PLACEHOLDER</description>
+    <baseCost>8000</baseCost>
+    <researchViewX>11.00</researchViewX>
+    <researchViewY>5.40</researchViewY>
+    <techprintMarketValue>1000</techprintMarketValue>
+    <prerequisites>
+      <li>UltraMechtech</li>
+      <li>AdvancedFabrication</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredAnalyzed>
+    <li>PowerfocusChip</li>
+    </requiredAnalyzed>
+  </ResearchProjectDef>
+    -->
+</Defs>

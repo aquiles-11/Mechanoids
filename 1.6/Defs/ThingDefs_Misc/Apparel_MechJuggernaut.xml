@@ -1,0 +1,49 @@
+<Defs>
+
+  <ThingDef ParentName="ApparelArmorPowerBase">
+    <defName>APM_Apparel_MechamancerSuit</defName>
+    <label>mechamancer suit</label>
+    <description>A power-assisted armor suit packed with mechanitor-assistance gear. The mechlord suit dramatically amplifies a mechanitor's bandwidth, but is somewhat less protective than dedicated heavy armor.</description>
+    <recipeMaker>
+      <researchPrerequisite>UltraMechtech</researchPrerequisite> <!-- PLACEHOLDER UNTIL NEW RESEARCH IS ADDED -->
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+      <displayPriority>530</displayPriority>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Apparel/MechamancerSuit/MechJuggernaut</texPath><!-- make an icon -->
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <ArmorRating_Sharp>1.15</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.65</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.60</ArmorRating_Heat>
+      <Insulation_Cold>75</Insulation_Cold>
+      <Insulation_Heat>15</Insulation_Heat>
+      <EquipDelay>15</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <MechBandwidth>18</MechBandwidth>
+      <ShootingAccuracyPawn>-4</ShootingAccuracyPawn>
+      <MeleeHitChance>-0.6</MeleeHitChance>
+      <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.3</VacuumResistance>
+    </equippedStatOffsets>
+    <costList>
+      <NanostructuringChip>2</NanostructuringChip> <!-- PLACEHOLDER UNTIL NEW RESEARCH IS ADDED -->
+      <PowerfocusChip>1</PowerfocusChip> <!-- PLACEHOLDER UNTIL NEW RESEARCH IS ADDED -->
+      <Plasteel>120</Plasteel> <!-- PLACEHOLDER UNTIL NEW RESEARCH IS ADDED -->
+      <ComponentSpacer>8</ComponentSpacer> <!-- PLACEHOLDER UNTIL NEW RESEARCH IS ADDED -->
+    </costList>
+    <apparel>
+      <tags>
+        <li>RoyalTier7</li>
+        <li>APM_Mechamancer</li>
+      </tags>
+      <wornGraphicPath>Apparel/MechamancerSuit/MechJuggernaut</wornGraphicPath>
+    </apparel>
+    <tradeability>Sellable</tradeability>
+    <tradeTags Inherit="False">
+      <li>HiTechArmor</li>
+    </tradeTags>
+  </ThingDef>
+
+</Defs>
