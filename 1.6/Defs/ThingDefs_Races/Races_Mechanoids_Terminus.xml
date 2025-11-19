@@ -99,6 +99,47 @@
     </weaponTags>
     <techHediffsChance>1</techHediffsChance>
     <techHediffsMoney>9999~9999</techHediffsMoney>
+		<abilities>
+			<li>SeveringEdge</li>
+		</abilities>
   </PawnKindDef>
+
+
+	<AbilityDef>
+		<defName>SeveringEdge</defName>
+		<label>severing edge</label>
+		<description>PLACEHOLDER.</description>
+		<iconPath>UI/Icons/SeveringEdge</iconPath>
+		<cooldownTicksRange>60</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>4.9</range>
+			<warmupTime>0.5</warmupTime>
+			<soundCast>PiercingSpine_Launch</soundCast>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityLaunchProjectile">
+				<projectileDef>SeveringEdge</projectileDef>
+			</li>
+		</comps>
+	</AbilityDef>
+	<ThingDef ParentName="BaseBullet">
+		<defName>SeveringEdge</defName>
+		<label>severing edge</label>
+		<graphicData Class="VEF.Graphics.GraphicData_Animated">
+			<texPath>Things/Projectile/SeveringEdge</texPath>
+			<graphicClass>VEF.Graphics.Graphic_Animated</graphicClass>
+			<drawSize>3.7</drawSize>
+			<ticksPerFrame>5</ticksPerFrame>
+		</graphicData>
+		<projectile>
+			<damageDef>RangedStab</damageDef>
+			<damageAmountBase>30</damageAmountBase>
+			<armorPenetrationBase>1</armorPenetrationBase>
+			<stoppingPower>1</stoppingPower>
+			<speed>5</speed>
+		</projectile>
+	</ThingDef>
 
 </Defs>
