@@ -61,6 +61,7 @@
     <Compile Include="JobGiver_Duel.cs" />
     <Compile Include="MentalState_Duel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeveringEdge.cs" />
     <Compile Include="StartUp.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>

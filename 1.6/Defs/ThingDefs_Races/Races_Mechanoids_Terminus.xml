@@ -117,6 +117,9 @@
 			<range>4.9</range>
 			<warmupTime>0.5</warmupTime>
 			<soundCast>PiercingSpine_Launch</soundCast>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
 		</verbProperties>
 		<comps>
 			<li Class="CompProperties_AbilityLaunchProjectile">
@@ -126,6 +129,7 @@
 	</AbilityDef>
 	<ThingDef ParentName="BaseBullet">
 		<defName>SeveringEdge</defName>
+		<thingClass>ApexMechanoids.SeveringEdge</thingClass>
 		<label>severing edge</label>
 		<graphicData Class="VEF.Graphics.GraphicData_Animated">
 			<texPath>Things/Projectile/SeveringEdge</texPath>
