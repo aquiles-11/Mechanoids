@@ -72,4 +72,65 @@
 		</comps>
 	</AbilityDef>
 
+	<AbilityDef>
+		<defName>APM_SunRay</defName>
+		<label>sun ray</label>
+		<description>...</description>
+		<iconPath>UI/Powerful</iconPath>
+		<!-- <cooldownTicksRange>7500</cooldownTicksRange> -->
+		<cooldownTicksRange>500</cooldownTicksRange>
+		<aiCanUse>true</aiCanUse>
+		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+		<!-- <warmupStartSound>OrbitalTargeter_Aiming</warmupStartSound> -->
+		<verbProperties>
+			<verbClass>ApexMechanoids.Verb_ShootSunBeam</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<warmupTime>1.0</warmupTime>
+			<range>24.9</range>
+			<minRange>3.9</minRange>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+			<beamFullWidthRange>6.9</beamFullWidthRange>
+			<burstShotCount>5</burstShotCount>
+			<showBurstShotStats>false</showBurstShotStats>
+			<beamWidth>6</beamWidth>
+			<ticksBetweenBurstShots>22</ticksBetweenBurstShots>
+			<beamDamageDef>Beam</beamDamageDef>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+			<muzzleFlashScale>9</muzzleFlashScale>
+			<soundCastBeam>BeamGraser_Shooting</soundCastBeam>
+			<beamGroundFleckDef>Fleck_BeamBurn</beamGroundFleckDef>
+			<beamFleckChancePerTick>0.32</beamFleckChancePerTick>
+			<!-- <beamMaxDeviation>1.5</beamMaxDeviation> -->
+			<!-- <beamCurvature>0.6</beamCurvature> -->
+			<beamMoteDef>Mote_GraserBeamBase</beamMoteDef>
+			<beamEndEffecterDef>GraserBeam_End</beamEndEffecterDef>
+			<beamChanceToStartFire>0.85</beamChanceToStartFire>
+			<beamChanceToAttachFire>0.85</beamChanceToAttachFire>
+			<beamFireSizeRange>1.0~1.5</beamFireSizeRange>
+			<beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
+			<beamStartOffset>0.8</beamStartOffset>
+
+			<beamCantHitWithinMinRange>true</beamCantHitWithinMinRange>
+			<stopBurstWithoutLos>false</stopBurstWithoutLos>
+			<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+			<ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
+			<!-- <aimingLineMote></aimingLineMote> -->
+			<!-- <aimingChargeMote></aimingChargeMote> -->
+			<aimingChargeMoteOffset>1.07</aimingChargeMoteOffset>
+			<aimingLineMoteFixedLength>25.9</aimingLineMoteFixedLength>
+			<!-- <aimingTargetMote></aimingTargetMote> -->
+			<soundAiming>HellsphereCannon_Aiming</soundAiming>
+
+			<beamLineFleckChanceCurve>
+				<points>
+					<li>(0, 0)</li>
+					<li>(0.65, 0.4)</li>
+					<li>(1, 0.75)</li>
+				</points>
+			</beamLineFleckChanceCurve>
+		</verbProperties>
+	</AbilityDef>
+
 </Defs>

@@ -34,6 +34,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets.cs" />
+    <Compile Include="Verb_ShootSunBeam.cs" />
     <Compile Include="CompAbilityEffect_KillCaster.cs" />
     <Compile Include="CompAbilityEffect_Absorb.cs" />
     <Compile Include="CompAbilityEffect_NeedOffset.cs" />
@@ -81,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Publicize Include="Assembly-CSharp:RimWorld.CompRefuelable.fuel" />
+    <Publicize Include="Assembly-CSharp" MemberPattern="^(Verse\.Verb_ShootBeam).*" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
