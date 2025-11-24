@@ -16,7 +16,7 @@ namespace ApexMechanoids
         protected override void Tick()
         {
             base.Tick();
-            foreach (var thing in Map.mapPawns.AllPawnsSpawned.Where(IsValidTarget).ToList())
+            foreach (var thing in Map.mapPawns.AllPawnsSpawned.Except(this.launcher).Where(IsValidTarget).ToList())
             {
                 Impact(thing);
             }
