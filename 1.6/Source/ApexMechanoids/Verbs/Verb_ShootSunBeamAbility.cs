@@ -4,30 +4,47 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Verse;
+using Verse.AI;
 using Verse.Sound;
 
 namespace ApexMechanoids
 {
-    public class Verb_ShootSunBeamAbility : Verb_ShootBeam, IAbilityVerb
+    public class Verb_ShootSunBeamAbility : Verb_CastAbility
     {
-        private Ability ability;
+        private List<Vector3> path = new List<Vector3>();
 
-        public Ability Ability
-        {
-            get
-            {
-                return ability;
-            }
-            set
-            {
-                ability = value;
-            }
-        }
+        private List<Vector3> tmpPath = new List<Vector3>();
+
+        private int ticksToNextPathStep;
+
+        private Vector3 initialTargetPosition;
+
+        private MoteDualAttached mote;
+
+        private Effecter endEffecter;
+
+        private Sustainer sustainer;
+
+        private HashSet<IntVec3> pathCells = new HashSet<IntVec3>();
+
+        private HashSet<IntVec3> tmpPathCells = new HashSet<IntVec3>();
+
+        private HashSet<IntVec3> tmpHighlightCells = new HashSet<IntVec3>();
+
+        private HashSet<IntVec3> tmpSecondaryHighlightCells = new HashSet<IntVec3>();
+
+        private HashSet<IntVec3> hitCells = new HashSet<IntVec3>();
+
+        private const int NumSubdivisionsPerUnitLength = 1;
 
         private Vector3 LasttargetPosition;
         private int min => Mathf.RoundToInt(verbProps.minRange);
 
-        public new Vector3 InterpolatedPosition
+        protected override int ShotsPerBurst => base.BurstShotCount;
+
+        public float ShotProgress => (float)ticksToNextPathStep / (float)base.TicksBetweenBurstShots;
+
+        public Vector3 InterpolatedPosition
         {
             get
             {
@@ -111,7 +128,7 @@ namespace ApexMechanoids
             tmpSecondaryHighlightCells.Clear();
         }
 
-        public override bool TryCastShot()
+        protected override bool TryCastShot()
         {
             ShootLine resultingLine;
             bool flag = TryFindShootLineFromTo(caster.Position, currentTarget, out resultingLine);
@@ -121,22 +138,13 @@ namespace ApexMechanoids
             }
             if (verbProps.stopBurstWithoutLos && !flag)
             {
-                Log.Message($"TryCastShot false");
                 return false;
             }
-            Log.Message($"TryCastShot base.EquipmentSource != null {base.EquipmentSource != null}");
-            //if (base.EquipmentSource != null)
-            //{
-            //    base.EquipmentSource.GetComp<CompChangeableProjectile>()?.Notify_ProjectileLaunched();
-            //    base.EquipmentSource.GetComp<CompApparelReloadable>()?.UsedOnce();
-            //}
             lastShotTick = Find.TickManager.TicksGame;
             ticksToNextPathStep = base.TicksBetweenBurstShots;
             IntVec3 targetCell = InterpolatedPosition.Yto0().ToIntVec3();
             if (!TryGetHitCell(resultingLine.Source, targetCell, out var hitCell))
             {
-                Log.Message($"TryCastShot 1 true");
-                ability.StartCooldown(ability.def.cooldownTicksRange.RandomInRange);
                 return true;
             }
             HitCell(hitCell, resultingLine.Source);
@@ -153,8 +161,92 @@ namespace ApexMechanoids
                     }
                 }
             }
-            Log.Message($"TryCastShot 2 true");
-            ability.StartCooldown(ability.def.cooldownTicksRange.RandomInRange);
+            return true;
+        }
+
+        protected bool TryGetHitCell(IntVec3 source, IntVec3 targetCell, out IntVec3 hitCell)
+        {
+            IntVec3 intVec = GenSight.LastPointOnLineOfSight(source, targetCell, (IntVec3 c) => c.InBounds(caster.Map) && c.CanBeSeenOverFast(caster.Map), skipFirstCell: true);
+            if (verbProps.beamCantHitWithinMinRange && intVec.DistanceTo(source) < verbProps.minRange)
+            {
+                hitCell = default(IntVec3);
+                return false;
+            }
+            hitCell = (intVec.IsValid ? intVec : targetCell);
+            return intVec.IsValid;
+        }
+
+        protected IntVec3 GetHitCell(IntVec3 source, IntVec3 targetCell)
+        {
+            TryGetHitCell(source, targetCell, out var hitCell);
+            return hitCell;
+        }
+
+        protected IEnumerable<IntVec3> GetBeamHitNeighbourCells(IntVec3 source, IntVec3 pos)
+        {
+            if (!verbProps.beamHitsNeighborCells)
+            {
+                yield break;
+            }
+            for (int i = 0; i < 4; i++)
+            {
+                IntVec3 intVec = pos + GenAdj.CardinalDirections[i];
+                if (intVec.InBounds(Caster.Map) && (!verbProps.beamHitsNeighborCellsRequiresLOS || GenSight.LineOfSight(source, intVec, caster.Map)))
+                {
+                    yield return intVec;
+                }
+            }
+        }
+
+        public override bool TryStartCastOn(LocalTargetInfo castTarg, LocalTargetInfo destTarg, bool surpriseAttack = false, bool canHitNonTargetPawns = true, bool preventFriendlyFire = false, bool nonInterruptingSelfCast = false)
+        {
+            castTarg = verbProps.beamTargetsGround ? ((LocalTargetInfo)castTarg.Cell) : castTarg;
+            if (caster == null)
+            {
+                Log.Error("Verb " + GetUniqueLoadID() + " needs caster to work (possibly lost during saving/loading).");
+                return false;
+            }
+            if (!caster.Spawned)
+            {
+                return false;
+            }
+            if (state == VerbState.Bursting || !CanHitTarget(castTarg))
+            {
+                return false;
+            }
+            //if (CausesTimeSlowdown(castTarg))
+            //{
+            //    Find.TickManager.slower.SignalForceNormalSpeed();
+            //}
+            this.surpriseAttack = surpriseAttack;
+            canHitNonTargetPawnsNow = canHitNonTargetPawns;
+            this.preventFriendlyFire = preventFriendlyFire;
+            this.nonInterruptingSelfCast = nonInterruptingSelfCast;
+            currentTarget = castTarg;
+            currentDestination = destTarg;
+            if (CasterIsPawn && WarmupTime > 0f)
+            {
+                if (!TryFindShootLineFromTo(caster.Position, castTarg, out var resultingLine))
+                {
+                    return false;
+                }
+                CasterPawn.Drawer.Notify_WarmingCastAlongLine(resultingLine, caster.Position);
+                float statValue = CasterPawn.GetStatValue(StatDefOf.AimingDelayFactor);
+                int ticks = (WarmupTime * statValue).SecondsToTicks();
+                CasterPawn.stances.SetStance(new Stance_Warmup(ticks, castTarg, this));
+                if (verbProps.stunTargetOnCastStart && castTarg.Pawn != null)
+                {
+                    castTarg.Pawn.stances.stunner.StunFor(ticks, null, addBattleLog: false);
+                }
+            }
+            else
+            {
+                if (verbTracker.directOwner is Ability ability)
+                {
+                    ability.lastCastTick = Find.TickManager.TicksGame;
+                }
+                WarmupComplete();
+            }
             return true;
         }
 
@@ -181,13 +273,6 @@ namespace ApexMechanoids
                 mote.UpdateTargets(new TargetInfo(caster.Position, caster.Map), new TargetInfo(intVec, caster.Map), offsetA, val4);
                 mote.Maintain();
             }
-            //if (caster.IsHashIntervalTick(base.TicksBetweenBurstShots) && base.EquipmentSource != null && modExtention != null && modExtention.circleMote != null)
-            //{
-            //    float rotation = normalized.AngleFlat();
-            //    FleckCreationData dataStatic = FleckMaker.GetDataStatic(val, caster.Map, modExtention.circleMote);
-            //    dataStatic.rotation = rotation;
-            //    caster.Map.flecks.CreateFleck(dataStatic);
-            //}
             if (verbProps.beamGroundFleckDef != null && Rand.Chance(verbProps.beamFleckChancePerTick))
             {
                 FleckMaker.Static(val, caster.Map, verbProps.beamGroundFleckDef);
@@ -217,66 +302,8 @@ namespace ApexMechanoids
             sustainer?.Maintain();
         }
 
-        public override bool TryStartCastOn(LocalTargetInfo castTarg, LocalTargetInfo destTarg, bool surpriseAttack = false, bool canHitNonTargetPawns = true, bool preventFriendlyFire = false, bool nonInterruptingSelfCast = false)
-        {
-            Log.Message($"TryStartCastOn");
-            castTarg = verbProps.beamTargetsGround ? ((LocalTargetInfo)castTarg.Cell) : castTarg;
-            if (caster == null)
-            {
-                Log.Error("Verb " + GetUniqueLoadID() + " needs caster to work (possibly lost during saving/loading).");
-                return false;
-            }
-            if (!caster.Spawned)
-            {
-                Log.Message($"TryStartCastOn 1 false");
-                return false;
-            }
-            if (state == VerbState.Bursting || !CanHitTarget(castTarg))
-            {
-                Log.Message($"TryStartCastOn 2 false");
-                return false;
-            }
-            //if (CausesTimeSlowdown(castTarg))
-            //{
-            //    Find.TickManager.slower.SignalForceNormalSpeed();
-            //}
-            this.surpriseAttack = surpriseAttack;
-            canHitNonTargetPawnsNow = canHitNonTargetPawns;
-            this.preventFriendlyFire = preventFriendlyFire;
-            this.nonInterruptingSelfCast = nonInterruptingSelfCast;
-            currentTarget = castTarg;
-            currentDestination = destTarg;
-            if (CasterIsPawn && WarmupTime > 0f)
-            {
-                if (!TryFindShootLineFromTo(caster.Position, castTarg, out var resultingLine))
-                {
-                    Log.Message($"TryStartCastOn 3 false");
-                    return false;
-                }
-                CasterPawn.Drawer.Notify_WarmingCastAlongLine(resultingLine, caster.Position);
-                float statValue = CasterPawn.GetStatValue(StatDefOf.AimingDelayFactor);
-                int ticks = (WarmupTime * statValue).SecondsToTicks();
-                CasterPawn.stances.SetStance(new Stance_Warmup(ticks, castTarg, this));
-                if (verbProps.stunTargetOnCastStart && castTarg.Pawn != null)
-                {
-                    castTarg.Pawn.stances.stunner.StunFor(ticks, null, addBattleLog: false);
-                }
-            }
-            else
-            {
-                if (verbTracker.directOwner is Ability ability)
-                {
-                    ability.lastCastTick = Find.TickManager.TicksGame;
-                }
-                WarmupComplete();
-            }
-            Log.Message($"TryStartCastOn true");
-            return true;
-        }
-
         public override void WarmupComplete()
         {
-
             state = VerbState.Bursting;
             initialTargetPosition = currentTarget.CenterVector3;
             CalculatePath(currentTarget.CenterVector3, path, pathCells);
@@ -313,7 +340,7 @@ namespace ApexMechanoids
             //}
         }
 
-        private new void CalculatePath(Vector3 target, List<Vector3> pathList, HashSet<IntVec3> pathCellsList, bool addRandomOffset = true)
+        private void CalculatePath(Vector3 target, List<Vector3> pathList, HashSet<IntVec3> pathCellsList, bool addRandomOffset = true)
         {
             pathList.Clear();
             IntVec3 intVec = target.ToIntVec3();
@@ -339,10 +366,18 @@ namespace ApexMechanoids
             }
             pathList.Reverse();
             pathCellsList.Reverse();
-            Log.Message($"CalculatePath {pathCellsList.Count}");
         }
 
-        private new void HitCell(IntVec3 cell, IntVec3 sourceCell, float damageFactor = 1f)
+        private bool CanHit(Thing thing)
+        {
+            if (!thing.Spawned)
+            {
+                return false;
+            }
+            return !CoverUtility.ThingCovered(thing, caster.Map);
+        }
+
+        private void HitCell(IntVec3 cell, IntVec3 sourceCell, float damageFactor = 1f)
         {
             if (!cell.InBounds(caster.Map))
             {
@@ -361,11 +396,58 @@ namespace ApexMechanoids
             }
         }
 
-        public override void ExposeData()
+        private void ApplyDamage(Thing thing, IntVec3 sourceCell, float damageFactor = 1f)
         {
-            Scribe_References.Look(ref ability, "ability");
-            base.ExposeData();
+            IntVec3 intVec = InterpolatedPosition.Yto0().ToIntVec3();
+            IntVec3 intVec2 = GenSight.LastPointOnLineOfSight(sourceCell, intVec, (IntVec3 c) => c.InBounds(caster.Map) && c.CanBeSeenOverFast(caster.Map), skipFirstCell: true);
+            if (intVec2.IsValid)
+            {
+                intVec = intVec2;
+            }
+            Map map = caster.Map;
+            if (thing == null || verbProps.beamDamageDef == null)
+            {
+                return;
+            }
+            float angleFlat = (currentTarget.Cell - caster.Position).AngleFlat;
+            BattleLogEntry_RangedImpact log = new BattleLogEntry_RangedImpact(caster, thing, currentTarget.Thing, null, null, null);
+            DamageInfo dinfo;
+            if (verbProps.beamTotalDamage > 0f)
+            {
+                float num = verbProps.beamTotalDamage / (float)pathCells.Count;
+                num *= damageFactor;
+                dinfo = new DamageInfo(verbProps.beamDamageDef, num, verbProps.beamDamageDef.defaultArmorPenetration, angleFlat, caster, null, null, DamageInfo.SourceCategory.ThingOrUnknown, currentTarget.Thing);
+            }
+            else
+            {
+                float amount = (float)verbProps.beamDamageDef.defaultDamage * damageFactor;
+                dinfo = new DamageInfo(verbProps.beamDamageDef, amount, verbProps.beamDamageDef.defaultArmorPenetration, angleFlat, caster, null, null, DamageInfo.SourceCategory.ThingOrUnknown, currentTarget.Thing);
+            }
+            thing.TakeDamage(dinfo).AssociateWithLog(log);
+            if (thing.CanEverAttachFire())
+            {
+                float chance = ((verbProps.flammabilityAttachFireChanceCurve == null) ? verbProps.beamChanceToAttachFire : verbProps.flammabilityAttachFireChanceCurve.Evaluate(thing.GetStatValue(StatDefOf.Flammability)));
+                if (Rand.Chance(chance))
+                {
+                    thing.TryAttachFire(verbProps.beamFireSizeRange.RandomInRange, caster);
+                }
+            }
+            else if (Rand.Chance(verbProps.beamChanceToStartFire))
+            {
+                FireUtility.TryStartFireIn(intVec, map, verbProps.beamFireSizeRange.RandomInRange, caster, verbProps.flammabilityAttachFireChanceCurve);
+            }
         }
 
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Collections.Look(ref path, "path", LookMode.Value);
+            Scribe_Values.Look(ref ticksToNextPathStep, "ticksToNextPathStep", 0);
+            Scribe_Values.Look(ref initialTargetPosition, "initialTargetPosition");
+            if (Scribe.mode == LoadSaveMode.PostLoadInit && path == null)
+            {
+                path = new List<Vector3>();
+            }
+        }
     }
 }

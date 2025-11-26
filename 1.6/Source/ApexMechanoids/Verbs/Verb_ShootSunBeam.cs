@@ -109,12 +109,11 @@ namespace ApexMechanoids
             {
                 return false;
             }
-            Log.Message($"TryCastShot base.EquipmentSource != null {base.EquipmentSource != null}");
-            //if (base.EquipmentSource != null)
-            //{
-            //    base.EquipmentSource.GetComp<CompChangeableProjectile>()?.Notify_ProjectileLaunched();
-            //    base.EquipmentSource.GetComp<CompApparelReloadable>()?.UsedOnce();
-            //}
+            if (base.EquipmentSource != null)
+            {
+                base.EquipmentSource.GetComp<CompChangeableProjectile>()?.Notify_ProjectileLaunched();
+                base.EquipmentSource.GetComp<CompApparelReloadable>()?.UsedOnce();
+            }
             lastShotTick = Find.TickManager.TicksGame;
             ticksToNextPathStep = base.TicksBetweenBurstShots;
             IntVec3 targetCell = InterpolatedPosition.Yto0().ToIntVec3();
@@ -200,7 +199,6 @@ namespace ApexMechanoids
 
         public override bool TryStartCastOn(LocalTargetInfo castTarg, LocalTargetInfo destTarg, bool surpriseAttack = false, bool canHitNonTargetPawns = true, bool preventFriendlyFire = false, bool nonInterruptingSelfCast = false)
         {
-            Log.Message($"TryStartCastOn");
             castTarg = verbProps.beamTargetsGround ? ((LocalTargetInfo)castTarg.Cell) : castTarg;
             if (caster == null)
             {
@@ -209,12 +207,10 @@ namespace ApexMechanoids
             }
             if (!caster.Spawned)
             {
-                Log.Message($"TryStartCastOn 1 false");
                 return false;
             }
             if (state == VerbState.Bursting || !CanHitTarget(castTarg))
             {
-                Log.Message($"TryStartCastOn 2 false");
                 return false;
             }
             //if (CausesTimeSlowdown(castTarg))
@@ -231,7 +227,6 @@ namespace ApexMechanoids
             {
                 if (!TryFindShootLineFromTo(caster.Position, castTarg, out var resultingLine))
                 {
-                    Log.Message($"TryStartCastOn 3 false");
                     return false;
                 }
                 CasterPawn.Drawer.Notify_WarmingCastAlongLine(resultingLine, caster.Position);
@@ -251,13 +246,11 @@ namespace ApexMechanoids
                 }
                 WarmupComplete();
             }
-            Log.Message($"TryStartCastOn true");
             return true;
         }
 
         public override void WarmupComplete()
         {
-
             state = VerbState.Bursting;
             initialTargetPosition = currentTarget.CenterVector3;
             CalculatePath(currentTarget.CenterVector3, path, pathCells);
@@ -320,7 +313,6 @@ namespace ApexMechanoids
             }
             pathList.Reverse();
             pathCellsList.Reverse();
-            Log.Message($"CalculatePath {pathCellsList.Count}");
         }
 
         private new void HitCell(IntVec3 cell, IntVec3 sourceCell, float damageFactor = 1f)
