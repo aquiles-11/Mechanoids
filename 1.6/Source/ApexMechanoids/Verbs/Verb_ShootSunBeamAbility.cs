@@ -8,7 +8,7 @@ using Verse.Sound;
 
 namespace ApexMechanoids
 {
-    public class Verb_ShootSunBeam : Verb_ShootBeam, IAbilityVerb
+    public class Verb_ShootSunBeamAbility : Verb_ShootBeam, IAbilityVerb
     {
         private Ability ability;
 

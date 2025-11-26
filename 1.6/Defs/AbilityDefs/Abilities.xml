@@ -83,7 +83,7 @@
 		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
 		<!-- <warmupStartSound>OrbitalTargeter_Aiming</warmupStartSound> -->
 		<verbProperties>
-			<verbClass>ApexMechanoids.Verb_ShootSunBeam</verbClass>
+			<verbClass>ApexMechanoids.Verb_ShootSunBeamAbility</verbClass>
 			<hasStandardCommand>true</hasStandardCommand>
 			<warmupTime>1.0</warmupTime>
 			<range>24.9</range>
