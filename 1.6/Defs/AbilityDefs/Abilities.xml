@@ -36,6 +36,8 @@
 		</comps>
 	</AbilityDef>
 
+
+
 	<AbilityDef>
 		<defName>APM_SwitchToPowerPlantMode</defName>
 		<label>Power Plant Mode</label>
@@ -72,13 +74,14 @@
 		</comps>
 	</AbilityDef>
 
+
+
 	<AbilityDef>
 		<defName>APM_SunRay</defName>
 		<label>sun ray</label>
 		<description>...</description>
 		<iconPath>UI/Powerful</iconPath>
-		<!-- <cooldownTicksRange>7500</cooldownTicksRange> -->
-		<cooldownTicksRange>500</cooldownTicksRange>
+		<cooldownTicksRange>7500</cooldownTicksRange>
 		<aiCanUse>true</aiCanUse>
 		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
 		<!-- <warmupStartSound>OrbitalTargeter_Aiming</warmupStartSound> -->
@@ -96,7 +99,7 @@
 			<showBurstShotStats>false</showBurstShotStats>
 			<beamWidth>6</beamWidth>
 			<ticksBetweenBurstShots>22</ticksBetweenBurstShots>
-			<beamDamageDef>Beam</beamDamageDef>
+			<beamDamageDef>APM_MegaBeam</beamDamageDef>
 			<soundCastTail>GunTail_Medium</soundCastTail>
 			<muzzleFlashScale>9</muzzleFlashScale>
 			<soundCastBeam>BeamGraser_Shooting</soundCastBeam>
@@ -104,10 +107,10 @@
 			<beamFleckChancePerTick>0.32</beamFleckChancePerTick>
 			<!-- <beamMaxDeviation>1.5</beamMaxDeviation> -->
 			<!-- <beamCurvature>0.6</beamCurvature> -->
-			<beamMoteDef>Mote_GraserBeamBase</beamMoteDef>
+			<beamMoteDef>APM_Mote_GraserLaserBeamBase</beamMoteDef>
 			<beamEndEffecterDef>GraserBeam_End</beamEndEffecterDef>
-			<beamChanceToStartFire>0.85</beamChanceToStartFire>
-			<beamChanceToAttachFire>0.85</beamChanceToAttachFire>
+			<beamChanceToStartFire>1</beamChanceToStartFire>
+			<beamChanceToAttachFire>1</beamChanceToAttachFire>
 			<beamFireSizeRange>1.0~1.5</beamFireSizeRange>
 			<beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
 			<beamStartOffset>0.8</beamStartOffset>

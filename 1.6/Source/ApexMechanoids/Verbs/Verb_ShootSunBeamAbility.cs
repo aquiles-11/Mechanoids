@@ -143,6 +143,10 @@ namespace ApexMechanoids
             lastShotTick = Find.TickManager.TicksGame;
             ticksToNextPathStep = base.TicksBetweenBurstShots;
             IntVec3 targetCell = InterpolatedPosition.Yto0().ToIntVec3();
+            if (!ability.Activate(currentTarget, currentDestination))
+            {
+                return false;
+            }
             if (!TryGetHitCell(resultingLine.Source, targetCell, out var hitCell))
             {
                 return true;
