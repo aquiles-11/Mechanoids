@@ -13,6 +13,16 @@ namespace ApexMechanoids
     {
         const float maxDist = 1.9f;
         private List<Thing> ignore = new List<Thing>();
+        public override void Launch(Thing launcher, Vector3 origin, LocalTargetInfo usedTarget, LocalTargetInfo intendedTarget, ProjectileHitFlags hitFlags, bool preventFriendlyFire = false, Thing equipment = null, ThingDef targetCoverDef = null)
+        {
+            var ticks = (this.def.graphicData as VEF.Graphics.GraphicData_Animated).ticksPerFrame * ((this.def.graphicData.Graphic as VEF.Graphics.Graphic_Animated).SubGraphicCount);
+            var dir = (usedTarget.CenterVector3 - origin).normalized;
+            var dest = (origin + (dir * ticks * def.projectile.SpeedTilesPerTick));
+            usedTarget = dest.ToIntVec3();
+            base.Launch(launcher, origin, usedTarget, intendedTarget, hitFlags, preventFriendlyFire, equipment, targetCoverDef);
+            this.destination = dest;
+            this.lifetime = this.ticksToImpact = Mathf.FloorToInt(StartingTicksToImpact);
+        }
         protected override void Tick()
         {
             base.Tick();
