@@ -1,0 +1,36 @@
+<Defs>
+
+	<ThingDef ParentName="APM_BaseGas">
+		<defName>APM_Smokescreen</defName>
+		<label>tear gas</label>
+		<graphicData>
+			<texPath>Things/Gas/ThickSmoke</texPath>
+			<drawSize>2.2</drawSize>
+			<color>(0,0.49,1.0,0.5)</color>
+		</graphicData>
+		<gas>
+			<expireSeconds>
+				<min>20</min>
+				<max>30</max>
+			</expireSeconds>
+			<rotationSpeed>20</rotationSpeed>
+		</gas>
+		<thingClass>ApexMechanoids.Gas_SmokescreenCelerus</thingClass>
+		<modExtensions>
+			<li Class="ApexMechanoids.DefModExtension_CelerusGas">
+				<effectDelay>120~240</effectDelay>
+				<immuneThingDefs>
+					<li>APM_Mech_Celerus</li>
+				</immuneThingDefs>
+				<fleckDefs>
+					<li>ArcLargeEMP_A</li>
+					<li>ArcLargeEMP_B</li>
+				</fleckDefs>
+				<effecterDef>MechBandElectricityArc</effecterDef>
+				<damageDef>Burn</damageDef>
+				<amount>1</amount>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+</Defs>

@@ -1,0 +1,16 @@
+<Defs>
+
+	<ThingDef Name="APM_BaseGas" Abstract="True">
+		<thingClass>Gas</thingClass>
+		<label>gas</label>
+		<category>Gas</category>
+		<altitudeLayer>Gas</altitudeLayer>
+		<useHitPoints>false</useHitPoints>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<graphicClass>Graphic_Gas</graphicClass>
+			<shaderType>Transparent</shaderType>
+		</graphicData>
+	</ThingDef>
+
+</Defs>
