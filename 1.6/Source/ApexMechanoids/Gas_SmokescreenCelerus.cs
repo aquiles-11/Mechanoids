@@ -11,9 +11,6 @@ namespace ApexMechanoids
 {
     public class Gas_SmokescreenCelerus : Gas
     {
-        public const int refreshTicks = 120;
-
-        public const int severityPerTick = 1;
 
         public int effectDelay;
 
@@ -63,7 +60,14 @@ namespace ApexMechanoids
                             {
                                 if (!modExtension.immuneThingDefs.NullOrEmpty())
                                 {
-                                    if (modExtension.immuneThingDefs.Contains(pawn.def)) continue;
+                                    if (modExtension.immuneThingDefs.Contains(pawn.def))
+                                    {
+                                        if (modExtension.hediffToImmunePawn != null)
+                                        {
+                                            GiveHediff(pawn);
+                                        }
+                                        continue;
+                                    }
                                 }
                                 DoDamage(pawn);
                             }
@@ -72,6 +76,11 @@ namespace ApexMechanoids
                 }
 
             }
+        }
+        public void GiveHediff(Pawn pawn)
+        {
+            Hediff hediff = HediffMaker.MakeHediff(modExtension.hediffToImmunePawn,pawn);
+            pawn.health.AddHediff(hediff);
         }
         public void DoEffect()
         {
