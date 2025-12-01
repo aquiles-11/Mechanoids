@@ -161,13 +161,13 @@ namespace ApexMechanoids
                 mote.UpdateTargets(new TargetInfo(caster.Position, caster.Map), new TargetInfo(intVec, caster.Map), offsetA, val4);
                 mote.Maintain();
             }
-            //if (caster.IsHashIntervalTick(base.TicksBetweenBurstShots) && base.EquipmentSource != null && modExtention != null && modExtention.circleMote != null)
-            //{
-            //    float rotation = normalized.AngleFlat();
-            //    FleckCreationData dataStatic = FleckMaker.GetDataStatic(val, caster.Map, modExtention.circleMote);
-            //    dataStatic.rotation = rotation;
-            //    caster.Map.flecks.CreateFleck(dataStatic);
-            //}
+            if (caster.IsHashIntervalTick(base.TicksBetweenBurstShots) && base.EquipmentSource != null && modExtention != null && modExtention.circleMote != null)
+            {
+                float rotation = normalized.AngleFlat();
+                FleckCreationData dataStatic = FleckMaker.GetDataStatic(val, caster.Map, modExtention.circleMote);
+                dataStatic.rotation = rotation;
+                caster.Map.flecks.CreateFleck(dataStatic);
+            }
             if (verbProps.beamGroundFleckDef != null && Rand.Chance(verbProps.beamFleckChancePerTick))
             {
                 FleckMaker.Static(val, caster.Map, verbProps.beamGroundFleckDef);
@@ -213,10 +213,6 @@ namespace ApexMechanoids
             {
                 return false;
             }
-            //if (CausesTimeSlowdown(castTarg))
-            //{
-            //    Find.TickManager.slower.SignalForceNormalSpeed();
-            //}
             this.surpriseAttack = surpriseAttack;
             canHitNonTargetPawnsNow = canHitNonTargetPawns;
             this.preventFriendlyFire = preventFriendlyFire;
@@ -267,24 +263,6 @@ namespace ApexMechanoids
             {
                 sustainer = verbProps.soundCastBeam.TrySpawnSustainer(SoundInfo.InMap(caster, MaintenanceType.PerTick));
             }
-            //foreach (IntVec3 pathCell in pathCells)
-            //{
-            //    foreach (IntVec3 item in GenRadial.RadialCellsAround(pathCell, 4f, useCenter: true).InRandomOrder())
-            //    {
-            //        foreach (Thing thing in item.GetThingList(caster.Map))
-            //        {
-            //            if (thing is Pawn pawn && !pawn.HostileTo(caster) && !pawn.Drafted && !pawn.IsColonist && (!pawn.Downed || pawn.health.CanCrawl) && pawn != caster)
-            //            {
-            //                Job job = Utility.MakeFlee(pawn, caster, 5f, pathCells.ToList());
-            //                if (job != null && (pawn.CurJob == null || pawn.CurJobDef != JobDefOf.Flee))
-            //                {
-            //                    pawn.jobs.StopAll();
-            //                    pawn.jobs.StartJob(job, JobCondition.InterruptOptional);
-            //                }
-            //            }
-            //        }
-            //    }
-            //}
         }
 
         private new void CalculatePath(Vector3 target, List<Vector3> pathList, HashSet<IntVec3> pathCellsList, bool addRandomOffset = true)

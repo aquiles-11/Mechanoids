@@ -124,6 +124,7 @@
 			<beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
 			<beamStartOffset>0.8</beamStartOffset>
 
+			<beamTargetsGround>true</beamTargetsGround>
 			<beamCantHitWithinMinRange>true</beamCantHitWithinMinRange>
 			<stopBurstWithoutLos>false</stopBurstWithoutLos>
 			<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
