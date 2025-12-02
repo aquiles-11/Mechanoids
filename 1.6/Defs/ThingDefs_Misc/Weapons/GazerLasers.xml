@@ -90,9 +90,6 @@
     <weaponClasses>
       <li>RangedHeavy</li>
     </weaponClasses>
-    <weaponTags Inherit="False">
-      <li>APM_WeaponGazerLaser</li>
-    </weaponTags>
     <verbs>
       <li>
 			<verbClass>ApexMechanoids.Verb_ShootSunBeam</verbClass>

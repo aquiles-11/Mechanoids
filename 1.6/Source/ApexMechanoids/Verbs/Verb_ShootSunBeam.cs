@@ -161,13 +161,13 @@ namespace ApexMechanoids
                 mote.UpdateTargets(new TargetInfo(caster.Position, caster.Map), new TargetInfo(intVec, caster.Map), offsetA, val4);
                 mote.Maintain();
             }
-            if (caster.IsHashIntervalTick(base.TicksBetweenBurstShots) && base.EquipmentSource != null && modExtention != null && modExtention.circleMote != null)
-            {
-                float rotation = normalized.AngleFlat();
-                FleckCreationData dataStatic = FleckMaker.GetDataStatic(val, caster.Map, modExtention.circleMote);
-                dataStatic.rotation = rotation;
-                caster.Map.flecks.CreateFleck(dataStatic);
-            }
+            //if (caster.IsHashIntervalTick(base.TicksBetweenBurstShots) && base.EquipmentSource != null && modExtention != null && modExtention.circleMote != null)
+            //{
+            //    float rotation = normalized.AngleFlat();
+            //    FleckCreationData dataStatic = FleckMaker.GetDataStatic(val, caster.Map, modExtention.circleMote);
+            //    dataStatic.rotation = rotation;
+            //    caster.Map.flecks.CreateFleck(dataStatic);
+            //}
             if (verbProps.beamGroundFleckDef != null && Rand.Chance(verbProps.beamFleckChancePerTick))
             {
                 FleckMaker.Static(val, caster.Map, verbProps.beamGroundFleckDef);
