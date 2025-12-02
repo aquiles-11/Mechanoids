@@ -9,7 +9,7 @@ using Verse;
 
 namespace ApexMechanoids
 {
-    public class SeveringEdge : Projectile
+    public class SeveringEdge : Projectile, VEF.Graphics.IAnimationOneTime
     {
         const float maxDist = 1.9f;
         private List<Thing> ignore = new List<Thing>();
@@ -61,6 +61,13 @@ namespace ApexMechanoids
         {
             base.ExposeData();
             Scribe_Collections.Look(ref ignore, nameof(ignore), LookMode.Reference);
+        }
+
+        public int CurrentIndex()
+        {
+            var data = (VEF.Graphics.GraphicData_Animated)this.def.graphicData;
+            var graphics = (VEF.Graphics.Graphic_Animated)this.def.graphicData.Graphic;
+            return Mathf.Min((Mathf.FloorToInt(StartingTicksToImpact) - ticksToImpact) / data.ticksPerFrame, graphics.SubGraphicCount);
         }
     }
 }

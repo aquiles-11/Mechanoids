@@ -143,6 +143,7 @@
 			<armorPenetrationBase>1</armorPenetrationBase>
 			<stoppingPower>1</stoppingPower>
 			<speed>12</speed>
+			<useGraphicClass>true</useGraphicClass>
 		</projectile>
 	</ThingDef>
 
