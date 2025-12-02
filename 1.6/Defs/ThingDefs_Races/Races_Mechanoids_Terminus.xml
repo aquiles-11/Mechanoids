@@ -121,6 +121,7 @@
 				<canTargetLocations>true</canTargetLocations>
 			</targetParams>
 		</verbProperties>
+		<warmupMote>Mote_SeveringEdge_Intro</warmupMote>
 		<comps>
 			<li Class="CompProperties_AbilityLaunchProjectile">
 				<projectileDef>SeveringEdge</projectileDef>
