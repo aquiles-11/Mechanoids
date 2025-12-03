@@ -3,7 +3,7 @@
   
   <ThingDef ParentName="MoteBase">
     <defName>Mote_SeveringEdge_Intro</defName>
-    <!--<thingClass>MoteAttached</thingClass>-->
+    <thingClass>ApexMechanoids.SeveringEdge_Mote</thingClass>
     <altitudeLayer>MoteOverhead</altitudeLayer>
     <mote>
       <fadeInTime>0.35</fadeInTime>
@@ -14,6 +14,7 @@
     <graphicData Class="VEF.Graphics.GraphicData_Animated">
       <graphicClass>VEF.Graphics.Graphic_AnimatedMote</graphicClass>
       <color>(0.35, 0.52, 0.85)</color>
+			<drawSize>(3.5, 3.5)</drawSize>
       <!--<shaderType>MoteMultiplyAddScroll</shaderType>-->
       <texPath>Things/Mote/SeveringEdge_Intro</texPath>
 			<ticksPerFrame>3</ticksPerFrame>

@@ -122,6 +122,7 @@
 			</targetParams>
 		</verbProperties>
 		<warmupMote>Mote_SeveringEdge_Intro</warmupMote>
+		<moteOffsetAmountTowardsTarget>0.5</moteOffsetAmountTowardsTarget>
 		<comps>
 			<li Class="CompProperties_AbilityLaunchProjectile">
 				<projectileDef>SeveringEdge</projectileDef>
