@@ -34,13 +34,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets.cs" />
+    <Compile Include="DefModExtension_CelerusGas.cs" />
     <Compile Include="CompAbilityEffect_KillCaster.cs" />
     <Compile Include="CompAbilityEffect_Absorb.cs" />
     <Compile Include="CompAbilityEffect_NeedOffset.cs" />
     <Compile Include="CompAbilityEffect_SpawnThingDuelAttached.cs" />
+    <Compile Include="CompProperties\CompProperties_AreaHediffGiver.cs" />
     <Compile Include="CompProperties\CompProperties_Aegis.cs" />
     <Compile Include="CompProperties\CompProperties_MechWirelessCharger.cs" />
     <Compile Include="CompProperties\CompProperties_ConvertToBuilding.cs" />
+    <Compile Include="Gas_SmokescreenCelerus.cs" />
+    <Compile Include="Comps\CompAreaHediffGiver.cs" />
     <Compile Include="Comps\CompAegis.cs" />
     <Compile Include="Comps\CompDrawRotatedAdditionalGraphics.cs" />
     <Compile Include="Comps\CompMechWirelessCharger.cs" />
