@@ -78,7 +78,7 @@
 
 	<AbilityDef>
 		<defName>APM_SunRay</defName>
-		<label>sun ray</label>
+		<label>Sun Ray</label>
 		<description>...</description>
 		<iconPath>UI/Powerful</iconPath>
 		<cooldownTicksRange>3500</cooldownTicksRange>
@@ -98,7 +98,7 @@
 			<showBurstShotStats>false</showBurstShotStats>
 			<beamWidth>6</beamWidth>
 			<ticksBetweenBurstShots>14</ticksBetweenBurstShots>
-			<beamDamageDef>APM_MegaBeam</beamDamageDef>
+			<beamDamageDef>APM_SunRay</beamDamageDef>
 			<soundCastTail>GunTail_Medium</soundCastTail>
 			<muzzleFlashScale>35</muzzleFlashScale>
 			<soundCastBeam>BeamGraser_Shooting</soundCastBeam>

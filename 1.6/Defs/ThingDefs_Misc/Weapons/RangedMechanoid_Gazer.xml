@@ -36,11 +36,11 @@
 				<range>24.9</range>
 				<minRange>3.9</minRange>
 				<beamFullWidthRange>6.9</beamFullWidthRange>
-				<burstShotCount>10</burstShotCount>
+				<burstShotCount>14</burstShotCount>
 				<showBurstShotStats>false</showBurstShotStats>
 				<beamWidth>6</beamWidth>
-				<ticksBetweenBurstShots>22</ticksBetweenBurstShots>
-				<beamDamageDef>Beam</beamDamageDef>
+				<ticksBetweenBurstShots>14</ticksBetweenBurstShots>
+				<beamDamageDef>APM_GazerBeam</beamDamageDef>
 				<soundCastTail>GunTail_Medium</soundCastTail>
 				<muzzleFlashScale>9</muzzleFlashScale>
 				<soundCastBeam>BeamGraser_Shooting</soundCastBeam>
@@ -71,10 +71,9 @@
 		<label>sun ray projector</label>
 		<description>PLACEHOLDER</description>
 		<graphicData>
-			<texPath>Blank</texPath>
+			<texPath>Things/Item/Equipment/WeaponRanged/APM_SunRay</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<uiIconPath>UI/Light</uiIconPath>
 		<techLevel>Ultra</techLevel>
 		<tradeability>None</tradeability>
 		<destroyOnDrop>true</destroyOnDrop>
@@ -94,7 +93,7 @@
 			<li>
 				<verbClass>ApexMechanoids.Verb_ShootSunBeam</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<warmupTime>23.0</warmupTime>
+				<warmupTime>15.0</warmupTime>
 				<range>29.9</range>
 				<minRange>3.9</minRange>
 				<targetParams>
@@ -105,7 +104,7 @@
 				<showBurstShotStats>false</showBurstShotStats>
 				<beamWidth>6</beamWidth>
 				<ticksBetweenBurstShots>20</ticksBetweenBurstShots>
-				<beamDamageDef>APM_MegaBeam</beamDamageDef>
+				<beamDamageDef>APM_SunRayGun</beamDamageDef>
 				<soundCastTail>GunTail_Medium</soundCastTail>
 				<muzzleFlashScale>32</muzzleFlashScale>
 				<soundCastBeam>BeamGraser_Shooting</soundCastBeam>
@@ -141,11 +140,5 @@
 			</li>
 		</verbs>
 	</ThingDef>
-
-	<DamageDef ParentName="Beam">
-		<defName>APM_MegaBeam</defName>
-		<label>mega beam</label>
-		<defaultDamage>25</defaultDamage>
-	</DamageDef>
 
 </Defs>
