@@ -1,183 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <ThingDef ParentName="BaseGun">
-    <defName>APM_Gazer_Laser</defName>
-    <label>laser</label>
-    <description>PLACEHOLDER</description>
-    <graphicData>
-      <texPath>Blank</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <uiIconPath>UI/Light</uiIconPath>
-    <techLevel>Ultra</techLevel>
-    <tradeability>None</tradeability>
-    <destroyOnDrop>true</destroyOnDrop>
-    <relicChance>0</relicChance>
-    <statBases>
-      <MarketValue>9999</MarketValue>
-      <AccuracyTouch>0.7</AccuracyTouch>
-      <AccuracyShort>0.85</AccuracyShort>
-      <AccuracyMedium>0.92</AccuracyMedium>
-      <AccuracyLong>0.90</AccuracyLong>
-      <RangedWeapon_Cooldown>6.8</RangedWeapon_Cooldown>
-    </statBases>
-    <weaponClasses>
-      <li>RangedHeavy</li>
-    </weaponClasses>
-    <weaponTags Inherit="False">
-      <li>APM_WeaponGazerLaser</li>
-    </weaponTags>
-    <verbs>
-      <li>
-        <verbClass>Verb_ShootBeam</verbClass>
-        <hasStandardCommand>true</hasStandardCommand>
-        <warmupTime>1.0</warmupTime>
-        <range>24.9</range>
-        <minRange>3.9</minRange>
-        <beamFullWidthRange>6.9</beamFullWidthRange>
-        <burstShotCount>5</burstShotCount>
-        <showBurstShotStats>false</showBurstShotStats>
-        <beamWidth>6</beamWidth>
-        <ticksBetweenBurstShots>22</ticksBetweenBurstShots>
-        <beamDamageDef>Beam</beamDamageDef>
-        <soundCastTail>GunTail_Medium</soundCastTail>
-        <muzzleFlashScale>9</muzzleFlashScale>
-        <soundCastBeam>BeamGraser_Shooting</soundCastBeam>
-        <beamGroundFleckDef>Fleck_BeamBurn</beamGroundFleckDef>
-        <beamFleckChancePerTick>0.32</beamFleckChancePerTick>
-        <beamMaxDeviation>1.5</beamMaxDeviation>
-        <beamCurvature>0.6</beamCurvature>
-        <beamMoteDef>Mote_GraserBeamBase</beamMoteDef>
-        <beamEndEffecterDef>GraserBeam_End</beamEndEffecterDef>
-        <beamChanceToStartFire>0.85</beamChanceToStartFire>
-        <beamChanceToAttachFire>0.85</beamChanceToAttachFire>
-        <beamFireSizeRange>0.55~0.85</beamFireSizeRange>
-        <beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
-        <beamStartOffset>0.8</beamStartOffset>
-        <beamLineFleckChanceCurve>
-          <points>
-            <li>(0, 0)</li>
-            <li>(0.65, 0.4)</li>
-            <li>(1, 0.75)</li>
-          </points>
-        </beamLineFleckChanceCurve>
-      </li>
-    </verbs>
-  </ThingDef>
+	<ThingDef ParentName="BaseGun">
+		<defName>APM_Gazer_BeamGun</defName>
+		<label>laser beam projector</label>
+		<description>PLACEHOLDER</description>
+		<graphicData>
+			<texPath>Blank</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<uiIconPath>UI/Light</uiIconPath>
+		<techLevel>Ultra</techLevel>
+		<tradeability>None</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
+		<relicChance>0</relicChance>
+		<statBases>
+			<MarketValue>9999</MarketValue>
+			<AccuracyTouch>0.7</AccuracyTouch>
+			<AccuracyShort>0.85</AccuracyShort>
+			<AccuracyMedium>0.92</AccuracyMedium>
+			<AccuracyLong>0.90</AccuracyLong>
+			<RangedWeapon_Cooldown>2.4</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponClasses>
+			<li>RangedHeavy</li>
+		</weaponClasses>
+		<weaponTags Inherit="False">
+			<li>APM_WeaponGazerLaser</li>
+		</weaponTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_ShootBeam</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<warmupTime>1.0</warmupTime>
+				<range>24.9</range>
+				<minRange>3.9</minRange>
+				<beamFullWidthRange>6.9</beamFullWidthRange>
+				<burstShotCount>10</burstShotCount>
+				<showBurstShotStats>false</showBurstShotStats>
+				<beamWidth>6</beamWidth>
+				<ticksBetweenBurstShots>22</ticksBetweenBurstShots>
+				<beamDamageDef>Beam</beamDamageDef>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<soundCastBeam>BeamGraser_Shooting</soundCastBeam>
+				<beamGroundFleckDef>Fleck_BeamBurn</beamGroundFleckDef>
+				<beamFleckChancePerTick>0.32</beamFleckChancePerTick>
+				<beamMaxDeviation>1.5</beamMaxDeviation>
+				<beamCurvature>0.6</beamCurvature>
+				<beamMoteDef>APM_Mote_GazerBeam_Base</beamMoteDef>
+				<beamEndEffecterDef>APM_Effecter_SunRay_End</beamEndEffecterDef>
+				<beamChanceToStartFire>0.85</beamChanceToStartFire>
+				<beamChanceToAttachFire>0.85</beamChanceToAttachFire>
+				<beamFireSizeRange>0.55~0.85</beamFireSizeRange>
+				<beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
+				<beamStartOffset>0.8</beamStartOffset>
+				<beamLineFleckChanceCurve>
+					<points>
+						<li>(0, 0)</li>
+						<li>(0.65, 0.4)</li>
+						<li>(1, 0.75)</li>
+					</points>
+				</beamLineFleckChanceCurve>
+			</li>
+		</verbs>
+	</ThingDef>
 
-  <ThingDef ParentName="BaseGun">
-    <defName>APM_Gazer_LaserGun</defName>
-    <label>laser gun</label>
-    <description>PLACEHOLDER</description>
-    <graphicData>
-      <texPath>Blank</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <uiIconPath>UI/Light</uiIconPath>
-    <techLevel>Ultra</techLevel>
-    <tradeability>None</tradeability>
-    <destroyOnDrop>true</destroyOnDrop>
-    <relicChance>0</relicChance>
-    <statBases>
-      <MarketValue>9999</MarketValue>
-      <AccuracyTouch>0.7</AccuracyTouch>
-      <AccuracyShort>0.85</AccuracyShort>
-      <AccuracyMedium>0.92</AccuracyMedium>
-      <AccuracyLong>0.90</AccuracyLong>
-      <RangedWeapon_Cooldown>6.8</RangedWeapon_Cooldown>
-    </statBases>
-    <weaponClasses>
-      <li>RangedHeavy</li>
-    </weaponClasses>
-    <verbs>
-      <li>
-			<verbClass>ApexMechanoids.Verb_ShootSunBeam</verbClass>
-			<hasStandardCommand>true</hasStandardCommand>
-			<warmupTime>1.0</warmupTime>
-			<range>24.9</range>
-			<minRange>3.9</minRange>
-			<targetParams>
-				<canTargetLocations>true</canTargetLocations>
-			</targetParams>
-			<beamFullWidthRange>6.9</beamFullWidthRange>
-			<burstShotCount>5</burstShotCount>
-			<showBurstShotStats>false</showBurstShotStats>
-			<beamWidth>6</beamWidth>
-			<ticksBetweenBurstShots>22</ticksBetweenBurstShots>
-			<beamDamageDef>APM_MegaBeam</beamDamageDef>
-			<soundCastTail>GunTail_Medium</soundCastTail>
-			<muzzleFlashScale>9</muzzleFlashScale>
-			<soundCastBeam>BeamGraser_Shooting</soundCastBeam>
-			<beamGroundFleckDef>Fleck_BeamBurn</beamGroundFleckDef>
-			<beamFleckChancePerTick>0.32</beamFleckChancePerTick>
-			<!-- <beamMaxDeviation>1.5</beamMaxDeviation> -->
-			<!-- <beamCurvature>0.6</beamCurvature> -->
-			<beamMoteDef>APM_Mote_GraserLaserBeamBase</beamMoteDef>
-			<beamEndEffecterDef>GraserBeam_End</beamEndEffecterDef>
-			<beamChanceToStartFire>0.85</beamChanceToStartFire>
-			<beamChanceToAttachFire>0.85</beamChanceToAttachFire>
-			<beamFireSizeRange>1.0~1.5</beamFireSizeRange>
-			<beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
-			<beamStartOffset>0.8</beamStartOffset>
+	<ThingDef ParentName="BaseGun">
+		<defName>APM_Gazer_SunRayGun</defName>
+		<label>sun ray projector</label>
+		<description>PLACEHOLDER</description>
+		<graphicData>
+			<texPath>Blank</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<uiIconPath>UI/Light</uiIconPath>
+		<techLevel>Ultra</techLevel>
+		<tradeability>None</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
+		<relicChance>0</relicChance>
+		<statBases>
+			<MarketValue>9999</MarketValue>
+			<AccuracyTouch>0.7</AccuracyTouch>
+			<AccuracyShort>0.85</AccuracyShort>
+			<AccuracyMedium>0.92</AccuracyMedium>
+			<AccuracyLong>0.90</AccuracyLong>
+			<RangedWeapon_Cooldown>35.0</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponClasses>
+			<li>RangedHeavy</li>
+		</weaponClasses>
+		<verbs>
+			<li>
+				<verbClass>ApexMechanoids.Verb_ShootSunBeam</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<warmupTime>23.0</warmupTime>
+				<range>29.9</range>
+				<minRange>3.9</minRange>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<beamFullWidthRange>6.9</beamFullWidthRange>
+				<burstShotCount>5</burstShotCount>
+				<showBurstShotStats>false</showBurstShotStats>
+				<beamWidth>6</beamWidth>
+				<ticksBetweenBurstShots>20</ticksBetweenBurstShots>
+				<beamDamageDef>APM_MegaBeam</beamDamageDef>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>32</muzzleFlashScale>
+				<soundCastBeam>BeamGraser_Shooting</soundCastBeam>
+				<beamGroundFleckDef>APM_Fleck_SunRay_Burn</beamGroundFleckDef>
+				<beamFleckChancePerTick>0.5</beamFleckChancePerTick>
+				<beamMaxDeviation>1.5</beamMaxDeviation>
+				<beamCurvature>0.6</beamCurvature>
+				<beamMoteDef>APM_Mote_SunRay_Base</beamMoteDef>
+				<beamEndEffecterDef>APM_Effecter_SunRay_End</beamEndEffecterDef>
+				<beamChanceToStartFire>0.85</beamChanceToStartFire>
+				<beamChanceToAttachFire>0.85</beamChanceToAttachFire>
+				<beamFireSizeRange>1.0~1.5</beamFireSizeRange>
+				<beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
+				<beamStartOffset>0.8</beamStartOffset>
+				<beamTargetsGround>true</beamTargetsGround>
+				<beamCantHitWithinMinRange>true</beamCantHitWithinMinRange>
+				<stopBurstWithoutLos>false</stopBurstWithoutLos>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
+				<aimingLineMote>APM_Mote_SunRay_Aim</aimingLineMote>
+				<aimingChargeMote>APM_Mote_SunRay_Charge</aimingChargeMote>
+				<aimingChargeMoteOffset>1.07</aimingChargeMoteOffset>
+				<aimingLineMoteFixedLength>25.9</aimingLineMoteFixedLength>
+				<aimingTargetMote>APM_Mote_SunRay_Target</aimingTargetMote>
+				<soundAiming>HellsphereCannon_Aiming</soundAiming>
+				<beamLineFleckChanceCurve>
+					<points>
+						<li>(0, 0)</li>
+						<li>(0.65, 0.4)</li>
+						<li>(1, 0.75)</li>
+					</points>
+				</beamLineFleckChanceCurve>
+			</li>
+		</verbs>
+	</ThingDef>
 
-			<beamTargetsGround>true</beamTargetsGround>
-			<beamCantHitWithinMinRange>true</beamCantHitWithinMinRange>
-			<stopBurstWithoutLos>false</stopBurstWithoutLos>
-			<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
-			<ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
-			<!-- <aimingLineMote></aimingLineMote> -->
-			<!-- <aimingChargeMote></aimingChargeMote> -->
-			<aimingChargeMoteOffset>1.07</aimingChargeMoteOffset>
-			<aimingLineMoteFixedLength>25.9</aimingLineMoteFixedLength>
-			<!-- <aimingTargetMote></aimingTargetMote> -->
-			<soundAiming>HellsphereCannon_Aiming</soundAiming>
-
-			<beamLineFleckChanceCurve>
-				<points>
-					<li>(0, 0)</li>
-					<li>(0.65, 0.4)</li>
-					<li>(1, 0.75)</li>
-				</points>
-			</beamLineFleckChanceCurve>
-      </li>
-    </verbs>
-  </ThingDef>
-
-  <DamageDef ParentName="Beam">
-    <defName>APM_MegaBeam</defName>
-    <label>mega beam</label>
-    <defaultDamage>25</defaultDamage>
-  </DamageDef>
-
-  <ThingDef ParentName="MoteBase">
-    <defName>APM_Mote_GraserLaserBeamBase</defName>
-    <thingClass>MoteDualAttached</thingClass>
-    <altitudeLayer>MoteOverhead</altitudeLayer>
-    <mote>
-      <fadeInTime>0.2</fadeInTime>
-      <fadeOutTime>0.3</fadeOutTime>
-      <solidTime>999999</solidTime>
-      <needsMaintenance>True</needsMaintenance>
-      <rotateTowardsTarget>True</rotateTowardsTarget>
-      <scaleToConnectTargets>True</scaleToConnectTargets>
-      <fadeOutUnmaintained>True</fadeOutUnmaintained>
-    </mote>
-    <drawOffscreen>true</drawOffscreen>
-    <graphicData>
-      <texPath>Things/Mote/GraserBeam</texPath>
-      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
-      <shaderType>MoteBeam</shaderType>
-      <shaderParameters>
-        <_ExtraTexA>/Things/Mote/BeamSecondaryNoise_A</_ExtraTexA>
-        <_ExtraTexB>/Things/Mote/BeamSecondaryNoise_B</_ExtraTexB>
-        <_ScrollSpeedA>-4 </_ScrollSpeedA>
-        <_ScrollSpeedB>3</_ScrollSpeedB>
-        <_Intensity>2</_Intensity>
-      </shaderParameters>
-      <color>(235, 64, 52)</color>
-      <drawSize>(5.5, 1)</drawSize>
-    </graphicData>
-  </ThingDef>
+	<DamageDef ParentName="Beam">
+		<defName>APM_MegaBeam</defName>
+		<label>mega beam</label>
+		<defaultDamage>25</defaultDamage>
+	</DamageDef>
 
 </Defs>

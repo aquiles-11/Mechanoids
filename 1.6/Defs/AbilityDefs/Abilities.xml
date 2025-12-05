@@ -81,15 +81,14 @@
 		<label>sun ray</label>
 		<description>...</description>
 		<iconPath>UI/Powerful</iconPath>
-		<cooldownTicksRange>7500</cooldownTicksRange>
+		<cooldownTicksRange>3500</cooldownTicksRange>
 		<aiCanUse>true</aiCanUse>
 		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
-		<!-- <warmupStartSound>OrbitalTargeter_Aiming</warmupStartSound> -->
 		<verbProperties>
 			<verbClass>ApexMechanoids.Verb_ShootSunBeamAbility</verbClass>
 			<hasStandardCommand>true</hasStandardCommand>
-			<warmupTime>1.0</warmupTime>
-			<range>24.9</range>
+			<warmupTime>9.5</warmupTime>
+			<range>34.9</range>
 			<minRange>3.9</minRange>
 			<targetParams>
 				<canTargetLocations>true</canTargetLocations>
@@ -98,35 +97,33 @@
 			<burstShotCount>5</burstShotCount>
 			<showBurstShotStats>false</showBurstShotStats>
 			<beamWidth>6</beamWidth>
-			<ticksBetweenBurstShots>22</ticksBetweenBurstShots>
+			<ticksBetweenBurstShots>14</ticksBetweenBurstShots>
 			<beamDamageDef>APM_MegaBeam</beamDamageDef>
 			<soundCastTail>GunTail_Medium</soundCastTail>
-			<muzzleFlashScale>9</muzzleFlashScale>
+			<muzzleFlashScale>35</muzzleFlashScale>
 			<soundCastBeam>BeamGraser_Shooting</soundCastBeam>
-			<beamGroundFleckDef>Fleck_BeamBurn</beamGroundFleckDef>
-			<beamFleckChancePerTick>0.32</beamFleckChancePerTick>
-			<!-- <beamMaxDeviation>1.5</beamMaxDeviation> -->
-			<!-- <beamCurvature>0.6</beamCurvature> -->
-			<beamMoteDef>APM_Mote_GraserLaserBeamBase</beamMoteDef>
-			<beamEndEffecterDef>GraserBeam_End</beamEndEffecterDef>
+			<beamGroundFleckDef>APM_Fleck_SunRay_Burn</beamGroundFleckDef>
+			<beamFleckChancePerTick>0.5</beamFleckChancePerTick>
+			<beamMaxDeviation>1.5</beamMaxDeviation>
+			<beamCurvature>0.6</beamCurvature>
+			<beamMoteDef>APM_Mote_SunRay_Base</beamMoteDef>
+			<beamEndEffecterDef>APM_Effecter_SunRay_End</beamEndEffecterDef>
 			<beamChanceToStartFire>1</beamChanceToStartFire>
 			<beamChanceToAttachFire>1</beamChanceToAttachFire>
 			<beamFireSizeRange>1.0~1.5</beamFireSizeRange>
 			<beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
 			<beamStartOffset>0.8</beamStartOffset>
-
 			<beamTargetsGround>true</beamTargetsGround>
 			<beamCantHitWithinMinRange>true</beamCantHitWithinMinRange>
 			<stopBurstWithoutLos>false</stopBurstWithoutLos>
 			<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
 			<ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
-			<!-- <aimingLineMote></aimingLineMote> -->
-			<!-- <aimingChargeMote></aimingChargeMote> -->
+			<aimingLineMote>APM_Mote_SunRay_Aim</aimingLineMote>
+			<aimingChargeMote>APM_Mote_SunRay_Charge</aimingChargeMote>
 			<aimingChargeMoteOffset>1.07</aimingChargeMoteOffset>
 			<aimingLineMoteFixedLength>25.9</aimingLineMoteFixedLength>
-			<!-- <aimingTargetMote></aimingTargetMote> -->
+			<aimingTargetMote>APM_Mote_SunRay_Target</aimingTargetMote>
 			<soundAiming>HellsphereCannon_Aiming</soundAiming>
-
 			<beamLineFleckChanceCurve>
 				<points>
 					<li>(0, 0)</li>
