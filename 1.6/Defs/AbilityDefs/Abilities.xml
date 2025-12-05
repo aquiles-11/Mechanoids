@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<AbilityDef>
+		<defName>APM_Absorb</defName>
+		<label>absorb</label>
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<description>PLACEHOLDER</description>
+		<iconPath>UI/Haze</iconPath>
+		<cooldownTicksRange>90000</cooldownTicksRange><!-- 1.5 days -->
+		<targetRequired>true</targetRequired>
+		<hostile>false</hostile>
+		<showCastingProgressBar>true</showCastingProgressBar>
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<warmupTime>1</warmupTime>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<targetParams>
+				<canTargetCorpses>true</canTargetCorpses>
+				<canTargetItems>true</canTargetItems>
+				<mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<thingCategory>None</thingCategory>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="ApexMechanoids.CompProperties_Absorb">
+				<chemfuelPer1BodySizeOfCorpse>36</chemfuelPer1BodySizeOfCorpse>
+				<chemfuelPer1Nutrition>10</chemfuelPer1Nutrition>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<AbilityDef>
+		<defName>APM_SwitchToPowerPlantMode</defName>
+		<label>Power Plant Mode</label>
+		<description>...</description>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>False</targetRequired>
+		<canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+		<iconPath>UI/BuildingMode</iconPath>
+		<cooldownTicksRange>20000</cooldownTicksRange><!-- 8 hours -->
+		<stunTargetWhileCasting>True</stunTargetWhileCasting>
+		<showPsycastEffects>False</showPsycastEffects>
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		<warmupStartSound>CombatCommand_Warmup</warmupStartSound>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>40</warmupTime>
+			<drawAimPie>False</drawAimPie>
+			<requireLineOfSight>False</requireLineOfSight>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>false</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="ApexMechanoids.CompProperties_ConvertToBuilding">
+				<thingDef>APM_DynamoPoweredGenerator</thingDef>
+			</li>
+		</comps>
+	</AbilityDef>
+
+</Defs>
