@@ -29,7 +29,7 @@ namespace ApexMechanoids
             Scribe_Values.Look(ref destroyTick, "destroyTick", 0);
         }
 
-        public override void TickInterval(int delta)
+        protected override void TickInterval(int delta)
         {
             base.TickInterval(delta);
             if (!Destroyed)
@@ -73,7 +73,7 @@ namespace ApexMechanoids
 
             }
         }
-        public override void Tick()
+        protected override void Tick()
         {
             if (destroyTick <= Find.TickManager.TicksGame)
             {
