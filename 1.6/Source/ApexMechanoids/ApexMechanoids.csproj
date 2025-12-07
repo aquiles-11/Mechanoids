@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
     <AssemblyName>ApexMechanoids</AssemblyName>
     <AssemblyVersion>0.8</AssemblyVersion>
     <FileVersion>0.8</FileVersion>
@@ -10,13 +9,14 @@
     <Authors />
     <Copyright>CC BY-NC-SA 4.0 2025</Copyright>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <TargetFramework>net48</TargetFramework>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == '1.6|AnyCPU'">
     <OutputPath>..\..\Assemblies\</OutputPath>
     <DebugType>embedded</DebugType>
 		<DebugSymbols>true</DebugSymbols>
 		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-		<LangVersion>12.0</LangVersion>
+		<LangVersion>14</LangVersion>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
@@ -32,5 +32,8 @@
 	</ItemGroup>
 	<ItemGroup>
 		<Publicize Include="Assembly-CSharp" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ReferencePathWithRefAssemblies Update="\var\home\Carl\.local\share\Steam\steamapps\common\RimWorld\Mods\Mechanoids\1.6\Source\ApexMechanoids\obj\1.6\PublicizedAssemblies\Assembly-CSharp.B448D900D643AC82DB2AEBD337BC9398\Assembly-CSharp.dll" />
 	</ItemGroup>
 </Project>

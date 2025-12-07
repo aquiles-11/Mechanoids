@@ -23,7 +23,7 @@ namespace ApexMechanoidsF
             ext = def.GetModExtension<ModExt_PawnFlyerExt>();
         }
 
-        protected override void DrawAt(Vector3 drawLoc, bool flip = false)
+        public override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             base.DrawAt(drawLoc, flip);
             if (ext?.rope ?? false) GenDraw.DrawLineBetween(DrawPos, DestinationPos, AltitudeLayer.PawnRope.AltitudeFor(), RopeLineMat);
