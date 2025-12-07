@@ -1,0 +1,82 @@
+<Defs>
+	
+	<ThingDef ParentName="BuildingBase">
+    <defName>APM_Building_ToxicPurifier</defName>
+    <label>purifier station</label>
+    <description>PLACEHOLDER</description>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Building/PowerPlant/PowerPlant</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(5,7)</drawSize>
+	  <drawOffset>(0,0,1)</drawOffset>
+    </graphicData>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <uiIconPath>Things/Building/PowerPlant/PowerPlant_south</uiIconPath>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <canOverlapZones>false</canOverlapZones>
+    <pathCost>42</pathCost>
+    <blockWind>true</blockWind>
+    <fillPercent>0.5</fillPercent>
+    <building>
+      <buildingTags>
+        <li>Biotech</li>
+      </buildingTags>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <designationCategory>Biotech</designationCategory>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <WorkToBuild>30000</WorkToBuild>
+      <Mass>80</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <size>(5,5)</size>
+    <costList>
+      <Steel>200</Steel>
+    </costList>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+	<specialDisplayRadius>40</specialDisplayRadius>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>4000</basePowerConsumption>
+      </li>
+	  <li Class="ApexMechanoids.CompProperties_ToxicPurifier">
+		<toxicPerTileCleaned>0.005</toxicPerTileCleaned>
+		<interval>2500</interval>
+		<radius>40</radius>
+		<tileToUnpollutePerTrigger>10</tileToUnpollutePerTrigger>
+		<isCleanRandomTileInMap>true</isCleanRandomTileInMap>
+		<pumpEffecterDef>PollutionPumped</pumpEffecterDef>
+		<conditionDef>APM_Toxicity</conditionDef>
+	  </li>
+    </comps>
+  </ThingDef>
+	
+	<GameConditionDef>
+		<defName>APM_Toxicity</defName>
+		<conditionClass>ApexMechanoids.GameCondition_ToxicPurifier</conditionClass>
+		<label>toxicity level</label>
+		<description>toxic level in local atmosphere.</description>
+		<canBePermanent>true</canBePermanent>
+		<!-- <displayOnUI>false</displayOnUI> -->
+		<modExtensions>
+			<li Class="ApexMechanoids.DefModExtension_ToxicPurifier">
+				<toxicRecoveryPerDay>-0.25</toxicRecoveryPerDay> <!-- 25% -->
+				<toxicLevelToStartSpreading>0.5</toxicLevelToStartSpreading> <!-- 50% -->
+				<toxicLevelToAffectRelation>0.75</toxicLevelToAffectRelation> <!-- 75% -->
+				<goodWillChangePerDayAboveThreshold>-1</goodWillChangePerDayAboveThreshold>
+				<pollutionChangeOnNeighborsTile>0.01</pollutionChangeOnNeighborsTile> <!-- 1% per day, per tiles -->
+				<tileRadius>10</tileRadius>
+				<chanceForToxicFallout>0.05</chanceForToxicFallout> <!-- 5% -->
+			</li>
+		</modExtensions>
+	</GameConditionDef>
+
+</Defs>
