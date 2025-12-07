@@ -34,6 +34,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets.cs" />
+    <Compile Include="CompProperties\CompProperties_ToxicPurifier.cs" />
+    <Compile Include="Comps\CompToxicPurifier.cs" />
+    <Compile Include="GameCondition_ToxicPurifier.cs" />
     <Compile Include="DefModExtension_CelerusGas.cs" />
     <Compile Include="CompAbilityEffect_KillCaster.cs" />
     <Compile Include="CompAbilityEffect_Absorb.cs" />
