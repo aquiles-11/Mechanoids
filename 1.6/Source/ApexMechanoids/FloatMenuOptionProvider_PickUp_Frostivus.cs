@@ -12,13 +12,13 @@ namespace ApexMechanoids
 {
     public class FloatMenuOptionProvider_PickUp_Frostivus : FloatMenuOptionProvider
     {
-        protected override bool Drafted => true;
+        public override bool Drafted => true;
 
-        protected override bool Undrafted => true;
+        public override bool Undrafted => true;
 
-        protected override bool Multiselect => true;
+        public override bool Multiselect => true;
 
-        protected override bool MechanoidCanDo => true;
+        public override bool MechanoidCanDo => true;
 
         public override bool SelectedPawnValid(Pawn pawn, FloatMenuContext context)
         {
