@@ -49,7 +49,7 @@
 				<beamMaxDeviation>1.5</beamMaxDeviation>
 				<beamCurvature>0.6</beamCurvature>
 				<beamMoteDef>APM_Mote_GazerBeam_Base</beamMoteDef>
-				<beamEndEffecterDef>APM_Effecter_SunRay_End</beamEndEffecterDef>
+				<beamEndEffecterDef>APM_Effecter_GazerBeam_End</beamEndEffecterDef>
 				<beamChanceToStartFire>0.85</beamChanceToStartFire>
 				<beamChanceToAttachFire>0.85</beamChanceToAttachFire>
 				<beamFireSizeRange>0.55~0.85</beamFireSizeRange>

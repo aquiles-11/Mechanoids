@@ -6,9 +6,7 @@
 		<thingClass>MoteDualAttached</thingClass>
 		<altitudeLayer>MoteOverhead</altitudeLayer>
 		<mote>
-			<!-- <fadeInTime>0.2</fadeInTime> -->
 			<fadeInTime>0.5</fadeInTime>
-			<!-- <fadeOutTime>0.3</fadeOutTime> -->
 			<fadeOutTime>0.5</fadeOutTime>
 			<solidTime>999999</solidTime>
 			<needsMaintenance>True</needsMaintenance>
@@ -24,12 +22,9 @@
 			<shaderParameters>
 				<_ExtraTexA>/Things/Mote/BeamSecondaryNoise_A</_ExtraTexA>
 				<_ExtraTexB>/Things/Mote/BeamSecondaryNoise_B</_ExtraTexB>
-				<!-- <_ScrollSpeedA>-4</_ScrollSpeedA> -->
-				<!-- <_ScrollSpeedB>3</_ScrollSpeedB> -->
-				<!-- <_Intensity>2</_Intensity> -->
 				<_ScrollSpeedA>-8</_ScrollSpeedA>
 				<_ScrollSpeedB>6</_ScrollSpeedB>
-				<_Intensity>4</_Intensity>
+				<_Intensity>1</_Intensity>
 			</shaderParameters>
 		</graphicData>
 	</ThingDef>
@@ -132,7 +127,9 @@
 			<shaderType>MoteHellfireCannon_Target</shaderType>
 			<shaderParameters>
 				<_ScanTex>/Things/Mote/MoteHellfireCannon_Target_Scan</_ScanTex>
-				<_ScanMask>/Things/Mote/MoteHellfireCannon_Target_Scan_Mask</_ScanMask>
+				<_ScanMask>/Things/Mote/APM_SunRay_MoteWave</_ScanMask>
+				<_ScanSpeed>0.01</_ScanSpeed>
+				<_ScanSpeedAccel>0.1</_ScanSpeedAccel>
 			</shaderParameters>
 			<drawSize>(8, 8)</drawSize>
 		</graphicData>

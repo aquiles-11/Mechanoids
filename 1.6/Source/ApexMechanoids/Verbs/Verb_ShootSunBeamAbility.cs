@@ -420,6 +420,12 @@ namespace ApexMechanoids
             }
         }
 
+        //Change to avoid not being able to find target behind full cover, due to no line of sight.
+        public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
+        {
+            return base.CanHitTargetFrom(root, targ);
+        }
+
         public override void ExposeData()
         {
             base.ExposeData();
