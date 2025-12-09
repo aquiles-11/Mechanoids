@@ -56,7 +56,7 @@
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
 			<warmupTime>40</warmupTime>
-			<drawAimPie>False</drawAimPie>
+			<range>0.48</range>
 			<requireLineOfSight>False</requireLineOfSight>
 			<targetParams>
 				<canTargetSelf>true</canTargetSelf>
