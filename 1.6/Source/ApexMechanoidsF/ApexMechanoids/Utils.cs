@@ -3,7 +3,6 @@ using Verse;
 
 namespace ApexMechanoidsF
 {
-    [HotSwap.HotSwappable]
     [StaticConstructorOnStartup]
     public static class Utils
     {
