@@ -40,14 +40,10 @@ namespace ApexMechanoids
                     yield return new CodeInstruction(OpCodes.Ret);
 
 
-                    yield return new CodeInstruction(OpCodes.Ldarg_0);
-                    yield return instruction.WithLabels(label);
+                    yield return new CodeInstruction(OpCodes.Ldarg_0).WithLabels(label);
                     patched = true;
                 }
-                else
-                {
-                    yield return instruction;
-                }
+                yield return instruction;
             }
             if (!patched)
             {

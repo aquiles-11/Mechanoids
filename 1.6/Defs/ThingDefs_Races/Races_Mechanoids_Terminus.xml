@@ -70,8 +70,8 @@
     <lifeStages>
       <li MayRequire="Ludeon.RimWorld.Biotech">
         <bodyGraphicData>
-          <texPath>Mechs/Terminus/Regular/Terminus</texPath>
-          <maskPath>Mechs/Overlays/Terminus_Overlay/Regular/Mech_Terminus</maskPath>
+          <texPath>Things/Pawn/Mechanoid/Terminus/Regular/Terminus</texPath>
+          <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Terminus/Regular/Mech_Terminus</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.5</drawSize>
@@ -82,8 +82,8 @@
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Mechs/Terminus/Regular/TerminusAncient</texPath>
-          <maskPath>Mechs/Overlays/Terminus_Overlay/Regular/Mech_Terminus</maskPath>
+          <texPath>Things/Pawn/Mechanoid/Terminus/Regular/TerminusAncient</texPath>
+          <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Terminus/Regular/Mech_Terminus</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.5</drawSize>

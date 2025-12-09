@@ -11,7 +11,7 @@ namespace ApexMechanoids
 {
     public class JobGiver_Duel : ThinkNode_JobGiver
     {
-        protected override Job TryGiveJob(Pawn pawn)
+        public override Job TryGiveJob(Pawn pawn)
         {
             var target = pawn.mindState.enemyTarget;
             if (target == null)
