@@ -14,9 +14,9 @@ namespace ApexMechanoids
     {
 
 
-        public DefModExtension_CelerusGas modExtension => def.GetModExtension<DefModExtension_CelerusGas>();
+        private DefModExtension_CelerusGas modExtension => def.GetModExtension<DefModExtension_CelerusGas>();
 
-        public int effectDelay;
+        private int effectDelay;
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad: true);
@@ -88,7 +88,7 @@ namespace ApexMechanoids
                 }
             }
         }
-        public void GiveHediff(Pawn pawn, HediffDef hediffDef)
+        private void GiveHediff(Pawn pawn, HediffDef hediffDef)
         {
             Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(hediffDef);
             if (hediff != null)
@@ -103,7 +103,7 @@ namespace ApexMechanoids
                 pawn.health.AddHediff(hediff);
             }
         }
-        public void DoEffect()
+        private void DoEffect()
         {
             if (Rand.Chance(0.5f))
             {
@@ -125,7 +125,7 @@ namespace ApexMechanoids
                 }
             }
         }
-        public void DoDamage(Pawn pawn)
+        private void DoDamage(Pawn pawn)
         {
             DamageInfo damageInfo = new DamageInfo(modExtension.damageDef, modExtension.amount.RandomInRange, instigator: this);
             pawn.TakeDamage(damageInfo);
