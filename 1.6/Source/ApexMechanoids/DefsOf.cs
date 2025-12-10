@@ -15,6 +15,5 @@ namespace ApexMechanoids
         public static HediffDef APM_DuelWinner;
         public static HediffDef APM_DuelDraw;
         public static HediffDef APM_InDuel;
-        public static FleckDef ArcLargeEMP_B;
     }
 }

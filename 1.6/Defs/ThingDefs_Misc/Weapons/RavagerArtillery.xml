@@ -6,7 +6,7 @@
     <label>ravager artillery</label>
     <description>PLACEHOLDER</description>
     <graphicData>
-      <texPath>Things/Item/Equipment/WeaponRanged/RavagerArtillery</texPath>
+      <texPath>Weapons/Artillery</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>1.6</drawSize>
     </graphicData>

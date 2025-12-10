@@ -9,14 +9,14 @@
     <drawerType>MapMeshAndRealTime</drawerType>
     <tickerType>Normal</tickerType>
     <graphicData>
-      <texPath>Things/Building/BigRepairStation/BigRepairStation_Base</texPath>
+      <texPath>Buildings/BigRepairStation/BigRepairStation_Base</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(3,3)</drawSize>
     </graphicData>
     <thingCategories>
       <li>BuildingsMisc</li>
     </thingCategories>
-    <uiIconPath>Things/Building/BigRepairStation/BigRepairStation</uiIconPath>
+    <uiIconPath>Buildings/BigRepairStation/BigRepairStation</uiIconPath>
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
     <minifiedDef>MinifiedThing</minifiedDef>
@@ -30,11 +30,11 @@
       </buildingTags>
       <ai_chillDestination>false</ai_chillDestination>
       <doorTopGraphic>
-        <texPath>Things/Building/BigRepairStation/BigRepairStation_Top</texPath>
+        <texPath>Buildings/BigRepairStation/BigRepairStation_Top</texPath>
         <graphicClass>Graphic_Single</graphicClass>
       </doorTopGraphic>
       <upperMoverGraphic>
-        <texPath>Things/Building/BigRepairStation/BigRepairStation_Moving</texPath>
+        <texPath>Buildings/BigRepairStation/BigRepairStation_Moving</texPath>
         <graphicClass>Graphic_Multi</graphicClass>
       </upperMoverGraphic>
     </building>

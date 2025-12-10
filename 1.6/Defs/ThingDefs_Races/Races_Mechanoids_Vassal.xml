@@ -69,8 +69,8 @@
     <lifeStages>
       <li MayRequire="Ludeon.RimWorld.Biotech">
         <bodyGraphicData>
-          <texPath>Things/Pawn/Mechanoid/Vassal/Vassal</texPath>
-          <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Vassal/Mech_Vassal</maskPath>
+          <texPath>Mechs/Vassal/Vassal</texPath>
+          <maskPath>Mechs/Overlays/Vassal_Overlay/Mech_Vassal</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.8</drawSize>
@@ -81,8 +81,8 @@
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Mechanoid/Vassal/VassalAncient</texPath>
-          <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Vassal/Mech_Vassal</maskPath>
+          <texPath>Mechs/Vassal/VassalAncient</texPath>
+          <maskPath>Mechs/Overlays/Vassal_Overlay/Mech_Vassal</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.8</drawSize>

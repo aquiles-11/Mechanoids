@@ -37,7 +37,7 @@ namespace ApexMechanoids
             Scribe_Values.Look(ref ticksToNextRepair, "ticksToNextRepair", 0);
         }
 
-        public override IEnumerable<Toil> MakeNewToils()
+        protected override IEnumerable<Toil> MakeNewToils()
         {
             this.FailOnDestroyedOrNull(MechInd);
             this.FailOnForbidden(MechInd);

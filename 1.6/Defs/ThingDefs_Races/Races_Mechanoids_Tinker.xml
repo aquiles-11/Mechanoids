@@ -69,8 +69,8 @@
     <lifeStages>
       <li MayRequire="Ludeon.RimWorld.Biotech">
         <bodyGraphicData>
-          <texPath>Things/Pawn/Mechanoid/Tinker/Tinker</texPath>
-          <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Tinker/Mech_Tinker</maskPath>
+          <texPath>Mechs/Tinker/Tinker</texPath>
+          <maskPath>Mechs/Overlays/Tinker_Overlay/Mech_Tinker</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.5</drawSize>
@@ -81,8 +81,8 @@
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Mechanoid/Tinker/TinkerAncient</texPath>
-          <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Tinker/Mech_Tinker</maskPath>
+          <texPath>Mechs/Tinker/TinkerAncient</texPath>
+          <maskPath>Mechs/Overlays/Tinker_Overlay/Mech_Tinker</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.5</drawSize>

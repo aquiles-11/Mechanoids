@@ -69,8 +69,8 @@
     <lifeStages>
       <li MayRequire="Ludeon.RimWorld.Biotech">
         <bodyGraphicData>
-          <texPath>Things/Pawn/Mechanoid/Siren/Siren</texPath>
-          <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Siren/Mech_Siren</maskPath>
+          <texPath>Mechs/Siren/Siren</texPath>
+          <maskPath>Mechs/Overlays/Siren_Overlay/Mech_Siren</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.8</drawSize>
@@ -81,8 +81,8 @@
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Mechanoid/Siren/SirenAncient</texPath>
-          <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Siren/Mech_Siren</maskPath>
+          <texPath>Mechs/Siren/SirenAncient</texPath>
+          <maskPath>Mechs/Overlays/Siren_Overlay/Mech_Siren</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.8</drawSize>

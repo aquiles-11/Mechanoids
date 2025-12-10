@@ -69,8 +69,8 @@
     <lifeStages>
       <li MayRequire="Ludeon.RimWorld.Biotech">
         <bodyGraphicData>
-          <texPath>Things/Pawn/Mechanoid/Celerus/Regular/Celerus</texPath>
-          <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Celerus/Regular/Mech_Celerus</maskPath>
+          <texPath>Mechs/Celerus/Regular/Celerus</texPath>
+          <maskPath>Mechs/Overlays/Celerus_Overlay/Regular/Mech_Celerus</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.5</drawSize>
@@ -81,8 +81,8 @@
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Mechanoid/Celerus/Regular/CelerusAncient</texPath>
-          <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Celerus/Regular/Mech_Celerus</maskPath>
+          <texPath>Mechs/Celerus/Regular/CelerusAncient</texPath>
+          <maskPath>Mechs/Overlays/Celerus_Overlay/Regular/Mech_Celerus</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.5</drawSize>

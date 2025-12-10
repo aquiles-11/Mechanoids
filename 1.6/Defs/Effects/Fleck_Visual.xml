@@ -7,28 +7,28 @@
 			<li>
 				<graphicClass>Graphic_Fleck</graphicClass>
 				<color>(250, 147, 19)</color>
-				<texPath>Things/Mote/Duel/FireOrb_a</texPath>
+				<texPath>Effects/Duel/FireOrb_a</texPath>
 				<shaderType>MoteGlow</shaderType>
 				<renderInstanced>true</renderInstanced>
 			</li>
 			<li>
 				<graphicClass>Graphic_Fleck</graphicClass>
 				<color>(250, 147, 19)</color>
-				<texPath>Things/Mote/Duel/FireOrb_b</texPath>
+				<texPath>Effects/Duel/FireOrb_b</texPath>
 				<shaderType>MoteGlow</shaderType>
 				<renderInstanced>true</renderInstanced>
 			</li>
 			<li>
 				<graphicClass>Graphic_Fleck</graphicClass>
 				<color>(250, 147, 19)</color>
-				<texPath>Things/Mote/Duel/FireOrb_c</texPath>
+				<texPath>Effects/Duel/FireOrb_c</texPath>
 				<shaderType>MoteGlow</shaderType>
 				<renderInstanced>true</renderInstanced>
 			</li>
 			<li>
 				<graphicClass>Graphic_Fleck</graphicClass>
 				<color>(250, 147, 19)</color>
-				<texPath>Things/Mote/Duel/FireOrb_d</texPath>
+				<texPath>Effects/Duel/FireOrb_d</texPath>
 				<shaderType>MoteGlow</shaderType>
 				<renderInstanced>true</renderInstanced>
 			</li>
