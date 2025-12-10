@@ -93,8 +93,8 @@
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Mechs/Gazer/Gazer</texPath>
-					<maskPath>Mechs/Overlays/Gazer_Overlay/Mech_Gazer</maskPath>
+					<texPath>Things/Pawn/Mechanoid/Gazer</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Gazer/Mech_Gazer</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>4.0</drawSize>
@@ -105,8 +105,8 @@
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Mechs/Gazer/GazerAncient</texPath>
-					<maskPath>Mechs/Overlays/Gazer_Overlay/Mech_Gazer</maskPath>
+					<texPath>Things/Pawn/Mechanoid/GazerAncient</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Gazer/Mech_Gazer</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>4.0</drawSize>
