@@ -92,6 +92,7 @@ namespace ApexMechanoids
             {
                 compRefuelableDynamo.fuel = compRefuelablePlant.fuel;
             }
+            compRefuelablePlant.fuel = 0;
             return dynamo;
         }
 
