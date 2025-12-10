@@ -26,8 +26,9 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore ./1.6/Source/ApexMechanoids.sln
 
+
     - name: Build solution
-      run: dotnet build ./1.6/Source/ApexMechanoids.sln --no-restore --configuration Release
+      run: dotnet build ./1.6/Source/ApexMechanoids.sln --no-restore
 
     - name: Run tests
-      run: dotnet test ./1.6/Source/ApexMechanoids.sln --no-restore --configuration Release
+      run: dotnet test ./1.6/Source/ApexMechanoids.sln --no-restore
