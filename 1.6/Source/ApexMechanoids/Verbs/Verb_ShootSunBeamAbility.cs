@@ -40,7 +40,7 @@ namespace ApexMechanoids
         private Vector3 LasttargetPosition;
         private int min => Mathf.RoundToInt(verbProps.minRange);
 
-        protected override int ShotsPerBurst => base.BurstShotCount;
+        public override int ShotsPerBurst => base.BurstShotCount;
 
         public float ShotProgress => (float)ticksToNextPathStep / (float)base.TicksBetweenBurstShots;
 
@@ -128,7 +128,7 @@ namespace ApexMechanoids
             tmpSecondaryHighlightCells.Clear();
         }
 
-        protected override bool TryCastShot()
+        public override bool TryCastShot()
         {
             ShootLine resultingLine;
             bool flag = TryFindShootLineFromTo(caster.Position, currentTarget, out resultingLine);
