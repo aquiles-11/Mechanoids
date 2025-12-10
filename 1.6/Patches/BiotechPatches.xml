@@ -30,6 +30,7 @@
             <li>APM_Mech_Conqueror_AR</li>
             <li>APM_Mech_Conqueror_DMR</li>
             <li>APM_Mech_Vassal</li>
+            <li>APM_Mech_Ravager</li>
           </value>
         </li>
 
@@ -269,6 +270,241 @@
               </products>
               <descriptionHyperlinks>
                 <ThingDef>APM_Mech_Vassal</ThingDef>
+              </descriptionHyperlinks>
+            </RecipeDef>
+
+            <RecipeDef ParentName="HeavyMechanoidRecipe">
+              <defName>APM_Mech_Ravager</defName>
+              <label>gestate Ravager</label>
+              <description>Gestate an Ravager mechanoid.</description>
+              <researchPrerequisite>HighMechtech</researchPrerequisite>
+              <ingredients Inherit="False">
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>Steel</li>
+                    </thingDefs>
+                  </filter>
+                  <count>150</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>Plasteel</li>
+                    </thingDefs>
+                  </filter>
+                  <count>80</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>ComponentIndustrial</li>
+                    </thingDefs>
+                  </filter>
+                  <count>3</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>SubcoreHigh</li>
+                    </thingDefs>
+                  </filter>
+                  <count>1</count>
+                </li>
+              </ingredients>
+              <products>
+                <APM_Mech_Ravager>1</APM_Mech_Ravager>
+              </products>
+              <descriptionHyperlinks>
+                <ThingDef>APM_Mech_Ravager</ThingDef>
+              </descriptionHyperlinks>
+            </RecipeDef>
+
+            <RecipeDef ParentName="HeavyMechanoidRecipe">
+              <defName>APM_Mech_Siren</defName>
+              <label>gestate Siren</label>
+              <description>Gestate an Siren mechanoid.</description>
+              <researchPrerequisite>HighMechtech</researchPrerequisite>
+              <ingredients Inherit="False">
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>Steel</li>
+                    </thingDefs>
+                  </filter>
+                  <count>150</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>Plasteel</li>
+                    </thingDefs>
+                  </filter>
+                  <count>80</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>ComponentIndustrial</li>
+                    </thingDefs>
+                  </filter>
+                  <count>3</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>SubcoreHigh</li>
+                    </thingDefs>
+                  </filter>
+                  <count>1</count>
+                </li>
+              </ingredients>
+              <products>
+                <APM_Mech_Siren>1</APM_Mech_Siren>
+              </products>
+              <descriptionHyperlinks>
+                <ThingDef>APM_Mech_Siren</ThingDef>
+              </descriptionHyperlinks>
+            </RecipeDef>
+
+            <RecipeDef ParentName="HeavyMechanoidRecipe">
+              <defName>APM_Mech_Terminus</defName>
+              <label>gestate Terminus</label>
+              <description>Gestate an Terminus mechanoid.</description>
+              <researchPrerequisite>HighMechtech</researchPrerequisite>
+              <ingredients Inherit="False">
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>Steel</li>
+                    </thingDefs>
+                  </filter>
+                  <count>150</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>Plasteel</li>
+                    </thingDefs>
+                  </filter>
+                  <count>80</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>ComponentIndustrial</li>
+                    </thingDefs>
+                  </filter>
+                  <count>3</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>SubcoreHigh</li>
+                    </thingDefs>
+                  </filter>
+                  <count>1</count>
+                </li>
+              </ingredients>
+              <products>
+                <APM_Mech_Terminus>1</APM_Mech_Terminus>
+              </products>
+              <descriptionHyperlinks>
+                <ThingDef>APM_Mech_Terminus</ThingDef>
+              </descriptionHyperlinks>
+            </RecipeDef>
+
+            <RecipeDef ParentName="HeavyMechanoidRecipe">
+              <defName>APM_Mech_Celerus</defName>
+              <label>gestate Celerus</label>
+              <description>Gestate an Celerus mechanoid. Ninja Robot!</description>
+              <researchPrerequisite>HighMechtech</researchPrerequisite>
+              <ingredients Inherit="False">
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>Steel</li>
+                    </thingDefs>
+                  </filter>
+                  <count>150</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>Plasteel</li>
+                    </thingDefs>
+                  </filter>
+                  <count>80</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>ComponentIndustrial</li>
+                    </thingDefs>
+                  </filter>
+                  <count>3</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>SubcoreHigh</li>
+                    </thingDefs>
+                  </filter>
+                  <count>1</count>
+                </li>
+              </ingredients>
+              <products>
+                <APM_Mech_Celerus>1</APM_Mech_Celerus>
+              </products>
+              <descriptionHyperlinks>
+                <ThingDef>APM_Mech_Celerus</ThingDef>
+              </descriptionHyperlinks>
+            </RecipeDef>
+            
+            <RecipeDef ParentName="HeavyMechanoidRecipe">
+              <defName>APM_Mech_Dominus</defName>
+              <label>gestate Dominus</label>
+              <description>Gestate an Dominus mechanoid. Ninja Robot!</description>
+              <researchPrerequisite>HighMechtech</researchPrerequisite>
+              <ingredients Inherit="False">
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>Steel</li>
+                    </thingDefs>
+                  </filter>
+                  <count>150</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>Plasteel</li>
+                    </thingDefs>
+                  </filter>
+                  <count>80</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>ComponentIndustrial</li>
+                    </thingDefs>
+                  </filter>
+                  <count>3</count>
+                </li>
+                <li>
+                  <filter>
+                    <thingDefs>
+                      <li>SubcoreHigh</li>
+                    </thingDefs>
+                  </filter>
+                  <count>1</count>
+                </li>
+              </ingredients>
+              <products>
+                <APM_Mech_Dominus>1</APM_Mech_Dominus>
+              </products>
+              <descriptionHyperlinks>
+                <ThingDef>APM_Mech_Dominus</ThingDef>
               </descriptionHyperlinks>
             </RecipeDef>
 
