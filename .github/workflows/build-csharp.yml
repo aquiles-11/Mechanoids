@@ -1,9 +1,13 @@
+
 name: Build C# Project
 
 on:
   push:
     branches:
-      - add-csharp-workflow
+      - main
+      - master
+      - develop
+      - '**'
   pull_request:
 
 jobs:
@@ -17,22 +21,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '7.0.x'
-
-    - name: Fetch solution file SHA
-      id: fetch-sln-sha
-      run: |
-        SLN_PATH=$(find . -name "*.sln" | head -n 1)
-        if [ -z "$SLN_PATH" ]; then
-          echo "Solution file not found. Exiting..."
-          exit 1
-        fi
-        SLN_SHA=$(git hash-object "$SLN_PATH")
-        echo "::set-output name=sln_sha::$SLN_SHA"
-      shell: bash
-
-    - name: Log solution file SHA
-      run: echo "Solution SHA: ${{ steps.fetch-sln-sha.outputs.sln_sha }}"
+        dotnet-version: '9.0.x'
 
     - name: Restore dependencies
       run: dotnet restore
