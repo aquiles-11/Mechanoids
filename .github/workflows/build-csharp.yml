@@ -22,20 +22,6 @@ jobs:
       with:
         dotnet-version: '9.0.x'
 
-    - name: Fetch solution file SHA
-      id: fetch-sln-sha
-      run: |
-        SLN_PATH="./1.6/Source/ApexMechanoids.sln"
-        if [ ! -f "$SLN_PATH" ]; then
-          echo "Solution file not found at $SLN_PATH. Exiting..."
-          exit 1
-        fi
-        SLN_SHA=$(git hash-object "$SLN_PATH")
-        echo "::set-output name=sln_sha::$SLN_SHA"
-      shell: bash
-
-    - name: Log solution file SHA
-      run: echo "Solution SHA: ${{ steps.fetch-sln-sha.outputs.sln_sha }}"
 
     - name: Restore dependencies
       run: dotnet restore ./1.6/Source/ApexMechanoids.sln
