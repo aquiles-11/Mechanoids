@@ -33,7 +33,7 @@ namespace ApexMechanoids
         public override void PostPostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
         {
             base.PostPostApplyDamage(dinfo, totalDamageDealt);
-            if (dinfo.Instigator.Faction.HostileTo(parent.Faction))
+            if (dinfo.Instigator?.Faction?.HostileTo(parent.Faction) ?? false)
             {
                 parent.Destroy();
             }
@@ -92,6 +92,7 @@ namespace ApexMechanoids
             {
                 compRefuelableDynamo.fuel = compRefuelablePlant.fuel;
             }
+            compRefuelablePlant.fuel = 0;
             return dynamo;
         }
 

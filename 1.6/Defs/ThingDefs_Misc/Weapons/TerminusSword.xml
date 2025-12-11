@@ -7,7 +7,7 @@
     <description>PLACEHOLDER</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Things/Item/Equipment/WeaponMelee/TerminusSword</texPath>
+      <texPath>Weapons/Sword</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>1.35</drawSize>
     </graphicData>

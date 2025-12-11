@@ -52,7 +52,7 @@ namespace ApexMechanoids
                             pawn.health.AddHediff(hediff);
                         }
                     }
-                    
+
                 }
                 catch (Exception ex)
                 {

@@ -10,30 +10,31 @@
     <Copyright>CC BY-NC-SA 4.0 2025</Copyright>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <TargetFramework>net48</TargetFramework>
+    <Configurations>Debug;Release</Configurations>
+    <Platforms>AnyCPU</Platforms>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == '1.6|AnyCPU'">
-    <OutputPath>..\..\Assemblies\</OutputPath>
-    <DebugType>embedded</DebugType>
-		<DebugSymbols>true</DebugSymbols>
-		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-		<LangVersion>14</LangVersion>
-		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>../../Assemblies/</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>../../Assemblies/</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-		<PackageReference Include="Krafs.Publicizer" Version="2.3.0">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-		<PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4633" GeneratePathProperty="true" />
-		<PackageReference Include="Lib.Harmony" Version="2.4.2" ExcludeAssets="runtime">
+    <PackageReference Include="Krafs.Publicizer" Version="2.3.0">
       <PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>compile</IncludeAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-	</ItemGroup>
-	<ItemGroup>
-		<Publicize Include="Assembly-CSharp" />
-	</ItemGroup>
-	<ItemGroup>
-	  <ReferencePathWithRefAssemblies Update="\var\home\Carl\.local\share\Steam\steamapps\common\RimWorld\Mods\Mechanoids\1.6\Source\ApexMechanoids\obj\1.6\PublicizedAssemblies\Assembly-CSharp.B448D900D643AC82DB2AEBD337BC9398\Assembly-CSharp.dll" />
-	</ItemGroup>
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4633" GeneratePathProperty="true" />
+    <PackageReference Include="Lib.Harmony" Version="2.4.2" ExcludeAssets="runtime">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>compile</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Publicize Include="Assembly-CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ReferencePathWithRefAssemblies
+      Update="\var\home\Carl\.local\share\Steam\steamapps\common\RimWorld\Mods\Mechanoids\1.6\Source\ApexMechanoids\obj\1.6\PublicizedAssemblies\Assembly-CSharp.B448D900D643AC82DB2AEBD337BC9398\Assembly-CSharp.dll" />
+  </ItemGroup>
 </Project>

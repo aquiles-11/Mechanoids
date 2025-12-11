@@ -72,8 +72,8 @@
     <lifeStages>
       <li MayRequire="Ludeon.RimWorld.Biotech">
         <bodyGraphicData>
-        <texPath>Things/Pawn/Mechanoid/Conqueror/DMR/ConquerorDMR</texPath>
-          <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Conqueror/DMR/Mech_Conqueror_DMR</maskPath>
+        <texPath>Mechs/Conqueror/DMR/ConquerorDMR</texPath>
+          <maskPath>Mechs/Overlays/Conqueror_Overlay/DMR/Mech_Conqueror_DMR</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.5</drawSize>
@@ -84,8 +84,8 @@
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Mechanoid/Conqueror/DMR/ConquerorDMRAncient</texPath>
-          <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Conqueror/DMR/Mech_Conqueror_DMR</maskPath>
+          <texPath>Mechs/Conqueror/DMR/ConquerorDMRAncient</texPath>
+          <maskPath>Mechs/Overlays/Conqueror_Overlay/DMR/Mech_Conqueror_DMR</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.5</drawSize>
@@ -120,8 +120,8 @@
     <lifeStages>
       <li MayRequire="Ludeon.RimWorld.Biotech">
         <bodyGraphicData>
-          <texPath>Things/Pawn/Mechanoid/Conqueror/AR/ConquerorAR</texPath>
-          <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Conqueror/AR/Mech_ConquerorAR</maskPath>
+          <texPath>Mechs/Conqueror/AR/ConquerorAR</texPath>
+          <maskPath>Mechs/Overlays/Conqueror_Overlay/AR/Mech_ConquerorAR</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.5</drawSize>
@@ -132,8 +132,8 @@
       </li>
       <li>
         <bodyGraphicData>
-        <texPath>Things/Pawn/Mechanoid/Conqueror/ConquerorARAncient</texPath>
-          <maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Conqueror/AR/Mech_ConquerorAR</maskPath>
+        <texPath>Mechs/Conqueror/AR/ConquerorARAncient</texPath>
+          <maskPath>Mechs/Overlays/Conqueror_Overlay/AR/Mech_ConquerorAR</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.5</drawSize>

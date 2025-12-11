@@ -36,7 +36,7 @@ namespace ApexMechanoids
 
         public void ChargeMechs()
         {
-            List<Pawn> mechs = parent.Map.mapPawns.PawnsInFaction(parent.Faction).Where((Pawn p) => p.Spawned && p.RaceProps.IsMechanoid && !p.Dead && p.PositionHeld.DistanceTo(parent.Position) <= Props.radius).OrderBy((Pawn p) => p.needs.energy.CurLevel).ToList();
+            List<Pawn> mechs = parent.Map.mapPawns.PawnsInFaction(parent.Faction).Where((Pawn p) => p.Spawned && p.RaceProps.IsMechanoid && !p.Dead && ((p.needs?.energy?.CurLevel ?? float.PositiveInfinity) < (p.needs?.energy?.MaxLevel ?? float.NegativeInfinity)) && p.PositionHeld.DistanceTo(parent.Position) <= Props.radius).OrderBy((Pawn p) => p.needs.energy.CurLevel).ToList();
             int mechsCharged = 0;
             foreach (Pawn mech in mechs)
             {

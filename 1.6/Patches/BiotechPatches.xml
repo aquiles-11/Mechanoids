@@ -272,6 +272,7 @@
                 <ThingDef>APM_Mech_Vassal</ThingDef>
               </descriptionHyperlinks>
             </RecipeDef>
+
             <RecipeDef ParentName="HeavyMechanoidRecipe">
               <defName>APM_Mech_Ravager</defName>
               <label>gestate Ravager</label>
@@ -318,6 +319,7 @@
                 <ThingDef>APM_Mech_Ravager</ThingDef>
               </descriptionHyperlinks>
             </RecipeDef>
+
             <RecipeDef ParentName="HeavyMechanoidRecipe">
               <defName>APM_Mech_Siren</defName>
               <label>gestate Siren</label>
@@ -364,6 +366,7 @@
                 <ThingDef>APM_Mech_Siren</ThingDef>
               </descriptionHyperlinks>
             </RecipeDef>
+
             <RecipeDef ParentName="HeavyMechanoidRecipe">
               <defName>APM_Mech_Terminus</defName>
               <label>gestate Terminus</label>
@@ -410,6 +413,7 @@
                 <ThingDef>APM_Mech_Terminus</ThingDef>
               </descriptionHyperlinks>
             </RecipeDef>
+
             <RecipeDef ParentName="HeavyMechanoidRecipe">
               <defName>APM_Mech_Celerus</defName>
               <label>gestate Celerus</label>
@@ -456,6 +460,7 @@
                 <ThingDef>APM_Mech_Celerus</ThingDef>
               </descriptionHyperlinks>
             </RecipeDef>
+            
             <RecipeDef ParentName="HeavyMechanoidRecipe">
               <defName>APM_Mech_Dominus</defName>
               <label>gestate Dominus</label>
