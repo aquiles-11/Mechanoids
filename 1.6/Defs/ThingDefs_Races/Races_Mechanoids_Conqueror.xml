@@ -132,7 +132,7 @@
       </li>
       <li>
         <bodyGraphicData>
-        <texPath>Mechs/Conqueror/ConquerorARAncient</texPath>
+        <texPath>Mechs/Conqueror/AR/ConquerorARAncient</texPath>
           <maskPath>Mechs/Overlays/Conqueror_Overlay/AR/Mech_ConquerorAR</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
