@@ -7,7 +7,7 @@
     <drawerType>MapMeshAndRealTime</drawerType>
     <tickerType>Normal</tickerType>
     <graphicData>
-      <texPath>Building/PowerPlant</texPath>
+      <texPath>Building/PowerPlant/PowerPlant</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(5,7)</drawSize>
 	  <drawOffset>(0,0,1)</drawOffset>
