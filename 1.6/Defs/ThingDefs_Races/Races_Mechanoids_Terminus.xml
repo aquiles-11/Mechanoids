@@ -127,6 +127,9 @@
 			<li Class="CompProperties_AbilityLaunchProjectile">
 				<projectileDef>SeveringEdge</projectileDef>
 			</li>
+			<li Class="ApexMechanoids.CompProperties_RotateMoteTowardsDestination">
+				<extraRotation>310</extraRotation>
+			</li>
 		</comps>
 	</AbilityDef>
 	<ThingDef ParentName="BaseBullet">

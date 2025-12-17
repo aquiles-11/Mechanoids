@@ -42,6 +42,7 @@
     <Compile Include="CompAbilityEffect_Absorb.cs" />
     <Compile Include="CompAbilityEffect_NeedOffset.cs" />
     <Compile Include="CompAbilityEffect_SpawnThingDuelAttached.cs" />
+    <Compile Include="CompAbility_RotateMoteTowardsDestination.cs" />
     <Compile Include="CompProperties\CompProperties_Aegis.cs" />
     <Compile Include="CompProperties\CompProperties_MechWirelessCharger.cs" />
     <Compile Include="CompProperties\CompProperties_ConvertToBuilding.cs" />
@@ -87,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Publicize Include="Assembly-CSharp:RimWorld.CompRefuelable.fuel" />
+    <Publicize Include="Assembly-CSharp:RimWorld.Ability.warmupMote" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
