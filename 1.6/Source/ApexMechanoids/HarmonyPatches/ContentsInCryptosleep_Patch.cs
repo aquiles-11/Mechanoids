@@ -4,54 +4,44 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
 using Verse;
 
 namespace ApexMechanoids
 {
-    [HarmonyLib.HarmonyPatch()]
+    [HarmonyLib.HarmonyPatch]
     internal static class ContentsInCryptosleep_Patch
     {
-        public static IEnumerable<MethodBase> TargetMethods()
+        // Prefix patch for ThingOwnerUtility.ContentsInCryptosleep
+        // Runs before the original method and can return early
+        [HarmonyLib.HarmonyPrefix]
+        [HarmonyLib.HarmonyPatch(typeof(ThingOwnerUtility), nameof(ThingOwnerUtility.ContentsInCryptosleep))]
+        public static bool ContentsInCryptosleepPrefix(IThingHolder holder, ref bool __result)
         {
-            yield return AccessTools.Method(typeof(ThingOwnerUtility), nameof(ThingOwnerUtility.ContentsInCryptosleep));
-            yield return AccessTools.Method(typeof(ThingOwnerUtility), nameof(ThingOwnerUtility.ContentsSuspended));
+            // Check our custom condition first
+            if (IsCryptosleepContainer(holder))
+            {
+                __result = true;
+                return false; // Skip original method
+            }
+            return true; // Continue with original method
         }
 
-        // Insert
-        // if (IsCryptosleepContainer(holder)) return true;
-        // 
-        // before
-        // if (holder is Building_CryptosleepCasket) return true;
-        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
+        // Prefix patch for ThingOwnerUtility.ContentsSuspended
+        // Runs before the original method and can return early
+        [HarmonyLib.HarmonyPrefix]
+        [HarmonyLib.HarmonyPatch(typeof(ThingOwnerUtility), nameof(ThingOwnerUtility.ContentsSuspended))]
+        public static bool ContentsSuspendedPrefix(IThingHolder holder, ref bool __result)
         {
-            bool patched = false;
-            var label = generator.DefineLabel();
-            foreach (var instruction in instructions)
+            // Check our custom condition first
+            if (IsCryptosleepContainer(holder))
             {
-                if (!patched && instruction.opcode == OpCodes.Isinst && (Type)instruction.operand == typeof(Building_CryptosleepCasket))
-                {
-
-                    yield return CodeInstruction.Call(typeof(ContentsInCryptosleep_Patch), nameof(ContentsInCryptosleep_Patch.IsCryptosleepContainer));
-                    yield return new CodeInstruction(OpCodes.Brfalse_S, label);
-                    yield return new CodeInstruction(OpCodes.Ldc_I4_1);
-                    yield return new CodeInstruction(OpCodes.Ret);
-                    yield return new CodeInstruction(OpCodes.Ldarg_0);
-                    yield return instruction.WithLabels(label);
-                    patched = true;
-                }
-                else
-                {
-                    yield return instruction;
-                }
+                __result = true;
+                return false; // Skip original method
             }
-            if (!patched)
-            {
-                Log.Error("Patch failed!");
-            }
+            return true; // Continue with original method
         }
+
+        // Helper method to check if the holder is our custom cryptosleep container
         public static bool IsCryptosleepContainer(IThingHolder holder)
         {
             return (holder as Pawn_InventoryTracker)?.pawn.def == ApexDefsOf.APM_Mech_Frostivus;
