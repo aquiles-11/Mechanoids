@@ -76,7 +76,7 @@
 					<maskPath>Mechs/Overlays/Dominus_Overlay/Regular/Mech_Dominus</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
-					<drawSize>4.0</drawSize>
+					<drawSize>2</drawSize>
 					<shadowData>
 						<volume>(0.4, 0.8, 0.4)</volume>
 					</shadowData>
@@ -88,7 +88,7 @@
 					<maskPath>Mechs/Overlays/Dominus_Overlay/Regular/Mech_Dominus</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
-					<drawSize>4.0</drawSize>
+					<drawSize>2</drawSize>
 					<shadowData>
 						<volume>(0.4, 0.8, 0.4)</volume>
 					</shadowData>
@@ -181,8 +181,6 @@
 		</stages>
 	</ThoughtDef>
 
-
-
 	<AbilityDef>
 		<defName>APM_Mech_Duel</defName>
 		<label>the duel trial</label>
@@ -221,5 +219,5 @@
 			</li>
 		</comps>
 	</AbilityDef>
-    
+
 </Defs>

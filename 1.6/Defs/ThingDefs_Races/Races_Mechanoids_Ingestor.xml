@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<ThingDef Abstract="True" Name="APM_Mech_Ingestor" ParentName="MechCentipede">
+	<ThingDef Name="APM_Mech_Ingestor" ParentName="MechCentipede">
 		<defName>APM_Mech_Ingestor</defName>
 		<label>Ingestor</label>
 		<description>While mechtech devices typically rely on internal power cells, provided electricity and incendiary fuel are still needed. The ingestor scourers the remains of battlefields for survivors to finish off and organic material including corpses, to automatically refine into chemfuel within its chassis.</description>
@@ -45,8 +45,8 @@
 		<lifeStages>
 			<li MayRequire="Ludeon.RimWorld.Biotech">
 				<bodyGraphicData>
-					<texPath>Mechs/Ingestor/Ingestor</texPath>
-					<maskPath>Mechs/Overlays/Ingestor_Overlay/Mech_Ingestor</maskPath>
+					<texPath>Mechs/Ingestor/Closed/IngestorC</texPath><!-- Only the Closed variant, what about Opened? -->
+					<maskPath>Mechs/Overlays/Ingestor_Overlay/Closed/Mech_IngestorC</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>3</drawSize>
@@ -57,8 +57,8 @@
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Mechs/Ingestor/IngestorAncient</texPath>
-					<maskPath>Mechs/Overlays/Ingestor_Overlay/Mech_Ingestor</maskPath>
+					<texPath>Mechs/Ingestor/Closed/IngestorCAncient</texPath><!-- Only the Closed variant, what about Opened? -->
+					<maskPath>Mechs/Overlays/Ingestor_Overlay/Closed/Mech_IngestorC</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>3</drawSize>

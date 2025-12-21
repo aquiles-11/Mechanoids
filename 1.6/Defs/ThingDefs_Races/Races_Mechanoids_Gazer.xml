@@ -97,7 +97,7 @@
 					<maskPath>Mechs/Overlays/Gazer_Overlay/Mech_Gazer</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
-					<drawSize>4.0</drawSize>
+					<drawSize>3</drawSize>
 					<shadowData>
 						<volume>(0.4, 0.8, 0.4)</volume>
 					</shadowData>
@@ -109,7 +109,7 @@
 					<maskPath>Mechs/Overlays/Gazer_Overlay/Mech_Gazer</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
-					<drawSize>4.0</drawSize>
+					<drawSize>3</drawSize>
 					<shadowData>
 						<volume>(0.4, 0.8, 0.4)</volume>
 					</shadowData>

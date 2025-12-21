@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<ThingDef Abstract="True" Name="APM_Mech_Lasher" ParentName="BaseMechanoidWalker">
+	<ThingDef Name="APM_Mech_Lasher" ParentName="BaseMechanoidWalker">
 		<defName>APM_Mech_Lasher</defName>
 		<label>Lasher</label>
 		<description>Wielding a plasma charged whip, this mechanoid was designed to handle, tame and train animals. Its more unique role in a mechanoid task force has this lasher’s whip also function in short range combat, with it being able to strike out at foes, dealing EMP damage.\n\nThis mechanoid can strike out with its whip, dealing damage and electrifying anything within a short area around the whip.</description>
@@ -43,7 +43,7 @@
 		<race>
 			<body>Lancer</body>
 			<mechEnabledWorkTypes>
-				<li>Animals</li>
+				<li>Handling</li>
 			</mechEnabledWorkTypes>
 			<baseHealthScale>1</baseHealthScale>
 			<detritusLeavings>
