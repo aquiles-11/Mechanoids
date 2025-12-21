@@ -115,14 +115,14 @@
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
 			<range>4.9</range>
-			<warmupTime>0.5</warmupTime>
+			<warmupTime>0.3</warmupTime>
 			<soundCast>PiercingSpine_Launch</soundCast>
 			<targetParams>
 				<canTargetLocations>true</canTargetLocations>
 			</targetParams>
 		</verbProperties>
 		<warmupMote>Mote_SeveringEdge_Intro</warmupMote>
-		<moteOffsetAmountTowardsTarget>0.5</moteOffsetAmountTowardsTarget>
+		<moteOffsetAmountTowardsTarget>0.2</moteOffsetAmountTowardsTarget>
 		<comps>
 			<li Class="CompProperties_AbilityLaunchProjectile">
 				<projectileDef>SeveringEdge</projectileDef>
