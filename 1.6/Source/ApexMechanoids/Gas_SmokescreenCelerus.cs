@@ -103,6 +103,23 @@ namespace ApexMechanoids
                 pawn.health.AddHediff(hediff);
             }
         }
+
+        private void DoEffectOn(IntVec3 pos)
+        {
+            if (!modExtension.fleckDefs.NullOrEmpty())
+            {
+                FleckMaker.Static(pos, MapHeld, modExtension.fleckDefs.RandomElement());
+            }
+            if (modExtension.effecterDef != null)
+            {
+                Effecter effecter = modExtension.effecterDef.Spawn(pos, MapHeld);
+                effecter.Cleanup();
+            }
+            if (modExtension.soundDef != null)
+            {
+                modExtension.soundDef.PlayOneShot(SoundInfo.InMap(this));
+            }
+        }
         private void DoEffect()
         {
             if (Rand.Chance(0.5f))
@@ -129,6 +146,10 @@ namespace ApexMechanoids
         {
             DamageInfo damageInfo = new DamageInfo(modExtension.damageDef, modExtension.amount.RandomInRange, instigator: this);
             pawn.TakeDamage(damageInfo);
+            if (modExtension.isDoEffectWhenDamagePawn)
+            {
+                DoEffectOn(pawn.Position);
+            }
         }
     }
 }
