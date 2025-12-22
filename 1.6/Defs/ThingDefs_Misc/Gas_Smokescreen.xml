@@ -23,12 +23,11 @@
 				<immuneThingDefs>
 					<li>APM_Mech_Celerus</li>
 				</immuneThingDefs>
-				<hediffToImmunePawn>APM_CelerusSmokescreenBuff</hediffToImmunePawn>
 				<fleckDefs>
 					<li>ArcLargeEMP_A</li>
 					<li>ArcLargeEMP_B</li>
 				</fleckDefs>
-				<effecterDef>APM_ElectricityArc</effecterDef>
+				<effecterDef>MechBandElectricityArc</effecterDef>
 				<damageDef>Burn</damageDef>
 				<amount>1</amount>
 			</li>

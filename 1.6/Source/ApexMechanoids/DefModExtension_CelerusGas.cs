@@ -11,8 +11,6 @@ namespace ApexMechanoids
     {
         public List<ThingDef> immuneThingDefs = new List<ThingDef>();
 
-        public bool isDoEffectWhenDamagePawn = true;
-
         public IntRange effectDelay = new IntRange(120, 120);
 
         public HediffDef hediffToImmunePawn;
