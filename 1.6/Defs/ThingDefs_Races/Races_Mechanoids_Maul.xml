@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<ThingDef ParentName="BaseMechanoidWalker">
-		<defName>APM_Mech_Terminus</defName>
-		<label>Terminus</label>
-		<description>Three powerful mechanoid types were created by an Archotech mind in an attempt to create a central commander of all mechanoid forces. Influenced by the Old Earth region of Europe in medieval times, the Terminus cleaves through waves of foes and not even distance can mitigate its wrath. Its weapon has the ability to sweep through a large area in front of itself. The Terminus can also focus its psychic influence inward, enhancing its damage and stagger resistance. For foes who escape its grasp, it is also equipped with a grappling hook to draw in enemies from a distance to finish off. Additionally, mechanitors can extend their command range in a radius around this mech if under their control.</description>
+	<ThingDef Name="APM_Mech_Maul" ParentName="BaseMechanoidWalker">
+		<defName>APM_Mech_Maul</defName>
+		<label>Maul</label>
+		<description>Wielding a plasma charged whip, this mechanoid was designed to handle, tame and train animals. Its more unique role in a mechanoid task force has this Maul’s whip also function in short range combat, with it being able to strike out at foes, dealing EMP damage.\n\nThis mechanoid can strike out with its whip, dealing damage and electrifying anything within a short area around the whip.</description>
+		<statBases>
+			<MoveSpeed>4.2</MoveSpeed>
+			<ArmorRating_Blunt>0.3</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.6</ArmorRating_Sharp>
+			<BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">4</BandwidthCost>
+		</statBases>
 		<tools>
 			<li>
 				<label>left fist</label>
@@ -12,7 +18,7 @@
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
-				<power>12.0</power>
+				<power>20.0</power>
 				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
 				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
@@ -23,7 +29,7 @@
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
-				<power>12.0</power>
+				<power>20.0</power>
 				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
 				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
@@ -33,7 +39,7 @@
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
-				<power>8.5</power>
+				<power>10.0</power>
 				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
 				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
@@ -41,64 +47,69 @@
 			</li>
 		</tools>
 		<race>
-			<body>APM_Terminus</body>
-			<renderTree>APM_RenderTree_Terminus</renderTree>
-			<baseHealthScale>1</baseHealthScale>
+			<body>Lancer</body>
+			<baseBodySize>2.0</baseBodySize>
+			<baseHealthScale>3.5</baseHealthScale>
 			<detritusLeavings>
 				<li>
 					<def>ChunkMechanoidSlag</def>
 					<texOverrideIndex>11</texOverrideIndex>
-					<spawnChance>0.1</spawnChance>
+					<spawnChance>0.13</spawnChance>
 				</li>
 				<li>
 					<def>ChunkMechanoidSlag</def>
 					<texOverrideIndex>12</texOverrideIndex>
-					<spawnChance>0.1</spawnChance>
+					<spawnChance>0.3</spawnChance>
 				</li>
 			</detritusLeavings>
 		</race>
-		<statBases>
-			<BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">2</BandwidthCost>
-		</statBases>
+		<butcherProducts>
+			<Steel>20</Steel>
+			<Plasteel>5</Plasteel>
+		</butcherProducts>
 	</ThingDef>
 
 	<PawnKindDef ParentName="BaseMechanoidKind">
-		<defName>APM_Mech_Terminus</defName>
-		<label>terminus</label>
-		<race>APM_Mech_Terminus</race>
+		<defName>APM_Mech_Maul</defName>
+		<label>maul</label>
+		<race>APM_Mech_Maul</race>
 		<combatPower>190</combatPower>
 		<lifeStages>
 			<li MayRequire="Ludeon.RimWorld.Biotech">
 				<bodyGraphicData>
-					<texPath>Mechs/Terminus/Regular/Terminus</texPath>
-					<maskPath>Mechs/Overlays/Terminus_Overlay/Regular/Mech_Terminus</maskPath>
+					<texPath>Mechs/Maul/Maul</texPath>
+					<maskPath>Mechs/Overlays/Maul_Overlay/Mech_Maul</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
-					<drawSize>2.25</drawSize>
+					<drawSize>2.5</drawSize>
 					<shadowData>
-						<volume>(0.4, 0.8, 0.4)</volume>
+						<volume>(0.5, 0.8, 0.5)</volume>
 					</shadowData>
 				</bodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Mechs/Terminus/Regular/TerminusAncient</texPath>
-					<maskPath>Mechs/Overlays/Terminus_Overlay/Regular/Mech_Terminus</maskPath>
+					<texPath>Mechs/Maul/MaulAncient</texPath>
+					<maskPath>Mechs/Overlays/Maul_Overlay/Mech_Maul</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
-					<drawSize>2.25</drawSize>
+					<drawSize>2.5</drawSize>
 					<shadowData>
-						<volume>(0.4, 0.8, 0.4)</volume>
+						<volume>(0.5, 0.8, 0.5)</volume>
 					</shadowData>
 				</bodyGraphicData>
 			</li>
 		</lifeStages>
 		<weaponMoney>9999~9999</weaponMoney>
-		<weaponTags Inherit="False">
-			<li>APM_WeaponTerminusSword</li>
+		<weaponTags>
+			<li>APM_WeaponMaul</li>
 		</weaponTags>
 		<techHediffsChance>1</techHediffsChance>
 		<techHediffsMoney>9999~9999</techHediffsMoney>
+		<controlGroupPortraitZoom>0.8</controlGroupPortraitZoom>
+		<abilities>
+
+		</abilities>
 	</PawnKindDef>
 
 </Defs>

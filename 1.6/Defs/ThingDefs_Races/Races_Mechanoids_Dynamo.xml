@@ -104,7 +104,7 @@
 					<texPath>Mechs/Dynamo/Dynamo</texPath>
 					<maskPath>Mechs/Overlays/Dynamo_Overlay/Dynamo</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
-					<drawSize>1.5</drawSize>
+					<drawSize>3</drawSize>
 				</bodyGraphicData>
 			</li>
 			<li>
@@ -112,7 +112,7 @@
 					<texPath>Mechs/Dynamo/DynamoAncient</texPath>
 					<maskPath>Mechs/Overlays/Dynamo_Overlay/Dynamo</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
-					<drawSize>1.5</drawSize>
+					<drawSize>3</drawSize>
 				</bodyGraphicData>
 			</li>
 		</lifeStages>
