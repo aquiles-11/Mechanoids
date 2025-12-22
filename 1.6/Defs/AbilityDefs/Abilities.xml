@@ -73,6 +73,37 @@
 			</li>
 		</comps>
 	</AbilityDef>
+	
+	<AbilityDef ParentName="PsycastBaseSkip">
+		<defName>APM_CelerusBlink</defName>
+		<label>blink</label>
+		<description>WIP.</description>
+		<level>4</level>
+		<iconPath>UI/Blink</iconPath>
+		<writeCombatLog>True</writeCombatLog>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<warmupTime>0.25</warmupTime>
+			<range>27.9</range>
+			<targetParams>
+				<canTargetSelf>True</canTargetSelf>
+				<canTargetAnimals>True</canTargetAnimals>
+				<canTargetItems>True</canTargetItems>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityTeleport">
+				<compClass>CompAbilityEffect_Teleport</compClass>
+				<destination>Selected</destination>
+				<requiresLineOfSight>True</requiresLineOfSight>
+				<range>17.9</range>
+				<clamorType>Ability</clamorType>
+				<clamorRadius>10</clamorRadius>
+				<destClamorType>Ability</destClamorType>
+				<destClamorRadius>10</destClamorRadius>
+			</li>
+		</comps>
+	</AbilityDef>
 
 
 
