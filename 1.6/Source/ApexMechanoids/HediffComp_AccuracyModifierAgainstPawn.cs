@@ -1,6 +1,6 @@
 ﻿using Verse;
 
-namespace ApexMechanoidsF
+namespace ApexMechanoids
 {
     public class HediffCompProperties_AccuracyModifierAgainstPawn : HediffCompProperties
     {

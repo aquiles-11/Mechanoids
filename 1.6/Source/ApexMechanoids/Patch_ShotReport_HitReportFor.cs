@@ -1,9 +1,9 @@
-﻿using HarmonyLib;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using HarmonyLib;
 using Verse;
 
-namespace ApexMechanoidsF
+namespace ApexMechanoids
 {
     [HarmonyPatch(typeof(ShotReport), "AimOnTargetChance_StandardTarget", MethodType.Getter)]
     public static class Patch_ShotReport_AimOnTargetChance_StandardTarget

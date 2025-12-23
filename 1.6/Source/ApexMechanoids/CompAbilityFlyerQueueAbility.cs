@@ -1,7 +1,7 @@
 ﻿using RimWorld;
 using Verse;
 
-namespace ApexMechanoidsF
+namespace ApexMechanoids
 {
     public class CompProperties_AbilityFlyerQueueAbility : CompProperties_AbilityEffect
     {
