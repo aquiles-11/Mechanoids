@@ -122,7 +122,7 @@
 			</targetParams>
 		</verbProperties>
 		<warmupMote>Mote_SeveringEdge_Intro</warmupMote>
-		<moteOffsetAmountTowardsTarget>0.2</moteOffsetAmountTowardsTarget>
+		<moteOffsetAmountTowardsTarget>0.1</moteOffsetAmountTowardsTarget>
 		<comps>
 			<li Class="CompProperties_AbilityLaunchProjectile">
 				<projectileDef>SeveringEdge</projectileDef>
@@ -131,7 +131,7 @@
 				<extraRotation>310</extraRotation>
 			</li>
 			<li Class="ApexMechanoids.CompProperties_MaintainWarmupMoteAfterCast">
-				<ticksToMaintain>30</ticksToMaintain>
+				<ticksToMaintain>60</ticksToMaintain>
 			</li>
 		</comps>
 	</AbilityDef>
