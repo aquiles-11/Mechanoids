@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
- <!-- <HediffDef>
+<HediffDef>
     <defName>APEXM_TestAccuracyHediff</defName>
     <label>test accuracy hediff</label>
     <description>...</description>
@@ -9,14 +9,14 @@
 	<maxSeverity>1</maxSeverity>
 	<comps>
 		<li Class="HediffCompProperties_Disappears">
-			<disappearsAfterTicks>600</disappearsAfterTicks> <!{1}** remove after 10 secs **{1}>
+			<disappearsAfterTicks>600</disappearsAfterTicks> <!-- {1}** remove after 10 secs **{1}-->
 			<showRemainingTime>true</showRemainingTime>
 			<canUseDecimalsShortForm>true</canUseDecimalsShortForm>
 			<sendLetterOnDisappearIfDead>false</sendLetterOnDisappearIfDead>
 		</li>
-		<li Class="ApexMechanoidsF.HediffCompProperties_AccuracyModifierAgainstPawn">
-			<amount>-0.504</amount> <!{1}** CHANGE ACCURACY MODIFIER HERE **{1}>
+		<li Class="ApexMechanoids.HediffCompProperties_AccuracyModifierAgainstPawn">
+			<amount>-0.504</amount> <!--{1}** CHANGE ACCURACY MODIFIER HERE **{1}-->
 		</li>
 	</comps>
-  </HediffDef>-->
+  </HediffDef>
 </Defs>

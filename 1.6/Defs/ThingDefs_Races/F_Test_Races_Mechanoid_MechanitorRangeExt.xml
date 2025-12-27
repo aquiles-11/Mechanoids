@@ -7,7 +7,7 @@
 		<defName>APEXM_Test_Mech_MechanitorRange</defName>
 		<label>test mechanitor range</label>
 		<comps>
-		  <li Class="ApexMechanoidsF.CompProperties_MechanitorRangeExtender"> <!-- use this comp -->
+		  <li Class="ApexMechanoids.CompProperties_MechanitorRangeExtender"> <!-- use this comp -->
 			<minRange>7.9</minRange> <!-- when not used, for performance reasons -->
 			<maxRange>15.4</maxRange> <!-- when used -->
 		  </li>
