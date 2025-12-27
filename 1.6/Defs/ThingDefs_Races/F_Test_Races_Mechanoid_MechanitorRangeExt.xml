@@ -3,8 +3,8 @@
 
 	<!-- Test mechanoid with mechanitor range extension -->
 
-	<ThingDef ParentName="APEXM_TestScyther">
-		<defName>APEXM_Test_Mech_MechanitorRange</defName>
+	<ThingDef ParentName="ApexMechanoids_TestScyther">
+		<defName>ApexMechanoids_Test_Mech_MechanitorRange</defName>
 		<label>test mechanitor range</label>
 		<comps>
 		  <li Class="ApexMechanoids.CompProperties_MechanitorRangeExtender"> <!-- use this comp -->
@@ -14,13 +14,13 @@
 		</comps>
 	</ThingDef>
 
-	<PawnKindDef ParentName="APEXM_TestScytherKind">
-		<defName>APEXM_Test_Mech_MechanitorRange</defName>
+	<PawnKindDef ParentName="ApexMechanoids_TestScytherKind">
+		<defName>ApexMechanoids_Test_Mech_MechanitorRange</defName>
 		<label>test mechanitor range</label>
-		<race>APEXM_Test_Mech_MechanitorRange</race>
+		<race>ApexMechanoids_Test_Mech_MechanitorRange</race>
 	</PawnKindDef>
 
-  <ThingDef ParentName="BaseMechanoidWalker" Name="APEXM_TestScyther" Abstract="True">
+  <ThingDef ParentName="BaseMechanoidWalker" Name="ApexMechanoids_TestScyther" Abstract="True">
     <description>.</description>
     <tools>
       <li>
@@ -83,7 +83,7 @@
     </statBases>
   </ThingDef>
 
-  <PawnKindDef ParentName="BaseMechanoidKind" Name="APEXM_TestScytherKind" Abstract="True">
+  <PawnKindDef ParentName="BaseMechanoidKind" Name="ApexMechanoids_TestScytherKind" Abstract="True">
     <combatPower>150</combatPower>
     <lifeStages>
       <li MayRequire="Ludeon.RimWorld.Biotech">
