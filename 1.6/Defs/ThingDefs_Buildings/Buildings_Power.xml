@@ -2,18 +2,66 @@
 <Defs>
 
 	<ThingDef ParentName="BuildingBase">
+		<defName>Building_PowerPlant</defName>
+		<label>power plant</label>
+		<description>PLACEHOLDER</description>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<texPath>Buildings/PowerPlant</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(2,3)</drawSize>
+		</graphicData>
+		<thingCategories>
+			<li>BuildingsMisc</li>
+		</thingCategories>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<canOverlapZones>false</canOverlapZones>
+		<pathCost>42</pathCost>
+		<blockWind>true</blockWind>
+		<fillPercent>0.5</fillPercent>
+		<building>
+			<buildingTags>
+				<li>Biotech</li>
+			</buildingTags>
+			<ai_chillDestination>false</ai_chillDestination>
+		</building>
+		<designationCategory>Biotech</designationCategory>
+		<hasInteractionCell>true</hasInteractionCell>
+		<interactionCellOffset>(0, 0, -1)</interactionCellOffset>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>30000</WorkToBuild>
+			<Mass>80</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<size>(2,3)</size>
+		<costList>
+			<Steel>200</Steel>
+		</costList>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>400</basePowerConsumption>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
 		<defName>APM_DynamoPoweredGenerator</defName>
 		<label>Dynamo powered generator</label>
 		<description>Produces power by consuming chemfuel. Must be periodically refueled by hand.</description>
 		<thingClass>Building</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
-			<texPath>Buildings/Dynamo/Dynamo_Building</texPath>
+			<texPath>Things/Building/Power/DynamoPoweredGenerator/Dynamo_Building</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(2,2)</drawSize>
 			<shadowData>
-				<volume>(1.93,1,1.69)</volume>
-				<offset>(-0.03,0,-0.1)</offset>
+				<volume>(0.93,1,0.93)</volume>
 			</shadowData>
 		</graphicData>
 		<altitudeLayer>Building</altitudeLayer>
@@ -25,8 +73,8 @@
 		<statBases>
 			<MaxHitPoints>300</MaxHitPoints>
 			<WorkToBuild>2500</WorkToBuild>
-			<Flammability>1.0</Flammability>
-			<Beauty>-20</Beauty>
+			<Flammability>0.0</Flammability>
+			<Beauty>-10</Beauty>
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<canOverlapZones>false</canOverlapZones>
@@ -35,16 +83,16 @@
 			<destroySound>BuildingDestroyed_Metal_Medium</destroySound>
 		</building>
 		<comps>
-			<li Class="CompProperties_Power">
-				<compClass>ApexMechanoids.CompPowerPlantDynamo</compClass>
-				<basePowerConsumption>-1000</basePowerConsumption>
+			<li Class="ApexMechanoids.CompProperties_PowerPlantDynamo">
+				<basePowerConsumption>-5000</basePowerConsumption>
 				<transmitsPower>true</transmitsPower>
 				<soundAmbientProducingPower>ChemfuelFiredGenerator_Ambience</soundAmbientProducingPower>
+				<overrideAncientTexPath>Things/Building/Power/DynamoPoweredGenerator/Dynamo_Ancient_Building</overrideAncientTexPath>
 			</li>
 			<li Class="CompProperties_Flickable"/>
 			<li Class="CompProperties_Refuelable">
-				<fuelConsumptionRate>4.5</fuelConsumptionRate>
-				<fuelCapacity>30.0</fuelCapacity>
+				<fuelConsumptionRate>0.5</fuelConsumptionRate>
+				<fuelCapacity>10.0</fuelCapacity>
 				<fuelFilter>
 					<thingDefs>
 						<li>Uranium</li>
@@ -55,7 +103,7 @@
 			</li>
 			<li Class="CompProperties_Glower">
 				<glowRadius>6</glowRadius>
-				<glowColor>(80,112,180,0)</glowColor>
+				<glowColor>(100,100,100,0)</glowColor>
 			</li>
 			<li Class="CompProperties_HeatPusher">
 				<compClass>CompHeatPusherPowered</compClass>
