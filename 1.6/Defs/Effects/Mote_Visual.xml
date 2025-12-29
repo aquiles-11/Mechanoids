@@ -127,7 +127,7 @@
 			<shaderType>MoteHellfireCannon_Target</shaderType>
 			<shaderParameters>
 				<_ScanTex>/Things/Mote/MoteHellfireCannon_Target_Scan</_ScanTex>
-				<_ScanMask>/Things/Mote/APM_SunRay_MoteWave</_ScanMask>
+				<_ScanMask>/Effects/Mote/APM_SunRay_MoteWave</_ScanMask>
 				<_ScanSpeed>0.01</_ScanSpeed>
 				<_ScanSpeedAccel>0.1</_ScanSpeedAccel>
 			</shaderParameters>
