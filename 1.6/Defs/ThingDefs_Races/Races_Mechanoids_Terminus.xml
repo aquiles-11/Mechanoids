@@ -144,6 +144,7 @@
 			<graphicClass>VEF.Graphics.Graphic_Animated</graphicClass>
 			<drawSize>3.7</drawSize>
 			<ticksPerFrame>5</ticksPerFrame>
+			<color>(163,180,187)</color>
 		</graphicData>
 		<projectile>
 			<damageDef>RangedStab</damageDef>
