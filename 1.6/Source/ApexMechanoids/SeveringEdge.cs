@@ -12,13 +12,18 @@ namespace ApexMechanoids
     public class SeveringEdge : Projectile, VEF.Graphics.IAnimationOneTime
     {
         const float maxDist = 1.9f;
+        const int ticksBeforeImpact = 10;
         private List<Thing> ignore = new List<Thing>();
         protected override void Tick()
         {
             base.Tick();
-            foreach (var thing in Map.mapPawns.AllPawnsSpawned.Except(this.launcher).Where(IsValidTarget).ToList())
+
+            if (this.StartingTicksToImpact - this.ticksToImpact > ticksBeforeImpact)
             {
-                Impact(thing);
+                foreach (var thing in Map.mapPawns.AllPawnsSpawned.Except(this.launcher).Where(IsValidTarget).ToList())
+                {
+                    Impact(thing);
+                }
             }
         }
         protected virtual void Impact(Thing thing)
