@@ -31,10 +31,18 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Publicize Include="Assembly-CSharp:RimWorld.CompRefuelable.fuel" />
+    <Publicize Include="Assembly-CSharp:RimWorld.Ability.warmupMote" />
+    <Publicize Include="Assembly-CSharp:RimWorld.Ability.wasCastingOnPrevTick" />
     <Publicize Include="Assembly-CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <ReferencePathWithRefAssemblies
-      Update="\var\home\Carl\.local\share\Steam\steamapps\common\RimWorld\Mods\Mechanoids\1.6\Source\ApexMechanoids\obj\1.6\PublicizedAssemblies\Assembly-CSharp.B448D900D643AC82DB2AEBD337BC9398\Assembly-CSharp.dll" />
+    <Reference Include="VEF">
+      <HintPath>..\..\..\..\..\..\..\workshop\content\294100\2023507013\1.6\Assemblies\VEF.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ReferencePathWithRefAssemblies Update="\var\home\Carl\.local\share\Steam\steamapps\common\RimWorld\Mods\Mechanoids\1.6\Source\ApexMechanoids\obj\1.6\PublicizedAssemblies\Assembly-CSharp.B448D900D643AC82DB2AEBD337BC9398\Assembly-CSharp.dll" />
   </ItemGroup>
 </Project>
