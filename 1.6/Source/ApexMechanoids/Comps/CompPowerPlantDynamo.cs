@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using HarmonyLib;
+using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -9,11 +10,16 @@ namespace ApexMechanoids
     [StaticConstructorOnStartup]
     public class CompPowerPlantDynamo : CompPowerPlant, IThingHolder
     {
+        public new CompProperties_PowerPlantDynamo Props => (CompProperties_PowerPlantDynamo)props;
+
         private ThingOwner<Thing> innerContainer;
+
+        GraphicData overrideGraphicData = new GraphicData();
 
         public Pawn Dynamo => innerContainer.InnerListForReading.FirstOrDefault() as Pawn;
 
         private bool wasDrafted;
+        private bool isInitialGraphic = true;
 
         public void GetChildHolders(List<IThingHolder> outChildren)
         {
@@ -30,12 +36,36 @@ namespace ApexMechanoids
             innerContainer = new ThingOwner<Thing>(this, LookMode.Deep, removeContentsIfDestroyed: false);
         }
 
+        public void UpdateGraphic()
+        {
+            if (Dynamo?.ageTracker?.CurLifeStageIndex > 0)
+            {
+                overrideGraphicData.CopyFrom(parent.def.graphicData);
+                string overrideTexPath = Props.overrideAncientTexPath;
+                if (!overrideTexPath.NullOrEmpty())
+                {
+                    overrideGraphicData.texPath = overrideTexPath;
+                }
+                AccessTools.Field(typeof(Thing), "graphicInt").SetValue(parent, overrideGraphicData.GraphicColoredFor(parent));
+                parent.DirtyMapMesh(parent.Map);
+            }
+        }
+
         public override void PostPostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
         {
             base.PostPostApplyDamage(dinfo, totalDamageDealt);
-            if (dinfo.Instigator.Faction.HostileTo(parent.Faction))
+            if (dinfo.Instigator?.Faction?.HostileTo(parent.Faction) ?? false)
             {
                 parent.Destroy();
+            }
+        }
+
+        public override void PostDraw()
+        {
+            if (isInitialGraphic)
+            {
+                UpdateGraphic();
+                isInitialGraphic = false;
             }
         }
 
@@ -92,6 +122,7 @@ namespace ApexMechanoids
             {
                 compRefuelableDynamo.fuel = compRefuelablePlant.fuel;
             }
+            compRefuelablePlant.fuel = 0;
             return dynamo;
         }
 

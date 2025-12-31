@@ -7,28 +7,28 @@
 			<li>
 				<graphicClass>Graphic_Fleck</graphicClass>
 				<color>(250, 147, 19)</color>
-				<texPath>Things/Mote/Duel/FireOrb_a</texPath>
+				<texPath>Effects/Duel/FireOrb_a</texPath>
 				<shaderType>MoteGlow</shaderType>
 				<renderInstanced>true</renderInstanced>
 			</li>
 			<li>
 				<graphicClass>Graphic_Fleck</graphicClass>
 				<color>(250, 147, 19)</color>
-				<texPath>Things/Mote/Duel/FireOrb_b</texPath>
+				<texPath>Effects/Duel/FireOrb_b</texPath>
 				<shaderType>MoteGlow</shaderType>
 				<renderInstanced>true</renderInstanced>
 			</li>
 			<li>
 				<graphicClass>Graphic_Fleck</graphicClass>
 				<color>(250, 147, 19)</color>
-				<texPath>Things/Mote/Duel/FireOrb_c</texPath>
+				<texPath>Effects/Duel/FireOrb_c</texPath>
 				<shaderType>MoteGlow</shaderType>
 				<renderInstanced>true</renderInstanced>
 			</li>
 			<li>
 				<graphicClass>Graphic_Fleck</graphicClass>
 				<color>(250, 147, 19)</color>
-				<texPath>Things/Mote/Duel/FireOrb_d</texPath>
+				<texPath>Effects/Duel/FireOrb_d</texPath>
 				<shaderType>MoteGlow</shaderType>
 				<renderInstanced>true</renderInstanced>
 			</li>
@@ -38,6 +38,34 @@
 		<solidTime>3</solidTime>
 		<fadeOutTime>1.2</fadeOutTime>
 		<growthRate>0.04</growthRate>
+	</FleckDef>
+
+	<FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+		<defName>APM_Fleck_SunRay_Burn</defName>
+		<altitudeLayer>MoteLow</altitudeLayer>
+		<fadeInTime>0.1</fadeInTime>
+		<fadeOutTime>2</fadeOutTime>
+		<solidTime>12</solidTime>
+		<randomGraphics>
+		<li>
+			<graphicClass>Graphic_Fleck</graphicClass>
+			<texPath>Things/Mote/BeamBurn/BeamBurn_A</texPath>
+			<shaderType>Transparent</shaderType>
+			<drawSize>2.65</drawSize>
+		</li>
+		<li>
+			<graphicClass>Graphic_Fleck</graphicClass>
+			<texPath>Things/Mote/BeamBurn/BeamBurn_B</texPath>
+			<shaderType>Transparent</shaderType>
+			<drawSize>2.65</drawSize>
+		</li>
+		<li>
+			<graphicClass>Graphic_Fleck</graphicClass>
+			<texPath>Things/Mote/BeamBurn/BeamBurn_C</texPath>
+			<shaderType>Transparent</shaderType>
+			<drawSize>2.65</drawSize>
+		</li>
+		</randomGraphics>
 	</FleckDef>
 
 </Defs>

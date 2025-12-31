@@ -21,5 +21,20 @@ namespace ApexMechanoids
                 compPowerPlantDynamo.SwithcToPowerPlantMode(pawn);
             }
         }
+
+        public override bool CanCast
+        {
+            get
+            {
+                foreach (IntVec3 cell in GenAdj.OccupiedRect(pawn.Position, Props.thingDef.defaultPlacingRot, Props.thingDef.size).Cells)
+                {
+                    if (!cell.Standable(pawn.Map))
+                    {
+                        return false;
+                    }
+                }
+                return base.CanCast;
+            }
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace ApexMechanoids
         const float maxDist = 1.9f;
         const int ticksBeforeImpact = 10;
         private List<Thing> ignore = new List<Thing>();
-        protected override void Tick()
+        public override void Tick()
         {
             base.Tick();
 
