@@ -7,7 +7,7 @@
 	<!-- "targeting" for pinpoint mech -->
 	
 	<AbilityDef>
-        <defName>APEXM_Ability_GiveAccuracyHediff</defName>
+        <defName>ApexMechanoids_Ability_GiveAccuracyHediff</defName>
         <label>give accuracy hediff</label>
         <description>.</description>
         <iconPath>Things/Mote/SpeechSymbols/Speech</iconPath>
@@ -28,7 +28,7 @@
         <comps>
             <li Class="CompProperties_AbilityGiveHediff">
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
-				<hediffDef>APEXM_TestAccuracyHediff</hediffDef>
+				<hediffDef>ApexMechanoids_TestAccuracyHediff</hediffDef>
             </li>
         </comps>
     </AbilityDef>
@@ -37,7 +37,7 @@
 	<!-- "true sight" for pinpoint mech -->
 	
 	<AbilityDef>
-        <defName>APEXM_Ability_RevealInvisible</defName>
+        <defName>ApexMechanoids_Ability_RevealInvisible</defName>
         <label>reveal invisible</label>
         <description>.</description>
         <iconPath>Things/Mote/SpeechSymbols/Speech</iconPath>
@@ -60,7 +60,7 @@
             </targetParams>
         </verbProperties>
         <comps>
-            <li Class="ApexMechanoidsF.CompProperties_AbilityRevealInvisibility"> <!-- should reveal invisible pawns -->
+            <li Class="ApexMechanoids.CompProperties_AbilityRevealInvisibility"> <!-- should reveal invisible pawns -->
                 <instant>false</instant>
             </li>
         </comps>
@@ -70,9 +70,9 @@
 	<!-- "dashing" pawnFlyer with rope -->
 	
 	<ThingDef ParentName="PawnFlyerBase">
-		<defName>APEXM_DashingPawn</defName>
+		<defName>ApexMechanoids_DashingPawn</defName>
 		<label>dashing</label>
-		  <thingClass>ApexMechanoidsF.PawnFlyerExtended</thingClass>
+		  <thingClass>ApexMechanoids.PawnFlyerExtended</thingClass>
 		  <drawGUIOverlay>true</drawGUIOverlay>
 		<pawnFlyer>
 		  <flightDurationMin>0.25</flightDurationMin>
@@ -88,7 +88,7 @@
 		  </progressCurve>
 		</pawnFlyer>
 		<modExtensions>
-			<li Class="ApexMechanoidsF.ModExt_PawnFlyerExt"> <!-- draw rope when dashing -->
+			<li Class="ApexMechanoids.ModExt_PawnFlyerExt"> <!-- draw rope when dashing -->
 				<rope>true</rope>
 			</li>
 		</modExtensions>
@@ -96,8 +96,8 @@
   
 	<!-- Primary: dash (then push) -->
 	
-	<AbilityDef>
-		<defName>APEXM_Ability_DashAndPush</defName>
+	<!--<AbilityDef>
+		<defName>ApexMechanoids_Ability_DashAndPush</defName>
 		<label>dash and push</label>
 		<description>.</description>
 		<iconPath>Things/Mote/SpeechSymbols/Speech</iconPath>
@@ -108,30 +108,30 @@
 		<writeCombatLog>true</writeCombatLog>
 		<aiCanUse>true</aiCanUse>
 		<verbProperties>
-			<verbClass>ApexMechanoidsF.Verb_CastAbilityJumpExt</verbClass>
-			<spawnDef>APEXM_DashingPawn</spawnDef> <!-- make another that damages pawns on path -->
+			<verbClass>ApexMechanoids.Verb_CastAbilityJumpExt</verbClass>
+			<spawnDef>ApexMechanoids_DashingPawn</spawnDef>  make another that damages pawns on path 
 			<soundCast>Pawn_Cat_Call</soundCast>
 			<warmupTime>0</warmupTime>
 			<noiseRadius>6</noiseRadius>
 			<range>9.9</range>
 			<targetParams>
-				<!-- <canTargetLocations>true</canTargetLocations> -->
+				<canTargetLocations>true</canTargetLocations> 
 			</targetParams>
 		</verbProperties>
 		<comps>
-			<li Class="ApexMechanoidsF.CompProperties_AbilityFlyerQueueAbility">
+			<li Class="ApexMechanoids.CompProperties_AbilityFlyerQueueAbility">
 			  <abilityOnFinish>
-				<li>APEXM_Ability_Push</li> <!-- only 1 follow-up for jumps -->
+				<li>ApexMechanoids_Ability_Push</li> only 1 follow-up for jumps 
 			  </abilityOnFinish>
 			</li>
 		</comps>
-	</AbilityDef>
+	</AbilityDef>-->
 	
 	
 	<!-- Follow-up: push -->
 	
-	<AbilityDef>
-        <defName>APEXM_Ability_Push</defName>
+	<!--<AbilityDef>
+        <defName>ApexMechanoids_Ability_Push</defName>
         <label>push</label>
         <description>.</description>
         <iconPath>Things/Mote/SpeechSymbols/Speech</iconPath>
@@ -141,7 +141,7 @@
 		<aiCanUse>true</aiCanUse>
 		<canUseAoeToGetTargets>true</canUseAoeToGetTargets>
 		<statBases>
-			<Ability_EffectRadius>0.9</Ability_EffectRadius> <!-- this should make it possible to pick targets from AoE to push -->
+			<Ability_EffectRadius>0.9</Ability_EffectRadius>  this should make it possible to pick targets from AoE to push 
 		</statBases>
         <verbProperties>
             <verbClass>Verb_CastAbility</verbClass>
@@ -161,13 +161,13 @@
                 <destination>RandomInRange</destination>
             </li>
         </comps>
-    </AbilityDef>
+    </AbilityDef>-->
 	
 	
 	<!-- Siren Lure -->
 	
 	<AbilityDef>
-        <defName>APEXM_Ability_SirenLure</defName>
+        <defName>ApexMechanoids_Ability_SirenLure</defName>
         <label>siren lure</label>
         <description>.</description>
         <iconPath>Things/Mote/SpeechSymbols/Speech</iconPath>

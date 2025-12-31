@@ -2,7 +2,7 @@
 using UnityEngine;
 using Verse;
 
-namespace ApexMechanoidsF
+namespace ApexMechanoids
 {
     public class ModExt_PawnFlyerExt : DefModExtension
     {

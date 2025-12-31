@@ -17,7 +17,10 @@ namespace ApexMechanoids
             if (target.TryGetPawn(out var pawn))
             {
                 var need = pawn.needs?.TryGetNeed(Props.needDef);
-                need.CurLevel += Props.offset;
+                if (need != null)
+                {
+                    need.CurLevel += Props.offset;
+                }
             }
         }
     }

@@ -2,7 +2,7 @@
 using Verse;
 using Verse.AI;
 
-namespace ApexMechanoidsF
+namespace ApexMechanoids
 {
     // Copied from Rimpact
     public class Verb_CastAbilityJumpExt : Verb_CastAbilityJump

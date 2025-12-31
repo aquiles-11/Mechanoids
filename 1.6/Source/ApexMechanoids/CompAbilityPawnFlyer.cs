@@ -1,7 +1,8 @@
-﻿using RimWorld;
+﻿using ApexMechanoids;
+using RimWorld;
 using Verse;
 
-namespace ApexMechanoidsF
+namespace ApexMechanoids
 {
     public class CompProperties_AbilityOnJumpCompleted : CompProperties_AbilityEffect
     {
