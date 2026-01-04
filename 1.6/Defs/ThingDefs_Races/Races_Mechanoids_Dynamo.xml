@@ -60,6 +60,7 @@
 				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 				<canEjectFuel>true</canEjectFuel>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
 			</li>
 			<li Class="CompProperties_ProjectileInterceptor">
 				<radius>6</radius>
