@@ -1,37 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
   <ThingDef ParentName="ApparelArmorPowerBase">
     <defName>APM_Apparel_MechamancerSuit</defName>
-    <label>mechamancer suit</label>
-    <description>PLACEHOLDER</description>
+    <label>mechmancer suit</label>
+    <description>A power-assisted armor suit packed with mechanitor-assistance gear. The mechmancer suit dramatically amplifies a mechanitor's bandwidth, providing a personal energy shield and damage resistance comparable to dedicated power armor.</description>
     <recipeMaker>
-      <researchPrerequisite>UltraMechtech</researchPrerequisite> <!-- PLACEHOLDER UNTIL NEW RESEARCH IS ADDED -->
+      <!--<researchPrerequisite>ApexMechtech</researchPrerequisite>-->
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
-      <displayPriority>530</displayPriority>
+      <displayPriority>510</displayPriority>
     </recipeMaker>
     <graphicData>
-      <texPath>Apparel/MechamancerSuit/MechJuggernaut</texPath><!-- make an icon -->
+      <texPath>Apparel/MechamancerSuit/MechJuggernaut_icon</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
     </graphicData>
     <statBases>
-      <ArmorRating_Sharp>1.15</ArmorRating_Sharp>
-      <ArmorRating_Blunt>0.65</ArmorRating_Blunt>
-      <ArmorRating_Heat>0.60</ArmorRating_Heat>
-      <Insulation_Cold>75</Insulation_Cold>
-      <Insulation_Heat>15</Insulation_Heat>
-      <EquipDelay>15</EquipDelay>
+      <ArmorRating_Sharp>1.07</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.9</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.70</ArmorRating_Heat>
+      <Insulation_Cold>50</Insulation_Cold>
+      <Insulation_Heat>30</Insulation_Heat>
+      <EquipDelay>25</EquipDelay>
+      <EnergyShieldRechargeRate MayRequire="Ludeon.RimWorld.Royalty">0.12</EnergyShieldRechargeRate>
+      <EnergyShieldEnergyMax MayRequire="Ludeon.RimWorld.Royalty">1.2</EnergyShieldEnergyMax>
     </statBases>
+    <comps>
+      <li Class="CompProperties_Shield" MayRequire="Ludeon.RimWorld.Royalty">
+        <blocksRangedWeapons>false</blocksRangedWeapons>
+      </li>
+    </comps>
     <equippedStatOffsets>
-      <MechBandwidth>18</MechBandwidth>
+      <MechBandwidth>26</MechBandwidth>
+      <MechControlGroups>2</MechControlGroups>
       <ShootingAccuracyPawn>-4</ShootingAccuracyPawn>
       <MeleeHitChance>-0.6</MeleeHitChance>
-      <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.3</VacuumResistance>
+      <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.4</VacuumResistance>
     </equippedStatOffsets>
     <costList>
-      <NanostructuringChip>2</NanostructuringChip> <!-- PLACEHOLDER UNTIL NEW RESEARCH IS ADDED -->
-      <PowerfocusChip>1</PowerfocusChip> <!-- PLACEHOLDER UNTIL NEW RESEARCH IS ADDED -->
-      <Plasteel>120</Plasteel> <!-- PLACEHOLDER UNTIL NEW RESEARCH IS ADDED -->
-      <ComponentSpacer>8</ComponentSpacer> <!-- PLACEHOLDER UNTIL NEW RESEARCH IS ADDED -->
+      <!--Terminus
+      chips which havent been defined yet, this requires rebalancing anyway-->
+      <Plasteel>250</Plasteel>
+      <ComponentSpacer>9</ComponentSpacer>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <Steel>60</Steel>
     </costList>
     <apparel>
       <tags>
@@ -40,10 +51,10 @@
       </tags>
       <wornGraphicPath>Apparel/MechamancerSuit/MechJuggernaut</wornGraphicPath>
     </apparel>
-    <tradeability>Sellable</tradeability>
-    <tradeTags Inherit="False">
-      <li>HiTechArmor</li>
+    <tradeTags>
+      <li>ExoticMisc</li>
+      <li>Clothing</li>
     </tradeTags>
+    <tradeability>Sellable</tradeability>
   </ThingDef>
-
 </Defs>
