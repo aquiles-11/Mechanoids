@@ -57,6 +57,14 @@
         <compClass>CompPowerTrader</compClass>
         <basePowerConsumption>400</basePowerConsumption>
       </li>
+    <li Class="CompProperties_Flickable"/>
+    <li Class="ApexMechanoids.CompProperties_RepairAura">
+      <radius>6</radius>
+      <healAmount>2</healAmount>
+      <tickInterval>60</tickInterval>
+      <idlePower>500</idlePower>
+      <activePower>2000</activePower>
+    </li>
     </comps>
   </ThingDef>
 
