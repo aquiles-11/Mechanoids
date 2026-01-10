@@ -4,7 +4,7 @@ using HarmonyLib;
 using RimWorld;
 using Verse;
 
-namespace ApexMechanoidsF
+namespace ApexMechanoids
 {
     [HarmonyPatch(typeof(Pawn_MechanitorTracker), "CanControlMechs", MethodType.Getter)]
     public class Patch_Pawn_MechanitorTracker_CanControlMechs

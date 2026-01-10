@@ -63,9 +63,15 @@ namespace ApexMechanoids
 
         public void GenerateWastePack()
         {
-            wasteProducer.ProduceWaste(Mathf.RoundToInt(wasteProduced));
-            wasteProduced = 0f;
-            EffecterDefOf.MechChargerWasteProduced.Spawn(parent.Position, parent.Map).Cleanup();
+            if (wasteProducer != null)
+            {
+                wasteProducer.ProduceWaste(Mathf.RoundToInt(wasteProduced));
+                wasteProduced = 0f;
+                if (parent.Map != null)
+                {
+                    EffecterDefOf.MechChargerWasteProduced.Spawn(parent.Position, parent.Map).Cleanup();
+                }
+            }
         }
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)

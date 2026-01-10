@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using Verse;
 
-namespace ApexMechanoidsF
+namespace ApexMechanoids
 {
-    public class CompProperties_MechanitorRangeExtender : CompProperties
+    public class CompProperties_MechanitorRangeExtender : Verse.CompProperties
     {
         public float maxRange;
         public float minRange;

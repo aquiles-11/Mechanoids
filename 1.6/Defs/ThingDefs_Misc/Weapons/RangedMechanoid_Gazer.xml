@@ -71,7 +71,7 @@
 		<label>sun ray projector</label>
 		<description>PLACEHOLDER</description>
 		<graphicData>
-			<texPath>Things/Item/Equipment/WeaponRanged/APM_SunRay</texPath>
+			<texPath>Weapons/APM_SunRay</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<techLevel>Ultra</techLevel>
