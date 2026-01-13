@@ -21,14 +21,7 @@ namespace ApexMechanoids
         {
             get
             {
-                if (modExtension.toxicityUnit != null)
-                {
-                    return $"{base.Label} ({toxicityLevel}{modExtension.toxicityUnit})";
-                }
-                else
-                {
-                    return $"{base.Label} ({toxicityLevel.ToStringPercent("0.00")})";
-                }
+                return $"{base.Label} ({toxicityLevel.ToStringPercent("0.00")})";
             }
         }
         public List<Thing> purifierOnMap = new List<Thing>();
@@ -121,13 +114,6 @@ namespace ApexMechanoids
         public void ChangeToxicity(float value)
         {
             toxicityLevel += value;
-            if (modExtension.maxValue > 0)
-            {
-                if (toxicityLevel > modExtension.maxValue)
-                {
-                    toxicityLevel = modExtension.maxValue;
-                }
-            }
         }
 
         public void toxicDegradation()
@@ -145,8 +131,6 @@ namespace ApexMechanoids
 
     public class DefModExtension_ToxicPurifier : DefModExtension
     {
-        public float maxValue = -1f;
-
         public float toxicRecoveryPerDay = -0.25f;
 
         public float toxicLevelToStartSpreading = 0.5f;
@@ -160,7 +144,5 @@ namespace ApexMechanoids
         public float chanceForToxicFallout = 0.1f;
 
         public float tileRadius = 10f;
-
-        public string toxicityUnit;
     }
 }

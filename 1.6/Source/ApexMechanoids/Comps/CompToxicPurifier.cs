@@ -121,13 +121,7 @@ namespace ApexMechanoids
                     gameCondition.ChangeToxicity(Props.toxicPerTileCleaned);
                 }
             }
-            IntVec3 pos = parent.Position;
-            if (Props.effecterOffset != null)
-            {
-                pos += Props.effecterOffset;
-            }
-            Effecter effecter = Props.pumpEffecterDef?.Spawn(pos, map);
-            effecter.Cleanup();
+            Props.pumpEffecterDef?.Spawn(parent.Position, map).Cleanup();
         }
 
         public IEnumerable<IntVec3> GetCellsToUnpollute()

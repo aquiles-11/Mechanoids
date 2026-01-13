@@ -21,8 +21,6 @@ namespace ApexMechanoids
 
         public EffecterDef pumpEffecterDef;
 
-        public IntVec3 effecterOffset;
-
         public GameConditionDef conditionDef;
 
         public CompProperties_ToxicPurifier()
