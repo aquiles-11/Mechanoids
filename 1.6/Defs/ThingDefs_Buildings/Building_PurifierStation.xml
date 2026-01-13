@@ -54,6 +54,7 @@
 		<tileToUnpollutePerTrigger>10</tileToUnpollutePerTrigger>
 		<isCleanRandomTileInMap>true</isCleanRandomTileInMap>
 		<pumpEffecterDef>PollutionPumped</pumpEffecterDef>
+		<effecterOffset>(0,0,4)</effecterOffset>
 		<conditionDef>APM_Toxicity</conditionDef>
 	  </li>
     </comps>
@@ -68,6 +69,9 @@
 		<!-- <displayOnUI>false</displayOnUI> -->
 		<modExtensions>
 			<li Class="ApexMechanoids.DefModExtension_ToxicPurifier">
+				<maxValue>1.00</maxValue> <!-- 1.00 translate to 100% -->
+				<!-- if toxicityUnit is not omitted, it will be show as ie. toxicity level (1.0Psi) -->
+				<!-- <toxicityUnit>Psi</toxicityUnit> -->
 				<toxicRecoveryPerDay>-0.25</toxicRecoveryPerDay> <!-- 25% -->
 				<toxicLevelToStartSpreading>0.5</toxicLevelToStartSpreading> <!-- 50% -->
 				<toxicLevelToAffectRelation>0.75</toxicLevelToAffectRelation> <!-- 75% -->
