@@ -10,7 +10,7 @@
 		<graphicData>
 			<texPath>Buildings/Dynamo/Dynamo_Building</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(2,2)</drawSize>
+			<drawSize>(2.5,2.5)</drawSize>
 			<shadowData>
 				<volume>(0.93,1,0.93)</volume>
 			</shadowData>
@@ -43,7 +43,7 @@
 			<li Class="CompProperties_Flickable"/>
 			<li Class="CompProperties_Refuelable">
 				<fuelConsumptionRate>0.5</fuelConsumptionRate>
-				<fuelCapacity>10.0</fuelCapacity>
+				<fuelCapacity>30.0</fuelCapacity>
 				<fuelFilter>
 					<thingDefs>
 						<li>Uranium</li>

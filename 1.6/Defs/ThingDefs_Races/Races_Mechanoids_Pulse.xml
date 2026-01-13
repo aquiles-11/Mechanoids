@@ -76,7 +76,7 @@
 					<maskPath>Mechs/Overlays/Pulse_Overlay/Mech_Pulse</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
-					<drawSize>1.75</drawSize>
+					<drawSize>2.0</drawSize>
 				</bodyGraphicData>
 			</li>
 			<li>
@@ -85,7 +85,7 @@
 					<maskPath>Mechs/Overlays/Pulse_Overlay/Mech_Pulse</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
-					<drawSize>1.75</drawSize>
+					<drawSize>2.0</drawSize>
 				</bodyGraphicData>
 			</li>
 		</lifeStages>

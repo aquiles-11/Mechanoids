@@ -86,7 +86,7 @@
 			</li>
 			<li Class="CompProperties_ThingContainer">
 				<compClass>CompThingContainer</compClass>
-				<stackLimit>10</stackLimit>
+				<stackLimit>30</stackLimit>
 				<drawContainedThing>false</drawContainedThing>
 				<dropEffecterDef>MechChargerWasteRemoved</dropEffecterDef>
 			</li>
