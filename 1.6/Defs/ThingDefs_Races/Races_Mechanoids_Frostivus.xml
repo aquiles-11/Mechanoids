@@ -121,8 +121,38 @@
 		<techHediffsMoney>9999~9999</techHediffsMoney>
 		<controlGroupPortraitZoom>0.65</controlGroupPortraitZoom>
 		<abilities>
-
+			<li>APM_FrostivusCryptosleep</li>
 		</abilities>
 	</PawnKindDef>
 
+	<AbilityDef>
+		<defName>APM_FrostivusCryptosleep</defName>
+		<label>Frostivus cryptosleep</label>
+		<description>TODO.</description>
+		<iconPath>UI/Cryptoswallow</iconPath>
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<stunTargetWhileCasting>True</stunTargetWhileCasting>
+		<showPsycastEffects>False</showPsycastEffects>
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<comps>
+			<li Class="CompProperties_AbilityEffect">
+				<compClass>ApexMechanoids.CompAbilityEffect_FrostivusCryptosleep</compClass>
+			</li>
+		</comps>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>False</drawAimPie>
+			<range>-1</range>
+			<warmupTime>1.0</warmupTime>
+			<targetParams>
+				<canTargetBuildings>False</canTargetBuildings>
+				<canTargetSubhumans>false</canTargetSubhumans>
+				<neverTargetHostileFaction>True</neverTargetHostileFaction>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
 </Defs>
