@@ -73,7 +73,7 @@
 			<li MayRequire="Ludeon.RimWorld.Biotech">
 				<bodyGraphicData>
 					<texPath>Mechs/Conqueror/DMR/ConquerorDMR</texPath>
-					<maskPath>Mechs/Overlays/Conqueror_Overlay/DMR/Mech_Conqueror_DMR</maskPath>
+					<maskPath>Mechs/Overlays/Conqueror_Overlay/DMR/Mech_ConquerorDMR</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>1.5</drawSize>
@@ -85,7 +85,7 @@
 			<li>
 				<bodyGraphicData>
 					<texPath>Mechs/Conqueror/DMR/ConquerorDMRAncient</texPath>
-					<maskPath>Mechs/Overlays/Conqueror_Overlay/DMR/Mech_Conqueror_DMR</maskPath>
+					<maskPath>Mechs/Overlays/Conqueror_Overlay/DMR/Mech_ConquerorDMR</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>1.5</drawSize>
@@ -121,7 +121,7 @@
 			<li MayRequire="Ludeon.RimWorld.Biotech">
 				<bodyGraphicData>
 					<texPath>Mechs/Conqueror/AR/ConquerorAR</texPath>
-					<maskPath>Mechs/Overlays/Conqueror_Overlay/AR/Mech_ConquerorAR</maskPath>
+					<maskPath>Mechs/Overlays/Conqueror_Overlay/AR/Mech_ConquerorAuto</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>1.5</drawSize>
@@ -133,7 +133,7 @@
 			<li>
 				<bodyGraphicData>
 					<texPath>Mechs/Conqueror/AR/ConquerorARAncient</texPath>
-					<maskPath>Mechs/Overlays/Conqueror_Overlay/AR/Mech_ConquerorAR</maskPath>
+					<maskPath>Mechs/Overlays/Conqueror_Overlay/AR/Mech_ConquerorAuto</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>1.5</drawSize>
