@@ -102,7 +102,7 @@
         </escorts>
         <bossApparel>
           <li>
-            <thing>Apparel_HeavyShield</thing>
+            <thing>Apparel_HeavyShield</thing> 
           </li>
         </bossApparel>
       </li>
