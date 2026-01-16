@@ -8,7 +8,7 @@
     <drawerType>MapMeshAndRealTime</drawerType>
     <tickerType>Normal</tickerType>
     <graphicData>
-      <texPath>Buildings/PowerPlant/PowerPlant</texPath>
+      <texPath>Things/Building/PowerPlant/PowerPlant</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(7,7)</drawSize>
 	  <drawOffset>(0,0,1)</drawOffset>
@@ -16,7 +16,7 @@
     <thingCategories>
       <li>BuildingsMisc</li>
     </thingCategories>
-    <uiIconPath>Buildings/PowerPlant/PowerPlantUI</uiIconPath>
+    <uiIconPath>Things/Building/PowerPlant/PowerPlantUI</uiIconPath>
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
     <minifiedDef>MinifiedThing</minifiedDef>

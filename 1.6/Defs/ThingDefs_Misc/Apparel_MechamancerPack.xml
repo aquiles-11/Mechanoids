@@ -8,7 +8,7 @@
     <techLevel>Spacer</techLevel>
     <mergeVerbGizmos>false</mergeVerbGizmos>
     <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/MechamancerPack/MechamancerPack_south</texPath>
+      <texPath>Things/Pawn/Humanlike/Apparel/MechamancerPack/MechamancerPack_icon</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(1.2,1.2)</drawSize>
     </graphicData>

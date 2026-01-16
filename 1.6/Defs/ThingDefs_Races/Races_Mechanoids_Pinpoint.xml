@@ -61,8 +61,8 @@
 		<lifeStages>
 			<li MayRequire="Ludeon.RimWorld.Biotech">
 				<bodyGraphicData>
-					<texPath>Mechs/Pinpoint/Pinpoint</texPath>
-					<maskPath>Mechs/Overlays/Pinpoint_Overlay/Mech_Pinpoint</maskPath>
+					<texPath>Things/Pawn/Mechanoid/Pinpoint/Pinpoint</texPath>
+					<maskPath>Pawn/Mechanoid/AllegianceOverlays/Pinpoint/Mech_Pinpoint</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>1.25</drawSize>
@@ -74,8 +74,8 @@
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Mechs/Pinpoint/PinpointAncient</texPath>
-					<maskPath>Mechs/Overlays/Pinpoint_Overlay/Mech_Pinpoint</maskPath>
+					<texPath>Things/Pawn/Mechanoid/Pinpoint/PinpointAncient</texPath>
+					<maskPath>Pawn/Mechanoid/AllegianceOverlays/Pinpoint/Mech_Pinpoint</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>1.25</drawSize>

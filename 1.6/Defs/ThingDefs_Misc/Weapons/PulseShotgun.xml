@@ -62,7 +62,7 @@
 		<defName>APM_Pulse_Proj</defName>
 		<label>pulse bullet</label>
 		<graphicData>
-			<texPath>Projectiles/Pulse_Proj</texPath>
+			<texPath>Things/Projectile/PulseShotgun</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<projectile>

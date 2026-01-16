@@ -16,7 +16,7 @@
 		</mote>
 		<drawOffscreen>true</drawOffscreen>
 		<graphicData>
-			<texPath>Effects/Mote/APM_SunRay_Base</texPath>
+			<texPath>Things/Mote/Sunray/APM_SunRay_Base</texPath>
 			<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
 			<shaderType>MoteBeam</shaderType>
 			<shaderParameters>
@@ -44,7 +44,7 @@
 		</mote>
 		<drawOffscreen>true</drawOffscreen>
 		<graphicData>
-			<texPath>Effects/Mote/APM_GazerBeam_Base</texPath>
+			<texPath>Things/Mote/Sunray/APM_GazerBeam_Base</texPath>
 			<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
 			<shaderType>MoteBeam</shaderType>
 			<shaderParameters>
@@ -71,7 +71,7 @@
 			<fadeOutUnmaintained>True</fadeOutUnmaintained>
 		</mote>
 		<graphicData>
-			<texPath>Effects/Mote/APM_SunRay_Aim</texPath>
+			<texPath>Things/Mote/Sunray/APM_SunRay_Aim</texPath>
 			<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
 			<shaderType>MoteHellfireCannon_Aim</shaderType>
 			<shaderParameters>
@@ -97,7 +97,7 @@
 			<needsMaintenance>True</needsMaintenance>
 		</mote>
 		<graphicData>
-			<texPath>Effects/Mote/APM_SunRay_ChargeMote</texPath>
+			<texPath>Things/Mote/Sunray/APM_SunRay_ChargeMote</texPath>
 			<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
 			<shaderType>MoteHellfireCannon_Charge</shaderType>
 			<shaderParameters>
@@ -122,12 +122,12 @@
 			<needsMaintenance>True</needsMaintenance>
 		</mote>
 		<graphicData>
-			<texPath>Effects/Mote/APM_SunRay_GroundMote</texPath>
+			<texPath>Things/Mote/Sunray/APM_SunRay_GroundMote</texPath>
 			<graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
 			<shaderType>MoteHellfireCannon_Target</shaderType>
 			<shaderParameters>
 				<_ScanTex>/Things/Mote/MoteHellfireCannon_Target_Scan</_ScanTex>
-				<_ScanMask>/Effects/Mote/APM_SunRay_MoteWave</_ScanMask>
+				<_ScanMask>/Things/Mote/Sunray/APM_SunRay_MoteWave</_ScanMask>
 				<_ScanSpeed>0.01</_ScanSpeed>
 				<_ScanSpeedAccel>0.1</_ScanSpeedAccel>
 			</shaderParameters>
@@ -146,7 +146,7 @@
 			<solidTime>1</solidTime>
 		</mote>
 		<graphicData>
-			<texPath>Effects/SparkEffects</texPath>
+			<texPath>Things/Mote/SparkEffects</texPath>
 			<graphicClass>GraphicMote_RandomWithAgeSecs</graphicClass>
 			<shaderType>GlowAnimated</shaderType>
 			<color>(0.6,0.64,0.2,0.75)</color>

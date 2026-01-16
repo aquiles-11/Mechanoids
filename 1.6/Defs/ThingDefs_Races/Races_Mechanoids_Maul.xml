@@ -77,8 +77,8 @@
 		<lifeStages>
 			<li MayRequire="Ludeon.RimWorld.Biotech">
 				<bodyGraphicData>
-					<texPath>Mechs/Maul/Maul</texPath>
-					<maskPath>Mechs/Overlays/Maul_Overlay/Mech_Maul</maskPath>
+					<texPath>Things/Pawn/Mechanoid/Maul/Maul</texPath>
+					<maskPath>Pawn/Mechanoid/AllegianceOverlays/Maul/Mech_Maul</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>2.5</drawSize>
@@ -89,8 +89,8 @@
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Mechs/Maul/MaulAncient</texPath>
-					<maskPath>Mechs/Overlays/Maul_Overlay/Mech_Maul</maskPath>
+					<texPath>Things/Pawn/Mechanoid/Maul/MaulAncient</texPath>
+					<maskPath>Pawn/Mechanoid/AllegianceOverlays/Maul/Mech_Maul</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>2.5</drawSize>
