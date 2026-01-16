@@ -10,9 +10,8 @@ namespace ApexMechanoids
 {
     public class CompAbility_MaintainWarmupMoteAfterCast : AbilityComp
     {
-        public CompAbility_MaintainWarmupMoteAfterCast() : base() { }
         private int ticks = 0;
-        public new CompProperties_MaintainWarmupMoteAfterCast Props => (CompProperties_MaintainWarmupMoteAfterCast)props;
+        public CompProperties_MaintainWarmupMoteAfterCast Props => (CompProperties_MaintainWarmupMoteAfterCast)props;
         public override void CompTick()
         {
             base.CompTick();
@@ -34,7 +33,7 @@ namespace ApexMechanoids
     }
     public class CompProperties_MaintainWarmupMoteAfterCast : AbilityCompProperties
     {
-        public CompProperties_MaintainWarmupMoteAfterCast() : base()
+        public CompProperties_MaintainWarmupMoteAfterCast()
         {
             this.compClass = typeof(CompAbility_MaintainWarmupMoteAfterCast);
         }
