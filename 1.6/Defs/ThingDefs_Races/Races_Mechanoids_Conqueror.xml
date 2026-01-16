@@ -74,6 +74,8 @@
 				<bodyGraphicData>
 					<texPath>Mechs/Conqueror/DMR/ConquerorDMR</texPath>
 					<maskPath>Mechs/Overlays/Conqueror_Overlay/DMR/Mech_ConquerorDMR</maskPath>
+					<texPath>Things/Pawn/Mechanoid/Conqueror/DMR/ConquerorDMR</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Conqueror/DMR/Mech_Conqueror_DMR</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>1.5</drawSize>
@@ -180,8 +182,8 @@
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Mechs/Conqueror/LMG/ConquerorLMGAncient</texPath>
-					<maskPath>Mechs/Overlays/Conqueror_Overlay/LMG/Mech_ConquerorLMG</maskPath>
+					<texPath>Things/Pawn/Mechanoid/Conqueror/LMG/ConquerorLMGAncient</texPath>
+					<maskPath>Pawn/Mechanoid/AllegianceOverlays/Conqueror/LMG/Mech_ConquerorLMG</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>1.5</drawSize>

@@ -7,7 +7,7 @@
     <description>PLACEHOLDER</description>
     <possessionCount>1</possessionCount>
     <graphicData>
-      <texPath>Weapons/Spear</texPath>
+      <texPath>Things/Item/Equipment/WeaponMelee/DominusSpear</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>1.5</drawSize>

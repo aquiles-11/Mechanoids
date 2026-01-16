@@ -45,7 +45,7 @@
 		<jobDef>CastAbilityOnThing</jobDef>
 		<targetRequired>False</targetRequired>
 		<canUseAoeToGetTargets>False</canUseAoeToGetTargets>
-		<iconPath>UI/Commands/DropCarriedPawn</iconPath>
+		<iconPath>UI/BuildingMode</iconPath>
 		<cooldownTicksRange>20000</cooldownTicksRange><!-- 8 hours -->
 		<stunTargetWhileCasting>True</stunTargetWhileCasting>
 		<showPsycastEffects>False</showPsycastEffects>

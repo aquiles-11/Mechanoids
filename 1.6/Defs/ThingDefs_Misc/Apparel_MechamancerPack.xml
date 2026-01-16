@@ -8,7 +8,7 @@
     <techLevel>Spacer</techLevel>
     <mergeVerbGizmos>false</mergeVerbGizmos>
     <graphicData>
-      <texPath>Apparel/MechamancerPack/MechamancerPack_south</texPath>
+      <texPath>Things/Pawn/Humanlike/Apparel/MechamancerPack/MechamancerPack_south</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(1.2,1.2)</drawSize>
     </graphicData>
@@ -52,7 +52,7 @@
       <layers>
         <li>Belt</li>
       </layers>
-      <wornGraphicPath>Apparel/MechamancerPack/MechamancerPack</wornGraphicPath>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/MechamancerPack/MechamancerPack</wornGraphicPath>
       <wornGraphicData>
         <renderUtilityAsPack>true</renderUtilityAsPack>
         <north>
