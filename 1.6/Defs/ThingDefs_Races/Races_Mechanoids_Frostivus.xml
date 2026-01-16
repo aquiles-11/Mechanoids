@@ -92,8 +92,8 @@
 		<lifeStages>
 			<li MayRequire="Ludeon.RimWorld.Biotech">
 				<bodyGraphicData>
-					<texPath>Mechs/Frostivus/Frostivus</texPath>
-					<maskPath>Mechs/Overlays/Frostivus_Overlay/Mech_Frostivus</maskPath>
+					<texPath>Things/Pawn/Mechanoid/Frostivus/Frostivus</texPath>
+					<maskPath>Pawn/Mechanoid/AllegianceOverlays/Frostivus/Mech_Frostivus</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>3</drawSize>
@@ -104,8 +104,8 @@
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Mechs/Frostivus/FrostivusAncient</texPath>
-					<maskPath>Mechs/Overlays/Frostivus_Overlay/Mech_Frostivus</maskPath>
+					<texPath>Things/Pawn/Mechanoid/Frostivus/FrostivusAncient</texPath>
+					<maskPath>Pawn/Mechanoid/AllegianceOverlays/Frostivus/Mech_Frostivus</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>3</drawSize>

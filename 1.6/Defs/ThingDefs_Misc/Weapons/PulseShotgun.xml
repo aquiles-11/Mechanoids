@@ -7,7 +7,7 @@
 		<description>A pulse-charged shotgun that fires two heavy bursts, releasing unstable energy on impact.</description>
 		<techLevel>Spacer</techLevel>
 		<graphicData>
-			<texPath>Weapons/PulseShotgun</texPath>
+			<texPath>Things/Item/Equipment/WeaponRanged/PulseShotgun</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>1.25</drawSize>
 		</graphicData>
@@ -62,7 +62,7 @@
 		<defName>APM_Pulse_Proj</defName>
 		<label>pulse bullet</label>
 		<graphicData>
-			<texPath>Projectiles/Pulse_Proj</texPath>
+			<texPath>Things/Projectile/PulseShotgun</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<projectile>

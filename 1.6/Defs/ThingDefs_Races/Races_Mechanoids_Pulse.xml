@@ -72,8 +72,8 @@
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Mechs/Pulse/Pulse</texPath>
-					<maskPath>Mechs/Overlays/Pulse_Overlay/Mech_Pulse</maskPath>
+					<texPath>Things/Pawn/Mechanoid/Pulse/Pulse</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Pulse/Mech_Pulse</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>2.0</drawSize>
@@ -81,8 +81,8 @@
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Mechs/Pulse/PulseAncient</texPath>
-					<maskPath>Mechs/Overlays/Pulse_Overlay/Mech_Pulse</maskPath>
+					<texPath>Things/Pawn/Mechanoid/Pulse/PulseAncient</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Pulse/Mech_Pulse</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>2.0</drawSize>

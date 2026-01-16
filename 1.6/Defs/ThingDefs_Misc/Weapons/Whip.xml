@@ -13,7 +13,7 @@
       <scaleToConnectTargets>true</scaleToConnectTargets>
     </mote>
     <graphicData>
-      <texPath>Effects/WhipEffects/Whip_Animation1</texPath>
+      <texPath>Things/Mote/WhipEffects/Whip_Animation1</texPath>
       <graphicClass>Graphic_Mote</graphicClass>
       <shaderType>Mote</shaderType>
       <drawSize>(5, 1)</drawSize>
@@ -25,7 +25,7 @@
     <label>whip</label>
     <description>A small burst-oriented flamethrower used by mechanoids.</description>
     <graphicData>
-      <texPath>Weapons/Whip</texPath>
+      <texPath>Things/Item/Equipment/WeaponMelee/Whip</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <smeltable>false</smeltable>

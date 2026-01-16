@@ -7,7 +7,7 @@
 		<description>A charged-shot assault rifle. Weaker than a charge rifle, but more accurate.</description>
 		<techLevel>Spacer</techLevel>
 		<graphicData>
-			<texPath>Weapons/ConquerorAR</texPath>
+			<texPath>Things/Item/Equipment/WeaponRanged/ConquerorAR</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<soundInteract>Interact_ChargeRifle</soundInteract>
@@ -80,7 +80,7 @@
 		<description>A stronger, faster, but less accurate Charge Lance.</description>
 		<techLevel>Spacer</techLevel>
 		<graphicData>
-			<texPath>Weapons/ConquerorDMR</texPath>
+			<texPath>Things/Item/Equipment/WeaponRanged/ConquerorDMR</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<soundInteract>Interact_ChargeLance</soundInteract>
@@ -158,7 +158,7 @@
 		<description>A pulse-charged rapid-fire blaster for area suppressive fire. Lighter than the heavy charge blaster but more accurate.</description>
 		<techLevel>Spacer</techLevel>
 		<graphicData>
-			<texPath>Weapons/ConquerorLMG</texPath>
+			<texPath>Things/Item/Equipment/WeaponRanged/ConquerorLMG</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<soundInteract>Interact_ChargeLance</soundInteract>
