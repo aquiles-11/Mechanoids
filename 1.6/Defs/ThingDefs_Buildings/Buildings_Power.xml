@@ -72,5 +72,6 @@
 		<designationCategory IsNull="True" />
 		<constructEffect>ConstructMetal</constructEffect>
 	</ThingDef>
+	
 
 </Defs>
