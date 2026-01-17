@@ -8,7 +8,7 @@
 		<thingClass>Building</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
-			<texPath>Things/Building/Power/ChemfuelPoweredGenerator</texPath>
+			<texPath>Things/Building/Dynamo/Dynamo_Building</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(2.5,2.5)</drawSize>
 			<shadowData>
@@ -38,7 +38,7 @@
 				<basePowerConsumption>-5000</basePowerConsumption>
 				<transmitsPower>true</transmitsPower>
 				<soundAmbientProducingPower>ChemfuelFiredGenerator_Ambience</soundAmbientProducingPower>
-				<overrideAncientTexPath>Buildings/Dynamo/Dynamo_Ancient_Building</overrideAncientTexPath>
+				<overrideAncientTexPath>Things/Building/Dynamo/Dynamo_Ancient_Building</overrideAncientTexPath>
 			</li>
 			<li Class="CompProperties_Flickable"/>
 			<li Class="CompProperties_Refuelable">
