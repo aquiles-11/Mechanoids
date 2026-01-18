@@ -32,12 +32,6 @@ jobs:
 
     - name: Run tests
       run: dotnet test ./1.6/Source/ApexMechanoids.sln --no-restore
-      
-    - name: Save Built Solution
-      run: |
-        mkdir -p ./artifacts         
-        cp -r ./1.6/Source/ApexMechanoids/bin/Debug ./1.6/Assemblies/
-        echo "Solution saved successfully"
           
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
