@@ -36,7 +36,7 @@ jobs:
     - name: Save Built Solution
       run: |
         mkdir -p ./artifacts         
-        cp -r ./1.6/Source/ApexMechanoids/bin/Debug/* ./1.6/Assemblies/
+        cp -r ./1.6/Source/ApexMechanoids/bin/Debug ./1.6/Assemblies/
         echo "Solution saved successfully"
           
     - name: Upload artifacts
