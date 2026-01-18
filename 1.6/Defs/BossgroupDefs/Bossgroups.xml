@@ -5,7 +5,7 @@
 
   <BossDef>
     <defName>APM_Boss_Dominus</defName>
-    <kindDef>APM_Mech_Dominus</kindDef>
+    <kindDef>APM_Mech_Dominus_Boss</kindDef>
     <appearAfterTicks>7200000</appearAfterTicks><!-- 2 years -->
   </BossDef>
 
@@ -113,7 +113,7 @@
   <!--Terminus-->
   <BossDef>
     <defName>APM_Boss_Terminus</defName>
-    <kindDef>APM_Mech_Terminus</kindDef>
+    <kindDef>APM_Mech_Terminus_Boss</kindDef>
     <appearAfterTicks>7200000</appearAfterTicks><!-- 2 years -->
   </BossDef>
 
@@ -220,7 +220,7 @@
   </BossgroupDef>
   <BossDef>
     <defName>APM_Boss_Celerus</defName>
-    <kindDef>APM_Mech_Celerus</kindDef>
+    <kindDef>APM_Mech_Celerus_Boss</kindDef>
     <appearAfterTicks>7200000</appearAfterTicks><!-- 2 years -->
   </BossDef>
 
