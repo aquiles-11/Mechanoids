@@ -70,11 +70,12 @@
 								<graphicClass>Verse.Graphic_Multi</graphicClass>
 								<drawSize>(1.250,1.250)</drawSize>
 							</graphicData>
-							<maxReach>0.65</maxReach>
+							<maxReach>0.55</maxReach>
 							<drawOffsetNorth>(-0.134,0.000,0.578)</drawOffsetNorth>
 							<drawOffsetEast>(0.260,0.000,0.250)</drawOffsetEast>
 							<drawOffsetSouth>(0.133,0.000,-0.102)</drawOffsetSouth>
 							<drawOffsetWest>(-0.264,0.000,0.224)</drawOffsetWest>
+							<randomInterval>60~240</randomInterval>
 						</li>
 						<li>
 							<graphicData>
@@ -82,12 +83,12 @@
 								<graphicClass>Verse.Graphic_Multi</graphicClass>
 								<drawSize>(1.250,1.250)</drawSize>
 							</graphicData>
-							<maxReach>0.65</maxReach>
+							<maxReach>0.55</maxReach>
 							<drawOffsetNorth>(0.152,0.000,0.521)</drawOffsetNorth>
 							<drawOffsetEast>(0.260,0.000,0.120)</drawOffsetEast>
 							<drawOffsetSouth>(-0.154,0.000,-0.134)</drawOffsetSouth>
 							<drawOffsetWest>(-0.264,0.000,0.250)</drawOffsetWest>
-							<randomInterval>30~60</randomInterval>
+							<randomInterval>60~240</randomInterval>
 						</li>
 					</arms>
 				</armsAnimation>

@@ -23,7 +23,7 @@ namespace ApexMechanoids
         private int autoRepairTimer;
         private Effecter progressBar;
         private Effecter mechRepairEffecter;
-        private int totalHpToHeal;
+        private float totalHpToHeal;
         private float hpHealedSoFar;
         private static readonly int[] IntervalOptions = new int[] { 1500, 2500, 5000, 10000 };
         private static readonly Texture2D CancelIcon = ContentFinder<Texture2D>.Get("UI/Designators/Cancel");
@@ -183,10 +183,11 @@ namespace ApexMechanoids
             foreach (Hediff injury in injuries)
             {
                 if (hpBudget <= 0f) break;
-                float amount = Mathf.Min(injury.Severity, hpBudget);
+                float amount = Mathf.Ceil(Mathf.Min(injury.Severity, hpBudget));
                 injury.Heal(amount);
                 hpHealedSoFar += amount;
                 hpBudget -= amount;
+
             }
             if (hpHealedSoFar >= totalHpToHeal && !mech.health.hediffSet.GetMissingPartsCommonAncestors().Any())
             {
@@ -224,7 +225,7 @@ namespace ApexMechanoids
                 if (innerContainer.TryAddOrTransfer(p))
                 {
                     startTick = Find.TickManager.TicksGame;
-                    totalHpToHeal = (int)p.health.hediffSet.hediffs.Where(h => h is Hediff_Injury).Sum(h => h.Severity);
+                    totalHpToHeal = p.health.hediffSet.hediffs.Where(h => h is Hediff_Injury).Sum(h => h.Severity);
                     hpHealedSoFar = 0f;
                 }
 
@@ -237,7 +238,7 @@ namespace ApexMechanoids
             innerContainer.TryDropAll(InteractionCell, Map, ThingPlaceMode.Near);
             selectedPawn = null;
             startTick = -1;
-            totalHpToHeal = (int)0f;
+            totalHpToHeal = 0f;
             hpHealedSoFar = 0f;
             SoundDefOf.Building_Complete.PlayOneShot(SoundInfo.InMap(this));
         }
@@ -366,7 +367,7 @@ namespace ApexMechanoids
             Scribe_Values.Look(ref autoRepairEnabled, "autoRepairEnabled", false);
             Scribe_Values.Look(ref autoRepairIntervalTicks, "autoRepairIntervalTicks", 2500);
             Scribe_Values.Look(ref autoRepairTimer, "autoRepairTimer", 0);
-            Scribe_Values.Look<int>(ref totalHpToHeal, "totalHpToHeal", 0);
+            Scribe_Values.Look(ref totalHpToHeal, "totalHpToHeal", 0f);
             Scribe_Values.Look(ref hpHealedSoFar, "hpHealedSoFar", 0f);
         }
 

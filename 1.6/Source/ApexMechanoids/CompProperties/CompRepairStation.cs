@@ -50,6 +50,12 @@ namespace ApexMechanoids
         public Vector3 drawOffsetWest;
         public IntRange? randomInterval;
         public FloatRange? randomReach;
+        
+        // New parameters for random stops and faster retraction
+        public int fastRetractionSpeed = 2; // Speed multiplier for retraction
+        public float randomStopChance = 0.1f; // Chance of stopping arms randomly during repair (0-1)
+        public int randomStopDurationMin = 60; // Minimum duration of random stops in ticks
+        public int randomStopDurationMax = 180; // Maximum duration of random stops in ticks
     }
 
     public class ArmsAnimationConfig
@@ -65,5 +71,10 @@ namespace ApexMechanoids
         public GraphicData graphicData;
         public float animationStart = 0f;
         public float animationEnd = 1f;
+        
+        // Random slowdown parameters
+        public int randomSlowdownFrequency = 75; // How often slowdowns occur (on average, every N ticks - 0 means disabled)
+        public int randomSlowdownMinTicks = 60; // Minimum duration of slowdown in ticks
+        public int randomSlowdownMaxTicks = 180; // Maximum duration of slowdown in ticks
     }
 }
