@@ -9,7 +9,6 @@
 		<designationCategory>Biotech</designationCategory>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData />
-		<defaultPlacingRot>South</defaultPlacingRot>
 		<rotatable>true</rotatable>
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>PassThroughOnly</passability>
@@ -35,6 +34,7 @@
 				<volume>(1.8, 1.0, 1.8)</volume>
 			</shadowData>
 		</graphicData>
+		<defaultPlacingRot>South</defaultPlacingRot>
 		<size>(3,2)</size>
 		<interactionCellOffset>(0,0,2)</interactionCellOffset>
 		<statBases>
@@ -109,16 +109,16 @@
 		<uiIconPath>Things/Building/BigRepairStation/BigRepairStation</uiIconPath>
 		<graphicData>
 			<texPath>Things/Building/BigRepairStation/BigRepairStation_Base</texPath>
-			<graphicClass>Graphic_Multi</graphicClass>
+			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(4.5,4.5)</drawSize>
 			<drawOffset>(0, 0, 0.5)</drawOffset>
 			<shadowData>
 				<volume>(2.8, 1.0, 2.8)</volume>
 			</shadowData>
 		</graphicData>
-		<defaultPlacingRot>South</defaultPlacingRot>
 		<size>(4,4)</size>
-		<interactionCellOffset>(1,0,3)</interactionCellOffset>
+		<rotatable>false</rotatable>
+		<interactionCellOffset>(0,0,-2)</interactionCellOffset>
 		<statBases>
 			<MaxHitPoints>500</MaxHitPoints>
 			<WorkToBuild>25000</WorkToBuild>
@@ -146,14 +146,14 @@
 					<animationEnd>1</animationEnd>
 					<graphicData>
 						<texPath>Things/Building/BigRepairStation/BigRepairStation_Moving</texPath>
-						<graphicClass>Graphic_Multi</graphicClass>
+						<graphicClass>Graphic_Single</graphicClass>
 						<drawSize>(4.5,4.5)</drawSize>
 						<drawOffset>(0, 0, 0.5)</drawOffset>
 					</graphicData>
 				</platformAnimation>
 				<topGraphic>
 					<texPath>Things/Building/BigRepairStation/BigRepairStation_Top</texPath>
-					<graphicClass>Graphic_Multi</graphicClass>
+					<graphicClass>Graphic_Single</graphicClass>
 					<drawSize>(4.5,4.5)</drawSize>
 					<drawOffset>(0, 0, 0.5)</drawOffset>
 				</topGraphic>

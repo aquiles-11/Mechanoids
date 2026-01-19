@@ -23,7 +23,7 @@ namespace ApexMechanoids
         private int autoRepairTimer;
         private Effecter progressBar;
         private Effecter mechRepairEffecter;
-        private float totalHpToHeal;
+        private int totalHpToHeal;
         private float hpHealedSoFar;
         private static readonly int[] IntervalOptions = new int[] { 1500, 2500, 5000, 10000 };
         private static readonly Texture2D CancelIcon = ContentFinder<Texture2D>.Get("UI/Designators/Cancel");
@@ -224,7 +224,7 @@ namespace ApexMechanoids
                 if (innerContainer.TryAddOrTransfer(p))
                 {
                     startTick = Find.TickManager.TicksGame;
-                    totalHpToHeal = p.health.hediffSet.hediffs.Where(h => h is Hediff_Injury).Sum(h => h.Severity);
+                    totalHpToHeal = (int)p.health.hediffSet.hediffs.Where(h => h is Hediff_Injury).Sum(h => h.Severity);
                     hpHealedSoFar = 0f;
                 }
 
@@ -237,7 +237,7 @@ namespace ApexMechanoids
             innerContainer.TryDropAll(InteractionCell, Map, ThingPlaceMode.Near);
             selectedPawn = null;
             startTick = -1;
-            totalHpToHeal = 0f;
+            totalHpToHeal = (int)0f;
             hpHealedSoFar = 0f;
             SoundDefOf.Building_Complete.PlayOneShot(SoundInfo.InMap(this));
         }
@@ -265,7 +265,18 @@ namespace ApexMechanoids
             {
                 Vector3 elevated = drawLoc;
                 elevated.y = HeldPawnDrawPos_Y;
-                ContainedMech.Drawer.renderer.DynamicDrawPhaseAt(phase, elevated + PawnDrawOffset, null, neverAimWeapon: true);
+                
+                // Rotate the render angle of mechs 180 degrees if the building is using platform animations
+                if (platformAnim != null)
+                {
+                    // Calculate the rotated rotation (180 degrees from current)
+                    var rotatedRotation = new Rot4((this.Rotation.AsInt + 2) % 4); // +2 for 180 degree rotation
+                    ContainedMech.Drawer.renderer.DynamicDrawPhaseAt(phase, elevated + PawnDrawOffset, rotatedRotation, neverAimWeapon: true);
+                }
+                else
+                {
+                    ContainedMech.Drawer.renderer.DynamicDrawPhaseAt(phase, elevated + PawnDrawOffset, null, neverAimWeapon: true);
+                }
             }
         }
 
@@ -355,7 +366,7 @@ namespace ApexMechanoids
             Scribe_Values.Look(ref autoRepairEnabled, "autoRepairEnabled", false);
             Scribe_Values.Look(ref autoRepairIntervalTicks, "autoRepairIntervalTicks", 2500);
             Scribe_Values.Look(ref autoRepairTimer, "autoRepairTimer", 0);
-            Scribe_Values.Look(ref totalHpToHeal, "totalHpToHeal", 0f);
+            Scribe_Values.Look<int>(ref totalHpToHeal, "totalHpToHeal", 0);
             Scribe_Values.Look(ref hpHealedSoFar, "hpHealedSoFar", 0f);
         }
 
