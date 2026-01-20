@@ -35,6 +35,10 @@ namespace ApexMechanoids
         public float storedToxicity = 0f;
 
         public CompPowerTrader compPower;
+
+        public bool shouldSprayToxic = false;
+
+        public int sprayTickLeft = -1;
         public bool Active
         {
             get
@@ -86,9 +90,41 @@ namespace ApexMechanoids
                 Pump();
             }
         }
+
+        public override void CompTick()
+        {
+            base.CompTick();
+            if (!shouldSprayToxic) return;
+            if (sprayTickLeft > 0)
+            {
+                sprayTickLeft--;
+                if (Rand.Value < 0.6f)
+                {
+                    Vector3 pos = parent.TrueCenter();
+                    pos += Props.effecterVectorOffset;
+                    ThrowToxicAirPuffUp(pos, parent.Map);
+                }
+            }
+            else
+            {
+                shouldSprayToxic = false;
+            }
+        }
+        public static void ThrowToxicAirPuffUp(Vector3 loc, Map map)
+        {
+            if (loc.ToIntVec3().ShouldSpawnMotesAt(map))
+            {
+                FleckCreationData dataStatic = FleckMaker.GetDataStatic(loc + new Vector3(Rand.Range(-0.02f, 0.02f), 0f, Rand.Range(-0.02f, 0.02f)), map, ApexDefsOf.APM_AirPuffGreen, 1.5f);
+                dataStatic.rotationRate = Rand.RangeInclusive(-240, 240);
+                dataStatic.velocityAngle = Rand.Range(-45, 45);
+                dataStatic.velocitySpeed = Rand.Range(1.2f, 3.5f);
+                map.flecks.CreateFleck(dataStatic);
+            }
+        }
         private void Pump()
         {
             Map map = parent.Map;
+            bool cleanAnyPollution = false;
             if (Props.isCleanRandomTileInMap)
             {
                 IEnumerable<IntVec3> cells = parent.Map.AllCells.Where(x => x.IsPolluted(parent.Map));
@@ -97,6 +133,7 @@ namespace ApexMechanoids
                     int num = 0;
                     foreach (var item in cells.InRandomOrder())
                     {
+                        cleanAnyPollution |= item.IsPolluted(map);
                         map.pollutionGrid.SetPolluted(item, false);
                         gameCondition.ChangeToxicity(Props.toxicPerTileCleaned);
                         num++;
@@ -117,9 +154,15 @@ namespace ApexMechanoids
                 }
                 foreach (var cell in cellToUnpollute)
                 {
+                    cleanAnyPollution |= cell.IsPolluted(map);
                     map.pollutionGrid.SetPolluted(cell, false);
                     gameCondition.ChangeToxicity(Props.toxicPerTileCleaned);
                 }
+            }
+            if (cleanAnyPollution)
+            {
+                shouldSprayToxic = true;
+                sprayTickLeft = Rand.RangeInclusive(200,500);
             }
             IntVec3 pos = parent.Position;
             if (Props.effecterOffset != null)

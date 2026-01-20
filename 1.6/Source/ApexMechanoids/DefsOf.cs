@@ -16,5 +16,6 @@ namespace ApexMechanoids
         public static HediffDef APM_DuelDraw;
         public static HediffDef APM_InDuel;
         public static FleckDef ArcLargeEMP_B;
+        public static FleckDef APM_AirPuffGreen;
     }
 }
