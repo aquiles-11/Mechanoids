@@ -62,6 +62,40 @@
 	</ThingDef>
 
 	<PawnKindDef ParentName="BaseMechanoidKind">
+		<defName>APM_Mech_Celerus_Boss</defName>
+		<label>Celerus</label>
+		<race>APM_Mech_Celerus</race>
+		<combatPower>190</combatPower>
+		<lifeStages>
+			<li MayRequire="Ludeon.RimWorld.Biotech">
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Mechanoid/Celerus/Boss/CelerusBAncient</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Celerus/Boss/Mech_CelerusB</maskPath>
+					<shaderType>CutoutWithOverlay</shaderType>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.5</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Mechanoid/Celerus/Boss/CelerusBAncient</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Celerus/Boss/Mech_CelerusB</maskPath>
+					<shaderType>CutoutWithOverlay</shaderType>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.5</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<techHediffsChance>1</techHediffsChance>
+		<techHediffsMoney>9999~9999</techHediffsMoney>
+	</PawnKindDef>
+	<PawnKindDef ParentName="BaseMechanoidKind">
 		<defName>APM_Mech_Celerus</defName>
 		<label>Celerus</label>
 		<race>APM_Mech_Celerus</race>

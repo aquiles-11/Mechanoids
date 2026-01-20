@@ -103,6 +103,47 @@
 			<li>SeveringEdge</li>
 		</abilities>
 	</PawnKindDef>
+	<PawnKindDef ParentName="BaseMechanoidKind">
+		<defName>APM_Mech_Terminus_Boss</defName>
+		<label>terminus boss</label>
+		<race>APM_Mech_Terminus</race>
+		<combatPower>190</combatPower>
+		<lifeStages>
+			<li MayRequire="Ludeon.RimWorld.Biotech">
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Mechanoid/Terminus/Boss/TerminusBAncient</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Terminus/Boss/Mech_TerminusB</maskPath>
+					<shaderType>CutoutWithOverlay</shaderType>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.25</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Mechanoid/Terminus/Boss/TerminusBAncient</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Terminus/Boss/Mech_TerminusB</maskPath>
+					<shaderType>CutoutWithOverlay</shaderType>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.25</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<weaponMoney>9999~9999</weaponMoney>
+		<weaponTags Inherit="False">
+			<li>APM_WeaponTerminusSword</li>
+		</weaponTags>
+		<techHediffsChance>1</techHediffsChance>
+		<techHediffsMoney>9999~9999</techHediffsMoney>
+		<abilities>
+			<li>SeveringEdge</li>
+		</abilities>
+	</PawnKindDef>
 
 
 	<AbilityDef>
