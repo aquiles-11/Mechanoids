@@ -56,6 +56,7 @@
 		<isCleanRandomTileInMap>true</isCleanRandomTileInMap>
 		<pumpEffecterDef>PollutionPumped</pumpEffecterDef>
 		<effecterOffset>(0,0,4)</effecterOffset>
+		<effecterVectorOffset>(0,0,2)</effecterVectorOffset>
 		<conditionDef>APM_Toxicity</conditionDef>
 	  </li>
     </comps>
