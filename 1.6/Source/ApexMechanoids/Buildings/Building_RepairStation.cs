@@ -50,7 +50,7 @@ namespace ApexMechanoids
         public Pawn ContainedMech => innerContainer.FirstOrDefault() as Pawn;
         public bool PowerOn => PowerTrader != null && PowerTrader.PowerOn;
         public float HeldPawnDrawPos_Y => DrawPos.y + 0.04f;
-        public float HeldPawnBodyAngle => this.Rotation.Opposite.AsAngle;
+        public float HeldPawnBodyAngle => this.def.rotatable ? this.Rotation.Opposite.AsAngle : this.Rotation.AsAngle;
         public PawnPosture HeldPawnPosture => PawnPosture.LayingOnGroundFaceUp;
         public override Vector3 PawnDrawOffset => GetMechPositionOffset();
 
@@ -183,10 +183,11 @@ namespace ApexMechanoids
             foreach (Hediff injury in injuries)
             {
                 if (hpBudget <= 0f) break;
-                float amount = Mathf.Min(injury.Severity, hpBudget);
+                float amount = Mathf.Ceil(Mathf.Min(injury.Severity, hpBudget));
                 injury.Heal(amount);
                 hpHealedSoFar += amount;
                 hpBudget -= amount;
+
             }
             if (hpHealedSoFar >= totalHpToHeal && !mech.health.hediffSet.GetMissingPartsCommonAncestors().Any())
             {
@@ -264,7 +265,6 @@ namespace ApexMechanoids
             if (ContainedMech != null)
             {
                 Vector3 elevated = drawLoc;
-                elevated.y = HeldPawnDrawPos_Y;
                 ContainedMech.Drawer.renderer.DynamicDrawPhaseAt(phase, elevated + PawnDrawOffset, null, neverAimWeapon: true);
             }
         }

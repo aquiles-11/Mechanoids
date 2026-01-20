@@ -16,6 +16,8 @@ namespace ApexMechanoids
         private List<int> randomAnimDuration;
         private List<float> randomAnimReach;
         private List<bool> randomAnimExtending;
+        private List<int> stopTicksRemaining; // Tracks how many ticks remaining for each arm to stay stopped
+        private List<bool> isArmStopped; // Tracks whether each arm is currently stopped
 
         public ArmsAnimation(ArmsAnimationConfig cfg)
         {
@@ -28,6 +30,9 @@ namespace ApexMechanoids
             randomAnimDuration = new List<int>();
             randomAnimReach = new List<float>();
             randomAnimExtending = new List<bool>();
+            stopTicksRemaining = new List<int>(); // Initialize the new list
+            isArmStopped = new List<bool>(); // Initialize the new list
+            
             foreach (var armCfg in cfg.arms)
             {
                 if (armCfg.graphicData != null)
@@ -42,6 +47,8 @@ namespace ApexMechanoids
                 randomAnimDuration.Add(0);
                 randomAnimReach.Add(0f);
                 randomAnimExtending.Add(false);
+                stopTicksRemaining.Add(0);
+                isArmStopped.Add(false);
             }
         }
 
@@ -53,52 +60,89 @@ namespace ApexMechanoids
             }
             else
             {
-                if (ticks > 0) ticks--;
+                // Faster retraction by using speed multiplier if defined
+                int retractionSpeed = 1;
+                if (config.arms.Count > 0 && config.arms[0].fastRetractionSpeed > 1)
+                {
+                    retractionSpeed = config.arms[0].fastRetractionSpeed; // Use first arm's setting as default
+                }
+                
+                if (ticks > 0) 
+                {
+                    ticks = Mathf.Max(0, ticks - retractionSpeed);
+                }
             }
 
             bool isRepairingAndExtended = ticks == config.extendTicks && repairing;
 
             for (int i = 0; i < armTicks.Count; i++)
             {
-                if (config.arms[i].randomInterval.HasValue && isRepairingAndExtended)
+                // Handle random stops
+                if (isRepairingAndExtended && !isArmStopped[i] && config.arms[i].randomStopChance > 0f && 
+                    Rand.Chance(config.arms[i].randomStopChance))
                 {
-                    armTicks[i]--;
-                    if (armTicks[i] <= 0)
+                    // Start a random stop
+                    isArmStopped[i] = true;
+                    stopTicksRemaining[i] = Rand.RangeInclusive(
+                        config.arms[i].randomStopDurationMin,
+                        config.arms[i].randomStopDurationMax
+                    );
+                }
+                
+                // Decrement stop timer if arm is stopped
+                if (isArmStopped[i])
+                {
+                    stopTicksRemaining[i]--;
+                    if (stopTicksRemaining[i] <= 0)
                     {
-                        armTicks[i] = armIntervals[i];
-                        armIntervals[i] = Rand.RangeInclusive(
-                            config.arms[i].randomInterval.Value.min,
-                            config.arms[i].randomInterval.Value.max
-                        );
+                        isArmStopped[i] = false;
+                        stopTicksRemaining[i] = 0;
                     }
                 }
-
-                if (isRepairingAndExtended && config.arms[i].randomInterval.HasValue)
+                
+                // Update arm movement only if not stopped
+                if (!isArmStopped[i])
                 {
-                    if (randomAnimDuration[i] == 0)
+                    if (config.arms[i].randomInterval.HasValue && isRepairingAndExtended)
                     {
-                        randomAnimDuration[i] = armIntervals[i];
-                        randomAnimTicks[i] = 0;
-                        if (config.arms[i].randomReach.HasValue)
+                        armTicks[i]--;
+                        if (armTicks[i] <= 0)
                         {
-                            randomAnimReach[i] = Rand.Range(config.arms[i].randomReach.Value.min, config.arms[i].randomReach.Value.max);
-                        }
-                        else
-                        {
-                            randomAnimReach[i] = 0.2f;
+                            armTicks[i] = armIntervals[i];
+                            armIntervals[i] = Rand.RangeInclusive(
+                                config.arms[i].randomInterval.Value.min,
+                                config.arms[i].randomInterval.Value.max
+                            );
                         }
                     }
 
-                    randomAnimTicks[i]++;
-                    if (randomAnimTicks[i] >= randomAnimDuration[i])
+                    if (isRepairingAndExtended && config.arms[i].randomInterval.HasValue)
+                    {
+                        if (randomAnimDuration[i] == 0)
+                        {
+                            randomAnimDuration[i] = armIntervals[i];
+                            randomAnimTicks[i] = 0;
+                            if (config.arms[i].randomReach.HasValue)
+                            {
+                                randomAnimReach[i] = Rand.Range(config.arms[i].randomReach.Value.min, config.arms[i].randomReach.Value.max);
+                            }
+                            else
+                            {
+                                randomAnimReach[i] = 0.2f;
+                            }
+                        }
+
+                        randomAnimTicks[i]++;
+                        if (randomAnimTicks[i] >= randomAnimDuration[i])
+                        {
+                            randomAnimDuration[i] = 0;
+                        }
+                    }
+                    else
                     {
                         randomAnimDuration[i] = 0;
+                        randomAnimTicks[i] = 0;
                     }
-                }
-                else
-                {
-                    randomAnimDuration[i] = 0;
-                    randomAnimTicks[i] = 0;
                 }
             }
         }
@@ -191,6 +235,13 @@ namespace ApexMechanoids
                 {
                     Graphic graphic = armCfg.graphicData.Graphic;
                     armGraphics[armIndex] = graphic;
+                }
+                
+                // Ensure lists have entries for this arm index
+                while (armIndex >= stopTicksRemaining.Count)
+                {
+                    stopTicksRemaining.Add(0);
+                    isArmStopped.Add(false);
                 }
             }
         }
