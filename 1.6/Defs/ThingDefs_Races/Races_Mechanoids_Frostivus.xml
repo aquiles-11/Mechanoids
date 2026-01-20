@@ -6,6 +6,7 @@
 		<label>Frostivus</label>
 		<description>A very unique mechanoid, the frostivus is a mobile cryogenic chamber. It consumes organic material such as foodstuffs to store, freeze and dispense at request. It can be commanded to seal a targeted pawn inside of itself to store for the mechhive to later utilize for its twisted machinations. Not entirely for utility, the frostivus can also extend its chilling properties to its extremities, inflicting hypothermia over repeated attacks.</description>
 		<statBases>
+			<MarketValue>1200</MarketValue>
 			<MoveSpeed>2.2</MoveSpeed>
 			<BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">3</BandwidthCost>
 		</statBases>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<ThingDef ParentName="LancerMechanoidWalker">
+	<ThingDef ParentName="BaseMechanoidWalker">
 		<defName>APM_Mech_Dynamo</defName>
 		<label>dynamo</label>
 		<description>A combat support mechanoid with a wide-range bullet shield and mid-range needle gun. Designed to support other mechanoids, the legionary is vulnerable to anyone who can get inside its shield.</description>
@@ -10,10 +10,13 @@
 			<MoveSpeed>4.3</MoveSpeed>
 			<EnergyShieldRechargeRate>0.25</EnergyShieldRechargeRate>
 			<EnergyShieldEnergyMax>1.5</EnergyShieldEnergyMax>
-			<BandwidthCost>2</BandwidthCost>
-			<ControlTakingTime>18</ControlTakingTime>
+			<BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">2</BandwidthCost>
+			<ControlTakingTime MayRequire="Ludeon.RimWorld.Biotech">18</ControlTakingTime>
 		</statBases>
 		<race>
+			<body>Pikeman</body>
+			<baseBodySize>3.0</baseBodySize>
+			<baseHealthScale>3.0</baseHealthScale>
 			<lifeStageAges Inherit="False">
 				<li>
 					<def>MechanoidFullyFormed</def>

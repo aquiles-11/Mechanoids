@@ -50,7 +50,7 @@ namespace ApexMechanoids
         public Pawn ContainedMech => innerContainer.FirstOrDefault() as Pawn;
         public bool PowerOn => PowerTrader != null && PowerTrader.PowerOn;
         public float HeldPawnDrawPos_Y => DrawPos.y + 0.04f;
-        public float HeldPawnBodyAngle => this.Rotation.Opposite.AsAngle;
+        public float HeldPawnBodyAngle => this.def.rotatable ? this.Rotation.Opposite.AsAngle : this.Rotation.AsAngle;
         public PawnPosture HeldPawnPosture => PawnPosture.LayingOnGroundFaceUp;
         public override Vector3 PawnDrawOffset => GetMechPositionOffset();
 
@@ -265,19 +265,7 @@ namespace ApexMechanoids
             if (ContainedMech != null)
             {
                 Vector3 elevated = drawLoc;
-                elevated.y = HeldPawnDrawPos_Y;
-                
-                // Rotate the render angle of mechs 180 degrees if the building is using platform animations
-                if (platformAnim != null)
-                {
-                    // Calculate the rotated rotation (180 degrees from current)
-                    var rotatedRotation = new Rot4((this.Rotation.AsInt + 2) % 4); // +2 for 180 degree rotation
-                    ContainedMech.Drawer.renderer.DynamicDrawPhaseAt(phase, elevated + PawnDrawOffset, rotatedRotation, neverAimWeapon: true);
-                }
-                else
-                {
-                    ContainedMech.Drawer.renderer.DynamicDrawPhaseAt(phase, elevated + PawnDrawOffset, null, neverAimWeapon: true);
-                }
+                ContainedMech.Drawer.renderer.DynamicDrawPhaseAt(phase, elevated + PawnDrawOffset, null, neverAimWeapon: true);
             }
         }
 

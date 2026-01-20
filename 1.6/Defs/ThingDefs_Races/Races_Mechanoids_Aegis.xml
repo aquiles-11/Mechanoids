@@ -9,7 +9,7 @@
 			<MoveSpeed>1.5</MoveSpeed>
 			<ArmorRating_Blunt>0.60</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.60</ArmorRating_Sharp>
-			<BandwidthCost>3</BandwidthCost>
+			<BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">3</BandwidthCost>
 			<WorkSpeedGlobal>1.5</WorkSpeedGlobal>
 		</statBases>
 		<race>
