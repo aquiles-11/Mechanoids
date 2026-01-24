@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
 	<DamageDef ParentName="Beam">
@@ -23,6 +23,19 @@
 		<buildingDamageFactorImpassable>5</buildingDamageFactorImpassable>
 		<buildingDamageFactorPassable>2.5</buildingDamageFactorPassable>
 		<plantDamageFactor>3</plantDamageFactor>
+	</DamageDef>
+
+	<DamageDef ParentName="BluntBase">
+		<defName>Push</defName>
+		<deathMessage>{0} has been ... to death.</deathMessage>
+		<label>push damage</label>
+		<workerClass>VEF.Weapons.DamageWorker_PushBackAttackMelee</workerClass>
+		<modExtensions>
+			<li Class="VEF.Weapons.DamageExtension">
+				<pushBackDistance>3</pushBackDistance>
+				<soundOnDamage>DropPod_Open</soundOnDamage>
+			</li>
+		</modExtensions>
 	</DamageDef>
 
 </Defs>

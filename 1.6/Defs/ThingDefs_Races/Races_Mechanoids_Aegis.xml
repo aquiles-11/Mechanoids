@@ -89,7 +89,6 @@
 				<regenerationAmount>2</regenerationAmount> <!-- Amount of HP to regenerate per interval -->
 				<regenerationDelaySeconds>60</regenerationDelaySeconds> <!-- Minimum time in seconds before regeneration starts after damage -->
 				<regenerationIntervalSeconds>30</regenerationIntervalSeconds> <!-- How often to regenerate in seconds (converted to ticks internally). Uses CompTickRare, any amount less than 4.16 seconds won't work. -->
-				<steelRequiredForRepair>50</steelRequiredForRepair> <!-- Amount of steel required for manual repair -->
 			</li>
 		</comps>
 	</ThingDef>
