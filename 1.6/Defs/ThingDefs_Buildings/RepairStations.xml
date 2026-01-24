@@ -23,7 +23,7 @@
   <ThingDef ParentName="APM_RepairStationBase">
     <defName>APM_RepairStation_Small</defName>
     <label>repair station</label>
-    <description>A station that repairs small and medium mechanoids. The mechanoid enters the station to undergo repairs.</description>
+    <description> The repair station was originally developed by the mechanoid hive to mass manage the integrity of its forces with the absence of direct supervision by a mechanitor and glitterworld production facilities. Only suited for mechanoids of medium size and below.</description>
     <uiIconPath>Things/Building/SmallRepairStation/SmallRepairStationMenu</uiIconPath>
     <graphicData>
       <texPath>Things/Building/SmallRepairStation/SmallRepairStation_Base</texPath>
@@ -103,7 +103,7 @@
   <ThingDef ParentName="APM_RepairStationBase">
     <defName>APM_RepairStation_Advanced</defName>
     <label>advanced repair station</label>
-    <description>A station that repairs large mechanoids. The mechanoid enters the station to undergo repairs.</description>
+    <description> The repair station was originally developed by the mechanoid hive to mass manage the integrity of its forces with the absence of direct supervision by a mechanitor and glitterworld production facilities. Only suited for mechanoids of large size and above.</description>
     <uiIconPath>Things/Building/BigRepairStation/BigRepairStation</uiIconPath>
     <graphicData>
       <texPath>Things/Building/BigRepairStation/BigRepairStation_Base</texPath>
