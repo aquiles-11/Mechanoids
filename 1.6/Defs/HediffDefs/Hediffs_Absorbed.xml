@@ -3,7 +3,7 @@
 
 	<HediffDef>
 		<defName>APM_AbsorbedThing</defName>
-		<label>absorbed</label>
+		<label>absorbed something</label>
 		<hediffClass>HediffWithComps</hediffClass>
 		<description>Recycling the absorbed thing.</description>
 		<isBad>false</isBad>
