@@ -51,8 +51,10 @@ namespace ApexMechanoids
                 }
                 var pos = target.Thing.Position;
                 target.Thing.Destroy();
-                pos = CellFinder.FindNoWipeSpawnLocNear(pos, map, ThingDefOf.Chemfuel, Rot4.North, 5);
-                GenSpawn.Spawn(ThingDefOf.Chemfuel, pos, map, WipeMode.VanishOrMoveAside).stackCount = Mathf.Max(chemfuelCount, 1);
+                var hediff = parent.pawn.health.AddHediff(ApexDefsOf.APM_AbsorbedThing);
+                var hediffSpawner = hediff.TryGetComp<CompSpawnThingOnRemove>();
+                hediffSpawner.thing = ThingDefOf.Chemfuel;
+                hediffSpawner.count = chemfuelCount;
             }
         }
     }
