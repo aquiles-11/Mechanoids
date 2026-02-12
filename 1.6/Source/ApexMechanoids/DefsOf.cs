@@ -17,5 +17,8 @@ namespace ApexMechanoids
         public static HediffDef APM_InDuel;
         public static FleckDef ArcLargeEMP_B;
         public static FleckDef APM_AirPuffGreen;
+        public static ThingDef APM_PawnFlyer_Hooked;
+        public static ThingDef APM_Projectile_Hook;
+        public static ThingDef APM_Mote_HookRope;
     }
 }
