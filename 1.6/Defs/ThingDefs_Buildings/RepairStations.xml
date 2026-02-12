@@ -1,8 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-	<ThingDef Name="APM_RepairStationBase"
-			  ParentName="BuildingBase"
-			  Abstract="True">
+	<ThingDef Name="APM_RepairStationBase" ParentName="BuildingBase" Abstract="True">
 		<thingClass>ApexMechanoids.Building_RepairStation</thingClass>
 		<tickerType>Normal</tickerType>
 		<containedPawnsSelectable>true</containedPawnsSelectable>
