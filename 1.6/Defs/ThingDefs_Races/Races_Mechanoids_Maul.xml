@@ -4,7 +4,7 @@
 	<ThingDef Name="APM_Mech_Maul" ParentName="BaseMechanoidWalker">
 		<defName>APM_Mech_Maul</defName>
 		<label>Maul</label>
-		<description>Wielding a plasma charged whip, this mechanoid was designed to handle, tame and train animals. Its more unique role in a mechanoid task force has this Maul’s whip also function in short range combat, with it being able to strike out at foes, dealing EMP damage.\n\nThis mechanoid can strike out with its whip, dealing damage and electrifying anything within a short area around the whip.</description>
+		<description>TBD</description>
 		<statBases>
 			<MoveSpeed>4.2</MoveSpeed>
 			<ArmorRating_Blunt>0.3</ArmorRating_Blunt>
@@ -63,6 +63,34 @@
 				</li>
 			</detritusLeavings>
 		</race>
+		<comps>
+			<li Class="ApexMechanoids.CompProperties_StatFactorsFromHealth">
+				<statFactors>
+					<li>
+						<stat>RangedCooldownFactor</stat>
+						<curve>
+							<points>
+								<li>(0, 0.25)</li>
+								<li>(0.5, 0.5)</li>
+								<li>(1.0, 1)</li>
+								<li>(2.0, 2)</li>
+							</points>
+						</curve>
+					</li>
+					<li>
+						<stat>AimingDelayFactor</stat>
+						<curve>
+							<points>
+								<li>(0, 0.25)</li>
+								<li>(0.5, 0.5)</li>
+								<li>(1.0, 1)</li>
+								<li>(2.0, 2)</li>
+							</points>
+						</curve>
+					</li>
+				</statFactors>
+			</li>
+		</comps>		
 		<butcherProducts>
 			<Steel>20</Steel>
 			<Plasteel>5</Plasteel>
