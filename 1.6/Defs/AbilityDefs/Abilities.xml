@@ -283,7 +283,7 @@
 		</comps>
 	</AbilityDef>
 
-	<!--<AbilityDef>
+	<AbilityDef>
 		<defName>APM_HookPawn</defName>
 		<label>hook</label>
 		<description>Remotely project a personal defense shield onto a mech. The shield stops incoming damage, but also prevents shooting out, so this can be useful even when cast
@@ -364,6 +364,6 @@
 			<shaderType>Mote</shaderType>
 			<drawSize>(2, 1)</drawSize>
 		</graphicData>
-	</ThingDef>-->
+	</ThingDef>
 
 </Defs>
