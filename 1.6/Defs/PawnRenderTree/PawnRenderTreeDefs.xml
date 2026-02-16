@@ -126,4 +126,42 @@
       </children>
     </root>
   </PawnRenderTreeDef>
+
+	<AnimationDef>
+		<defName>APM_EatingIngestor</defName>
+		<durationTicks>80</durationTicks>
+		<keyframeParts>
+			<li>
+				<key>Body</key>
+				<value>
+					<keyframes>
+						<li>
+							<tick>60</tick>
+							<graphicState>APM_EatingIngestor_Closed</graphicState>
+						</li>
+						<li>
+							<tick>80</tick>
+							<graphicState>APM_EatingIngestor_Opened</graphicState>
+						</li>
+					</keyframes>
+				</value>
+			</li>
+		</keyframeParts>
+	</AnimationDef>
+
+	<GraphicStateDef>
+		<defName>APM_EatingIngestor_Closed</defName>
+		<defaultGraphicData>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<texPath>Mechs/Ingestor/Closed/IngestorC</texPath>
+		</defaultGraphicData>
+	</GraphicStateDef>
+
+	<GraphicStateDef>
+		<defName>APM_EatingIngestor_Opened</defName>
+		<defaultGraphicData>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<texPath>Mechs/Ingestor/Opened/IngestorO</texPath>
+		</defaultGraphicData>
+	</GraphicStateDef>
 </Defs>
