@@ -17,5 +17,6 @@ namespace ApexMechanoids
         public static HediffDef APM_InDuel;
         public static FleckDef ArcLargeEMP_B;
         public static HediffDef APM_AbsorbedThing;
+        public static AnimationDef APM_EatingIngestor;
     }
 }

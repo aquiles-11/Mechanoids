@@ -26,7 +26,6 @@ namespace ApexMechanoids
             }
             return false;
         }
-
         public override void PostApplied(List<LocalTargetInfo> targets, Map map)
         {
             base.PostApplied(targets, map);

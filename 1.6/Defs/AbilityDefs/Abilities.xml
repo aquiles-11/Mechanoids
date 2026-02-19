@@ -14,8 +14,8 @@
 		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
 		<verbProperties>
-			<verbClass>Verb_CastAbilityTouch</verbClass>
-			<warmupTime>1</warmupTime>
+			<verbClass>ApexMechanoids.Verb_Absorb</verbClass>
+			<warmupTime>5</warmupTime>
 			<drawAimPie>false</drawAimPie>
 			<range>-1</range>
 			<targetParams>
