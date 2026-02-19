@@ -12,7 +12,9 @@
 				<disappearsAfterTicks>12000</disappearsAfterTicks> <!--The same as duel mental state-->
 				<showRemainingTime>True</showRemainingTime>
 			</li>
-			<li Class="ApexMechanoids.CompSpawnThingOnRemove"/>
+			<li>
+				<compClass>ApexMechanoids.CompSpawnThingOnRemove</compClass>
+			</li>
 			<!--<li Class="HediffCompProperties_DisappearsOnDeath"/>-->
 		</comps>
 	</HediffDef>
