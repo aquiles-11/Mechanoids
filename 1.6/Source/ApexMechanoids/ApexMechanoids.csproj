@@ -12,7 +12,7 @@
     <TargetFramework>net48</TargetFramework>
     <Configurations>Debug;Release</Configurations>
     <Platforms>AnyCPU</Platforms>
-    <BaseOutputPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Apex_Mechanoids\1.6\Assemblies</BaseOutputPath>
+    <BaseOutputPath></BaseOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <OutputPath>../../Assemblies/</OutputPath>
