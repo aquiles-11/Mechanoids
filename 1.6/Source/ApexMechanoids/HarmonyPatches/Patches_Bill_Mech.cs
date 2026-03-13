@@ -4,7 +4,7 @@ using RimWorld;
 namespace ApexMechanoids
 {
     [HarmonyPatch(typeof(Bill_Mech), "WorkSpeedMultiplier", MethodType.Getter)]
-    public class Patch_Bill_Mech_BillTick
+    public class Patch_Bill_Mech_WorkSpeedMultiplier
     {
         public static void Postfix(Bill_Mech __instance, ref float __result)
         {
