@@ -809,6 +809,18 @@
 
 					</value>
 				</li>
+			
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="MechGestatorBase"]/comps</xpath>	
+					<value>
+						<li Class="CompProperties_AffectedByFacilities">
+							<linkableFacilities>
+								<li>APM_GestatorAmplifier</li>
+							</linkableFacilities>
+						</li>
+					</value>
+				</li>
+				
 			</operations>
 		</match>
 	</Operation>

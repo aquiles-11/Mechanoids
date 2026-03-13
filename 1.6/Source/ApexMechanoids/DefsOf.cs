@@ -20,5 +20,6 @@ namespace ApexMechanoids
         public static ThingDef APM_PawnFlyer_Hooked;
         public static ThingDef APM_Projectile_Hook;
         public static ThingDef APM_Mote_HookRope;
+        public static StatDef APM_GestationFactor;
     }
 }
