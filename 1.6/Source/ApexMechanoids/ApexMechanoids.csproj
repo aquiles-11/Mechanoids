@@ -12,7 +12,6 @@
     <TargetFramework>net48</TargetFramework>
     <Configurations>Debug;Release</Configurations>
     <Platforms>AnyCPU</Platforms>
-    <BaseOutputPath></BaseOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <OutputPath>../../Assemblies/</OutputPath>
