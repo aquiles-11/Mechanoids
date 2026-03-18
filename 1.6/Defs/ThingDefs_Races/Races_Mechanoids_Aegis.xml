@@ -127,6 +127,9 @@
 		</lifeStages>
 		<techHediffsChance MayRequire="Ludeon.RimWorld.Biotech">1</techHediffsChance>
 		<controlGroupPortraitZoom>1</controlGroupPortraitZoom>
+    <abilities>
+      <li>APM_ShieldCharge</li>
+    </abilities>
 	</PawnKindDef>
 
 </Defs>
