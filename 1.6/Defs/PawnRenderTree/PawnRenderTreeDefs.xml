@@ -132,7 +132,7 @@
 		<durationTicks>80</durationTicks>
 		<keyframeParts>
 			<li>
-				<key>Body</key>
+				<key>APM_Ingestor_Mouth</key>
 				<value>
 					<keyframes>
 						<li>
@@ -148,6 +148,52 @@
 			</li>
 		</keyframeParts>
 	</AnimationDef>
+
+	<PawnRenderTreeDef>
+		<defName>APM_RenderTree_Ingestor</defName>
+		<root Class="PawnRenderNodeProperties_Parent">
+			<debugLabel>Root</debugLabel>
+			<tagDef>Root</tagDef>
+			<children>
+				<li>
+					<debugLabel>Body</debugLabel>
+					<tagDef>Body</tagDef>
+					<nodeClass>PawnRenderNode_AnimalPart</nodeClass>
+					<children>
+						<li>
+							<debugLabel>Mouth</debugLabel>
+							<tagDef>APM_Ingestor_Mouth</tagDef>
+							<texPath>Mechs/Ingestor/Closed/IngestorC</texPath>
+						</li>
+						<li>
+							<debugLabel>Wounds</debugLabel>
+							<nodeClass>PawnRenderNode_AnimalPart</nodeClass>
+							<workerClass>PawnRenderNodeWorker_OverlayWounds</workerClass>
+							<overlayLayer>Body</overlayLayer>
+							<useGraphic>false</useGraphic>
+							<baseLayer>20</baseLayer>
+						</li>
+						<li>
+							<debugLabel>Firefoam</debugLabel>
+							<nodeClass>PawnRenderNode_AnimalPart</nodeClass>
+							<workerClass>PawnRenderNodeWorker_OverlayFirefoam</workerClass>
+							<overlayLayer>Body</overlayLayer>
+							<useGraphic>false</useGraphic>
+							<baseLayer>25</baseLayer>
+						</li>
+					</children>
+				</li>
+				<li Class="PawnRenderNodeProperties_Carried">
+					<debugLabel>Carried thing</debugLabel>
+					<workerClass>PawnRenderNodeWorker_Carried</workerClass>
+				</li>
+			</children>
+		</root>
+	</PawnRenderTreeDef>
+
+	<PawnRenderNodeTagDef>
+		<defName>APM_Ingestor_Mouth</defName>
+	</PawnRenderNodeTagDef>
 
 	<GraphicStateDef>
 		<defName>APM_EatingIngestor_Closed</defName>

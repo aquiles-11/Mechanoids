@@ -33,6 +33,7 @@
 			</li>
 		</tools>
 		<race>
+			<renderTree>APM_RenderTree_Ingestor</renderTree>
 			<baseHealthScale>3.0</baseHealthScale>
 		</race>
 	</ThingDef>
