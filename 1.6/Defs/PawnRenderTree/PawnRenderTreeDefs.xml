@@ -164,6 +164,22 @@
 							<debugLabel>Mouth</debugLabel>
 							<tagDef>APM_Ingestor_Mouth</tagDef>
 							<texPath>Mechs/Ingestor/Closed/IngestorC</texPath>
+							<drawData>
+								<scale>1.9</scale>
+								<dataWest>
+									<offset>(-0.10, 0.0, 0.0)</offset>
+									<layer>20</layer>
+								</dataWest>
+								<dataEast>
+									<layer>20</layer>
+								</dataEast>
+								<dataSouth>
+									<layer>20</layer>
+								</dataSouth>
+								<dataNorth>
+									<layer>-10</layer>
+								</dataNorth>
+							</drawData>
 						</li>
 						<li>
 							<debugLabel>Wounds</debugLabel>
