@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using System.Security.Cryptography;
 using Verse;
 
 namespace ApexMechanoids
@@ -21,5 +22,18 @@ namespace ApexMechanoids
         public static ThingDef APM_Projectile_Hook;
         public static ThingDef APM_Mote_HookRope;
         public static StatDef APM_GestationFactor;
+        public static JobDef APM_RemoteControlUplink;
+
+        public static HediffDef RemoteRepairerImplant;  //from Biotech
+        public static HediffDef RemoteShielderImplant;  //from Biotech
+        public static SoundDef ShieldMech_Complete;     //from Biotech
+        public static SoundDef ShieldMech_Start;        //from Biotech
+
+
+
+        static ApexDefsOf()
+        {
+            DefOfHelper.EnsureInitializedInCtor(typeof(ApexDefsOf));
+        }
     }
 }

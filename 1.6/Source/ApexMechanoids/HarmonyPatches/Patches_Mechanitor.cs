@@ -26,6 +26,23 @@ namespace ApexMechanoids
         }
     }
 
+
+    [HarmonyPatch(typeof(Pawn_MechanitorTracker), nameof(Pawn_MechanitorTracker.CanCommandTo))]
+    public static class Patch_Pawn_MechanitorTracker_CanCommandTo
+    {
+        public static bool Prefix(Pawn_MechanitorTracker __instance, ref bool __result)
+        {
+            Pawn pawn = __instance != null ? __instance.Pawn : null;
+            if (Utils.IsUplinkActiveFor(pawn))
+            {
+                __result = true;
+                return false;
+            }
+            return true;
+        }
+    }
+
+
     [HarmonyPatch(typeof(MechanitorUtility), "InMechanitorCommandRange")]
     public class Patch_MechanitorUtility_InMechanitorCommandRange
     {
@@ -36,6 +53,12 @@ namespace ApexMechanoids
                 return;
             }
             if (mech.HasComp<CompMechanitorRangeExtender>())
+            {
+                __result = true;
+                return;
+            }
+            Pawn overseer = mech.GetOverseer();
+            if (Utils.IsUplinkActiveFor(overseer))
             {
                 __result = true;
                 return;
