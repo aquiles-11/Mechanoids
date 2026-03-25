@@ -10,4 +10,14 @@
          <carryThingAfterJob>true</carryThingAfterJob>
          <dropThingBeforeJob>false</dropThingBeforeJob>
     </JobDef>
+
+	<JobDef>
+		<defName>APM_Absorb</defName>
+		<driverClass>ApexMechanoids.JobDriver_Absorb</driverClass>
+		<casualInterruptible>false</casualInterruptible>
+		<collideWithPawns>true</collideWithPawns>
+		<neverShowWeapon>true</neverShowWeapon>
+		<tryStartFlying>true</tryStartFlying>
+		<overrideFlyChance>1</overrideFlyChance>
+	</JobDef>
 </Defs>

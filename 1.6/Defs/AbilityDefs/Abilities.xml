@@ -4,7 +4,7 @@
 	<AbilityDef>
 		<defName>APM_Absorb</defName>
 		<label>absorb</label>
-		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<jobDef>APM_Absorb</jobDef>
 		<description>PLACEHOLDER</description>
 		<iconPath>UI/Absorb</iconPath>
 		<cooldownTicksRange>90000</cooldownTicksRange><!-- 1.5 days -->
@@ -14,7 +14,7 @@
 		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
 		<verbProperties>
-			<verbClass>ApexMechanoids.Verb_Absorb</verbClass>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
 			<warmupTime>5</warmupTime>
 			<drawAimPie>false</drawAimPie>
 			<range>-1</range>
