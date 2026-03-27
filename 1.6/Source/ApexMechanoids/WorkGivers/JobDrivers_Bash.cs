@@ -199,7 +199,7 @@ namespace ApexMechanoids
 			{
 				foreach (Thing t in cell.GetThingList(pawn.Map).ToList())
 				{
-					if (t == pawn || (t.Faction != null && !t.HostileTo(pawn)))
+					if (t == pawn || (t.Faction != null && !t.HostileTo(pawn) && t != TargetThingB))
 					{
 						continue;
 					}

@@ -75,7 +75,7 @@ namespace ApexMechanoids
 		{
 			base.Apply(target, dest);
 			Map map = parent.pawn.Map;
-			Job job = JobMaker.MakeJob(Props.job, target.Cell);
+			Job job = JobMaker.MakeJob(Props.job, target.Cell, target);
 			job.playerForced = true;
 			job.maxNumMeleeAttacks = Props.jobFactor;
 			parent.pawn.jobs.StartJob(job, JobCondition.InterruptForced, cancelBusyStances: true);
