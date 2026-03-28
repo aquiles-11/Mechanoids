@@ -366,4 +366,85 @@
 		</graphicData>
 	</ThingDef>
 
+  <AbilityDef>
+    <defName>APM_ShieldCharge</defName>
+    <label>shield charge</label>
+    <description>.</description>
+    <iconPath>Things/Mote/SpeechSymbols/Speech</iconPath>
+    <cooldownTicksRange>2500</cooldownTicksRange>
+    <hostile>true</hostile>
+    <writeCombatLog>true</writeCombatLog>
+    <aiCanUse>true</aiCanUse>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>9.9</range>
+      <warmupTime>0.5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <targetParams>
+        <canTargetSelf>False</canTargetSelf>
+        <canTargetBuildings>False</canTargetBuildings>
+        <canTargetLocations>False</canTargetLocations>
+        <canTargetAnimals>False</canTargetAnimals>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="ApexMechanoids.CompProperties_AbilityBash">
+        <jobFactor>10</jobFactor>
+        <!--Stun damage amount-->
+        <job>APM_BashStun</job>
+        <moveSpeed>0.05</moveSpeed>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <JobDef>
+    <defName>APM_BashStun</defName>
+    <driverClass>ApexMechanoids.JobDriver_BashStun</driverClass>
+    <reportString>Bashing into TargetA.</reportString>
+    <playerInterruptible>false</playerInterruptible>
+    <carryThingAfterJob>true</carryThingAfterJob>
+    <dropThingBeforeJob>false</dropThingBeforeJob>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <AbilityDef>
+    <defName>APM_Bladehopp</defName>
+    <label>bladehopp</label>
+    <description>.</description>
+    <iconPath>Things/Mote/SpeechSymbols/Speech</iconPath>
+    <cooldownTicksRange>2500</cooldownTicksRange>
+    <hostile>true</hostile>
+    <writeCombatLog>true</writeCombatLog>
+    <aiCanUse>true</aiCanUse>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>9.9</range>
+      <warmupTime>0.5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <targetParams>
+        <canTargetSelf>False</canTargetSelf>
+        <canTargetBuildings>False</canTargetBuildings>
+        <canTargetLocations>False</canTargetLocations>
+        <canTargetAnimals>False</canTargetAnimals>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="ApexMechanoids.CompProperties_AbilityBash">
+        <jobFactor>10</jobFactor><!--Damage-->
+        <job>APM_BashDamage</job>
+        <moveSpeed>0.05</moveSpeed>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <JobDef>
+    <defName>APM_BashDamage</defName>
+    <driverClass>ApexMechanoids.JobDriver_BashDamage</driverClass>
+    <reportString>Bashing into TargetA.</reportString>
+    <playerInterruptible>false</playerInterruptible>
+    <carryThingAfterJob>true</carryThingAfterJob>
+    <dropThingBeforeJob>false</dropThingBeforeJob>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
 </Defs>

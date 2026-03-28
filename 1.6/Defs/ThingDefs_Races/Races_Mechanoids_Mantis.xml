@@ -97,6 +97,9 @@
 				</bodyGraphicData>
 			</li>
 		</lifeStages>
+    <abilities>
+      <li>APM_Bladehopp</li>
+    </abilities>
 	</PawnKindDef>
 
 </Defs>
