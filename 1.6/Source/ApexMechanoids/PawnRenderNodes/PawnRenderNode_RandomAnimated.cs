@@ -13,6 +13,6 @@ namespace ApexMechanoids
         public PawnRenderNode_RandomAnimated(Pawn pawn, PawnRenderNodeProperties props, PawnRenderTree tree) : base(pawn, props, tree)
         {
         }
-        protected override int GetNextIndex() => Rand.Range(0, Graphics.Count);
+        public override int GetNextIndex() => Rand.Range(0, Graphics.Count);
     }
 }

@@ -37,8 +37,8 @@ namespace ApexMechanoids
 
             }
         }
-        protected virtual int GetNextIndex() => (currentIndex + 1) % Graphics.Count;
-        protected override IEnumerable<Graphic> GraphicsFor(Pawn pawn)
+        public virtual int GetNextIndex() => (currentIndex + 1) % Graphics.Count;
+        public override IEnumerable<Graphic> GraphicsFor(Pawn pawn)
         {
             if (HasGraphic(pawn))
             {
