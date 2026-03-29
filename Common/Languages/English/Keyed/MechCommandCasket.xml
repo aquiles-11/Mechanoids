@@ -4,11 +4,12 @@
 	<APM.CommandCasket.Inspection>Remote control uplink is active for {PAWN}</APM.CommandCasket.Inspection>
 	<APM.CommandCasket.FailReason.NotMechanitor>not mechanitor</APM.CommandCasket.FailReason.NotMechanitor>
 
+	<APM.CommandCasket.Gizmo.CancelLink.Label>Cancel remote link</APM.CommandCasket.Gizmo.CancelLink.Label>
+	<APM.CommandCasket.Gizmo.CancelLink.Desc>Cancel the remote link for the current occupant. The occupant will be ejected.</APM.CommandCasket.Gizmo.CancelLink.Desc>
 
 		
     <APM.CommandCasket.Gizmo.Shield.Label>remote shield</APM.CommandCasket.Gizmo.Shield.Label> 
-    <APM.CommandCasket.Gizmo.Shield.Label.Desc>shield a friendly mechanoid, can target the whole map.</APM.CommandCasket.Gizmo.Shield.Label.Desc>
-	
+    <APM.CommandCasket.Gizmo.Shield.Desc>shield a friendly mechanoid, can target the whole map.</APM.CommandCasket.Gizmo.Shield.Desc>
 
 	
     <APM.CommandCasket.Gizmo.Repair.Label>remote repair</APM.CommandCasket.Gizmo.Repair.Label> 

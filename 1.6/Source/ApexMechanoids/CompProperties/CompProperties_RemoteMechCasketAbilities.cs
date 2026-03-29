@@ -4,8 +4,6 @@ namespace ApexMechanoids
 {
     public class CompProperties_RemoteMechCasketAbilities : CompProperties
     {
-
-
         public CompProperties_RemoteMechCasketAbilities()
         {
             compClass = typeof(CompRemoteMechCasketAbilities);

@@ -48,8 +48,7 @@ namespace ApexMechanoids
 
         private int TicksForShieldcooldown = 0;
 
-
-        public IEnumerable<Gizmo> GetGizmos()
+        public IEnumerable<Gizmo> GetGizmos()   //only add gizmos in here, so we can mirror them to the mechanitor!
         {
             if (CanUseAbilities)
             {
@@ -98,7 +97,7 @@ namespace ApexMechanoids
                     Command_Action shield_Action = new Command_Action();
                     shield_Action.defaultLabel = GetShieldGizmoLabel();
                     shield_Action.icon = GetShieldTexture();
-                    shield_Action.defaultDesc = "APM.CommandCasket.Gizmo.Shield.Label.Desc".Translate().CapitalizeFirst();
+                    shield_Action.defaultDesc = "APM.CommandCasket.Gizmo.Shield.Desc".Translate().CapitalizeFirst();
                     shield_Action.action = delegate
                     {
                         if (TicksForShieldcooldown == 0)
@@ -120,10 +119,24 @@ namespace ApexMechanoids
             yield break;
         }
         
+        public void TryChangeUser(Pawn pawn)
+        {
+            if(pawn == null)
+            {
+                EndAction();
+                User = pawn;
+                return;
+            }
+
+            if(User != pawn)
+            {  
+                User = pawn; 
+            }
+        }
+
+
         public override void CompTickInterval(int delta)
         {
-           
-
             if (TicksForShieldcooldown > 0)
             {
                 if (IsBusy != (int)MechCasketAction.shield)
@@ -136,12 +149,14 @@ namespace ApexMechanoids
             {
                 return;
             }
-            if(User.CurJobDef != ApexDefsOf.APM_RemoteControlUplink)
+            /*
+            if(!Utils.IsUplinkActiveFor(User))
             {
                 EndAction();
                 User = null;
                 return;
             }
+            */
 
             // gizmo actions
 
@@ -212,10 +227,6 @@ namespace ApexMechanoids
             Scribe_Values.Look(ref ticksToDisconnect, "ticksToDisconnect");
             Scribe_Values.Look(ref actionTick, "actionTick");
             Scribe_Values.Look(ref TicksForShieldcooldown, "TicksForShieldcooldown");
-           
-            
-
-            //TO DO!!!
         }
 
         
@@ -277,11 +288,11 @@ namespace ApexMechanoids
             return false;
         }
 
-        public void DrawLine(SimpleColor color)
+        public void DrawLine(SimpleColor color) //seems to no longer get called when we choose Building_MechCommandCasket
         {
             if (IsActing && TargetOnSameMap())
             {
-                GenDraw.DrawLineBetween(curTarget.TrueCenter(), parent.TrueCenter(), Color_Repair);
+                GenDraw.DrawLineBetween(curTarget.TrueCenter(), parent.TrueCenter(), color);
                 //GenDraw.DrawLineBetween(vec_target, vec_building, AltitudeLayer.BuildingBelowTop.AltitudeFor(), LineMatCyan, 3f); // if we need more control over the colors
             }
         }
@@ -686,22 +697,14 @@ namespace ApexMechanoids
         public bool CanUseAbilities
         { 
             get 
-            { 
-                if(User != null && User.CurJobDef == ApexDefsOf.APM_RemoteControlUplink && User.Faction == Faction.OfPlayer && User.Position == parent.InteractionCell)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-                    
+            {
+                return Utils.IsUplinkActiveFor(User);
             } 
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            List<Gizmo> list = GetGizmos().ToList();
+            List<Gizmo> list = GetGizmos().ToList();      //only add gizmos in GetGizmos, so we can mirror them to the mechanitor!
 
             foreach (Gizmo g in list)
             {
