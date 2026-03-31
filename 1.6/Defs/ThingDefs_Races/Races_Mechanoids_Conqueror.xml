@@ -73,7 +73,7 @@
 			<li MayRequire="Ludeon.RimWorld.Biotech">
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Mechanoid/Conqueror/DMR/ConquerorDMR</texPath>
-					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Conqueror/DMR/Mech_Conqueror_DMR</maskPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Conqueror/DMR/Mech_ConquerorDMR</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>1.5</drawSize>
@@ -85,7 +85,7 @@
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Mechanoid/Conqueror/DMR/ConquerorDMRAncient</texPath>
-					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Conqueror/DMR/Mech_Conqueror_DMR</maskPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Conqueror/DMR/Mech_ConquerorDMR</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>1.5</drawSize>
