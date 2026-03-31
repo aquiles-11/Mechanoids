@@ -46,7 +46,7 @@
 			<li MayRequire="Ludeon.RimWorld.Biotech">
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Mechanoid/Ingestor/Closed/IngestorC</texPath><!-- Only the Closed variant, what about Opened? -->
-					<maskPath>Pawn/Mechanoid/AllegianceOverlays/Ingestor/Closed/Mech_IngestorC</maskPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Ingestor/Closed/Mech_IngestorC</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>3</drawSize>
@@ -58,7 +58,7 @@
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Mechanoid/Ingestor/Closed/IngestorCAncient</texPath><!-- Only the Closed variant, what about Opened? -->
-					<maskPath>Pawn/Mechanoid/AllegianceOverlays/Ingestor/Closed/Mech_IngestorC</maskPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Ingestor/Closed/Mech_IngestorC</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>3</drawSize>

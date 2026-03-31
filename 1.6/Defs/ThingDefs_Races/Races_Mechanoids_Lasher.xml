@@ -73,7 +73,7 @@
 			<li MayRequire="Ludeon.RimWorld.Biotech">
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Mechanoid/Lasher/Lasher</texPath>
-					<maskPath>Pawn/Mechanoid/AllegianceOverlays/Lasher/Mech_Lasher</maskPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Lasher/Mech_Lasher</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>1.5</drawSize>
@@ -85,7 +85,7 @@
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Mechanoid/Lasher/LasherAncient</texPath>
-					<maskPath>Pawn/Mechanoid/AllegianceOverlays/Lasher/Mech_Lasher</maskPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Lasher/Mech_Lasher</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>1.5</drawSize>

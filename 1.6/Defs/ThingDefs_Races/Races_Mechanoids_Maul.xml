@@ -106,7 +106,7 @@
 			<li MayRequire="Ludeon.RimWorld.Biotech">
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Mechanoid/Maul/Maul</texPath>
-					<maskPath>Pawn/Mechanoid/AllegianceOverlays/Maul/Mech_Maul</maskPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Maul/Mech_Maul</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>2.5</drawSize>
@@ -118,7 +118,7 @@
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Mechanoid/Maul/MaulAncient</texPath>
-					<maskPath>Pawn/Mechanoid/AllegianceOverlays/Maul/Mech_Maul</maskPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Maul/Mech_Maul</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>2.5</drawSize>
