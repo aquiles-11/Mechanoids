@@ -72,8 +72,8 @@
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Mechs/Dominus/Regular/Dominus</texPath>
-					<maskPath>Mechs/Overlays/Dominus_Overlay/Regular/Mech_Dominus</maskPath>
+					<texPath>Things/Pawn/Mechanoid/Dominus/Regular/Dominus</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Dominus/Regular/Mech_Dominus</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>2</drawSize>
@@ -84,8 +84,8 @@
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Mechs/Dominus/Regular/DominusAncient</texPath>
-					<maskPath>Mechs/Overlays/Dominus_Overlay/Regular/Mech_Dominus</maskPath>
+					<texPath>Things/Pawn/Mechanoid/Dominus/Regular/DominusAncient</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Dominus/Regular/Mech_Dominus</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>2</drawSize>
@@ -104,6 +104,48 @@
 			<li>APM_Mech_Duel</li>
 		</abilities>
 	</PawnKindDef>
+	<PawnKindDef ParentName="BaseMechanoidKind">
+		<defName>APM_Mech_Dominus_Boss</defName>
+		<label>dominus</label>
+		<race>APM_Mech_Dominus</race>
+		<combatPower>550</combatPower>
+		<maxPerGroup MayRequire="Ludeon.Rimworld.Biotech">2</maxPerGroup>
+		<controlGroupPortraitZoom MayRequire="Ludeon.Rimworld.Biotech">0.48</controlGroupPortraitZoom>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Mechanoid/Dominus/Boss/DominusBAncient</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Dominus/Boss/Mech_DominusB</maskPath>
+					<shaderType>CutoutWithOverlay</shaderType>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li><li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Mechanoid/Dominus/Boss/DominusBAncient</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Dominus/Boss/Mech_DominusB</maskPath>
+					<shaderType>CutoutWithOverlay</shaderType>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<weaponMoney>99999~99999</weaponMoney>
+		<weaponTags Inherit="False">
+			<li>APM_WeaponDominusSpearBoss</li>
+		</weaponTags>
+		<abilities>
+			<li>APM_PressTheAttack</li>
+			<li>APM_Mech_Duel</li>
+		</abilities>
+	</PawnKindDef>
+	
 
 	<AbilityDef>
 		<defName>APM_PressTheAttack</defName>
@@ -164,6 +206,48 @@
 				</capMods>
 			</li>
 		</stages>
+		<renderNodeProperties>
+			<li>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<texPath>Effects/PressTheAttack/Halo</texPath>
+				<parentTagDef>Head</parentTagDef>
+				<drawData>
+					<scale>0.7</scale>
+					<defaultData>
+						<layer>92</layer>
+						<offset>(0,0,0.5)</offset>
+					</defaultData>
+				</drawData>
+			</li>
+			<li Class="ApexMechanoids.PawnRenderNodeProperties_Animated">
+				<nodeClass>ApexMechanoids.PawnRenderNode_RandomAnimated</nodeClass>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<texPath>Effects/PressTheAttack/Wings</texPath>
+				<parentTagDef>Body</parentTagDef>
+				<texPaths>
+					<li>Effects/PressTheAttack/Wings/WingsA</li>
+					<li>Effects/PressTheAttack/Wings/WingsB</li>
+					<li>Effects/PressTheAttack/Wings/WingsC</li>
+				</texPaths>
+				
+				<!--Optional, if we want specific time for each frame-->
+				<!--
+				<ticksPerTexPaths>
+					<li>3</li>
+					<li>4</li>
+					<li>3</li>
+				</ticksPerTexPaths>
+				-->
+				<ticksPerTexture>3</ticksPerTexture> <!--Alternative way to specify each frame time-->
+				<drawData>
+					<scale>2.3</scale>
+					<defaultData>
+						<layer>-6</layer>
+						<offset>(0,0,0)</offset>
+					</defaultData>
+				</drawData>
+			</li>
+		</renderNodeProperties>
 	</HediffDef>
 
 	<ThoughtDef>

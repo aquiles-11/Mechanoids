@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>APM_RemoteControlUplink</defName>
+    <driverClass>ApexMechanoids.JobDriver_RemoteControlUplink</driverClass>
+    <reportString>operating remote uplink.</reportString>
+    <playerInterruptible>true</playerInterruptible>
+    <checkOverrideOnDamage>Always</checkOverrideOnDamage>
+    <alwaysShowWeapon>false</alwaysShowWeapon>
+  </JobDef>
+</Defs>

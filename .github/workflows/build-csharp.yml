@@ -32,3 +32,9 @@ jobs:
 
     - name: Run tests
       run: dotnet test ./1.6/Source/ApexMechanoids.sln --no-restore
+          
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-output
+        path: ./1.6/Assemblies/

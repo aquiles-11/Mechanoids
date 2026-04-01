@@ -13,9 +13,6 @@ namespace ApexMechanoids
         // How often to regenerate in seconds (converted to ticks internally)
         public int regenerationIntervalSeconds = 5;
 
-        // Amount of steel required for manual repair
-        public int steelRequiredForRepair = 50;
-
         public CompProperties_Aegis()
         {
             compClass = typeof(CompAegis);

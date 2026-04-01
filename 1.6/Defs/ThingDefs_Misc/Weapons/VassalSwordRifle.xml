@@ -7,7 +7,7 @@
     <description>A charged-shot sword rifle. Weaker than a charge rifle, but more accurate and melee capable.</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Weapons/SwordRifle</texPath>
+      <texPath>Things/Item/Equipment/WeaponRanged/VassalSwordRifle</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <equippedAngleOffset>45</equippedAngleOffset>

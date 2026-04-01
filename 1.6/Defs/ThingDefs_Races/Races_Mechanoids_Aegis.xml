@@ -9,7 +9,7 @@
 			<MoveSpeed>1.5</MoveSpeed>
 			<ArmorRating_Blunt>0.60</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.60</ArmorRating_Sharp>
-			<BandwidthCost>3</BandwidthCost>
+			<BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">3</BandwidthCost>
 			<WorkSpeedGlobal>1.5</WorkSpeedGlobal>
 		</statBases>
 		<race>
@@ -89,7 +89,6 @@
 				<regenerationAmount>2</regenerationAmount> <!-- Amount of HP to regenerate per interval -->
 				<regenerationDelaySeconds>60</regenerationDelaySeconds> <!-- Minimum time in seconds before regeneration starts after damage -->
 				<regenerationIntervalSeconds>30</regenerationIntervalSeconds> <!-- How often to regenerate in seconds (converted to ticks internally). Uses CompTickRare, any amount less than 4.16 seconds won't work. -->
-				<steelRequiredForRepair>50</steelRequiredForRepair> <!-- Amount of steel required for manual repair -->
 			</li>
 		</comps>
 	</ThingDef>
@@ -103,8 +102,8 @@
 		<lifeStages>
 			<li MayRequire="Ludeon.RimWorld.Biotech">
 				<bodyGraphicData>
-					<texPath>Mechs/Aegis/Mechanoid/Aegis</texPath>
-					<maskPath>Mechs/Overlays/Aegis_Overlay/Mechanoid/Mech_Aegis</maskPath>
+					<texPath>Things/Pawn/Mechanoid/Aegis/Mechanoid/Aegis</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Aegis/Mechanoid</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>2.5</drawSize>
@@ -115,8 +114,8 @@
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Mechs/Aegis/Mechanoid/AegisAncient</texPath>
-					<maskPath>Mechs/Overlays/Aegis_Overlay/Mechanoid/Mech_Aegis</maskPath>
+					<texPath>Things/Pawn/Mechanoid/Aegis/Mechanoid/AegisAncient</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Aegis/Mechanoid</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>2.5</drawSize>
@@ -128,6 +127,9 @@
 		</lifeStages>
 		<techHediffsChance MayRequire="Ludeon.RimWorld.Biotech">1</techHediffsChance>
 		<controlGroupPortraitZoom>1</controlGroupPortraitZoom>
+    <abilities>
+      <li>APM_ShieldCharge</li>
+    </abilities>
 	</PawnKindDef>
 
 </Defs>

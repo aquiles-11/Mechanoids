@@ -73,8 +73,8 @@
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Mechs/Ravager/Ravager</texPath>
-					<maskPath>Mechs/Overlays/Ravager_Overlay/Mech_Ravager</maskPath>
+					<texPath>Things/Pawn/Mechanoid/Ravager/Ravager</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Ravager/Mech_Ravager</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>3</drawSize>
@@ -85,8 +85,8 @@
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Mechs/Ravager/RavagerAncient</texPath>
-					<maskPath>Mechs/Overlays/Ravager_Overlay/Mech_Ravager</maskPath>
+					<texPath>Things/Pawn/Mechanoid/Ravager/RavagerAncient</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Ravager/Mech_Ravager</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>3</drawSize>

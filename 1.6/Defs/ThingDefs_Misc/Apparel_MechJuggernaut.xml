@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <ThingDef ParentName="ApparelArmorPowerBase">
     <defName>APM_Apparel_MechamancerSuit</defName>
@@ -10,7 +9,7 @@
       <displayPriority>510</displayPriority>
     </recipeMaker>
     <graphicData>
-      <texPath>Apparel/MechamancerSuit/MechJuggernaut_icon</texPath>
+      <texPath>Things/Pawn/Humanlike/Apparel/MechamancerSuit/MechJuggernaut_icon</texPath><!-- make an icon -->
       <graphicClass>Graphic_Single</graphicClass>
       <shaderType>CutoutComplex</shaderType>
     </graphicData>
@@ -49,7 +48,7 @@
         <li>RoyalTier7</li>
         <li>APM_Mechamancer</li>
       </tags>
-      <wornGraphicPath>Apparel/MechamancerSuit/MechJuggernaut</wornGraphicPath>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/MechamancerSuit/MechJuggernaut</wornGraphicPath>
     </apparel>
     <tradeTags>
       <li>ExoticMisc</li>

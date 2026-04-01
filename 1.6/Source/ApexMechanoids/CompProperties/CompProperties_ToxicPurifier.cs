@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 using Verse;
 
 namespace ApexMechanoids
@@ -20,6 +21,9 @@ namespace ApexMechanoids
         public bool isCleanRandomTileInMap;
 
         public EffecterDef pumpEffecterDef;
+
+        public IntVec3 effecterOffset;
+        public Vector3 effecterVectorOffset;
 
         public GameConditionDef conditionDef;
 

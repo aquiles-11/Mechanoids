@@ -1,6 +1,8 @@
 ﻿using Verse;
 using RimWorld;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using Verse.AI;
 
 namespace ApexMechanoids
 {
@@ -69,6 +71,34 @@ namespace ApexMechanoids
                 return;
             }
             ab.QueueCastingJob(target.Pawn, target.Pawn);
+        }
+
+        public static bool IsUplinkActiveFor(Pawn mechanitor)
+        {
+            if (mechanitor == null || mechanitor.Dead || mechanitor.mechanitor == null)
+            {
+                return false;
+            }
+
+            Job curJob = mechanitor.CurJob;
+            if (curJob == null || curJob.def != ApexDefsOf.APM_RemoteControlUplink)
+            {
+                return false;
+            }
+
+            Thing building = curJob.targetA.Thing;
+            if (building == null)
+            {
+                return false;
+            }
+
+            CompRemoteControlUplink comp = building.TryGetComp<CompRemoteControlUplink>();
+            if (comp == null || comp.ManningPawn != mechanitor)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }
