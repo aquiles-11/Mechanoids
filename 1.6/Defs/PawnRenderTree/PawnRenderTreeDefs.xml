@@ -163,7 +163,7 @@
 						<li>
 							<debugLabel>Mouth</debugLabel>
 							<tagDef>APM_Ingestor_Mouth</tagDef>
-							<texPath>Mechs/Ingestor/Closed/IngestorC</texPath>
+							<texPath>Things/Pawn/Mechanoid/Ingestor/Closed/IngestorC</texPath>
 							<drawData>
 								<scale>1.9</scale>
 								<dataWest>
@@ -215,7 +215,7 @@
 		<defName>APM_EatingIngestor_Closed</defName>
 		<defaultGraphicData>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<texPath>Mechs/Ingestor/Closed/IngestorC</texPath>
+			<texPath>Things/Pawn/Mechanoid/Ingestor/Closed/IngestorC</texPath>
 		</defaultGraphicData>
 	</GraphicStateDef>
 
@@ -223,7 +223,7 @@
 		<defName>APM_EatingIngestor_Opened</defName>
 		<defaultGraphicData>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<texPath>Mechs/Ingestor/Opened/IngestorO</texPath>
+			<texPath>Things/Pawn/Mechanoid/Ingestor/Opened/IngestorO</texPath>
 		</defaultGraphicData>
 	</GraphicStateDef>
 </Defs>

@@ -46,8 +46,8 @@
 		<lifeStages>
 			<li MayRequire="Ludeon.RimWorld.Biotech">
 				<bodyGraphicData>
-					<texPath>Mechs/Ingestor/Ingestor</texPath><!-- Only the Closed variant, what about Opened? -->
-					<maskPath>Mechs/Overlays/Ingestor_Overlay/Mech_Ingestor</maskPath>
+					<texPath>Things/Pawn/Mechanoid/Ingestor/Ingestor</texPath><!-- Only the Closed variant, what about Opened? -->
+					<maskPath>Things/Pawn/Mechanoid/Overlays/Ingestor_Overlay/Mech_Ingestor</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>3</drawSize>
@@ -58,8 +58,8 @@
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Mechs/Ingestor/IngestorAncient</texPath><!-- Only the Closed variant, what about Opened? -->
-					<maskPath>Mechs/Overlays/Ingestor_Overlay/Mech_Ingestor</maskPath>
+					<texPath>Things/Pawn/Mechanoid/Ingestor/IngestorAncient</texPath><!-- Only the Closed variant, what about Opened? -->
+					<maskPath>Things/Pawn/Mechanoid/Overlays/Ingestor_Overlay/Mech_Ingestor</maskPath>
 					<shaderType>CutoutWithOverlay</shaderType>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>3</drawSize>
