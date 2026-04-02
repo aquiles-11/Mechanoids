@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef>
+    <defName>APM_Shockwave</defName>
+    <label>Shockwave</label>
+    <description>The Gazer overloads its core, drawing in unstable energy for several seconds before releasing it as a catastrophic shockwave. The blast devastates everything nearby, hurls survivors away and destroys the Gazer in the process.</description>
+    <iconPath>UI/Icons/Powerful</iconPath>
+    <cooldownTicksRange>45000</cooldownTicksRange>
+    <targetRequired>false</targetRequired>
+    <canUseAoeToGetTargets>false</canUseAoeToGetTargets>
+    <hostile>false</hostile>
+    <aiCanUse>true</aiCanUse>
+    <showCastingProgressBar>true</showCastingProgressBar>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <showPsycastEffects>false</showPsycastEffects>
+    <warmupStartSound>CombatCommand_Warmup</warmupStartSound>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>7.8</warmupTime>
+      <range>0.48</range>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetHumans>false</canTargetHumans>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="ApexMechanoids.CompProperties_ShockwaveWarmup">
+        <chargeEffecterDef>APM_Effecter_Shockwave_Charge</chargeEffecterDef>
+        <chargeFleckDefName>PsycastPsychicEffect</chargeFleckDefName>
+        <sparkIntervalTicks>5</sparkIntervalTicks>
+        <sparkRadius>1.3</sparkRadius>
+        <visualScale>0.62</visualScale>
+      </li>
+      <li Class="ApexMechanoids.CompProperties_Shockwave">
+        <damageDef>APM_Shockwave</damageDef>
+        <pushDamageDef>Push</pushDamageDef>
+        <emitterDef>APM_Mote_ShockwaveEmitter</emitterDef>
+        <flashThingDef>APM_ShockwaveFlash</flashThingDef>
+        <burstEffecterDef>APM_Effecter_Shockwave_Burst</burstEffecterDef>
+        <radius>8.9</radius>
+        <damageAmount>72</damageAmount>
+        <armorPenetration>1.4</armorPenetration>
+        <stunTicks>240</stunTicks>
+        <pushDamageAmount>1</pushDamageAmount>
+        <ringIntervalTicks>2</ringIntervalTicks>
+        <visualScale>1.22</visualScale>
+        <ringFleckDefName>PsycastPsychicEffect</ringFleckDefName>
+        <castSoundDefName>PsycastPsychicPulse</castSoundDefName>
+        <killCaster>true</killCaster>
+      </li>
+    </comps>
+  </AbilityDef>
+</Defs>
