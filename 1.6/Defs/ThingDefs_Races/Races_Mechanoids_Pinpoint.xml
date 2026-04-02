@@ -28,7 +28,7 @@
 		<race>
 			<body>Mech_Light</body>
 			<intelligence>ToolUser</intelligence>
-			<thinkTreeMain>Mechanoid</thinkTreeMain>
+			<thinkTreeMain>APM_PinpointMechanoid</thinkTreeMain>
 			<baseBodySize>0.7</baseBodySize>
 			<mechWeightClass>Light</mechWeightClass>
 			<lifeStageAges>
@@ -51,6 +51,14 @@
 		<butcherProducts>
 			<Steel>10</Steel>
 		</butcherProducts>
+		<comps>
+			<li Class="ApexMechanoids.CompProperties_PinpointProximityDetector">
+				<radius>19.9</radius>
+				<intervalTicks>30</intervalTicks>
+				<instant>false</instant>
+				<effecterDefName>ProximityDetectorAlert</effecterDefName>
+			</li>
+		</comps>
 	</ThingDef>
 
 	<PawnKindDef ParentName="BaseMechanoidKind">
@@ -86,12 +94,12 @@
 				</bodyGraphicData>
 			</li>
 		</lifeStages>
-		<weaponMoney>9999~9999</weaponMoney>
-		<weaponTags></weaponTags>
+		<weaponMoney>0~0</weaponMoney>
+		<weaponTags Inherit="False"></weaponTags>
 		<techHediffsChance>1</techHediffsChance>
 		<techHediffsMoney>9999~9999</techHediffsMoney>
 		<abilities>
-
+			<li>APM_PinpointCombatCommand</li>
 		</abilities>
 	</PawnKindDef>
 
