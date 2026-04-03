@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<SoundDef>
+		<defName>APM_Dual</defName>
+		<context>MapOnly</context>
+		<eventNames />
+		<maxVoices>4</maxVoices>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Duel_loop</clipPath>
+					</li>
+				</grains>
+				<volumeRange>
+					<min>55</min>
+					<max>65</max>
+				</volumeRange>
+				<pitchRange>
+					<min>0.895690</min>
+					<max>1.105345</max>
+				</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>APM_DualVictory</defName>
+		<context>MapOnly</context>
+		<eventNames />
+		<maxVoices>4</maxVoices>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Duel_victory</clipPath>
+					</li>
+				</grains>
+				<volumeRange>
+					<min>75</min>
+					<max>85</max>
+				</volumeRange>
+				<pitchRange>
+					<min>0.936413</min>
+					<max>1.042391</max>
+				</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>APM_DualLost</defName>
+		<context>MapOnly</context>
+		<eventNames />
+		<maxVoices>4</maxVoices>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Duel_victory</clipPath>
+					</li>
+				</grains>
+				<volumeRange>
+					<min>75</min>
+					<max>85</max>
+				</volumeRange>
+				<pitchRange>
+					<min>0.936413</min>
+					<max>1.042391</max>
+				</pitchRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+</Defs>
