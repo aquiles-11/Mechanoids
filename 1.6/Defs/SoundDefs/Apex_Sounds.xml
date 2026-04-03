@@ -61,7 +61,7 @@
 			<li>
 				<grains>
 					<li Class="AudioGrain_Clip">
-						<clipPath>Duel_victory</clipPath>
+						<clipPath>Duel_Lose</clipPath>
 					</li>
 				</grains>
 				<volumeRange>
