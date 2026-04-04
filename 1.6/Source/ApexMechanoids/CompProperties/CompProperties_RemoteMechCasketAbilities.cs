@@ -27,5 +27,7 @@ namespace ApexMechanoids
 
         public string textpath_ShieldCooldown = "UI/Gizmos/APM_ShieldMechCooldown";
 
+        public string labelShort = "Casket";
+
     }
 }

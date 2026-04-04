@@ -4,7 +4,6 @@ using Verse;
 using UnityEngine;
 using Verse.Sound;
 using System.Linq;
-using System.Drawing;
 
 
 
@@ -46,79 +45,106 @@ namespace ApexMechanoids
         private SimpleColor Color_Repair = SimpleColor.White;
         private SimpleColor Color_Connect = SimpleColor.Cyan;
 
-        private int TicksForShieldcooldown = 0;
+        public float TicksForShieldcooldown = 0;
 
         public IEnumerable<Gizmo> GetGizmos()   //only add gizmos in here, so we can mirror them to the mechanitor!
         {
-            if (CanUseAbilities)
+            if(User != null)
             {
-                #region Dis-/connect
-
-                Command_Action remoteControll_Action = new Command_Action();
-                remoteControll_Action.defaultLabel = "APM.CommandCasket.Gizmo.Connect.Label".Translate();
-                remoteControll_Action.icon = ContentFinder<Texture2D>.Get(Props.textpath_Connect);
-                remoteControll_Action.defaultDesc = "APM.CommandCasket.Gizmo.Connect.Desc".Translate().CapitalizeFirst();
-                remoteControll_Action.action = delegate
+                if (CanUseAbilities)
                 {
-                    Find.Targeter.BeginTargeting(RemoteConnectTargetingParameters(), StartToConnect, Highlight, CanRemoteConnect);
-                };
-                yield return remoteControll_Action;
+                    CommandCasketAbilityGizmo abilityGizmo = new CommandCasketAbilityGizmo(parent, this);
 
-
-                Command_Action disconnect_Action = new Command_Action();
-                disconnect_Action.defaultLabel = "APM.CommandCasket.Gizmo.Disconnect.Label".Translate();
-                disconnect_Action.icon = ContentFinder<Texture2D>.Get(Props.textpath_Disconnect);
-                disconnect_Action.defaultDesc = "APM.CommandCasket.Gizmo.Connect.Desc".Translate().CapitalizeFirst();
-                disconnect_Action.action = delegate
-                {
-                    Find.Targeter.BeginTargeting(RemoteDisconnectTargetingParameters(), StartToDisconnect, Highlight, CanRemoteDisconnect);
-                };
-                yield return disconnect_Action;
-
-                #endregion
-
-                #region implant based
-
-                if (HasImplantRepair())
-                {
-                    Command_Action repair_Action = new Command_Action();
-                    repair_Action.defaultLabel = "APM.CommandCasket.Gizmo.Repair.Label".Translate();
-                    repair_Action.icon = ContentFinder<Texture2D>.Get(Props.textpath_Repair);
-                    repair_Action.defaultDesc = "APM.CommandCasket.Gizmo.Repair.Desc".Translate().CapitalizeFirst();
-                    repair_Action.action = delegate
+                    /*
+                    foreach (var Gizmo in GetGizmosSingles())
                     {
-                        Find.Targeter.BeginTargeting(RemoteRepairTargetingParameters(), StartToRepair, Highlight, CanRemoteRepair);
-                    };
-                    yield return repair_Action;
-                }
+                        yield return Gizmo;
+                    }
+                    */
 
-                if (HasImplantShield())
-                {
-                    Command_Action shield_Action = new Command_Action();
-                    shield_Action.defaultLabel = GetShieldGizmoLabel();
-                    shield_Action.icon = GetShieldTexture();
-                    shield_Action.defaultDesc = "APM.CommandCasket.Gizmo.Shield.Desc".Translate().CapitalizeFirst();
-                    shield_Action.action = delegate
-                    {
-                        if (TicksForShieldcooldown == 0)
-                        {
-                            Find.Targeter.BeginTargeting(RemoteShieldTargetingParameters(), StartToShield, Highlight, CanRemoteShield);
-                        }
-                        else
-                        {
-                            string message = "AV_Gizmo_Cryopod_Shieldcooldown".Translate().CapitalizeFirst();
-                            Messages.Message(message, User, MessageTypeDefOf.CautionInput);
-                        }
-                    };
-                    yield return shield_Action;
+                    yield return abilityGizmo;
                 }
-
-                #endregion
             }
 
             yield break;
         }
-        
+
+        public IEnumerable<Gizmo> GetGizmosSingles()
+        {
+            #region OldSingleGizmos
+
+            #region Dis-/connect
+
+            Command_Action remoteControll_Action = new Command_Action();
+            remoteControll_Action.defaultLabel = "APM.CommandCasket.Gizmo.Connect.Label".Translate();
+            remoteControll_Action.icon = ContentFinder<Texture2D>.Get(Props.textpath_Connect);
+            remoteControll_Action.defaultDesc = "APM.CommandCasket.Gizmo.Connect.Desc".Translate().CapitalizeFirst();
+            remoteControll_Action.action = delegate
+            {
+                Find.Targeter.BeginTargeting(RemoteConnectTargetingParameters(), StartToConnect, Highlight, CanRemoteConnect);
+            };
+            yield return remoteControll_Action;
+
+
+            Command_Action disconnect_Action = new Command_Action();
+            disconnect_Action.defaultLabel = "APM.CommandCasket.Gizmo.Disconnect.Label".Translate();
+            disconnect_Action.icon = ContentFinder<Texture2D>.Get(Props.textpath_Disconnect);
+            disconnect_Action.defaultDesc = "APM.CommandCasket.Gizmo.Connect.Desc".Translate().CapitalizeFirst();
+            disconnect_Action.action = delegate
+            {
+                Find.Targeter.BeginTargeting(RemoteDisconnectTargetingParameters(), StartToDisconnect, Highlight, CanRemoteDisconnect);
+            };
+            yield return disconnect_Action;
+
+            #endregion
+
+            #region implant based
+
+            if (HasImplantRepair())
+            {
+                Command_Action repair_Action = new Command_Action();
+                repair_Action.defaultLabel = "APM.CommandCasket.Gizmo.Repair.Label".Translate();
+                repair_Action.icon = ContentFinder<Texture2D>.Get(Props.textpath_Repair);
+                repair_Action.defaultDesc = "APM.CommandCasket.Gizmo.Repair.Desc".Translate().CapitalizeFirst();
+                repair_Action.action = delegate
+                {
+                    Find.Targeter.BeginTargeting(RemoteRepairTargetingParameters(), StartToRepair, Highlight, CanRemoteRepair);
+                };
+                yield return repair_Action;
+            }
+
+            if (HasImplantShield())
+            {
+                Command_Action shield_Action = new Command_Action();
+                shield_Action.defaultLabel = GetShieldGizmoLabel();
+                shield_Action.icon = GetShieldTexture();
+                shield_Action.defaultDesc = "APM.CommandCasket.Gizmo.Shield.Desc".Translate().CapitalizeFirst();
+                shield_Action.action = delegate
+                {
+                    if (TicksForShieldcooldown == 0)
+                    {
+                        Find.Targeter.BeginTargeting(RemoteShieldTargetingParameters(), StartToShield, Highlight, CanRemoteShield);
+                    }
+                    else
+                    {
+                        string message = "shielding is on cooldown!";
+                        Messages.Message(message, User, MessageTypeDefOf.CautionInput);
+                    }
+                };
+                yield return shield_Action;
+            }
+
+            #endregion
+
+            #endregion
+        }
+
+
+
+
+
+
+
         public void TryChangeUser(Pawn pawn)
         {
             if(pawn == null)
@@ -141,7 +167,7 @@ namespace ApexMechanoids
             {
                 if (IsBusy != (int)MechCasketAction.shield)
                 {
-                    TicksForShieldcooldown--; // resets the cooldown when not shielding
+                    TicksForShieldcooldown -= (1 * delta); // resets the cooldown when not shielding
                 }
             }
 
@@ -149,25 +175,23 @@ namespace ApexMechanoids
             {
                 return;
             }
-            /*
-            if(!Utils.IsUplinkActiveFor(User))
-            {
-                EndAction();
-                User = null;
-                return;
-            }
-            */
 
             // gizmo actions
 
             if (actionTick != 0)
             {
-                actionTick++;
+                actionTick += (1 * delta);
 
                 if (IsBusy != (int)MechCasketAction.idle)
                 {
                     if (IsBusy == (int)MechCasketAction.connecting)
                     {
+                        if (!curLocalTargetInfo.Pawn.Dead && curLocalTargetInfo.Pawn.Map == parent.Map)
+                        {
+                            PawnUtility.ForceWait(curLocalTargetInfo.Pawn, 5, null, maintainPosture: true, maintainSleep: true);    
+                            // in tick so that mech can move again if it gets canceled
+                        }
+
                         if (actionTick >= ticksToTakeControl)
                         {
                             Connect(curLocalTargetInfo, User);
@@ -253,7 +277,7 @@ namespace ApexMechanoids
 
 
 
-        private void Highlight(LocalTargetInfo target)      //simplified CompPlantable targeter
+        public void Highlight(LocalTargetInfo target)      //simplified CompPlantable targeter
         {
             if (target.IsValid)
             {
@@ -306,7 +330,7 @@ namespace ApexMechanoids
             DestroyMechShield();
         }
 
-        private void EndAction()
+        public void EndAction()
         {
             actionTick = 0;
             DestroyMechShield();
@@ -360,9 +384,8 @@ namespace ApexMechanoids
         public void StartToConnect(LocalTargetInfo target)
         {
             UpdateTarget(target);
-            ticksToTakeControl = (int)(target.Pawn.GetStatValue(StatDefOf.ControlTakingTime) * 60);
 
-            //int connectTick = Find.TickManager.TicksGame + ticksToTakeControl;
+            ticksToTakeControl = Mathf.RoundToInt(target.Pawn.GetStatValue(StatDefOf.ControlTakingTime) * 60f);
             PawnUtility.ForceWait(target.Pawn, ticksToTakeControl, null, maintainPosture: true, maintainSleep: true);
             StartAction();
             IsBusy = (int)MechCasketAction.connecting;
@@ -637,7 +660,7 @@ namespace ApexMechanoids
 
         public bool HasImplantRepair()
         {
-            Hediff repairhediff = User.health.hediffSet.GetFirstHediffOfDef(ApexDefsOf.RemoteRepairerImplant);
+            Hediff repairhediff = User?.health?.hediffSet?.GetFirstHediffOfDef(ApexDefsOf.RemoteRepairerImplant);
 
             if (repairhediff != null)
             {
@@ -648,7 +671,7 @@ namespace ApexMechanoids
 
         public bool HasImplantShield()
         {
-            Hediff shieldhediff = User.health.hediffSet.GetFirstHediffOfDef(ApexDefsOf.RemoteShielderImplant);
+            Hediff shieldhediff = User?.health?.hediffSet?.GetFirstHediffOfDef(ApexDefsOf.RemoteShielderImplant);
             if (shieldhediff != null)
             {
                 return true;
@@ -668,7 +691,7 @@ namespace ApexMechanoids
 
         #region Gizmostuff 
 
-        private Texture2D GetShieldTexture()
+        public Texture2D GetShieldTexture()
         {
             if (TicksForShieldcooldown == 0)
             {
@@ -681,14 +704,16 @@ namespace ApexMechanoids
         }
 
 
-        private string GetShieldGizmoLabel()
+        public string GetShieldGizmoLabel()
         {
+            /*
             if (TicksForShieldcooldown != 0)
             {
                 int time = TicksForShieldcooldown / 60;
-                return "AV_GizmoLabel_Cryopod_Shield_Cooldown".Translate() + ": " + time.ToString() + "s";
+                return "remote shield cooldown: " + time.ToString() + "s";
             }
-            return "APM.CommandCasket.Gizmo.Shield.Label".Translate();
+            */
+            return "APM.CommandCasket.Gizmo.Shield.Label".Translate().CapitalizeFirst();
         }
 
         #endregion

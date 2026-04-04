@@ -25,7 +25,7 @@ namespace ApexMechanoids
         [Unsaved(false)]
         private CompRemoteMechCasketAbilities cachedAbilityComp;
 
-        private static readonly Texture2D CancelLoadingIcon = ContentFinder<Texture2D>.Get("UI/Designators/Cancel");
+        public static readonly Texture2D CancelLoadingIcon = ContentFinder<Texture2D>.Get("UI/Designators/Cancel");
 
         public static readonly CachedTexture InsertPawnIcon = new CachedTexture("UI/Gizmos/InsertPawn");
 
@@ -44,6 +44,8 @@ namespace ApexMechanoids
         public float HeldPawnDrawPos_Y => DrawPos.y + 0.03658537f;
 
         public float HeldPawnBodyAngle => base.Rotation.AsAngle;
+
+        public float NutritionPercent => NutritionBuffer / 100 * containedNutrition;  //   NutritionBuffer / 100 *   containedNutrition           10 / 0.2 ->
 
 
         public PawnPosture HeldPawnPosture => PawnPosture.LayingOnGroundFaceUp;
@@ -306,7 +308,7 @@ namespace ApexMechanoids
             }
         }
 
-        private void Finish()
+        public void Finish()
         {
             if (selectedPawn != null && innerContainer.Contains(selectedPawn))
             {
@@ -384,27 +386,28 @@ namespace ApexMechanoids
             {
                 yield return item;
             }
-            if (base.Working)
-            {
-                Command_Action command_Action = new Command_Action();
-                command_Action.defaultLabel = "APM.CommandCasket.Gizmo.CancelLink.Label".Translate();
-                command_Action.defaultDesc = "APM.CommandCasket.Gizmo.CancelLink.Desc".Translate();
-                command_Action.icon = CancelLoadingIcon;
-                command_Action.activateSound = SoundDefOf.Designate_Cancel;
-                command_Action.action = delegate
-                {
-                    Action action = delegate
-                    {
-                        Finish();
-                        innerContainer.TryDropAll(InteractionCell, base.Map, ThingPlaceMode.Near);
-                    };
-                    action();
-                };
-                yield return command_Action;
-
-            }
             if (DebugSettings.ShowDevGizmos)
             {
+                if (base.Working && CompAbilities == null)
+                {
+                    Command_Action command_Action = new Command_Action();
+                    command_Action.defaultLabel = "APM.CommandCasket.Gizmo.CancelLink.Label".Translate();
+                    command_Action.defaultDesc = "APM.CommandCasket.Gizmo.CancelLink.Desc".Translate();
+                    command_Action.icon = CancelLoadingIcon;
+                    command_Action.activateSound = SoundDefOf.Designate_Cancel;
+                    command_Action.action = delegate
+                    {
+                        Action action = delegate
+                        {
+                            Finish();
+                            innerContainer.TryDropAll(InteractionCell, base.Map, ThingPlaceMode.Near);
+                        };
+                        action();
+                    };
+                    yield return command_Action;
+
+                }
+
                 yield return new Command_Action
                 {
                     defaultLabel = "DEV: Fill nutrition",
