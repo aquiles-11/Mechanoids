@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <AbilityDef>
     <defName>APM_Shockwave</defName>
     <label>Shockwave</label>
     <description>The Gazer overloads its core, drawing in unstable energy for several seconds before releasing it as a catastrophic shockwave. The blast devastates everything nearby, hurls survivors away and destroys the Gazer in the process.</description>
-    <iconPath>UI/Icons/Powerful</iconPath>
+    <iconPath>UI/Shockwave</iconPath>
     <cooldownTicksRange>45000</cooldownTicksRange>
     <targetRequired>false</targetRequired>
     <canUseAoeToGetTargets>false</canUseAoeToGetTargets>
     <hostile>false</hostile>
-    <aiCanUse>true</aiCanUse>
+    <aiCanUse>false</aiCanUse>
     <showCastingProgressBar>true</showCastingProgressBar>
     <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
     <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>

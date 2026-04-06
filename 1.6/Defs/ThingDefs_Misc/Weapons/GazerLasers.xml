@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
   <ThingDef ParentName="BaseGun">
     <defName>APM_Gazer_Laser</defName>
     <label>laser</label>
@@ -28,14 +27,9 @@
     <weaponTags Inherit="False">
       <li>APM_WeaponGazerLaser</li>
     </weaponTags>
-    <comps>
-      <li Class="CompProperties_EquippableAbilityReloadable">
-        <abilityDef>APM_PowerBeam</abilityDef>
-      </li>
-    </comps>
     <verbs>
-      <li>
-        <verbClass>Verb_ShootBeam</verbClass>
+      <li Class="ApexMechanoids.VerbProperties_ShootBeamFromOffset">
+        <verbClass>ApexMechanoids.Verb_ShootBeamFromOffset</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <warmupTime>1.0</warmupTime>
         <range>24.9</range>
@@ -53,13 +47,16 @@
         <beamFleckChancePerTick>0.32</beamFleckChancePerTick>
         <beamMaxDeviation>1.5</beamMaxDeviation>
         <beamCurvature>0.6</beamCurvature>
-        <beamMoteDef>Mote_GraserLaserBeamBase</beamMoteDef>
+        <beamMoteDef>APM_Mote_GazerBeam_Base</beamMoteDef>
         <beamEndEffecterDef>GraserBeam_End</beamEndEffecterDef>
         <beamChanceToStartFire>0.85</beamChanceToStartFire>
         <beamChanceToAttachFire>0.85</beamChanceToAttachFire>
         <beamFireSizeRange>0.55~0.85</beamFireSizeRange>
         <beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
-        <beamStartOffset>0.8</beamStartOffset>
+        <beamStartOffset>0.0</beamStartOffset>
+        <beamOriginOffset>1.2,-0.4</beamOriginOffset>
+        <beamOriginFrontOffset>0.0,0.0</beamOriginFrontOffset>
+        <beamOriginBackOffset>0.9,0.0</beamOriginBackOffset>
         <beamLineFleckChanceCurve>
           <points>
             <li>(0, 0)</li>
@@ -69,37 +66,12 @@
         </beamLineFleckChanceCurve>
       </li>
     </verbs>
-    <modExtensions>
-      <li Class="VEF.Things.ThingDefExtension" MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">
-        <usableWithShields>true</usableWithShields>
-        <weaponDraftedDrawOffsets>
-          <north>
-            <drawOffset>(0.05,0.0,0.15)</drawOffset>
-            <angleOffset>-60</angleOffset>
-          </north>
-          <east>
-            <drawOffset>(0.20,-3.2,4.50)</drawOffset>
-            <angleOffset>-60</angleOffset>
-          </east>
-          <south>
-            <drawOffset>(0.3,0,0.10)</drawOffset>            <!-- -Left/+Right, -Back/+Front, -Down/+Up -->
-            <angleOffset>-60</angleOffset>
-          </south>
-          <west>
-            <drawOffset>(-0.10,0.0,0.15)</drawOffset>
-            <angleOffset>45</angleOffset>
-          </west>
-        </weaponDraftedDrawOffsets>
-      </li>
-    </modExtensions>
   </ThingDef>
-
   <DamageDef ParentName="Beam">
     <defName>MegaBeam</defName>
     <label>mega beam</label>
     <defaultDamage>25</defaultDamage>
   </DamageDef>
-
   <ThingDef ParentName="MoteBase">
     <defName>Mote_GraserLaserBeamBase</defName>
     <thingClass>MoteDualAttached</thingClass>
@@ -129,7 +101,6 @@
       <drawSize>(5.5, 1)</drawSize>
     </graphicData>
   </ThingDef>
-
   <AbilityDef>
     <defName>APM_PowerBeam</defName>
     <label>power beam</label>
@@ -159,7 +130,7 @@
       <beamFleckChancePerTick>0.32</beamFleckChancePerTick>
       <beamMaxDeviation>1.5</beamMaxDeviation>
       <beamCurvature>0.6</beamCurvature>
-      <beamMoteDef>Mote_GraserLaserBeamBase</beamMoteDef>
+      <beamMoteDef>APM_Mote_GazerBeam_Base</beamMoteDef>
       <beamEndEffecterDef>GraserBeam_End</beamEndEffecterDef>
       <beamChanceToStartFire>0.85</beamChanceToStartFire>
       <beamChanceToAttachFire>0.85</beamChanceToAttachFire>
@@ -175,5 +146,4 @@
       </beamLineFleckChanceCurve>
     </verbProperties>
   </AbilityDef>
-
 </Defs>
