@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
 	<ThingDef ParentName="BaseMechanoidWalker">
 		<defName>APM_Mech_Satellite</defName>
 		<label>Satellite</label>
@@ -43,6 +42,15 @@
 		<race>
 			<body>APM_Vassal</body>
 			<baseHealthScale>1</baseHealthScale>
+			<hediffGiverSets>
+				<li>
+					<hediffGivers>
+						<li Class="HediffGiver_StartWithHediff">
+							<hediff>APM_Mech_Floating</hediff>
+						</li>
+					</hediffGivers>
+				</li>
+			</hediffGiverSets>
 			<detritusLeavings>
 				<li>
 					<def>ChunkMechanoidSlag</def>
@@ -95,5 +103,4 @@
 		<techHediffsChance>1</techHediffsChance>
 		<techHediffsMoney>9999~9999</techHediffsMoney>
 	</PawnKindDef>
-
 </Defs>

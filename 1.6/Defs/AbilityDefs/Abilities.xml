@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
 	<AbilityDef>
-		<defName>APM_Absorb</defName>
+		<defName>APM_Ability_Absorb</defName>
 		<label>Recycle Biomess</label>
 		<jobDef>CastAbilityOnThingMelee</jobDef>
 		<description>Grind up target corpse, and slowly process them into chem fuel.</description>
@@ -246,43 +245,6 @@
 		</modExtensions>
 	</ThingDef>
 
-	<!-- Siren Lure -->
-	<AbilityDef>
-		<defName>ApexMechanoids_Ability_SirenLure</defName>
-		<label>Aluring Song</label>
-		<description>Sing a aluring song to compel the target pawn to walk towards the caster.</description>
-		<iconPath>UI/Call</iconPath>
-		<cooldownTicksRange>600</cooldownTicksRange>
-		<hostile>true</hostile>
-		<writeCombatLog>true</writeCombatLog>
-		<aiCanUse>true</aiCanUse>
-		<verbProperties>
-			<verbClass>Verb_CastAbility</verbClass>
-			<range>29.9</range>
-			<warmupTime>0.5</warmupTime>
-			<requireLineOfSight>False</requireLineOfSight>
-			<soundCast>Pawn_Cat_Call</soundCast>
-			<targetParams>
-				<canTargetSelf>False</canTargetSelf>
-				<canTargetBuildings>False</canTargetBuildings>
-				<canTargetLocations>False</canTargetLocations>
-				<canTargetAnimals>False</canTargetAnimals>
-			</targetParams>
-		</verbProperties>
-		<statBases>
-			<Ability_Duration>10</Ability_Duration>
-			<Ability_EffectRadius>0.9</Ability_EffectRadius>
-		</statBases>
-		<comps>
-			<li Class="CompProperties_AbilityForceJob">
-				<compClass>CompAbilityEffect_ForceJob</compClass>
-				<jobDef>GotoMindControlled</jobDef>
-				<destination>Caster</destination>
-				<range>0.9</range>
-			</li>
-		</comps>
-	</AbilityDef>
-
 	<AbilityDef>
 		<defName>APM_HookPawn</defName>
 		<label>Grappling Hook</label>
@@ -504,9 +466,6 @@
 		<initialSeverity>1</initialSeverity>
 		<maxSeverity>1</maxSeverity>
 		<hediffClass>HediffWithComps</hediffClass>
-		<li Class="HediffCompProperties_Immunizable">
-			<severityPerDayNotImmune>-4</severityPerDayNotImmune>
-		</li>
 		<stages>
 			<li>
 				<capMods>
@@ -518,7 +477,10 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="HediffCompProperties_DisappearsOnDeath" />
+			<li Class="HediffCompProperties_Immunizable">
+				<severityPerDayNotImmune>-4</severityPerDayNotImmune>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"></li>
 			<li Class="HediffCompProperties_Disappears">
 				<showRemainingTime>True</showRemainingTime>
 			</li>
