@@ -113,6 +113,36 @@
           </parts>
         </li>
         <li>
+          <def>MechanicalShoulder</def>
+          <customLabel>cannon mount</customLabel>
+          <coverage>0.04</coverage>
+          <parts>
+            <li>
+              <def>MechanicalArm</def>
+              <customLabel>cannon arm</customLabel>
+              <coverage>0.85</coverage>
+              <parts>
+                <li>
+                  <def>MechanicalHand</def>
+                  <customLabel>cannon hand</customLabel>
+                  <coverage>0.2</coverage>
+                  <height>Bottom</height>
+                  <parts>
+                    <li>
+                      <def>MechanicalFinger</def>
+                      <customLabel>cannon grip</customLabel>
+                      <coverage>0.5</coverage>
+                      <groups>
+                        <li>RightHand</li>
+                      </groups>
+                    </li>
+                  </parts>
+                </li>
+              </parts>
+            </li>
+          </parts>
+        </li>
+        <li>
           <def>Reactor</def>
           <coverage>0.06</coverage>
           <depth>Inside</depth>
@@ -124,7 +154,7 @@
         </li>
         <li>
           <def>FluidReprocessor</def>
-          <coverage>0.04</coverage>
+          <coverage>0.03</coverage>
           <depth>Inside</depth>
         </li>
       </parts>
