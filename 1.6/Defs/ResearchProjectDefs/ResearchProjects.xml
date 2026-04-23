@@ -12,7 +12,7 @@
 		<researchViewX>8.0</researchViewX>
 		<researchViewY>2.0</researchViewY>
 		<prerequisites>
-			<li>Mechtech</li>
+			<li>BasicMechtech</li>
 		</prerequisites>
 	</ResearchProjectDef>
 
