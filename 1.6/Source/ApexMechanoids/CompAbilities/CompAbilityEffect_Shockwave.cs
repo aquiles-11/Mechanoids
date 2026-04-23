@@ -24,12 +24,11 @@ namespace ApexMechanoids
             IntVec3 center = caster.PositionHeld;
             SpawnBurstVisuals(caster, map, center);
             SpawnEmitter(caster, map, center);
-            DoExplosion(caster, map, center);
-            ApplySecondaryEffects(caster, map, center);
-
-            if (Props.killCaster)
+            bool waveSpawned = SpawnBlastWave(caster, map, center);
+            if (!waveSpawned)
             {
-                caster.Kill(null);
+                ThrowAffectedPawns(caster, map, center);
+                ApplyEmpToMechs(caster, map, center);
             }
         }
 
@@ -51,9 +50,6 @@ namespace ApexMechanoids
                     effecter.Cleanup();
                 }
             }
-
-            FleckMaker.Static(caster.DrawPos, map, FleckDefOf.ExplosionFlash, 4.6f);
-            FleckMaker.ThrowDustPuffThick(caster.DrawPos, map, 3.8f, Color.gray);
 
             if (!Props.castSoundDefName.NullOrEmpty())
             {
@@ -79,41 +75,195 @@ namespace ApexMechanoids
             GenSpawn.Spawn(emitter, center, map);
         }
 
-        private void DoExplosion(Pawn caster, Map map, IntVec3 center)
+        private bool SpawnBlastWave(Pawn caster, Map map, IntVec3 center)
         {
-            DamageDef damageDef = Props.damageDef ?? DamageDefOf.Bomb;
-            GenExplosion.DoExplosion(center, map, Props.radius, damageDef, caster, Props.damageAmount, Props.armorPenetration, null, null, null);
+            if (Props.blastWaveDef == null || !center.InBounds(map))
+            {
+                return false;
+            }
+
+            Mote_ShockwaveBlastWave blastWave = ThingMaker.MakeThing(Props.blastWaveDef) as Mote_ShockwaveBlastWave;
+            if (blastWave == null)
+            {
+                return false;
+            }
+
+            blastWave.Initialize(
+                center.ToVector3Shifted(),
+                Props.blastWaveStartScale,
+                Props.blastWaveEndScale,
+                Props.blastWaveLifetimeTicks,
+                caster,
+                Props.radius,
+                Props.throwFlyerDef,
+                Props.stunTicks,
+                Props.minThrowDistance,
+                Props.maxThrowDistance,
+                Props.empDamageAmount);
+            GenSpawn.Spawn(blastWave, center, map, WipeMode.Vanish);
+            return true;
         }
 
-        private void ApplySecondaryEffects(Pawn caster, Map map, IntVec3 center)
+        private void ThrowAffectedPawns(Pawn caster, Map map, IntVec3 center)
         {
             IReadOnlyList<Pawn> pawns = map.mapPawns.AllPawnsSpawned;
             for (int i = 0; i < pawns.Count; i++)
             {
                 Pawn pawn = pawns[i];
-                if (!ShouldAffectPawn(caster, pawn, center))
+                if (!ShouldThrowPawn(caster, pawn, center))
                 {
                     continue;
                 }
 
-                if (pawn.stances?.stunner != null)
+                IntVec3 destination = FindThrowDestination(pawn, center, map);
+                if (destination == pawn.Position || Props.throwFlyerDef == null || pawn.ParentHolder is PawnFlyer)
                 {
-                    pawn.stances.stunner.StunFor(Props.stunTicks, caster, addBattleLog: false);
+                    StunPawn(pawn, caster);
+                    continue;
                 }
 
-                if (Props.pushDamageDef != null)
+                PawnFlyer_ShockwaveThrown flyer = PawnFlyer.MakeFlyer(Props.throwFlyerDef, pawn, destination, null, null) as PawnFlyer_ShockwaveThrown;
+                if (flyer == null)
                 {
-                    Vector3 angleVec = pawn.DrawPos - caster.DrawPos;
-                    float angle = angleVec.AngleFlat();
-                    DamageInfo pushDamage = new DamageInfo(Props.pushDamageDef, Props.pushDamageAmount, 0f, angle, caster);
-                    pawn.TakeDamage(pushDamage);
+                    StunPawn(pawn, caster);
+                    continue;
                 }
+
+                flyer.Initialize(Props.stunTicks, caster);
+                GenSpawn.Spawn(flyer, pawn.PositionHeld, map, WipeMode.Vanish);
             }
         }
 
-        private bool ShouldAffectPawn(Pawn caster, Pawn pawn, IntVec3 center)
+        private void ApplyEmpToMechs(Pawn caster, Map map, IntVec3 center)
+        {
+            if (Props.empDamageAmount <= 0)
+            {
+                return;
+            }
+
+            IReadOnlyList<Pawn> pawns = map.mapPawns.AllPawnsSpawned;
+            for (int i = 0; i < pawns.Count; i++)
+            {
+                Pawn pawn = pawns[i];
+                if (!ShouldEmpMech(caster, pawn, center))
+                {
+                    continue;
+                }
+
+                DamageInfo empDamage = new DamageInfo(DamageDefOf.EMP, Props.empDamageAmount, 0f, -1f, caster);
+                pawn.TakeDamage(empDamage);
+            }
+        }
+
+        private IntVec3 FindThrowDestination(Pawn pawn, IntVec3 center, Map map)
+        {
+            Vector3 centerPos = center.ToVector3Shifted();
+            Vector3 direction = (pawn.Position.ToVector3Shifted() - centerPos).Yto0();
+            if (direction.sqrMagnitude < 0.001f)
+            {
+                direction = Quaternion.AngleAxis(Rand.Range(0f, 360f), Vector3.up) * Vector3.forward;
+            }
+
+            direction.Normalize();
+
+            float distance = pawn.Position.DistanceTo(center);
+            float closeness = 1f - Mathf.Clamp01(distance / Mathf.Max(Props.radius, 0.1f));
+            float baseThrowDistance = Mathf.Lerp(Props.minThrowDistance, Props.maxThrowDistance, closeness);
+            float bodySizeFactor = 1f / Mathf.Clamp(pawn.BodySize, 0.25f, 8f);
+            int throwDistance = Mathf.Clamp(Mathf.RoundToInt(baseThrowDistance * bodySizeFactor), 1, Mathf.CeilToInt(Props.maxThrowDistance * 2f));
+
+            IntVec3 bestCell = pawn.Position;
+            Vector3 origin = pawn.Position.ToVector3Shifted();
+            for (int step = 1; step <= throwDistance; step++)
+            {
+                IntVec3 cell = (origin + direction * step).ToIntVec3();
+                if (!cell.InBounds(map))
+                {
+                    break;
+                }
+
+                if (CanLandIn(cell, map, pawn))
+                {
+                    bestCell = cell;
+                    continue;
+                }
+
+                if (bestCell != pawn.Position)
+                {
+                    break;
+                }
+            }
+
+            if (bestCell != pawn.Position)
+            {
+                return bestCell;
+            }
+
+            for (int radius = 1; radius <= 2; radius++)
+            {
+                foreach (IntVec3 cell in GenRadial.RadialCellsAround(pawn.Position, radius, true))
+                {
+                    if (cell.InBounds(map) && CanLandIn(cell, map, pawn) && cell.DistanceTo(center) > pawn.Position.DistanceTo(center))
+                    {
+                        return cell;
+                    }
+                }
+            }
+
+            return pawn.Position;
+        }
+
+        private static bool CanLandIn(IntVec3 cell, Map map, Pawn pawn)
+        {
+            if (!cell.Standable(map))
+            {
+                return false;
+            }
+
+            if (cell.GetFirstPawn(map) != null)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private void StunPawn(Pawn pawn, Thing instigator)
+        {
+            if (pawn.stances?.stunner != null)
+            {
+                pawn.stances.stunner.StunFor(Props.stunTicks, instigator, addBattleLog: false);
+            }
+        }
+
+        private bool ShouldThrowPawn(Pawn caster, Pawn pawn, IntVec3 center)
         {
             if (pawn == null || pawn == caster || pawn.Dead || !pawn.Spawned)
+            {
+                return false;
+            }
+
+            if (pawn.RaceProps?.IsMechanoid ?? false)
+            {
+                return false;
+            }
+
+            if (pawn.Position.DistanceTo(center) > Props.radius)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool ShouldEmpMech(Pawn caster, Pawn pawn, IntVec3 center)
+        {
+            if (pawn == null || pawn == caster || pawn.Dead || !pawn.Spawned)
+            {
+                return false;
+            }
+
+            if (!(pawn.RaceProps?.IsMechanoid ?? false))
             {
                 return false;
             }
@@ -136,6 +286,8 @@ namespace ApexMechanoids
 
         public ThingDef emitterDef;
         public ThingDef flashThingDef;
+        public ThingDef blastWaveDef;
+        public ThingDef throwFlyerDef;
         public EffecterDef burstEffecterDef;
         public DamageDef damageDef;
         public DamageDef pushDamageDef;
@@ -146,9 +298,14 @@ namespace ApexMechanoids
         public int pushDamageAmount = 1;
         public int ringIntervalTicks = 2;
         public float visualScale = 1.22f;
+        public float blastWaveStartScale = 0.75f;
+        public float blastWaveEndScale = 10.4f;
+        public int blastWaveLifetimeTicks = 16;
+        public int minThrowDistance = 2;
+        public int maxThrowDistance = 6;
+        public int empDamageAmount = 8;
         public string ringFleckDefName = "PsycastPsychicEffect";
         public string castSoundDefName = "PsycastPsychicPulse";
-        public bool killCaster = true;
     }
 
     public class CompAbility_ShockwaveWarmup : AbilityComp
@@ -176,6 +333,13 @@ namespace ApexMechanoids
                 return;
             }
 
+            bool hasChargeEffecter = Props.chargeEffecterDef != null;
+            bool hasChargeFlecks = !Props.chargeFleckDefName.NullOrEmpty();
+            if (!hasChargeEffecter && !hasChargeFlecks)
+            {
+                return;
+            }
+
             if (chargeEffecter == null && Props.chargeEffecterDef != null)
             {
                 chargeEffecter = Props.chargeEffecterDef.Spawn(caster.PositionHeld, map);
@@ -187,6 +351,11 @@ namespace ApexMechanoids
                 chargeEffecter.offset = caster.DrawPos - caster.PositionHeld.ToVector3Shifted();
                 chargeEffecter.EffectTick(targetInfo, TargetInfo.Invalid);
                 chargeEffecter.ticksLeft--;
+            }
+
+            if (!hasChargeFlecks)
+            {
+                return;
             }
 
             if (ticksUntilNextSpark > 0)

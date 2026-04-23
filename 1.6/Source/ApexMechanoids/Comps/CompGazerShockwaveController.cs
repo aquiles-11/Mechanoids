@@ -1,4 +1,5 @@
 using RimWorld;
+using System.Collections.Generic;
 using Verse;
 
 namespace ApexMechanoids
@@ -6,8 +7,9 @@ namespace ApexMechanoids
     public class CompProperties_GazerShockwaveController : CompProperties
     {
         public AbilityDef shockwaveAbilityDef;
-        public float healthThreshold = 0.2f;
         public int checkIntervalTicks = 30;
+        public float meleeThreatRadius = 2.9f;
+        public int minHostilesToTrigger = 2;
 
         public CompProperties_GazerShockwaveController()
         {
@@ -84,7 +86,39 @@ namespace ApexMechanoids
 
         private bool ShouldAutoCast(Pawn pawn)
         {
-            return pawn.health?.summaryHealth != null && pawn.health.summaryHealth.SummaryHealthPercent <= Props.healthThreshold;
+            if (pawn.MapHeld == null)
+            {
+                return false;
+            }
+
+            int nearbyHostiles = 0;
+            IReadOnlyList<Pawn> pawns = pawn.MapHeld.mapPawns.AllPawnsSpawned;
+            for (int i = 0; i < pawns.Count; i++)
+            {
+                Pawn other = pawns[i];
+                if (other == null || other == pawn || other.Dead || other.Downed || !other.Spawned)
+                {
+                    continue;
+                }
+
+                if (!other.HostileTo(pawn))
+                {
+                    continue;
+                }
+
+                if (other.Position.DistanceTo(pawn.PositionHeld) > Props.meleeThreatRadius)
+                {
+                    continue;
+                }
+
+                nearbyHostiles++;
+                if (nearbyHostiles >= Props.minHostilesToTrigger)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }
