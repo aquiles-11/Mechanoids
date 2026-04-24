@@ -162,7 +162,7 @@
 
 	<!-- "targeting" for pinpoint mech -->
 	<AbilityDef>
-		<defName>ApexMechanoids_Ability_GiveAccuracyHediff</defName>
+		<defName>APM_Ability_GiveAccuracyHediff</defName>
 		<label>Mark Target</label>
 		<description>Mark target and share live location info to allies, make hitting said target eaiser.</description>
 		<iconPath>UI/Targeting</iconPath>
@@ -321,7 +321,7 @@
 		<defName>APM_ShieldCharge</defName>
 		<label>Shield Charge</label>
 		<description>Charge at a pawn, stunning everything hit on the way.</description>
-		<iconPath>Things/Mote/SpeechSymbols/Speech</iconPath>
+		<iconPath>UI/Icons/ShieldCharge</iconPath>
 		<cooldownTicksRange>2500</cooldownTicksRange>
 		<hostile>true</hostile>
 		<writeCombatLog>true</writeCombatLog>
@@ -362,7 +362,7 @@
 		<defName>APM_Bladehopp</defName>
 		<label>Bladehopp</label>
 		<description>Dash to a target followed by a quick attack.</description>
-		<iconPath>Things/Mote/SpeechSymbols/Speech</iconPath>
+		<iconPath>UI/Icons/Bladehopp</iconPath>
 		<cooldownTicksRange>2500</cooldownTicksRange>
 		<hostile>true</hostile>
 		<writeCombatLog>true</writeCombatLog>
@@ -391,7 +391,7 @@
 	<AbilityDef>
 		<defName>APM_BlindingLaser</defName>
 		<label>Blinding Laser</label>
-		<description>Fire a laser at target, effectively binding them for a short time.</description>
+		<description>Fire a laser at target, effectively blinding them for a short time.</description>
 		<iconPath>UI/Icons/Laser</iconPath>
 		<showPsycastEffects>false</showPsycastEffects>
 		<cooldownTicksRange>850</cooldownTicksRange>
@@ -460,7 +460,7 @@
 	<HediffDef>
 		<defName>APM_LaserBlind</defName>
 		<label>blinded by laser</label>
-		<description>vastly reduced sight capacity due to been blinded by laser.</description>
+		<description>Vastly reduced sight capacity due to been blinded by laser.</description>
 		<isBad>false</isBad>
 		<defaultLabelColor>(0.82, 0.6, 0.44)</defaultLabelColor>
 		<initialSeverity>1</initialSeverity>
@@ -488,11 +488,38 @@
 	</HediffDef>
 
 	<AbilityDef>
+		<defName>APM_Starfall</defName>
+		<label>Starfall</label>
+		<description>Overcharge the artillery cannon and unleash 3 rapid volleys at the target location.</description>
+		<iconPath>UI/Icons/Starfall</iconPath>
+		<cooldownTicksRange>18000</cooldownTicksRange>
+		<hostile>true</hostile>
+		<writeCombatLog>true</writeCombatLog>
+		<aiCanUse>true</aiCanUse>
+		<sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+		<verbProperties>
+			<verbClass>ApexMechanoids.Verb_StarfallAbility</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<burstShotCount>3</burstShotCount>
+			<ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+			<forcedMissRadius>8.9</forcedMissRadius>
+			<warmupTime>3</warmupTime>
+			<range>24.9</range>
+			<noiseRadius>4</noiseRadius>
+			<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+			<soundCast>Shot_IncendiaryLauncher</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+			<muzzleFlashScale>14</muzzleFlashScale>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
+
+	<AbilityDef>
 		<defName>APM_DefenceMatrix</defName>
 		<label>Defence Matrix</label>
-		<description>Remotely project a personal defense shield onto a friendly pawn. The shield stops incoming damage, but also prevents shooting out, so this can be useful even
-			when cast
-			on enemies. The tinker will be focused on projecting the shield.</description>
+		<description>Remotely project a personal defense shield onto a friendly pawn. The shield stops incoming damage, but also prevents shooting out, so this can be useful even when cast on enemies. The tinker will be focused on projecting the shield.</description>
 		<jobDef>ShieldMech</jobDef>
 		<targetRequired>true</targetRequired>
 		<canUseAoeToGetTargets>False</canUseAoeToGetTargets>
@@ -524,4 +551,66 @@
 		</verbProperties>
 	</AbilityDef>
 
+	<AbilityDef>
+		<defName>APM_Ability_SteelDiscipline</defName>
+		<label>Steel Discipline</label>
+		<description>In a radius around the Vassal, its allies gain a speed boost and their mental break chance is reduced if organic. The Vassal's commanding presence inspires those nearby with renewed purpose and fortitude.</description>
+		<iconPath>UI/Icons/SteelDiscipline</iconPath>
+		<cooldownTicksRange>9000</cooldownTicksRange><!-- 2.5 hours -->
+		<hostile>false</hostile>
+		<targetRequired>false</targetRequired>
+		<aiCanUse>true</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>1.5</warmupTime>
+			<range>0.1</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetLocations>false</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="ApexMechanoids.CompProperties_AbilitySteelDiscipline">
+				<radius>12</radius>
+				<buffHediff>APM_Hediff_SteelDiscipline</buffHediff>
+				<inspiredThought>APM_Thought_InspiredByDiscipline</inspiredThought>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<AbilityDef>
+		<defName>APM_Ability_ToxicMist</defName>
+		<label>Toxic Mist</label>
+		<description>Similar to a tox pack, the haze releases tox gas around itself, enveloping the surrounding area in a toxic cloud.</description>
+		<iconPath>UI/Icons/ToxicMist</iconPath>
+		<cooldownTicksRange>18000</cooldownTicksRange><!-- 5 hours -->
+		<hostile>true</hostile>
+		<writeCombatLog>true</writeCombatLog>
+		<aiCanUse>true</aiCanUse>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>1.5</warmupTime>
+			<range>0.48</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="ApexMechanoids.CompProperties_AbilitySpawnToxGas">
+				<radius>5</radius>
+				<gasAmount>1</gasAmount>
+			</li>
+		</comps>
+	</AbilityDef>
 </Defs>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
 	<ThingDef Name="APM_Mech_Frostivus" ParentName="BaseMechanoidWalker">
 		<defName>APM_Mech_Frostivus</defName>
 		<label>Frostivus</label>
@@ -132,7 +131,7 @@
 	<AbilityDef>
 		<defName>APM_Ability_CryptoSwallow</defName>
 		<label>Crypto Swallow</label>
-		<description>Engulfs a living pawn or corpse, sealing it within an internal cryo-chamber. Preserves the target in suspended animation — halting decay and biological processes until released.</description>
+		<description>Engulfs a living pawn or corpse, sealing it within an internal cryo-chamber. Preserves the target in suspended animation - halting decay and biological processes until released.</description>
 		<iconPath>UI/Cryptoswallow</iconPath>
 		<cooldownTicksRange>3600~3600</cooldownTicksRange>
 		<hostile>true</hostile>
@@ -160,7 +159,7 @@
 			<Ability_EffectRadius>0</Ability_EffectRadius>
 		</statBases>
 		<comps>
-			<!--TODO: Link CryptoSwallow C# logic here-->
+			<li Class="ApexMechanoids.CompProperties_CryptoSwallow"></li>
 		</comps>
 	</AbilityDef>
 </Defs>

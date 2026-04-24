@@ -28,6 +28,7 @@ namespace ApexMechanoids
 
         public static HediffDef RemoteRepairerImplant;  //from Biotech
         public static HediffDef RemoteShielderImplant;  //from Biotech
+        public static HediffDef APM_Hediff_Devoured;
         public static SoundDef ShieldMech_Complete;     //from Biotech
         public static SoundDef ShieldMech_Start;        //from Biotech
 
