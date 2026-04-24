@@ -14,5 +14,6 @@
   <APM_FullHealth>This mechanoid is already at full health.</APM_FullHealth>
   <APM_CommandCancelRepair>Cancel repair</APM_CommandCancelRepair>
   <APM_CommandCancelRepairDesc>Stop repairing and eject the mechanoid.</APM_CommandCancelRepairDesc>
+  <APM_UnityTooltip_Current>Current stats (with unity uplink):</APM_UnityTooltip_Current>
 
 </LanguageData>
