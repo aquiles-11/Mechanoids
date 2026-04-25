@@ -52,9 +52,9 @@ namespace ApexMechanoids
 
     public class CompProperties_CryptoSwallow : CompProperties_AbilityEffect
     {
-        public CompProperties_CryptoSwallow() : base()
+        public CompProperties_CryptoSwallow()
         {
-            this.compClass = typeof(CompAbilityEffect_CryptoSwallow);
+            compClass = typeof(CompAbilityEffect_CryptoSwallow);
         }
     }
 }

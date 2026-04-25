@@ -22,7 +22,7 @@
 		<description>An enhanced pulse-charged rapid-fire blaster for extreme suppressive fire. Heavy cooling allows long, deadly bursts and it is built with additional interfacing technology. This tech allows certain mechanoid wielders to continuously increase this blaster's output, to potentially disastrous effects for both the user and those in front of the barrel.</description>
 		<techLevel>Spacer</techLevel>
 		<graphicData>
-			<texPath>Things/Item/Equipment/WeaponRanged/Maul</texPath>
+			<texPath>Things/Item/Equipment/WeaponRanged/MaulHeavyChargeSuppressor</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<soundInteract>Interact_ChargeLance</soundInteract>

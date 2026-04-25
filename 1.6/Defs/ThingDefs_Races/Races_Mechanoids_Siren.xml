@@ -93,6 +93,10 @@
 		</lifeStages>
 		<techHediffsChance>1</techHediffsChance>
 		<techHediffsMoney>9999~9999</techHediffsMoney>
+		<weaponMoney>99999~99999</weaponMoney>
+		<weaponTags>
+			<li>APM_WeaponSirenChargeEmitter</li>
+		</weaponTags>
 		<abilities>
 			<li>APM_Ability_SirenSong</li>
 			<li>APM_Ability_SirenLure</li>
