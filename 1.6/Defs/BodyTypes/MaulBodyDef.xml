@@ -115,7 +115,7 @@
         <li>
           <def>MechanicalLeg</def>
           <customLabel>left leg</customLabel>
-          <coverage>0.22</coverage>
+          <coverage>0.17</coverage>
           <height>Bottom</height>
           <parts>
             <li>
@@ -128,7 +128,7 @@
         <li>
           <def>MechanicalLeg</def>
           <customLabel>right leg</customLabel>
-          <coverage>0.22</coverage>
+          <coverage>0.17</coverage>
           <height>Bottom</height>
           <parts>
             <li>
