@@ -145,7 +145,6 @@
 		</abilities>
 	</PawnKindDef>
 
-
 	<AbilityDef>
 		<defName>SeveringEdge</defName>
 		<label>severing edge</label>
