@@ -17,11 +17,7 @@ namespace ApexMechanoids
             var valid = base.Valid(target, throwMessages);
             if (valid)
             {
-                if (target.TryGetPawn(out var targetPawn) && parent.pawn.HostileTo(targetPawn))
-                {
-                    return false;
-                }
-                else if (target.Thing is Corpse corpse && (corpse.InnerPawn?.RaceProps.IsFlesh ?? false))
+                if (target.Thing is Corpse corpse && (corpse.InnerPawn?.RaceProps.IsFlesh ?? false))
                 {
                     var comp = corpse.TryGetComp<CompRottable>();
                     return comp != null && comp.Stage != RotStage.Dessicated;
