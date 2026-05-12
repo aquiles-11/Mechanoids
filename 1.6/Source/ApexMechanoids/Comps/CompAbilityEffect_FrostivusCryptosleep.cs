@@ -17,7 +17,7 @@ namespace ApexMechanoids
             {
                 return false;
             }
-            if (target.Thing is Pawn pawn && pawn.Faction == parent.pawn.Faction)
+            if (target.Thing is Pawn pawn && pawn.Faction == parent.pawn.Faction && !parent.pawn.HostileTo(pawn))
             {
                 if (MassUtility.CountToPickUpUntilOverEncumbered(parent.pawn, pawn) > 0)
                 {
