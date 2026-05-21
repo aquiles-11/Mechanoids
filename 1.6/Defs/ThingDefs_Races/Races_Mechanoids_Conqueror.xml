@@ -213,6 +213,8 @@
 		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 		<canUseAoeToGetTargets>true</canUseAoeToGetTargets>
 		<showCastingProgressBar>true</showCastingProgressBar>
+		<warmupEffecter>APM_UltitmateSacrifice</warmupEffecter>
+		<warmupMote>APM_Mote_UltimateSacrifice_Wave</warmupMote>
 		<statBases>
 			<Ability_EffectRadius>12</Ability_EffectRadius>
 			<Ability_Duration>150</Ability_Duration>
