@@ -221,7 +221,7 @@
 		</statBases>
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
-			<warmupTime>1</warmupTime>
+			<warmupTime>5</warmupTime>
 			<range>12.9</range>
 			<drawAimPie>false</drawAimPie>
 			<targetParams>
