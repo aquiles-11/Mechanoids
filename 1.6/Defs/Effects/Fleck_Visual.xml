@@ -55,7 +55,7 @@
 		<fadeInTime>0.50</fadeInTime>
 		<solidTime>3</solidTime>
 		<fadeOutTime>1.2</fadeOutTime>
-		<growthRate>0.04</growthRate>
+		<growthRate>0.02</growthRate>
 	</FleckDef>
 	
 	<FleckDef ParentName="FleckBase_RandomGraphic_Thrown">

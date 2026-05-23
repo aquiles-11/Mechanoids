@@ -230,8 +230,8 @@
 		<graphicData>
 			<graphicClass>Graphic_Mote</graphicClass>
 			<texPath>Things/Mote/UltimateSacrifice/LightPillar</texPath>
-			<drawSize>2.40</drawSize>
-			<drawOffset>(0, 0, 0.9)</drawOffset>
+			<drawSize>(1, 2.40)</drawSize>
+			<drawOffset>(0, 1.5, 7.7)</drawOffset>
 			<color>(250, 147, 19)</color>
 		</graphicData>
 	</ThingDef>
