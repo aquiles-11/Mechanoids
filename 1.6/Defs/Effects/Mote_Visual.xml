@@ -208,7 +208,7 @@
 			<fadeOutUnmaintained>True</fadeOutUnmaintained>
 		</mote>
 		<graphicData>
-			<graphicClass>Graphic_Single</graphicClass>
+			<graphicClass>Graphic_Mote</graphicClass>
 			<texPath>Things/Mote/UltimateSacrifice/EnergyWave</texPath>
 			<drawSize>2.40</drawSize>
 			<color>(250, 147, 19)</color>
@@ -228,7 +228,7 @@
 			<attachedDrawOffset>(0, 0, 0.8)</attachedDrawOffset>
 		</mote>
 		<graphicData>
-			<graphicClass>Graphic_Single</graphicClass>
+			<graphicClass>Graphic_Mote</graphicClass>
 			<texPath>Things/Mote/UltimateSacrifice/LightPillar</texPath>
 			<drawSize>2.40</drawSize>
 			<drawOffset>(0, 0, 0.9)</drawOffset>
