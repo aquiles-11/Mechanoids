@@ -213,6 +213,7 @@
 		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 		<canUseAoeToGetTargets>true</canUseAoeToGetTargets>
 		<showCastingProgressBar>true</showCastingProgressBar>
+		<warmupMote>APM_Mote_UltimateSacrifice_Pilar</warmupMote>
 		<warmupEffecter>APM_UltitmateSacrifice</warmupEffecter>
 		<statBases>
 			<Ability_EffectRadius>12</Ability_EffectRadius>
@@ -240,9 +241,6 @@
 			<li Class="ApexMechanoids.CompProperties_AbilityWarmupMote">
 				<moteDef>APM_Mote_UltimateSacrifice_Wave</moteDef>
 				<rotation>3</rotation>
-			</li>
-			<li Class="ApexMechanoids.CompProperties_AbilityWarmupMote">
-				<moteDef>APM_Mote_UltimateSacrifice_Pilar</moteDef>
 			</li>
 		</comps>
 	</AbilityDef>
