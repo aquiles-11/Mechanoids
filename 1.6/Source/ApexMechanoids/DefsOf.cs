@@ -30,6 +30,9 @@ namespace ApexMechanoids
         public static HediffDef RemoteShielderImplant;  //from Biotech
         public static SoundDef ShieldMech_Complete;     //from Biotech
         public static SoundDef ShieldMech_Start;        //from Biotech
+        public static SoundDef APM_DuelWin;
+        public static SoundDef APM_DuelLose;
+        public static SoundDef APM_DuelStarted;
 
 
 
