@@ -74,9 +74,9 @@ namespace ApexMechanoids
             {
                 ApexDefsOf.APM_DuelLose.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map));
             }
-            else
+            else if (pawn == duelStarter)
             {
-                //ApexDefsOf.APM_DuelDraw.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map));
+                ApexDefsOf.APM_DuelLose.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map));
             }
         }
 
