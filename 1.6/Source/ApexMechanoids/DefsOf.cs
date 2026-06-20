@@ -9,6 +9,7 @@ namespace ApexMechanoids
     {
 		public static ThingDef APM_Mech_Tinker;
         public static ThingDef APM_Mech_Frostivus;
+        public static EffecterDef APM_DuelStart;
         public static HediffDef APM_Hediff_TerminusOverdrive;
         public static BodyPartGroupDef APM_LeftAegisShield;
         public static BodyPartGroupDef APM_RightAegisShield;

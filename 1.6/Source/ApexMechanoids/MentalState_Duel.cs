@@ -28,7 +28,7 @@ namespace ApexMechanoids
             else
             {
                 this.duelStarter = this.pawn;
-                ApexDefsOf.APM_DuelStarted.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map));
+                ApexDefsOf.APM_DuelStart.Spawn(Vector3.Lerp(pawn.DrawPos, causedByPawn.DrawPos, 0.5f).ToIntVec3(), pawn.Map).Cleanup();
             }
             pawn.health.AddHediff(ApexDefsOf.APM_InDuel);
         }
