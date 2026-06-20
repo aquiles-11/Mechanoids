@@ -9,7 +9,6 @@ namespace ApexMechanoids
     {
 		public static ThingDef APM_Mech_Tinker;
         public static ThingDef APM_Mech_Frostivus;
-        public static EffecterDef APM_DuelStart;
         public static HediffDef APM_Hediff_TerminusOverdrive;
         public static BodyPartGroupDef APM_LeftAegisShield;
         public static BodyPartGroupDef APM_RightAegisShield;
@@ -31,15 +30,19 @@ namespace ApexMechanoids
         public static HediffDef RemoteShielderImplant;  //from Biotech
         public static SoundDef ShieldMech_Complete;     //from Biotech
         public static SoundDef ShieldMech_Start;        //from Biotech
-        public static SoundDef APM_DuelWin;
-        public static SoundDef APM_DuelLose;
-        public static SoundDef APM_DuelStarted;
-
 
 
         static ApexDefsOf()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(ApexDefsOf));
         }
+    }
+    [DefOf]
+    public static class ApexEffecterDefsOf
+    {
+        public static EffecterDef APM_DuelStart;
+        public static EffecterDef APM_DuelWin;
+        public static EffecterDef APM_DuelDraw;
+        public static EffecterDef APM_DuelLose;
     }
 }
