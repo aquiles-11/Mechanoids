@@ -202,7 +202,8 @@
 		<altitudeLayer>MoteOverhead</altitudeLayer>
 		<drawOffscreen>true</drawOffscreen>
 		<mote>
-			<solidTime>1.5</solidTime>
+			<solidTime>3.5</solidTime>
+			<fadeOutTime>1.5</fadeOutTime>
 		</mote>
 		<graphicData>
 			<graphicClass>Graphic_Mote</graphicClass>
@@ -219,7 +220,8 @@
 		<altitudeLayer>MoteOverhead</altitudeLayer>
 		<drawOffscreen>true</drawOffscreen>
 		<mote>
-			<solidTime>1.5</solidTime>
+			<solidTime>3.5</solidTime>
+			<fadeOutTime>1.5</fadeOutTime>
 		</mote>
 		<graphicData>
 			<graphicClass>Graphic_Mote</graphicClass>
@@ -236,7 +238,8 @@
 		<altitudeLayer>MoteOverhead</altitudeLayer>
 		<drawOffscreen>true</drawOffscreen>
 		<mote>
-			<solidTime>1.5</solidTime>
+			<solidTime>3.5</solidTime>
+			<fadeOutTime>1.5</fadeOutTime>
 		</mote>
 		<graphicData>
 			<graphicClass>Graphic_Mote</graphicClass>
