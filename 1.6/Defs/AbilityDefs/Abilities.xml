@@ -4,7 +4,7 @@
 	<AbilityDef>
 		<defName>APM_Absorb</defName>
 		<label>Recycle Biomess</label>
-		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<jobDef>APM_Absorb</jobDef>
 		<description>Grind up target corpse, and slowly process them into chem fuel.</description>
 		<iconPath>UI/Absorb</iconPath>
 		<cooldownTicksRange>90000</cooldownTicksRange><!-- 1.5 days -->
@@ -15,7 +15,7 @@
 		<disableGizmoWhileUndrafted>True</disableGizmoWhileUndrafted>
 		<verbProperties>
 			<verbClass>Verb_CastAbilityTouch</verbClass>
-			<warmupTime>1</warmupTime>
+			<warmupTime>5</warmupTime>
 			<drawAimPie>false</drawAimPie>
 			<range>-1</range>
 			<targetParams>
