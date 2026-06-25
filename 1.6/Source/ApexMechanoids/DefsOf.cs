@@ -32,10 +32,17 @@ namespace ApexMechanoids
         public static SoundDef ShieldMech_Start;        //from Biotech
 
 
-
         static ApexDefsOf()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(ApexDefsOf));
         }
+    }
+    [DefOf]
+    public static class ApexEffecterDefsOf
+    {
+        public static EffecterDef APM_DuelStart;
+        public static EffecterDef APM_DuelWin;
+        public static EffecterDef APM_DuelDraw;
+        public static EffecterDef APM_DuelLose;
     }
 }
