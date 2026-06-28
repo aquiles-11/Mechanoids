@@ -207,15 +207,31 @@
 			</li>
 		</stages>
 		<renderNodeProperties>
-			<li>
+			<li> <!--For pawns with head render node-->
 				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
 				<texPath>Effects/PressTheAttack/Halo</texPath>
 				<parentTagDef>Head</parentTagDef>
+				<pawnType>HumanlikeOnly</pawnType>
 				<drawData>
 					<scale>0.7</scale>
+					<scaleOffsetByBodySize>true</scaleOffsetByBodySize>
 					<defaultData>
 						<layer>92</layer>
 						<offset>(0,0,0.5)</offset>
+					</defaultData>
+				</drawData>
+			</li>
+			<li> <!--For pawns whos render tree has no head node, e.g. mechs-->
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<texPath>Effects/PressTheAttack/Halo</texPath>
+				<!--<parentTagDef>Head</parentTagDef>-->
+				<pawnType>NonHumanlikeOnly</pawnType>
+				<drawData>
+					<scale>0.7</scale>
+					<scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+					<defaultData>
+						<layer>92</layer>
+						<offset>(0,0,0.9)</offset>
 					</defaultData>
 				</drawData>
 			</li>
@@ -224,6 +240,7 @@
 				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
 				<texPath>Effects/PressTheAttack/Wings</texPath>
 				<parentTagDef>Body</parentTagDef>
+				<pawnType>Any</pawnType>
 				<texPaths>
 					<li>Effects/PressTheAttack/Wings/WingsA</li>
 					<li>Effects/PressTheAttack/Wings/WingsB</li>
