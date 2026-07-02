@@ -10,7 +10,7 @@
 		<stages>
 			<li>
 				<statFactors>
-					<IncomingDamageFactor>3</IncomingDamageFactor>
+					<IncomingDamageFactor>1.75</IncomingDamageFactor>
 					<MeleeCooldownFactor>0.7</MeleeCooldownFactor>
 				</statFactors>
 			</li>
