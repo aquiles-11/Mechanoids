@@ -36,6 +36,12 @@
 			<renderTree>APM_RenderTree_Ingestor</renderTree>
 			<baseHealthScale>3.0</baseHealthScale>
 		</race>
+		<modExtensions>
+			<li Class="ApexMechanoids.DefModExtension_AnimationOnAttack">
+				<animation>APM_EatingIngestorOneLoop</animation>
+				<maneuver>Bite</maneuver>
+			</li>
+		</modExtensions>
 	</ThingDef>
 
 	<PawnKindDef ParentName="BaseMechanoidKind">
