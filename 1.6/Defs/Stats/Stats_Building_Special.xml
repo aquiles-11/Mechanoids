@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <StatDef>
-    <defName>APM_GestationFactor</defName>
+    <defName>MechGestationSpeedFactor</defName>	<!-- without prefix 'APM_' so its easier for other mods to make the same thing and not collide -->
     <label>mech gestation speed factor</label>
     <description>Mech gestation speed is multiplied by this value.</description>
     <category>Building</category>

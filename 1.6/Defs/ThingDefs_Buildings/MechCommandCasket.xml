@@ -5,71 +5,109 @@
     <defName>APM_MechCommandCasket</defName>
     <label>mech command casket</label>
     <description>The mech command casket is a fusion of mechlink and cryptosleep casket technology, allowing the enclosed user to control their mechanoids from the relative safety of the casket. The signal boosting capabilities of this machine allow the mechanitor to control their mechs even when world tiles away from them.</description>
-    <tickerType>Normal</tickerType>
-	<drawerType>MapMeshAndRealTime</drawerType>
+	<thingClass>ApexMechanoids.Building_MechCommandCasket</thingClass>
+	<containedPawnsSelectable>true</containedPawnsSelectable>
+	<tickerType>Normal</tickerType>
     <graphicData>
       <texPath>Things/Building/MechCommandCasket/MechCommandCasket</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(3,2)</drawSize>
-      <drawOffset>(0,0,0)</drawOffset>
+	  <shadowData>
+        <volume>(2.9,0.6,1.9)</volume>
+      </shadowData>
+	  <drawSize>(3,2)</drawSize>
     </graphicData>
-	<thingCategories>
-      <li>BuildingsMisc</li>
-    </thingCategories>
+	<drawerType>MapMeshAndRealTime</drawerType>
+	<drawGUIOverlay>true</drawGUIOverlay>
+	<defaultPlacingRot>South</defaultPlacingRot>
+	<researchPrerequisites>
+      <li>MicroelectronicsBasics</li>
+    </researchPrerequisites>
 	<altitudeLayer>Building</altitudeLayer>
 	<passability>PassThroughOnly</passability>
-	<minifiedDef>MinifiedThing</minifiedDef>	
+    <pathCost>42</pathCost>
+    <blockWind>true</blockWind>
+    <fillPercent>0.5</fillPercent>
     <canOverlapZones>false</canOverlapZones>
-	<pathCost>42</pathCost>
-	<blockWind>true</blockWind>
-	<fillPercent>0.5</fillPercent>
-	<building>
-      <paintable>false</paintable>
-      <destroySound>BuildingDestroyed_Metal_Big</destroySound>
-      <buildingTags>
-        <li>Biotech</li>
-      </buildingTags>
-      <ai_chillDestination>false</ai_chillDestination>
-    </building>
-	<designationCategory>Biotech</designationCategory>
 	<statBases>
-		<MaxHitPoints>250</MaxHitPoints>
-		<WorkToBuild>2200</WorkToBuild>
-		<Mass>20</Mass>
-		<Flammability>0.6</Flammability>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>28000</WorkToBuild>
+      <Mass>50</Mass>
+      <Flammability>0.5</Flammability>
+      <BiosculpterPodSpeedFactor>1</BiosculpterPodSpeedFactor>
+      <Beauty>-5</Beauty>
     </statBases>
 	<size>(3,2)</size>
-    <rotatable>true</rotatable>
-	<defaultPlacingRot>South</defaultPlacingRot>
     <interactionCellOffset>(0,0,2)</interactionCellOffset>
-	<hasInteractionCell>true</hasInteractionCell>
-	<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <hasInteractionCell>true</hasInteractionCell>
     <costList>
       <Steel>120</Steel>
       <ComponentIndustrial>4</ComponentIndustrial>
     </costList>
-    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
-    <researchPrerequisites>
-      <li>MicroelectronicsBasics</li>
-    </researchPrerequisites>
+	<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+	<building>
+		<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+      <ai_chillDestination>false</ai_chillDestination>
+      <haulToContainerDuration>120</haulToContainerDuration>
+      <workTableRoomRole>Laboratory</workTableRoomRole>
+      <buildingTags>
+        <li>Biotech</li>
+      </buildingTags>
+      <fixedStorageSettings>
+        <filter>
+          <categories>
+            <li>Foods</li>
+          </categories>
+          <specialFiltersToDisallow>
+            <li>AllowPlantFood</li>
+          </specialFiltersToDisallow>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <filter>
+          <categories>
+            <li>Foods</li>
+          </categories>
+          <disallowedCategories>
+            <li>EggsFertilized</li>
+          </disallowedCategories>
+          <disallowedThingDefs>
+            <li>InsectJelly</li>
+            <li>MealLavish</li>
+            <li>MealLavish_Veg</li>
+            <li>MealLavish_Meat</li>
+            <li>HemogenPack</li>
+            <li>Chocolate</li>
+          </disallowedThingDefs>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+	<inspectorTabs>
+      <li>ITab_BiosculpterNutritionStorage</li>
+    </inspectorTabs>
+	<resourcesFractionWhenDeconstructed>0.25</resourcesFractionWhenDeconstructed>
+    <designationCategory>Biotech</designationCategory>
+    <uiOrder>2500</uiOrder>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <rotatable>true</rotatable>
+	<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerTrader</compClass>
         <shortCircuitInRain>true</shortCircuitInRain>
-        <basePowerConsumption>200</basePowerConsumption>
+        <basePowerConsumption>600</basePowerConsumption>
+		<idlePowerDraw>80</idlePowerDraw>
       </li>
       <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_Breakdownable"/>
-	  <li Class="ApexMechanoids.CompProperties_RemoteControlUplink"/>
-	  <li Class="ApexMechanoids.CompProperties_RemoteMechCasketAbilities">
-	  
-	  </li>
+	  <li Class="ApexMechanoids.CompProperties_RemoteMechCasketAbilities"/>
     </comps>
 	<placeWorkers>
       <li>PlaceWorker_PreventInteractionSpotOverlap</li>
     </placeWorkers>
   </ThingDef>
-
-
 
 </Defs>
