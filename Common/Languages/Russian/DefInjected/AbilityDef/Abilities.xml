@@ -1,11 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
- <APM_Absorb.label>Поглотить</APM_Absorb.label>
-  <APM_Absorb.description>ЗАГОЛОВОК</APM_Absorb.description>
+  <APM_Absorb.label>Переработать биомассу</APM_Absorb.label>
+  <APM_Absorb.description>Перемалывает свежий органический труп или съедобный материал и медленно перерабатывает его в химтопливо.</APM_Absorb.description>
 
   <APM_SwitchToPowerPlantMode.label>Режим электростанции</APM_SwitchToPowerPlantMode.label>
   <APM_SwitchToPowerPlantMode.description>...</APM_SwitchToPowerPlantMode.description>
 
+  <APM_BlindingLaser.label>Ослепляющий лазер</APM_BlindingLaser.label>
+  <APM_BlindingLaser.description>Выстрелить лазером по цели, резко снижая её зрение на короткое время.</APM_BlindingLaser.description>
+
+  <APM_DefenceMatrix.label>Защитная матрица</APM_DefenceMatrix.label>
+  <APM_DefenceMatrix.description>Создать персональный защитный щит на пешке своей фракции. Щит блокирует входящий урон и не даёт цели стрелять наружу.</APM_DefenceMatrix.description>
 
 </LanguageData>

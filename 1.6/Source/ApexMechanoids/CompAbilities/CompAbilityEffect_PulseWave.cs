@@ -2,10 +2,103 @@ using RimWorld;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
+using Verse.AI;
 using Verse.Sound;
 
 namespace ApexMechanoids
 {
+    public class Ability_PulseWave : Ability
+    {
+        public Ability_PulseWave()
+        {
+        }
+
+        public Ability_PulseWave(Pawn pawn)
+            : base(pawn)
+        {
+        }
+
+        public Ability_PulseWave(Pawn pawn, AbilityDef def)
+            : base(pawn, def)
+        {
+        }
+
+        public Ability_PulseWave(Pawn pawn, Precept sourcePrecept, AbilityDef def)
+            : base(pawn, sourcePrecept, def)
+        {
+        }
+
+        public override bool CanApplyOn(LocalTargetInfo target)
+        {
+            return PulseWaveUtility.HasHostileAffectedPawnInRadius(pawn, PulseWaveUtility.GetProps(def));
+        }
+
+        public override Job GetJob(LocalTargetInfo target, LocalTargetInfo destination)
+        {
+            LocalTargetInfo selfTarget = pawn != null ? new LocalTargetInfo(pawn.Position) : target;
+            return base.GetJob(selfTarget, selfTarget);
+        }
+    }
+
+    public class Verb_CastPulseWave : Verb_CastAbility
+    {
+        public override bool TryStartCastOn(LocalTargetInfo castTarg, LocalTargetInfo destTarg, bool surpriseAttack = false, bool canHitNonTargetPawns = true, bool preventFriendlyFire = false, bool nonInterruptingSelfCast = false)
+        {
+            if (CasterIsPawn && !PulseWaveUtility.HasHostileAffectedPawnInRadius(CasterPawn, PulseWaveUtility.GetProps(ability?.def)))
+            {
+                return false;
+            }
+
+            if (CasterIsPawn)
+            {
+                LocalTargetInfo selfTarget = new LocalTargetInfo(CasterPawn.Position);
+                Job currentJob = CasterPawn.CurJob;
+                if (currentJob?.ability == ability)
+                {
+                    currentJob.targetA = selfTarget;
+                    currentJob.targetB = selfTarget;
+                }
+
+                return base.TryStartCastOn(selfTarget, selfTarget, surpriseAttack, canHitNonTargetPawns, preventFriendlyFire, nonInterruptingSelfCast);
+            }
+
+            return base.TryStartCastOn(castTarg, destTarg, surpriseAttack, canHitNonTargetPawns, preventFriendlyFire, nonInterruptingSelfCast);
+        }
+
+        public override bool CanHitTarget(LocalTargetInfo targ)
+        {
+            if (IsSelfCenteredTarget(targ))
+            {
+                return true;
+            }
+
+            return base.CanHitTarget(targ);
+        }
+
+        public override bool CanHitTargetFrom(IntVec3 root, LocalTargetInfo targ)
+        {
+            if (IsSelfCenteredTarget(targ))
+            {
+                return true;
+            }
+
+            return base.CanHitTargetFrom(root, targ);
+        }
+
+        public override void WarmupComplete()
+        {
+            base.WarmupComplete();
+            PulseWaveUtility.TryApply(CasterPawn, PulseWaveUtility.GetProps(ability?.def));
+        }
+
+        private bool IsSelfCenteredTarget(LocalTargetInfo target)
+        {
+            return CasterIsPawn
+                && target.IsValid
+                && (target.Cell == CasterPawn.Position || target.Thing == CasterPawn);
+        }
+    }
+
     public class CompAbilityEffect_PulseWave : CompAbilityEffect
     {
         public new CompProperties_PulseWave Props => (CompProperties_PulseWave)props;
@@ -13,40 +106,153 @@ namespace ApexMechanoids
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
         {
             base.Apply(target, dest);
-
-            Pawn caster = parent.pawn;
-            Map map = caster?.MapHeld;
-            if (caster == null || map == null || !caster.Spawned)
-            {
-                return;
-            }
-
-            SpawnCasterFlash(caster, map);
-
-            Thing thing = ThingMaker.MakeThing(Props.emitterDef);
-            Mote_PulseWaveEmitter emitter = thing as Mote_PulseWaveEmitter;
-            if (emitter != null)
-            {
-                emitter.Initialize(caster, Props);
-                GenSpawn.Spawn(emitter, caster.PositionHeld, map);
-            }
-
-            SoundDef castSound = DefDatabase<SoundDef>.GetNamedSilentFail(Props.castSoundDefName);
-            if (castSound != null)
-            {
-                castSound.PlayOneShot(new TargetInfo(caster.PositionHeld, map));
-            }
+            PulseWaveUtility.TryApply(parent.pawn, Props);
         }
 
-        private void SpawnCasterFlash(Pawn caster, Map map)
+        public override bool CanApplyOn(LocalTargetInfo target, LocalTargetInfo dest)
         {
-            if (Props.blindFlashThingDef == null || caster == null || map == null || !caster.PositionHeld.InBounds(map))
+            if (target.Pawn != null && !base.CanApplyOn(target, dest))
+            {
+                return false;
+            }
+
+            return PulseWaveUtility.HasHostileAffectedPawnInRadius(parent?.pawn, Props);
+        }
+
+        public override bool AICanTargetNow(LocalTargetInfo target)
+        {
+            return PulseWaveUtility.HasHostileAffectedPawnInRadius(parent?.pawn, Props);
+        }
+    }
+
+    internal static class PulseWaveUtility
+    {
+        private static int lastCasterThingId = -1;
+        private static int lastApplyTick = -1;
+
+        public static CompProperties_PulseWave GetProps(AbilityDef abilityDef)
+        {
+            if (abilityDef?.comps == null)
+            {
+                return null;
+            }
+
+            for (int i = 0; i < abilityDef.comps.Count; i++)
+            {
+                if (abilityDef.comps[i] is CompProperties_PulseWave pulseProps)
+                {
+                    return pulseProps;
+                }
+            }
+
+            return null;
+        }
+
+        public static void TryApply(Pawn caster, CompProperties_PulseWave props)
+        {
+            Map map = caster?.MapHeld;
+            if (caster == null || props == null || map == null || !caster.Spawned)
             {
                 return;
             }
 
-            Thing flashThing = ThingMaker.MakeThing(Props.blindFlashThingDef);
+            int currentTick = Find.TickManager.TicksGame;
+            if (lastApplyTick == currentTick && lastCasterThingId == caster.thingIDNumber)
+            {
+                return;
+            }
+
+            lastApplyTick = currentTick;
+            lastCasterThingId = caster.thingIDNumber;
+
+            SpawnCasterFlash(caster, map, props);
+            SpawnEmitter(caster, map, props);
+            PlayExplicitCastSound(caster, map, props);
+        }
+
+        public static bool HasHostileAffectedPawnInRadius(Pawn caster, CompProperties_PulseWave props)
+        {
+            Map map = caster?.MapHeld;
+            if (caster == null || props == null || map == null || caster.Dead || caster.Downed || !caster.Spawned || !caster.Awake())
+            {
+                return false;
+            }
+
+            float radius = props.radius;
+            IReadOnlyList<Pawn> pawns = map.mapPawns.AllPawnsSpawned;
+            for (int i = 0; i < pawns.Count; i++)
+            {
+                Pawn pawn = pawns[i];
+                if (IsValidHostileAffectedPawn(caster, pawn) && pawn.Position.DistanceTo(caster.Position) <= radius)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private static bool IsValidHostileAffectedPawn(Pawn caster, Pawn pawn)
+        {
+            return IsAffectedPawn(caster, pawn)
+                && !pawn.Downed
+                && !(pawn.ParentHolder is PawnFlyer)
+                && !pawn.IsPsychologicallyInvisible()
+                && pawn.HostileTo(caster);
+        }
+
+        public static bool IsAffectedPawn(Pawn caster, Pawn pawn)
+        {
+            if (caster == null || pawn == null || pawn == caster || pawn.Dead || !pawn.Spawned || pawn.MapHeld != caster.MapHeld)
+            {
+                return false;
+            }
+
+            if (!(pawn.RaceProps?.IsFlesh ?? false))
+            {
+                return false;
+            }
+
+            return pawn.Faction != Faction.OfMechanoids;
+        }
+
+        private static void SpawnCasterFlash(Pawn caster, Map map, CompProperties_PulseWave props)
+        {
+            if (props.blindFlashThingDef == null || !caster.PositionHeld.InBounds(map))
+            {
+                return;
+            }
+
+            Thing flashThing = ThingMaker.MakeThing(props.blindFlashThingDef);
             GenSpawn.Spawn(flashThing, caster.PositionHeld, map, WipeMode.Vanish);
+        }
+
+        private static void SpawnEmitter(Pawn caster, Map map, CompProperties_PulseWave props)
+        {
+            if (props.emitterDef == null)
+            {
+                return;
+            }
+
+            Mote_PulseWaveEmitter emitter = ThingMaker.MakeThing(props.emitterDef) as Mote_PulseWaveEmitter;
+            if (emitter == null)
+            {
+                return;
+            }
+
+            emitter.Initialize(caster, props);
+            GenSpawn.Spawn(emitter, caster.PositionHeld, map);
+        }
+
+        private static void PlayExplicitCastSound(Pawn caster, Map map, CompProperties_PulseWave props)
+        {
+            if (props.castSoundDefName.NullOrEmpty())
+            {
+                return;
+            }
+
+            SoundDef castSound = DefDatabase<SoundDef>.GetNamedSilentFail(props.castSoundDefName);
+            castSound?.PlayOneShot(new TargetInfo(caster.PositionHeld, map));
         }
     }
 
@@ -66,7 +272,7 @@ namespace ApexMechanoids
         public int blindTicks = 480;
         public float visualScale = 0.72f;
         public string fleckDefName = "PsycastPsychicEffect";
-        public string castSoundDefName = "PsycastPsychicPulse";
+        public string castSoundDefName;
     }
 
     public class Mote_PulseWaveEmitter : Mote
@@ -213,22 +419,7 @@ namespace ApexMechanoids
 
         private bool ShouldAffectPawn(Pawn pawn)
         {
-            if (pawn == null || pawn == caster || pawn.Dead || !pawn.Spawned)
-            {
-                return false;
-            }
-
-            if (!(pawn.RaceProps?.IsFlesh ?? false))
-            {
-                return false;
-            }
-
-            if (pawn.Faction == Faction.OfMechanoids)
-            {
-                return false;
-            }
-
-            return true;
+            return PulseWaveUtility.IsAffectedPawn(caster, pawn);
         }
 
         private void ApplyWaveToPawn(Pawn pawn)
