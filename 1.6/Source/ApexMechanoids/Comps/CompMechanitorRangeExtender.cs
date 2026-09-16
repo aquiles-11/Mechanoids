@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace ApexMechanoids
@@ -16,29 +18,60 @@ namespace ApexMechanoids
         public CompProperties_MechanitorRangeExtender Props => (CompProperties_MechanitorRangeExtender)props;
         private Pawn Pawn => parent as Pawn;
 
-        private float cachedDistance;
-
         public float currentRange;
 
-        public float SquaredDistance => cachedDistance == 0f ? GetCacheDistance() : cachedDistance;
+        public float SquaredDistance => GetEffectiveSquaredDistance();
 
-        private float GetCacheDistance() => cachedDistance = Mathf.Pow(currentRange, 2f);
+        private float GetEffectiveSquaredDistance()
+        {
+            float range = GetEffectiveRange();
+            if (range <= 0f) return 0f;
+            return range * range;
+        }
+
+        public float GetEffectiveRange()
+        {
+            Pawn pawn = Pawn;
+            Pawn overseer = pawn?.GetOverseer();
+            if (overseer == null)
+            {
+                currentRange = 0f;
+                return 0f;
+            }
+
+            currentRange = overseer.MapHeld == pawn.MapHeld ? Props.maxRange : Props.minRange;
+            return currentRange;
+        }
 
         public override void PostDraw()
         {
             base.PostDraw();
-            if (!Pawn.Drafted) return;
-            Pawn overseer = Pawn.GetOverseer();
-            if (overseer == null) return;
-            if (overseer.MapHeld == Pawn.MapHeld)
+            Pawn pawn = Pawn;
+            if (pawn == null || !pawn.Spawned) return;
+            if (!AnySelectedDraftedMechOfSameOverseer(pawn)) return;
+            float range = GetEffectiveRange();
+            if (range > 0f)
             {
-                currentRange = Props.maxRange;
+                GenDraw.DrawRadiusRing(parent.Position, range, Color.cyan);
             }
-            else if (!overseer.Spawned)
+        }
+
+        private static bool AnySelectedDraftedMechOfSameOverseer(Pawn pawn)
+        {
+            List<Pawn> selectedPawns = Find.Selector.SelectedPawns;
+            if (selectedPawns.Count == 0) return false;
+            Pawn overseer = pawn.GetOverseer();
+            if (overseer == null) return false;
+            for (int i = 0; i < selectedPawns.Count; i++)
             {
-                currentRange = Props.minRange;
+                Pawn selected = selectedPawns[i];
+                if (selected.Drafted && selected.GetOverseer() == overseer)
+                {
+                    return true;
+                }
             }
-            GenDraw.DrawRadiusRing(parent.Position, currentRange, Color.cyan);
+
+            return false;
         }
     }
 }

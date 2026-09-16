@@ -13,32 +13,27 @@ namespace ApexMechanoids
         {
             if (!__result)
             {
-                if (__instance.Pawn.HostFaction != null)
+                if (Utils.IsUplinkActiveFor(__instance.Pawn))
                 {
                     __result = true;
-                }
-                List<Pawn> ops = __instance.OverseenPawns;
-                if (ops != null && ops.Where((Pawn p) => p.TryGetComp<CompMechanitorRangeExtender>() != null)?.Count() > 0)
-                {
-                    __result = true;
+                    return;
                 }
             }
         }
     }
 
-
     [HarmonyPatch(typeof(Pawn_MechanitorTracker), nameof(Pawn_MechanitorTracker.CanCommandTo))]
     public static class Patch_Pawn_MechanitorTracker_CanCommandTo
     {
-        public static bool Prefix(Pawn_MechanitorTracker __instance, ref bool __result)
+        public static void Postfix(Pawn_MechanitorTracker __instance, ref bool __result)
         {
-            Pawn pawn = __instance != null ? __instance.Pawn : null;
-            if (Utils.IsUplinkActiveFor(pawn))
+            if(__result == false)
             {
-                __result = true;
-                return false;
+                if (__instance.pawn != null && Utils.IsUplinkActiveFor(__instance.Pawn))
+                {
+                    __result = true;
+                }
             }
-            return true;
         }
     }
 
@@ -78,43 +73,5 @@ namespace ApexMechanoids
             }
         }
     }
-
-    [HarmonyPatch(typeof(MechanitorUtility), "CanDraftMech")]
-    public class Patches_MechanitorUtility_CanDraftMech
-    {
-        public static void Postfix(Pawn mech, ref AcceptanceReport __result)
-        {
-            if ((bool)__result || mech.DeadOrDowned || (!mech.IsColonyMech && mech.HostFaction == null))
-            {
-                return;
-            }
-            else if (mech.HostFaction == Faction.OfPlayer)
-            {
-                __result = true;
-            }
-            if (mech.kindDef.race.HasComp(typeof(CompMechanitorRangeExtender)))
-            {
-                __result = true;
-                return;
-            }
-            List<Pawn> ops = mech.GetOverseer()?.mechanitor?.OverseenPawns;
-            if (ops.NullOrEmpty())
-            {
-                return;
-            }
-            List<Pawn> opsWithComp = ops.Where((Pawn x) => x.GetComp<CompMechanitorRangeExtender>() != null).ToList();
-            if (opsWithComp.NullOrEmpty())
-            {
-                return;
-            }
-            foreach (Pawn p in ops.Where((Pawn x) => x.MapHeld == mech.MapHeld))
-            {
-                if (opsWithComp.Contains(p))
-                {
-                    __result = true;
-                    break;
-                }
-            }
-        }
-    }
+ 
 }

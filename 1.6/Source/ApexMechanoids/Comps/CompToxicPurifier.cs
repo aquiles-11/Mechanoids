@@ -1,20 +1,69 @@
-﻿using RimWorld;
+﻿using LudeonTK;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Analytics;
 using Verse;
+using Verse.Noise;
 
 namespace ApexMechanoids
 {
-    public class CompToxicPurifier : ThingComp
+	public enum PurifierMode
+	{
+		WastepacksOverGround = 0,
+		GroundOverWastepacks = 1,
+		OnlyWastepacks = 2,
+        OnlyGround = 3
+	}
+
+	[StaticConstructorOnStartup]
+	public static class PurifierModeUtility
+	{
+		public static readonly Texture2D WastepacksOverGround = ContentFinder<Texture2D>.Get("UI/Gizmos/WastepacksOverGround");
+		public static readonly Texture2D GroundOverWastepacks = ContentFinder<Texture2D>.Get("UI/Gizmos/GroundOverWastepacks");
+		public static readonly Texture2D OnlyWastepacks = ContentFinder<Texture2D>.Get("UI/Gizmos/OnlyWastepacks");
+		public static readonly Texture2D OnlyGround = ContentFinder<Texture2D>.Get("UI/Gizmos/OnlyGround");
+		public static string GetLabel(this PurifierMode mode)
+		{
+            switch (mode)
+            {
+                case PurifierMode.OnlyGround:
+                    return "APM_ToxicPurifier_Mode_OnlyGround".Translate();
+                case PurifierMode.OnlyWastepacks:
+					return "APM_ToxicPurifier_Mode_OnlyWastepacks".Translate();
+                case PurifierMode.WastepacksOverGround:
+					return "APM_ToxicPurifier_Mode_WastepacksOverGround".Translate();
+                default:
+					return "APM_ToxicPurifier_Mode_GroundOverWastepacks".Translate();
+			}
+		}
+
+		public static Texture2D GetIcon(this PurifierMode mode)
+		{
+			switch (mode)
+			{
+				case PurifierMode.OnlyGround:
+					return OnlyGround;
+				case PurifierMode.OnlyWastepacks:
+					return OnlyWastepacks;
+				case PurifierMode.WastepacksOverGround:
+					return WastepacksOverGround;
+				default:
+					return GroundOverWastepacks;
+			}
+		}
+	}
+
+	public class CompToxicPurifier : ThingComp
     {
         public CompProperties_ToxicPurifier Props => (CompProperties_ToxicPurifier)props;
 
         public GameCondition_ToxicPurifier conditionCached;
-        public GameCondition_ToxicPurifier gameCondition
+        public GameCondition_ToxicPurifier GameCondition
         {
             get
             {
@@ -32,14 +81,27 @@ namespace ApexMechanoids
             }
         }
 
-        public float storedToxicity = 0f;
+		public bool Full => wastepacksCount >= Props.wastepackCapacity;
+
+		public float FillPercent => (float)wastepacksCount / (float)Props.wastepackCapacity;
+
+        public PurifierMode mode = PurifierMode.GroundOverWastepacks;
 
         public CompPowerTrader compPower;
 
         public bool shouldSprayToxic = false;
 
         public int sprayTickLeft = -1;
-        public bool Active
+
+        public int wastepacksCount;
+
+        private const int CellToUnpolluteCacheInterval = 300;
+
+        private IntVec3 cellToUnpolluteCached = IntVec3.Invalid;
+
+        private int cellToUnpolluteCacheTick = -1;
+
+        private bool Active
         {
             get
             {
@@ -51,44 +113,83 @@ namespace ApexMechanoids
                 {
                     return false;
                 }
-                if (!GetCellToUnpollute().IsValid)
-                {
-                    return false;
-                }
                 return true;
             }
         }
+
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
             compPower = parent.TryGetComp<CompPowerTrader>();
-            gameCondition.purifierOnMap.Add(parent);
+			if (!GameCondition.purifiersOnMap.Contains(parent))
+			{
+				GameCondition.purifiersOnMap.Add(parent);
+			}
         }
+
         public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
         {
             base.PostDeSpawn(map, mode);
-            if (gameCondition.purifierOnMap.Contains(parent))
+            if (GameCondition.purifiersOnMap.Contains(parent))
             {
-                gameCondition.purifierOnMap.Remove(parent);
+				GameCondition.purifiersOnMap.Remove(parent);
             }
-        }
+            Thing t = ThingMaker.MakeThing(ThingDefOf.Wastepack);
+            t.stackCount = wastepacksCount;
+            GenPlace.TryPlaceThing(t, parent.Position, map, ThingPlaceMode.Near);
+		}
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)
         {
             base.PostDestroy(mode, previousMap);
-            if (gameCondition.purifierOnMap.Contains(parent))
+            if (GameCondition.purifiersOnMap.Contains(parent))
             {
-                gameCondition.purifierOnMap.Remove(parent);
+				GameCondition.purifiersOnMap.Remove(parent);
             }
         }
+
+		public override void PostDrawExtraSelectionOverlays()
+		{
+			base.PostDrawExtraSelectionOverlays();
+			if (!Props.clearWholeMap && parent.Spawned)
+			{
+				GenDraw.DrawRadiusRing(parent.Position, Props.radius);
+			}
+		}
         public override void CompTickInterval(int delta)
         {
             base.CompTickInterval(delta);
             if (parent.IsHashIntervalTick(Props.interval, delta))
             {
-                if (!Active) return;
-                Pump();
-            }
+				if (!Active) return;
+                if(wastepacksCount > 0 && (mode == PurifierMode.WastepacksOverGround || mode == PurifierMode.OnlyWastepacks))
+                {
+                    wastepacksCount--;
+					Pump();
+                    return;
+				}
+                if(mode == PurifierMode.OnlyWastepacks)
+                {
+                    return;
+                }
+				IntVec3 cell = GetCellToUnpollute();
+				if (cell.IsValid)
+				{
+					parent.Map.pollutionGrid.SetPolluted(cell, false);
+					Pump();
+					return;
+				}
+				if (mode == PurifierMode.OnlyGround)
+				{
+					return;
+				}
+				if (wastepacksCount > 0)
+				{
+					wastepacksCount--;
+					Pump();
+					return;
+				}
+			}
         }
 
         public override void CompTick()
@@ -100,9 +201,7 @@ namespace ApexMechanoids
                 sprayTickLeft--;
                 if (Rand.Value < 0.6f)
                 {
-                    Vector3 pos = parent.TrueCenter();
-                    pos += Props.effecterVectorOffset;
-                    ThrowToxicAirPuffUp(pos, parent.Map);
+                    ThrowToxicAirPuffUp(parent.TrueCenter() + Props.EffectOffsetForRot(parent.Rotation), parent.Map);
                 }
             }
             else
@@ -121,90 +220,108 @@ namespace ApexMechanoids
                 map.flecks.CreateFleck(dataStatic);
             }
         }
+
         private void Pump()
         {
             Map map = parent.Map;
-            bool cleanAnyPollution = false;
-            if (Props.isCleanRandomTileInMap)
-            {
-                IEnumerable<IntVec3> cells = parent.Map.AllCells.Where(x => x.IsPolluted(parent.Map));
-                if (!cells.EnumerableNullOrEmpty())
-                {
-                    int num = 0;
-                    foreach (var item in cells.InRandomOrder())
-                    {
-                        cleanAnyPollution |= item.IsPolluted(map);
-                        map.pollutionGrid.SetPolluted(item, false);
-                        gameCondition.ChangeToxicity(Props.toxicPerTileCleaned);
-                        num++;
-                        if (num >= Props.tileToUnpollutePerTrigger)
-                        {
-                            break;
-                        }
-                    }
-                }
-                
-            }
-            else
-            {
-                IEnumerable<IntVec3> cellToUnpollute = GetCellsToUnpollute();
-                if (cellToUnpollute.EnumerableNullOrEmpty())
-                {
-                    return;
-                }
-                foreach (var cell in cellToUnpollute)
-                {
-                    cleanAnyPollution |= cell.IsPolluted(map);
-                    map.pollutionGrid.SetPolluted(cell, false);
-                    gameCondition.ChangeToxicity(Props.toxicPerTileCleaned);
-                }
-            }
-            if (cleanAnyPollution)
-            {
-                shouldSprayToxic = true;
-                sprayTickLeft = Rand.RangeInclusive(200,500);
-            }
-            IntVec3 pos = parent.Position;
-            if (Props.effecterOffset != null)
-            {
-                pos += Props.effecterOffset;
-            }
-            Effecter effecter = Props.pumpEffecterDef?.Spawn(pos, map);
+			GameCondition.ChangeToxicity(Props.toxicPerTileCleaned);
+			shouldSprayToxic = true;
+			sprayTickLeft = Rand.RangeInclusive(200, 500);
+            Effecter effecter = Props.pumpEffecterDef?.Spawn(parent, map, Props.EffectOffsetForRot(parent.Rotation));
             effecter.Cleanup();
         }
 
-        public IEnumerable<IntVec3> GetCellsToUnpollute()
-        {            
-            int num = GenRadial.NumCellsInRadius(Props.radius);
-            Map map = parent.Map;
-            int count = 0;
-            for (int i = 0; i < num; i++)
+		public bool HasCellToUnpolluteCached()
+		{
+			int ticksGame = Find.TickManager.TicksGame;
+			if (ticksGame < cellToUnpolluteCacheTick)
+			{
+				return cellToUnpolluteCached.IsValid;
+			}
+			cellToUnpolluteCached = GetCellToUnpollute();
+			cellToUnpolluteCacheTick = ticksGame + CellToUnpolluteCacheInterval;
+			return cellToUnpolluteCached.IsValid;
+		}
+
+		public void InvalidateCellToUnpolluteCache()
+		{
+			cellToUnpolluteCached = IntVec3.Invalid;
+			cellToUnpolluteCacheTick = -1;
+		}
+
+		public IntVec3 GetCellToUnpollute()
+		{
+			Map map = parent.Map;
+			if (Props.clearWholeMap)
             {
-                IntVec3 intVec = parent.Position + GenRadial.RadialPattern[i];
-                if (intVec.InBounds(map) && intVec.CanUnpollute(map))
+                CellRect cellRect = CellRect.FromCell(parent.Position);
+                int count = Mathf.RoundToInt((float)Mathf.Max(map.Size.x, map.Size.z) / 2f);
+                bool flag = true;
+                while (flag)
                 {
-                    count++;
-                    yield return intVec;
-                    if (count >= Props.tileToUnpollutePerTrigger)
+                    flag = false;
+					foreach (IntVec3 cell in cellRect.EdgeCells)
                     {
-                        break;
-                    }
-                }
-            }
-        }
-        public IntVec3 GetCellToUnpollute()
-        {
-            int num = GenRadial.NumCellsInRadius(Props.radius);
-            Map map = parent.Map;
-            for (int i = 0; i < num; i++)
+						if (cell.InBounds(map))
+						{
+                            flag = true;
+                            if (cell.CanUnpollute(map))
+                            {
+                                return cell;
+                            }
+						}
+					}
+                    cellRect = cellRect.ExpandedBy(1);
+				}
+				return IntVec3.Invalid;
+			}
+			int num = GenRadial.NumCellsInRadius(Props.radius);
+			for (int i = 0; i < num; i++)
+			{
+				IntVec3 intVec = parent.Position + GenRadial.RadialPattern[i];
+				if (intVec.InBounds(map) && intVec.CanUnpollute(map))
+				{
+					return intVec;
+				}
+			}
+			return IntVec3.Invalid;
+		}
+
+		public override IEnumerable<Gizmo> CompGetGizmosExtra()
+		{
+			Command_Action command_Action = new Command_Action();
+			command_Action.defaultLabel = "APM_ToxicPurifier_ModeChangeLabel".Translate() + ": " + mode.GetLabel();
+			command_Action.defaultDesc = "APM_ToxicPurifier_ModeChangeDesc".Translate();
+			command_Action.icon = mode.GetIcon();
+			command_Action.action = delegate
             {
-                IntVec3 intVec = parent.Position + GenRadial.RadialPattern[i];
-                if (intVec.InBounds(map) && intVec.CanUnpollute(map))
-                {
-                    return intVec;
-                }
-            }
-            return IntVec3.Invalid;
-        }
+				List<FloatMenuOption> list = new List<FloatMenuOption>();
+				for(int i = 0; i < 4; i++)
+				{
+					PurifierMode localMode = (PurifierMode)i;
+					list.Add(new FloatMenuOption(localMode.GetLabel(), delegate
+					{
+                        mode = localMode;
+                        InvalidateCellToUnpolluteCache();
+					}, localMode.GetIcon(), Color.white));
+				}
+				Find.WindowStack.Add(new FloatMenu(list));
+			};
+			yield return command_Action;
+		}
+
+		public override string CompInspectStringExtra()
+		{
+			return "ContainedThings".Translate(ThingDefOf.Wastepack) + ": " + wastepacksCount.ToString() + " / " + Props.wastepackCapacity.ToString();
+		}
+
+		public override void PostExposeData()
+		{
+			base.PostExposeData();
+			Scribe_Values.Look(ref wastepacksCount, "wastepacksCount");
+			Scribe_Values.Look(ref mode, "mode");
+			Scribe_Values.Look(ref shouldSprayToxic, "shouldSprayToxic");
+			Scribe_Values.Look(ref sprayTickLeft, "sprayTickLeft", defaultValue: -1);
+		}
     }
 }

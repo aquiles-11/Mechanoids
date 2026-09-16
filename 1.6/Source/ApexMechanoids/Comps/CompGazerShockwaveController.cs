@@ -1,6 +1,7 @@
 using RimWorld;
 using System.Collections.Generic;
 using Verse;
+using Verse.AI;
 
 namespace ApexMechanoids
 {
@@ -8,8 +9,8 @@ namespace ApexMechanoids
     {
         public AbilityDef shockwaveAbilityDef;
         public int checkIntervalTicks = 30;
-        public float meleeThreatRadius = 2.9f;
-        public int minHostilesToTrigger = 2;
+        public float meleeThreatRadius = 4f;
+        public int minHostilesToTrigger = 1;
 
         public CompProperties_GazerShockwaveController()
         {
@@ -34,7 +35,7 @@ namespace ApexMechanoids
             base.CompTick();
 
             Pawn pawn = Pawn;
-            if (pawn == null || !pawn.Spawned || pawn.Dead || pawn.Downed)
+            if (!Utils.CanRunAutonomousPawn(pawn))
             {
                 return;
             }
@@ -51,6 +52,11 @@ namespace ApexMechanoids
                 return;
             }
 
+            if (pawn.CurJob?.playerForced == true)
+            {
+                return;
+            }
+
             if (!ShouldAutoCast(pawn))
             {
                 return;
@@ -62,12 +68,26 @@ namespace ApexMechanoids
                 return;
             }
 
-            if (pawn.CurJobDef == ability.def.jobDef)
+            if (pawn.CurJob?.ability == ability)
             {
                 return;
             }
 
-            ability.QueueCastingJob(pawn, pawn);
+            LocalTargetInfo selfTarget = pawn;
+            if (!ability.AICanTargetNow(selfTarget) || !ability.CanApplyOn(selfTarget))
+            {
+                return;
+            }
+
+            Job job = ability.GetJob(selfTarget, selfTarget);
+            if (job == null)
+            {
+                return;
+            }
+
+            job.expiryInterval = 300;
+            job.checkOverrideOnExpire = true;
+            pawn.jobs.StartJob(job, JobCondition.InterruptForced, cancelBusyStances: true);
         }
 
         private void EnsureAbility()
@@ -86,39 +106,7 @@ namespace ApexMechanoids
 
         private bool ShouldAutoCast(Pawn pawn)
         {
-            if (pawn.MapHeld == null)
-            {
-                return false;
-            }
-
-            int nearbyHostiles = 0;
-            IReadOnlyList<Pawn> pawns = pawn.MapHeld.mapPawns.AllPawnsSpawned;
-            for (int i = 0; i < pawns.Count; i++)
-            {
-                Pawn other = pawns[i];
-                if (other == null || other == pawn || other.Dead || other.Downed || !other.Spawned)
-                {
-                    continue;
-                }
-
-                if (!other.HostileTo(pawn))
-                {
-                    continue;
-                }
-
-                if (other.Position.DistanceTo(pawn.PositionHeld) > Props.meleeThreatRadius)
-                {
-                    continue;
-                }
-
-                nearbyHostiles++;
-                if (nearbyHostiles >= Props.minHostilesToTrigger)
-                {
-                    return true;
-                }
-            }
-
-            return false;
+            return ShockwaveAIUtility.HasRequiredHostilesNear(pawn, Props.meleeThreatRadius, Props.minHostilesToTrigger);
         }
     }
 }
